@@ -30,6 +30,7 @@ trait BaseSpec
     extends AnyFeatureSpec
     with GivenWhenThen
     with BeforeAndAfterAll
+    with BeforeAndAfterEach
     with Matchers
     with WebBrowser
     with BrowserDriver
@@ -42,10 +43,10 @@ trait BaseSpec
   override def withFixture(test: NoArgTest): Outcome = {
     val fixture = super.withFixture(test)
     if (!fixture.isSucceeded) {
-      val screenshotName = test.name.replaceAll(" ", "_").replaceAll(":", "") + ".png"
+      val screenshotName = test.name.replaceAll(" ", "_").replaceAll(":", "").replaceAll("%", "_") + ".png"
       setCaptureDir("./target/test-reports/html-report/screenshots/")
       capture to screenshotName
-      markup(s"<img src='screenshots/$screenshotName' />")
+      markup(s"<img width='1000' height='400' src='screenshots/$screenshotName' />")
     }
     fixture
   }

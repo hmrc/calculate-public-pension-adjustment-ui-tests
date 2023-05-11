@@ -16,18 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ELIGIBILITY_PAGE_HEADER, CHECK_YOUR_ELIGIBILITY_PAGE_TITLE, SAVINGS_STATEMENT_PAGE_HEADER, SAVINGS_STATEMENT_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.SavingsStatementPage.{isHeader, onPage, verifyPageUrl}
 
-object CheckYourVATResult extends BasePage {
-
-  val checkYourVatResult   = "Your VAT calculation - Check your VAT flat rate - GOV.UK"
-  val resultOutcome        = "resultOutcome"
-  val useSetVATFlatRate    = "You can use the 16.5% VAT flat rate"
-  val useUniqueVATFlatRate = "You can use the VAT flat rate for your business type"
-
-  def result: String = {
-    onPage(checkYourVatResult)
-    driver.findElement(By.id(resultOutcome)).getText
+object EligibilityPage extends BasePage {
+  def onEligibilityPage() = {
+    verifyPageUrl("ineligible")
+    onPage(CHECK_YOUR_ELIGIBILITY_PAGE_TITLE)
+    isHeader(CHECK_YOUR_ELIGIBILITY_PAGE_HEADER)
   }
-
 }
