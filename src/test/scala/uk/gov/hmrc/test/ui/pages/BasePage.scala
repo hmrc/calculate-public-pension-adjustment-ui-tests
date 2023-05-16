@@ -110,7 +110,7 @@ trait BasePage extends BrowserDriver with Matchers {
     lastPart shouldEqual name
   }
 
-  def validateCheckBoxError(): Assertion =
+  def validateRadioButtonError(): Assertion =
     assert(
       driver
         .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))

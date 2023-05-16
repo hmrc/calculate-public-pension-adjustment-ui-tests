@@ -17,23 +17,39 @@
 package uk.gov.hmrc.test.ui.constants
 
 object PageInformation {
-  val HOME_PAGE_TITLE                     =
+  val HOME_PAGE_TITLE                               =
     "Calculate Public Pension Adjustment service - Calculate Public Pension Adjustment service - GOV.UK"
-  val HOME_PAGE_HEADER                    = "Calculate Public Pension Adjustment service"
-  val SAVINGS_STATEMENT_PAGE_TITLE        =
+  val HOME_PAGE_HEADER                              = "Calculate Public Pension Adjustment service"
+  val SAVINGS_STATEMENT_PAGE_TITLE                  =
     "Have you received a remedial service statement from your public service pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
-  val SAVINGS_STATEMENT_PAGE_HEADER       =
+  val SAVINGS_STATEMENT_PAGE_HEADER                 =
     "Have you received a remedial service statement from your public service pension scheme?"
-  val RESUBMITTING_ADJUSTMENT_PAGE_TITLE  =
+  val RESUBMITTING_ADJUSTMENT_PAGE_TITLE            =
     "Are you resubmitting a public pension adjustment? - Calculate Public Pension Adjustment service - GOV.UK"
-  val RESUBMITTING_ADJUSTMENT_PAGE_HEADER = "Are you resubmitting a public pension adjustment?"
-  val REASON_FOR_RESUBMISSION_PAGE_TITLE  =
+  val RESUBMITTING_ADJUSTMENT_PAGE_HEADER           = "Are you resubmitting a public pension adjustment?"
+  val REASON_FOR_RESUBMISSION_PAGE_TITLE            =
     "What is your reason for a resubmission? - Calculate Public Pension Adjustment service - GOV.UK"
-  val REASON_FOR_RESUBMISSION_PAGE_HEADER = "What is your reason for a resubmission?"
-  val CHECK_YOUR_ELIGIBILITY_PAGE_TITLE   =
+  val REASON_FOR_RESUBMISSION_PAGE_HEADER           = "What is your reason for a resubmission?"
+  val CHECK_YOUR_ELIGIBILITY_PAGE_TITLE             =
     "Check your eligibility - Calculate Public Pension Adjustment service - GOV.UK"
-  val CHECK_YOUR_ELIGIBILITY_PAGE_HEADER  = "Check your eligibility"
-  val REPORTING_CHANGE_PAGE_TITLE         =
+  val CHECK_YOUR_ELIGIBILITY_PAGE_HEADER            = "Check your eligibility"
+  val REPORTING_CHANGE_PAGE_TITLE                   =
     "What are you reporting? - Calculate Public Pension Adjustment service - GOV.UK"
-  val REPORTING_CHANGE_PAGE_HEADER        = "What are you reporting?"
+  val REPORTING_CHANGE_PAGE_HEADER                  = "What are you reporting?"
+  val SCOTTISH_TAX_PAYER_FROM_2016_PAGE_TITLE       =
+    "Were you ever a Scottish taxpayer from 6 April 2016 onwards? - Calculate Public Pension Adjustment service - GOV.UK"
+  val SCOTTISH_TAX_PAYER_FROM_2016_PAGE_HEADER      =
+    "Were you ever a Scottish taxpayer from 6 April 2016 onwards?"
+  val WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE      =
+    "In which years were you a Scottish taxpayer? - Calculate Public Pension Adjustment service - GOV.UK"
+  val WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER     =
+    "In which years were you a Scottish taxpayer?"
+  val PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_TITLE  =
+    "Are you paying into a public service pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_HEADER =
+    "Are you paying into a public service pension scheme?"
+  val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE    =
+    "When did you stop paying into a public service pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
+  val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER   =
+    "When did you stop paying into a public service pension scheme?"
 }
