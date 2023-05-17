@@ -19,11 +19,10 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{REPORTING_CHANGE_PAGE_HEADER, REPORTING_CHANGE_PAGE_TITLE, RESUBMITTING_ADJUSTMENT_PAGE_HEADER, RESUBMITTING_ADJUSTMENT_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.ReasonForResubmissionPage.{assert, driver}
-import uk.gov.hmrc.test.ui.pages.ResubmittingAdjustmentPage.{isHeader, onPage, verifyPageUrl}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{REPORTING_CHANGE_PAGE_HEADER, REPORTING_CHANGE_PAGE_TITLE}
 
 object ReportingChangePage extends BasePage {
+
   def validateReportingChangePageErrorsWhenNoCheckBoxSelected(): Assertion =
     assert(
       driver
@@ -38,9 +37,43 @@ object ReportingChangePage extends BasePage {
         .contains(Errors.CHECK_BOX_ERROR_SUMMARY)
     )
 
+  def clearAllOptions() =
+    if (driver.findElement(By.id("value_0")).isSelected) {
+      driver.findElement(By.id("value_0")).click()
+    } else if (driver.findElement(By.id("value_1")).isSelected) {
+      driver.findElement(By.id("value_1")).click()
+    } else if (driver.findElement(By.id("value_2")).isSelected) {
+      driver.findElement(By.id("value_2")).click()
+    }
+
   def onReportingChangePage() = {
     verifyPageUrl("reporting-change")
     onPage(REPORTING_CHANGE_PAGE_TITLE)
     isHeader(REPORTING_CHANGE_PAGE_HEADER)
   }
+
+  def clickAnnualAllowance() =
+    driver.findElement(By.id("value_0")).click()
+
+  def clickLifetimeAllowance() =
+    driver.findElement(By.id("value_1")).click()
+
+  def clickOtherCompensation() =
+    driver.findElement(By.id("value_2")).click()
+
+  def selectAnnualAllowanceAndContinue() = {
+    clickAnnualAllowance()
+    submitPage()
+  }
+
+  def selectLifetimeAllowanceAndContinue() = {
+    clickLifetimeAllowance()
+    submitPage()
+  }
+
+  def selectOtherCompensationAndContinue() = {
+    clickOtherCompensation()
+    submitPage()
+  }
+
 }
