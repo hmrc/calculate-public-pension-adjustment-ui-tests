@@ -33,7 +33,7 @@ object ReasonForResubmissionPage extends BasePage {
     driver.findElement(By.xpath("//textarea[@id='value']")).getAttribute("value")
 
   def verifiedMaxCharacterLength(): Boolean                                  =
-    getResubmissionReason == TEXT_WITH_500_CHARACTERS
+    getResubmissionReason() == TEXT_WITH_500_CHARACTERS
   def validateReasonForResubmissionPageErrorsWhenNoTextAsReason(): Assertion =
     assert(
       driver

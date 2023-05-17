@@ -20,7 +20,6 @@ import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{SCOTTISH_TAX_PAYER_FROM_2016_PAGE_HEADER, SCOTTISH_TAX_PAYER_FROM_2016_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.ReasonForResubmissionPage.{assert, driver}
 
 object ScottishTaxpayerFrom2016Page extends BasePage {
   def validateScottishTaxPayerRadioButtonError(): Assertion =

@@ -17,13 +17,10 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import org.scalatest.flatspec.AnyFlatSpec
-import org.scalatest.{Assertion, BeforeAndAfterEach}
+import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{SAVINGS_STATEMENT_PAGE_HEADER, SAVINGS_STATEMENT_PAGE_TITLE}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.HomePage.{driver, loadPage, url}
 
 import java.util.ResourceBundle
 

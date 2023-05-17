@@ -19,9 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{SCOTTISH_TAX_PAYER_FROM_2016_PAGE_HEADER, SCOTTISH_TAX_PAYER_FROM_2016_PAGE_TITLE, WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER, WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.ReportingChangePage.{assert, driver}
-import uk.gov.hmrc.test.ui.pages.ScottishTaxpayerFrom2016Page.{isHeader, onPage, verifyPageUrl}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER, WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE}
 
 object WhichYearsScottishTaxpayer extends BasePage {
   def onWhichYearsScottishTaxpayerPage() = {

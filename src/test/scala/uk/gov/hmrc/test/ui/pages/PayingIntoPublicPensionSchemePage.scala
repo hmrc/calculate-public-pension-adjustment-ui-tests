@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_HEADER, PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_TITLE, SCOTTISH_TAX_PAYER_FROM_2016_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_HEADER, PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_TITLE}
 
 object PayingIntoPublicPensionSchemePage extends BasePage {
   def validatePayingPSPSchemeRadioButtonError(): Assertion =

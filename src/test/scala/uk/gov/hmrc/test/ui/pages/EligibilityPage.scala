@@ -16,8 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ELIGIBILITY_PAGE_HEADER, CHECK_YOUR_ELIGIBILITY_PAGE_TITLE, SAVINGS_STATEMENT_PAGE_HEADER, SAVINGS_STATEMENT_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.SavingsStatementPage.{isHeader, onPage, verifyPageUrl}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ELIGIBILITY_PAGE_HEADER, CHECK_YOUR_ELIGIBILITY_PAGE_TITLE}
 
 object EligibilityPage extends BasePage {
   def onEligibilityPage() = {

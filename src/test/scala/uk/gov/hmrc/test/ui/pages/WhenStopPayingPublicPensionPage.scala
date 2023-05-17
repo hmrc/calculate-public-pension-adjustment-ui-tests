@@ -19,8 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{SCOTTISH_TAX_PAYER_FROM_2016_PAGE_HEADER, SCOTTISH_TAX_PAYER_FROM_2016_PAGE_TITLE, WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER, WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.ScottishTaxpayerFrom2016Page.{assert, driver, isHeader, onPage, verifyPageUrl}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER, WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE}
 
 object WhenStopPayingPublicPensionPage extends BasePage {
   def validateNoInputDateError(): Assertion =
@@ -101,14 +100,14 @@ object WhenStopPayingPublicPensionPage extends BasePage {
   }
 
   def enterAnInvalidDateAndClickContinue() = {
-    clearDate
+    clearDate()
     enterDay("32")
     enterMonth("04")
     enterYear("2016")
     submitPage()
   }
   def enterAFutureDateAndClickContinue() = {
-    clearDate
+    clearDate()
     enterDay("06")
     enterMonth("04")
     enterYear("2022")
@@ -116,7 +115,7 @@ object WhenStopPayingPublicPensionPage extends BasePage {
   }
 
   def enterAPreRemedyDateAndClickContinue() = {
-    clearDate
+    clearDate()
     enterDay("05")
     enterMonth("04")
     enterYear("2015")
@@ -124,7 +123,7 @@ object WhenStopPayingPublicPensionPage extends BasePage {
   }
 
   def enterValidPastDateAndClickContinue() = {
-    clearDate
+    clearDate()
     enterDay("06")
     enterMonth("04")
     enterYear("2015")
@@ -132,7 +131,7 @@ object WhenStopPayingPublicPensionPage extends BasePage {
   }
 
   def enterValidFutureDateAndClickContinue() = {
-    clearDate
+    clearDate()
     enterDay("05")
     enterMonth("04")
     enterYear("2022")

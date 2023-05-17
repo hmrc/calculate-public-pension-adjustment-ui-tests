@@ -16,11 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{REPORTING_CHANGE_PAGE_HEADER, REPORTING_CHANGE_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.HomePage.{driver, url}
 
 object ReportingChangePage extends BasePage {
 
@@ -63,17 +62,17 @@ object ReportingChangePage extends BasePage {
     driver.findElement(By.id("value_2")).click()
 
   def selectAnnualAllowanceAndContinue() = {
-    clickAnnualAllowance
+    clickAnnualAllowance()
     submitPage()
   }
 
   def selectLifetimeAllowanceAndContinue() = {
-    clickLifetimeAllowance
+    clickLifetimeAllowance()
     submitPage()
   }
 
   def selectOtherCompensationAndContinue() = {
-    clickOtherCompensation
+    clickOtherCompensation()
     submitPage()
   }
 
