@@ -40,4 +40,18 @@ object Errors {
     "Enter a real date for when you stopped paying into a public service pension scheme into the spaces provided as day, month, year"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY =
     "You have entered a pre-remedy date when you stopped paying into a public service pension scheme, it must be within the remedy period 6 April 2015 to 5 April 2022"
+  val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_ERROR_SUMMARY               =
+    "Select yes if you have a defined contribution pension scheme"
+  val HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_ERROR_SUMMARY                  =
+    "Select yes if you have flexibly accessed your defined contribution pension saving"
+  val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_NO_INPUT_DATA_ERROR_SUMMARY      =
+    "Enter the date that you flexibly accessed your defined contribution pension savings as day, month, year"
+  val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_REAL_DATE_ERROR_SUMMARY          =
+    "Enter a real date for the date that you flexibly accessed your defined contribution pension savings as day, month, year"
+  val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_FUTURE_DATE_ERROR_SUMMARY        =
+    "You have entered a future date for the date that you flexibly accessed your defined contribution pension savings, it must be within the remedy period"
+  val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY    =
+    "You have entered a date for the date that you flexibly accessed your defined contribution pension savings before the remedy period, enter a date after 5 April 2015"
+  val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_DATES_FORMAT_ERROR_SUMMARY       =
+    "Enter a date that you flexibly accessed your defined contribution pension savings as day, month, year"
 }

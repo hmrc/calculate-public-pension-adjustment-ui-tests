@@ -84,33 +84,11 @@ object WhenStopPayingPublicPensionPage extends BasePage {
     isHeader(WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER)
   }
 
-  def enterDay(day: String) =
-    driver.findElement(By.id("value.day")).sendKeys(day)
-
-  def enterMonth(month: String) =
-    driver.findElement(By.id("value.month")).sendKeys(month)
-
-  def enterYear(year: String) =
-    driver.findElement(By.id("value.year")).sendKeys(year)
-
-  def clearDate() = {
-    driver.findElement(By.id("value.day")).clear()
-    driver.findElement(By.id("value.month")).clear()
-    driver.findElement(By.id("value.year")).clear()
-  }
-
   def enterAnInvalidDateAndClickContinue() = {
     clearDate()
     enterDay("32")
     enterMonth("04")
     enterYear("2016")
-    submitPage()
-  }
-  def enterAFutureDateAndClickContinue() = {
-    clearDate()
-    enterDay("06")
-    enterMonth("04")
-    enterYear("2022")
     submitPage()
   }
 
@@ -133,6 +111,14 @@ object WhenStopPayingPublicPensionPage extends BasePage {
   def enterValidFutureDateAndClickContinue() = {
     clearDate()
     enterDay("05")
+    enterMonth("04")
+    enterYear("2022")
+    submitPage()
+  }
+
+  def enterAFutureDateAndClickContinue() = {
+    clearDate()
+    enterDay("06")
     enterMonth("04")
     enterYear("2022")
     submitPage()

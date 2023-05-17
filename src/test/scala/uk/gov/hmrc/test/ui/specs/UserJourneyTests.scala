@@ -258,6 +258,88 @@ class UserJourneyTests extends BaseSpec {
 
     }
 
+    /** Below journey covers 0,1,3(Y),4,5(AA),6(N),8(Y),10(Y),11 pages in the mural board* */
+    Scenario("User journey through paying into a PSPS (yes) functionality", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinue()
+
+      Then("I Should see the ResubmittingAdjustmentPage page")
+      ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinue()
+
+      Then("I Should see the ReasonForResubmissionPage page")
+      ReasonForResubmissionPage.onReasonForResubmissionPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      Then("I Should see the reporting-change page")
+      ReportingChangePage.onReportingChangePage()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      Then("I Should see the scottish-taxpayer-from-2016 page")
+      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
+
+      When("I select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinue()
+
+      Then("I Should see the paying-into-public-pension-scheme page")
+      PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
+
+      When("I select yes and continue to next page")
+      PayingIntoPublicPensionSchemePage.selectYesAndContinue()
+
+      Then("I Should see the have-defined-contribution-pension page")
+      HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
+
+      When("I click continue button")
+      HaveDefinedContributionPensionPage.submitPage()
+
+      Then("I Should see the error message")
+      HaveDefinedContributionPensionPage.validateHaveDefinedContributionPensionPageRadioButtonError()
+
+      When("I select yes and continue to next page")
+      HaveDefinedContributionPensionPage.selectYesAndContinue()
+
+      Then("I Should see the have-defined-contribution-pension page")
+      HaveFlexiblyAccessedPensionPage.onHaveFlexiblyAccessedPensionPage()
+
+      When("I click continue button")
+      HaveFlexiblyAccessedPensionPage.submitPage()
+
+      Then("I Should see the error message")
+      HaveFlexiblyAccessedPensionPage.validateHaveFlexiblyAccessedPensionPageRadioButtonError()
+
+      When("I select yes and continue to next page")
+      HaveFlexiblyAccessedPensionPage.selectYesAndContinue()
+
+      Then("I Should see the when-flexibly-access-pension page")
+      WhenFlexiblyAccessPensionPage.onWhenFlexiblyAccessPensionPage()
+
+      Then("I validate all date errors")
+      WhenFlexiblyAccessPensionPage.validateAllDateErrors()
+
+      Then("I verify valid dates and click continue")
+      WhenFlexiblyAccessPensionPage.verifyAllowedDatesAndContinue()
+
+    }
+
     /** Below journey covers 0,1,2 pages in the mural board* */
     Scenario("User Journey through savings statement 'NOT' received functionality", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
