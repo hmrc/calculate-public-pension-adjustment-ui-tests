@@ -21,7 +21,9 @@ import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.WhenStopPayingPublicPensionPage.driver
 
+import java.time.{LocalDateTime, ZoneId}
 import java.util.ResourceBundle
 
 trait BasePage extends BrowserDriver with Matchers {
@@ -37,12 +39,21 @@ trait BasePage extends BrowserDriver with Matchers {
     else true
 
   def isHeader(header: String): Boolean = {
-    val headerText = driver.findElement(By.xpath("//h1")).getText
-    if (headerText != header)
-      throw PageNotFoundException(
-        s"Expected '$header', but found '$headerText'"
-      )
-    else true
+    var headerText = driver.findElement(By.xpath("//h1")).getText
+    if (driver.findElements(By.xpath("//h1/span")).size() != 0) {
+      headerText = headerText.replaceAll(driver.findElement(By.xpath("(//h1/span)")).getText, "").replaceAll("\n", "")
+      if (headerText != header)
+        throw PageNotFoundException(
+          s"Expected '$header', but found '$headerText'"
+        )
+      else true
+    } else {
+      if (headerText != header)
+        throw PageNotFoundException(
+          s"Expected '$header', but found '$headerText'"
+        )
+      else true
+    }
   }
 
   def selectYesOption(): Unit =
@@ -129,6 +140,29 @@ trait BasePage extends BrowserDriver with Matchers {
   def selectNoAndContinue() = {
     selectNoOption()
     submitPage()
+  }
+
+  def enterDay(day: String) =
+    driver.findElement(By.id("value.day")).sendKeys(day)
+
+  def enterMonth(month: String) =
+    driver.findElement(By.id("value.month")).sendKeys(month)
+
+  def enterYear(year: String) =
+    driver.findElement(By.id("value.year")).sendKeys(year)
+
+  def clearDate() = {
+    driver.findElement(By.id("value.day")).clear()
+    driver.findElement(By.id("value.month")).clear()
+    driver.findElement(By.id("value.year")).clear()
+  }
+
+  def getCurrentDateTime(): (Int, Int, Int) = {
+    val currentDateTime = LocalDateTime.now(ZoneId.of("GMT"))
+    val currentDate     = currentDateTime.getDayOfMonth
+    val currentMonth    = currentDateTime.getMonthValue
+    val currentYear     = currentDateTime.getYear
+    (currentMonth, currentDate, currentYear)
   }
 
 }

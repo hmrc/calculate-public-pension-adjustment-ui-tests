@@ -52,4 +52,16 @@ object PageInformation {
     "When did you stop paying into a public service pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER   =
     "When did you stop paying into a public service pension scheme?"
+  val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_TITLE  =
+    "Do you have a defined contribution pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
+  val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_HEADER =
+    "Do you have a defined contribution pension scheme?"
+  val HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_TITLE     =
+    "Have you flexibly accessed your defined contribution pension savings? - Calculate Public Pension Adjustment service - GOV.UK"
+  val HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_HEADER    =
+    "Have you flexibly accessed your defined contribution pension savings?"
+  val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_TITLE       =
+    "When did you start flexibly accessing defined contribution pension savings? - Calculate Public Pension Adjustment service - GOV.UK"
+  val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER      =
+    "When did you start flexibly accessing defined contribution pension savings?"
 }
