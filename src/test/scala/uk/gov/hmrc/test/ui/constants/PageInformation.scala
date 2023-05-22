@@ -64,4 +64,20 @@ object PageInformation {
     "When did you start flexibly accessing defined contribution pension savings? - Calculate Public Pension Adjustment service - GOV.UK"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER      =
     "When did you start flexibly accessing defined contribution pension savings?"
+  val PAY_TAX_CHARGE_FROM2015_2016_PAGE_TITLE       =
+    "Did you pay a tax charge between 6 April 2015 and 5 April 2016? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PAY_TAX_CHARGE_FROM2015_2016_PAGE_HEADER      =
+    "Did you pay a tax charge between 6 April 2015 and 5 April 2016?"
+  val PIA_PRE_REMEDY_2012_PAGE_TITLE                =
+    "What was your pension input amount between 6 April 2012 and 5 April 2013? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PIA_PRE_REMEDY_2012_PAGE_HEADER               =
+    "What was your pension input amount between 6 April 2012 and 5 April 2013?"
+  val PIA_PRE_REMEDY_2013_PAGE_TITLE                =
+    "What was your pension input amount between 6 April 2013 and 5 April 2014? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PIA_PRE_REMEDY_2013_PAGE_HEADER               =
+    "What was your pension input amount between 6 April 2013 and 5 April 2014?"
+  val PIA_PRE_REMEDY_2014_PAGE_TITLE                =
+    "What was your pension input amount between 6 April 2014 and 5 April 2015? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PIA_PRE_REMEDY_2014_PAGE_HEADER               =
+    "What was your pension input amount between 6 April 2014 and 5 April 2015?"
 }

@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages.WhenStopPayingPublicPensionPage.driver
@@ -42,6 +43,15 @@ trait BasePage extends BrowserDriver with Matchers {
     var headerText = driver.findElement(By.xpath("//h1")).getText
     if (driver.findElements(By.xpath("//h1/span")).size() != 0) {
       headerText = headerText.replaceAll(driver.findElement(By.xpath("(//h1/span)")).getText, "").replaceAll("\n", "")
+      if (headerText != header)
+        throw PageNotFoundException(
+          s"Expected '$header', but found '$headerText'"
+        )
+      else true
+    }
+    if ((driver.findElements(By.xpath("//h1/label/span")).size() != 0)) {
+      headerText =
+        headerText.replaceAll(driver.findElement(By.xpath("(//h1/label/span)")).getText, "").replaceAll("\n", "")
       if (headerText != header)
         throw PageNotFoundException(
           s"Expected '$header', but found '$headerText'"
@@ -114,7 +124,7 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def verifyPageUrl(name: String): Assertion = {
     val currentUrl: String = driver.getCurrentUrl
-    val lastPart           = currentUrl.split("/").last
+    val lastPart           = currentUrl.replaceAll(TestConfiguration.url("ui-frontend") + "/", "")
     lastPart shouldEqual name
   }
 
@@ -164,6 +174,9 @@ trait BasePage extends BrowserDriver with Matchers {
     val currentYear     = currentDateTime.getYear
     (currentMonth, currentDate, currentYear)
   }
+
+  def enterAmount(amount: String) =
+    driver.findElement(By.id("value")).sendKeys(amount)
 
 }
 
