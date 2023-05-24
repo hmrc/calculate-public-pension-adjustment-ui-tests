@@ -16,11 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHAT_YOU_WILL_NEED_LTA_PAGE_HEADER, WHAT_YOU_WILL_NEED_LTA_PAGE_TITLE}
 
 object WhatYouWillNeedLtaPage extends BasePage {
+
+  val url: String = TestConfiguration.url("ui-frontend")
   def onWhatYouWillNeedLtaPage() = {
-    driver.navigate().to("http://localhost:12804/public-pension-adjustment/what-you-will-need-lta")
+    driver.navigate().to(url + "/what-you-will-need-lta")
     verifyPageUrl("what-you-will-need-lta")
     onPage(WHAT_YOU_WILL_NEED_LTA_PAGE_TITLE)
     isHeader(WHAT_YOU_WILL_NEED_LTA_PAGE_HEADER)
