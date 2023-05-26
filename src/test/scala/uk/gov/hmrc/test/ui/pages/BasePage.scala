@@ -22,6 +22,7 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.ReportingChangePage.driver
 import uk.gov.hmrc.test.ui.pages.WhenStopPayingPublicPensionPage.driver
 
 import java.time.{LocalDateTime, ZoneId}
@@ -31,6 +32,9 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def submitPage(): Unit =
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
+
+  def clickContinueButton(): Unit =
+    driver.findElement(By.xpath("//a[contains(text(),'Continue')]")).click()
 
   def onPage(pageTitle: String): Boolean =
     if (driver.getTitle != pageTitle)

@@ -20,6 +20,7 @@ import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{REPORTING_CHANGE_PAGE_HEADER, REPORTING_CHANGE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.HadBenefitCrystallisationEventPage.driver
 
 object ReportingChangePage extends BasePage {
 

@@ -392,7 +392,7 @@ class UserJourneyTests extends BaseSpec {
       When("I select yes and continue to next page")
       HaveDefinedContributionPensionPage.selectYesAndContinue()
 
-      Then("I Should see the have-defined-contribution-pension page")
+      Then("I Should see the have-flexible-accessed-pension page")
       HaveFlexiblyAccessedPensionPage.onHaveFlexiblyAccessedPensionPage()
 
       When("I select No and continue to next page")
@@ -422,6 +422,66 @@ class UserJourneyTests extends BaseSpec {
       When("I enter amount for 2014-2015 and click continue")
       PiaPreRemedyPage2014.enterAmountAndClickContinue()
 
+    }
+
+    /** Below journey covers 0,1,3(Y),4,5 pages in the mural board* */
+    Scenario("LTA user journey through LTA> had a benefit crystallisation(Yes) functionality", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinue()
+
+      Then("I Should see the what-you-will-need-lta page")
+      WhatYouWillNeedLtaPage.onWhatYouWillNeedLtaPage()
+
+      When("I click continue")
+      WhatYouWillNeedLtaPage.clickContinueButton()
+
+      Then("I Should see the had-benefit-crystallisation-event page")
+      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
+
+      When("I select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinue()
+
+      Then("I Should see the date-of-benefit-crystallisation-event page")
+      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+    }
+
+    /** Below journey covers 0,1,3(Y),4,5 pages in the mural board* */
+    Scenario("LTA user journey through LTA> had a benefit crystallisation(No) functionality", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinue()
+
+      Then("I Should see the what-you-will-need-lta page")
+      WhatYouWillNeedLtaPage.onWhatYouWillNeedLtaPage()
+
+      When("I click continue")
+      WhatYouWillNeedLtaPage.clickContinueButton()
+
+      Then("I Should see the had-benefit-crystallisation-event page")
+      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
+
+      When("I select No and continue to next page")
+      HadBenefitCrystallisationEventPage.selectNoAndContinue()
+
+      Then("I Should see the not-able-to-use-this-service-lta page")
+      NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()
     }
 
     /** Below journey covers 0,1,2 pages in the mural board* */
