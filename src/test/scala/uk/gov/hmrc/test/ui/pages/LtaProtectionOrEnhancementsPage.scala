@@ -16,19 +16,19 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER, DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_HEADER, LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.ToldChangeInLtaPercentagePage.driver
 
-object DateOfBenefitCrystallisationEventPage extends BasePage {
-  def onDateOfBenefitCrystallisationEventPage() = {
-    verifyPageUrl("date-of-benefit-crystallisation-event")
-    onPage(DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE)
-    isHeader(DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER)
+object LtaProtectionOrEnhancementsPage extends BasePage {
+  def onLtaProtectionOrEnhancementsPage() = {
+    verifyPageUrl("lta-protection-or-enhancements")
+    onPage(LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_TITLE)
+    isHeader(LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_HEADER)
   }
-  def enterBenefitCrystallisationDateAndContinue() = {
-    clearDate()
-    enterDay("25")
-    enterMonth("06")
-    enterYear("2017")
+
+  def selectProtectionRadioButtonAndContinue(): Unit = {
+    driver.findElement(By.xpath("//label[contains(text(),'Protection')]")).click()
     submitPage()
   }
 }

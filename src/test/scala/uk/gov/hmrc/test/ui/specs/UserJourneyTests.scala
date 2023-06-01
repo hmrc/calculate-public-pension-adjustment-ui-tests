@@ -424,7 +424,7 @@ class UserJourneyTests extends BaseSpec {
 
     }
 
-    /** Below journey covers 0,1,3(Y),4,5 pages in the mural board* */
+    /** Below journey covers 4.1,4.3,4.4,4.5,4.6,4.7,4.8 pages in the mural board* */
     Scenario("LTA user journey through LTA> had a benefit crystallisation(Yes) functionality", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
@@ -452,9 +452,82 @@ class UserJourneyTests extends BaseSpec {
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
       DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+
+      When("I enter date and click continue")
+      DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
+
+      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
+      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
+
+      Then("I Should see the percentage-caused-change-in-charge page")
+      PercentageCausedChangeInChargPage.onPercentageCausedChangeInChargPage()
+
+      When("I select any radio button and click continue")
+      PercentageCausedChangeInChargPage.selectNewChargeRadioButtonAndContinue()
+
+      /*Then("I Should see the lta-protection-or-enhancements page")
+      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
+
+      When("I select any radio button and click continue")
+      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
+
+      Then("I Should see the protection-type page")
+      ProtectionTypePage.onProtectionTypePage()
+
+      When("I select any radio button and click continue")
+      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
+
+      Then("I Should see the protection-reference page")
+      ProtectionReferencePage.onProtectionReferencePage()
+
+      When("I enter protection reference and click continue")
+      ProtectionReferencePage.enterProtectionReferenceAndContinue()*/
+
     }
 
-    /** Below journey covers 0,1,3(Y),4,5 pages in the mural board* */
+    /** Below journey covers 4.1,4.3,4.4,4.5 pages in the mural board */
+    Scenario(
+      "LTA user journey through LTA> been told about a change in the lifetime allowance percentage(No) functionality",
+      ZapTests
+    ) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinue()
+
+      Then("I Should see the what-you-will-need-lta page")
+      WhatYouWillNeedLtaPage.onWhatYouWillNeedLtaPage()
+
+      When("I click continue")
+      WhatYouWillNeedLtaPage.clickContinueButton()
+
+      Then("I Should see the had-benefit-crystallisation-event page")
+      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
+
+      When("I select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinue()
+
+      Then("I Should see the date-of-benefit-crystallisation-event page")
+      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+
+      When("I enter date and click continue")
+      DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
+
+      Then("I Should see the told-change-in-lta-percentage page and then select no and continue")
+      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectNoAndContinue()
+
+      Then("I Should see the not-able-to-use-this-service-lta page")
+      NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()
+    }
+
+    /** Below journey covers 4.1,4.2 pages in the mural board* */
     Scenario("LTA user journey through LTA> had a benefit crystallisation(No) functionality", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()

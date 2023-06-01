@@ -16,19 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER, DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER, PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE}
 
-object DateOfBenefitCrystallisationEventPage extends BasePage {
-  def onDateOfBenefitCrystallisationEventPage() = {
-    verifyPageUrl("date-of-benefit-crystallisation-event")
-    onPage(DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE)
-    isHeader(DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER)
+object PercentageCausedChangeInChargPage extends BasePage {
+  def onPercentageCausedChangeInChargPage() = {
+    verifyPageUrl("percentage-caused-change-in-charge")
+    onPage(PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE)
+    isHeader(PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER)
   }
-  def enterBenefitCrystallisationDateAndContinue() = {
-    clearDate()
-    enterDay("25")
-    enterMonth("06")
-    enterYear("2017")
+
+  def selectNewChargeRadioButtonAndContinue(): Unit = {
+    driver.findElement(By.xpath("//label[contains(text(),'New charge')]")).click()
     submitPage()
   }
 }
