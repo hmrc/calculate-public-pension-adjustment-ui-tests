@@ -91,4 +91,25 @@ object PageInformation {
   val NOT_ABLE_TO_USE_THIS_SERVICE_LTA_PAGE_TITLE       =
     "Not able to use this service - Calculate Public Pension Adjustment service - GOV.UK"
   val NOT_ABLE_TO_USE_THIS_SERVICE_LTA_HEADER           = "Not able to use this service"
+  val TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_TITLE          =
+    "Have you been told about a change in the lifetime allowance percentage? - Calculate Public Pension Adjustment service - GOV.UK"
+  val TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_HEADER         =
+    "Have you been told about a change in the lifetime allowance percentage?"
+  val PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE      =
+    "Has the change led to a new, increased or decreased tax charge? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER     =
+    "Has the change led to a new, increased or decreased tax charge?"
+  val LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_TITLE         =
+    "Do you have lifetime allowance protection or enhancements? - Calculate Public Pension Adjustment service - GOV.UK"
+  val LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_HEADER        =
+    "Do you have lifetime allowance protection or enhancements?"
+  val PROTECTION_TYPE_PAGE_TITLE                        =
+    "What is your protection type? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PROTECTION_TYPE_PAGE_HEADER                       =
+    "What is your protection type?"
+  val PROTECTION_REFERENCE_PAGE_TITLE                   =
+    "What is your protection reference? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PROTECTION_REFERENCE_PAGE_HEADER                  =
+    "What is your protection reference?"
+
 }

@@ -16,19 +16,19 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER, DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_TYPE_PAGE_HEADER, PROTECTION_TYPE_PAGE_TITLE}
 
-object DateOfBenefitCrystallisationEventPage extends BasePage {
-  def onDateOfBenefitCrystallisationEventPage() = {
-    verifyPageUrl("date-of-benefit-crystallisation-event")
-    onPage(DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE)
-    isHeader(DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER)
+object ProtectionTypePage extends BasePage {
+  def onProtectionTypePage() = {
+    verifyPageUrl("protection-type")
+    onPage(PROTECTION_TYPE_PAGE_TITLE)
+    isHeader(PROTECTION_TYPE_PAGE_HEADER)
   }
-  def enterBenefitCrystallisationDateAndContinue() = {
-    clearDate()
-    enterDay("25")
-    enterMonth("06")
-    enterYear("2017")
+
+  def selectEnhancedProtectionRadioButtonAndContinue(): Unit = {
+    driver.findElement(By.xpath("//label[contains(text(),'Enhanced Protection')]")).click()
     submitPage()
   }
+
 }

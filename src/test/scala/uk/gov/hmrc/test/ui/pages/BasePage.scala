@@ -22,8 +22,6 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.ReportingChangePage.driver
-import uk.gov.hmrc.test.ui.pages.WhenStopPayingPublicPensionPage.driver
 
 import java.time.{LocalDateTime, ZoneId}
 import java.util.ResourceBundle
@@ -183,5 +181,4 @@ trait BasePage extends BrowserDriver with Matchers {
     driver.findElement(By.id("value")).sendKeys(amount)
 
 }
-
 case class PageNotFoundException(s: String) extends Exception(s)
