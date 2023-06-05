@@ -16,19 +16,37 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.jsoup.Jsoup
 import org.openqa.selenium.By
 import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import util.DataCollectorMap
 
-import java.time.{LocalDateTime, ZoneId}
-import java.util.ResourceBundle
+import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
+import java.time.{LocalDate, LocalDateTime, ZoneId}
+import java.util.{Calendar, ResourceBundle}
+import scala.collection.mutable
+import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-trait BasePage extends BrowserDriver with Matchers {
+trait GSDataCollector {
+  def checkYourAnswersGSMap(key: String, value: Any): Unit
+}
 
-  def submitPage(): Unit =
+trait AASDataCollector {
+  def checkYourAnswersAASMap(key: String, value: Any): Unit
+}
+trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector with Matchers {
+
+  def checkYourAnswersGSMap(key: String, value: Any): Unit =
+    DataCollectorMap.addToGSMap(key, value)
+
+  def checkYourAnswersAASMap(key: String, value: Any): Unit =
+    DataCollectorMap.addToAASMap(key, value)
+  def submitPage(): Unit                                    =
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
   def clickContinueButton(): Unit =
@@ -66,6 +84,15 @@ trait BasePage extends BrowserDriver with Matchers {
         )
       else true
     }
+  }
+
+  def isHeader2(header: String): Boolean = {
+    val headerText = driver.findElement(By.xpath("//h2")).getText
+    if (headerText != header)
+      throw PageNotFoundException(
+        s"Expected '$header', but found '$headerText'"
+      )
+    else true
   }
 
   def selectYesOption(): Unit =
@@ -144,12 +171,70 @@ trait BasePage extends BrowserDriver with Matchers {
         .contains(Errors.RADIO_BUTTON_ERROR_SUMMARY)
     )
 
-  def selectYesAndContinue() = {
+  def getHeader(): String = {
+    var headerText = driver.findElement(By.xpath("//h1")).getText
+    if (driver.findElements(By.xpath("//h1/span")).size() != 0) {
+      headerText = headerText.replaceAll(driver.findElement(By.xpath("(//h1/span)")).getText, "").replaceAll("\n", "")
+    }
+    if ((driver.findElements(By.xpath("//h1/label/span")).size() != 0)) {
+      headerText =
+        headerText.replaceAll(driver.findElement(By.xpath("(//h1/label/span)")).getText, "").replaceAll("\n", "")
+    }
+    headerText
+  }
+
+  def getDate(): String = {
+    val inputDate     = getDay() + "/" + getMonth() + "/" + getYear()
+    val dateFormatter = new SimpleDateFormat("dd/MM/yyyy")
+    val parsedDate    = dateFormatter.parse(inputDate)
+    val calendar      = Calendar.getInstance()
+    calendar.setTime(parsedDate)
+    val year          = calendar.get(Calendar.YEAR)
+    val month         = calendar.get(Calendar.MONTH) + 1
+    val day           = calendar.get(Calendar.DAY_OF_MONTH)
+    val localDate     = LocalDate.of(year, month, day)
+    val outputFormat  = DateTimeFormatter.ofPattern("dd MMMM yyyy")
+    val formattedDate = localDate.format(outputFormat)
+    formattedDate
+  }
+
+  def selectedOption(): String =
+    if (driver.findElement(By.id("value")).isSelected)
+      "Yes"
+    else if (driver.findElement(By.id("value-no")).isSelected)
+      "No"
+    else ""
+
+  def selectYesAndContinueForGSPage() = {
+    selectYesOption()
+    checkYourAnswersGSMap(getHeader(), selectedOption())
+    submitPage()
+  }
+
+  def selectNoAndContinueForGSPage() = {
+    selectNoOption()
+    checkYourAnswersGSMap(getHeader(), selectedOption())
+    submitPage()
+  }
+
+  def selectYesAndContinueForAASPage() = {
+    selectYesOption()
+    checkYourAnswersAASMap(getHeader(), selectedOption())
+    submitPage()
+  }
+
+  def selectNoAndContinueForAASPage() = {
+    selectNoOption()
+    checkYourAnswersAASMap(getHeader(), selectedOption())
+    submitPage()
+  }
+
+  def selectYesAndContinueForLTAPage() = {
     selectYesOption()
     submitPage()
   }
 
-  def selectNoAndContinue() = {
+  def selectNoAndContinueForLTAPage() = {
     selectNoOption()
     submitPage()
   }
@@ -157,11 +242,20 @@ trait BasePage extends BrowserDriver with Matchers {
   def enterDay(day: String) =
     driver.findElement(By.id("value.day")).sendKeys(day)
 
+  def getDay() =
+    driver.findElement(By.id("value.day")).getAttribute("value")
+
   def enterMonth(month: String) =
     driver.findElement(By.id("value.month")).sendKeys(month)
 
+  def getMonth() =
+    driver.findElement(By.id("value.month")).getAttribute("value")
+
   def enterYear(year: String) =
     driver.findElement(By.id("value.year")).sendKeys(year)
+
+  def getYear() =
+    driver.findElement(By.id("value.year")).getAttribute("value")
 
   def clearDate() = {
     driver.findElement(By.id("value.day")).clear()
@@ -180,5 +274,37 @@ trait BasePage extends BrowserDriver with Matchers {
   def enterAmount(amount: String) =
     driver.findElement(By.id("value")).sendKeys(amount)
 
+  def getEnteredAmount(): String =
+    "£" + driver.findElement(By.id("value")).getAttribute("value")
+
+  def returnCheckYourAnswersPageInformation(): mutable.Map[String, Any] = {
+    val map         = mutable.Map[String, Any]()
+    // Extract <dt> and the first non-empty <dd> text for each <div>
+    val dlElement   = driver.findElement(By.xpath("//dl[@class='govuk-summary-list']"))
+    // Get the HTML content of the <dl> element
+    val html        = dlElement.getAttribute("innerHTML")
+    // Parse the HTML using Jsoup
+    val document    = Jsoup.parse(html)
+    // Extract <dt> and the first non-empty <dd> text for each <div>
+    val divElements = document.select("div")
+    divElements.forEach { divElement =>
+      val dtElement  = divElement.selectFirst("dt")
+      val ddElements = divElement.select("dd").asScala
+      if (dtElement != null && ddElements.nonEmpty) {
+        val dtText = dtElement.text().trim()
+        val ddText = ddElements.find(_.text().trim().nonEmpty).map(_.text().trim()).getOrElse("")
+        map.put(dtText, ddText)
+      }
+    }
+    map
+  }
+
+  def clickOnChangeLink(question: String) =
+    driver.findElement(By.xpath("//dt[contains(text(),'" + question + "')]/ancestor::div[1]//a")).click()
+
+  def signOutPage(): this.type = {
+    driver.findElement(By.xpath("//a[contains(text(),'Sign out')]")).click()
+    this
+  }
 }
 case class PageNotFoundException(s: String) extends Exception(s)

@@ -17,20 +17,19 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.constants.PageInformation.{TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_HEADER, TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.PercentageCausedChangeInChargPage.driver
 
 object ToldChangeInLtaPercentagePage extends BasePage {
   def onToldChangeInLtaPercentagePageAndSelectYesAndContinue() = {
     verifyPageUrl("told-change-in-lta-percentage")
     onPage(TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_TITLE)
     isHeader(TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_HEADER)
-    selectYesAndContinue()
+    selectYesAndContinueForLTAPage()
   }
 
   def onToldChangeInLtaPercentagePageAndSelectNoAndContinue() = {
     verifyPageUrl("told-change-in-lta-percentage")
     onPage(TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_TITLE)
     isHeader(TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_HEADER)
-    selectNoAndContinue()
+    selectNoAndContinueForLTAPage()
   }
 }
