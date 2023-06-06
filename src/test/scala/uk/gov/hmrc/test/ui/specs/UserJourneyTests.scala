@@ -566,24 +566,6 @@ class UserJourneyTests extends BaseSpec {
       When("I click sign out from the page")
       PercentageCausedChangeInChargPage.signOutPage()
 
-      /*Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
-
-      When("I select any radio button and click continue")
-      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
-
-      Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
-
-      When("I select any radio button and click continue")
-      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
-
-      Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
-
-      When("I enter protection reference and click continue")
-      ProtectionReferencePage.enterProtectionReferenceAndContinue()*/
-
     }
 
     /** Below journey covers 4.1,4.3,4.4,4.5,4.6,4.7,4.8 pages in the mural board* */
