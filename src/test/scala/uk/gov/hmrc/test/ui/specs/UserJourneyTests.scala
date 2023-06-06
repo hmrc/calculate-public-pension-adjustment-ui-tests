@@ -811,6 +811,7 @@ class UserJourneyTests extends BaseSpec {
 
       When("I click sign out from the page")
       NotAbleToUseThisServiceLtaPage.signOutPage()
+
     }
 
     /** Below journey covers 4.1,4.2 pages in the mural board* */
