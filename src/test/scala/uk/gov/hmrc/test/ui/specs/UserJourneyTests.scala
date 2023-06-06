@@ -563,10 +563,7 @@ class UserJourneyTests extends BaseSpec {
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargPage.selectNewChargeRadioButtonAndContinue()
 
-      When("I click sign out from the page")
-      PercentageCausedChangeInChargPage.signOutPage()
-
-      /*Then("I Should see the lta-protection-or-enhancements page")
+      Then("I Should see the lta-protection-or-enhancements page")
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
@@ -582,7 +579,10 @@ class UserJourneyTests extends BaseSpec {
       ProtectionReferencePage.onProtectionReferencePage()
 
       When("I enter protection reference and click continue")
-      ProtectionReferencePage.enterProtectionReferenceAndContinue()*/
+      ProtectionReferencePage.enterProtectionReferenceAndContinue()
+
+      When("I click sign out from the page")
+      ProtectionReferencePage.signOutPage()
 
     }
 

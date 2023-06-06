@@ -127,5 +127,29 @@ object PageInformation {
     "Calculate Public Service Pension Adjustment"
   val TASK_LISTS_PAGE_HEADER2                           =
     "Application incomplete"
+  val PROTECTION_CHANGED_PAGE_TITLE                     =
+    "Has your protection type or enhancement changed? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PROTECTION_CHANGED_PAGE_HEADER                    =
+    "Has your protection type or enhancement changed?"
+  val PROTECTION_CHANGED_NEW_TYPE_PAGE_TITLE            =
+    "What is the new protection type or enhancement? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PROTECTION_CHANGED_NEW_TYPE_PAGE_HEADER           =
+    "What is the new protection type or enhancement?"
+  val PROTECTION_CHANGED_NEW_REFERENCE_PAGE_TITLE       =
+    "What is the reference of the new protection type or enhancement? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PROTECTION_CHANGED_NEW_REFERENCE_PAGE_HEADER      =
+    "What is the reference of the new protection type or enhancement?"
+  val LTA_CHARGE_2015_2023_PAGE_TITLE                   =
+    "Have you had a lifetime allowance charge from 6 April 2015 to 5 April 2023? - Calculate Public Pension Adjustment service - GOV.UK"
+  val LTA_CHARGE_2015_2023_PAGE_HEADER                  =
+    "Have you had a lifetime allowance charge from 6 April 2015 to 5 April 2023?"
+  val HOW_EXCESS_WAS_PAID_PAGE_TITLE                    =
+    "How was the excess above your lifetime allowance paid to you? - Calculate Public Pension Adjustment service - GOV.UK"
+  val HOW_EXCESS_WAS_PAID_PAGE_HEADER                   =
+    "How was the excess above your lifetime allowance paid to you?"
+  val HOW_MUCH_LTA_CHARGE_PAGE_TITLE                    =
+    "What was the value of your lifetime allowance charge? - Calculate Public Pension Adjustment service - GOV.UK"
+  val HOW_MUCH_LTA_CHARGE_PAGE_HEADER                   =
+    "What was the value of your lifetime allowance charge?"
 
 }

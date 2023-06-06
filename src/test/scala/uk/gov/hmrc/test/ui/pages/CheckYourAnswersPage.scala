@@ -28,7 +28,6 @@ object CheckYourAnswersPage extends BasePage {
     onCheckYourAnswersPage()
     require(DataCollectorMap.checkAnswersGS == returnCheckYourAnswersPageInformation(), "Data not matching")
     clickContinueButton()
-    //DataCollectorMap.checkAnswersGS.clear()
   }
 
   def clickChangeOnWhatAreYouReportingQuestion() = clickOnChangeLink(

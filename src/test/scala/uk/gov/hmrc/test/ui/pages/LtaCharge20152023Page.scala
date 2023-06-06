@@ -16,19 +16,17 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_REFERENCE_PAGE_HEADER, PROTECTION_REFERENCE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{LTA_CHARGE_2015_2023_PAGE_HEADER, LTA_CHARGE_2015_2023_PAGE_TITLE}
 
-object ProtectionReferencePage extends BasePage {
-  def onProtectionReferencePage() = {
-    verifyPageUrl("protection-reference")
-    onPage(PROTECTION_REFERENCE_PAGE_TITLE)
-    isHeader(PROTECTION_REFERENCE_PAGE_HEADER)
+object LtaCharge20152023Page extends BasePage {
+  def onLtaCharge20152023Page() = {
+    verifyPageUrl("lta-charge-2015-2023")
+    onPage(LTA_CHARGE_2015_2023_PAGE_TITLE)
+    isHeader(LTA_CHARGE_2015_2023_PAGE_HEADER)
   }
 
-  def enterProtectionReferenceAndContinue(): Unit = {
-    driver.findElement(By.id("value")).clear()
-    driver.findElement(By.id("value")).sendKeys("asdfghjkqwertyu")
-    submitPage()
+  def selectYesAndClickOnContinue() = {
+    onLtaCharge20152023Page()
+    selectYesAndContinueForLTAPage()
   }
 }
