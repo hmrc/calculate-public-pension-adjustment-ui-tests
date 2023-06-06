@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.constants
 
 object PageInformation {
   val HOME_PAGE_TITLE                                   =
-    "Calculate Public Pension Adjustment service - Calculate Public Pension Adjustment service - GOV.UK"
-  val HOME_PAGE_HEADER                                  = "Calculate Public Pension Adjustment service"
+    "Calculate Public Service Pension Adjustment - Calculate Public Pension Adjustment service - GOV.UK"
+  val HOME_PAGE_HEADER                                  = "Calculate Public Service Pension Adjustment"
   val SAVINGS_STATEMENT_PAGE_TITLE                      =
     "Have you received a remedial service statement from your public service pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
   val SAVINGS_STATEMENT_PAGE_HEADER                     =
@@ -111,5 +111,21 @@ object PageInformation {
     "What is your protection reference? - Calculate Public Pension Adjustment service - GOV.UK"
   val PROTECTION_REFERENCE_PAGE_HEADER                  =
     "What is your protection reference?"
+  val CHECK_YOUR_ANSWERS_PAGE_TITLE                     =
+    "Check your answers - Calculate Public Pension Adjustment service - GOV.UK"
+  val CHECK_YOUR_ANSWERS_PAGE_HEADER                    =
+    "Check your answers"
+  val CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE              =
+    "Check your answers - Calculate Public Pension Adjustment service - GOV.UK"
+  val CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER             =
+    "Check your answers"
+  val CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER2            =
+    "Annual allowance setup questions"
+  val TASK_LISTS_PAGE_TITLE                             =
+    "Calculate Public Service Pension Adjustment - Calculate Public Pension Adjustment service - GOV.UK"
+  val TASK_LISTS_PAGE_HEADER                            =
+    "Calculate Public Service Pension Adjustment"
+  val TASK_LISTS_PAGE_HEADER2                           =
+    "Application incomplete"
 
 }

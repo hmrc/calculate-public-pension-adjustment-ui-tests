@@ -72,12 +72,15 @@ object ReasonForResubmissionPage extends BasePage {
   }
 
   def enterReasonAndContinue() = {
-    enterResubmissionReason("resubmission reason")
+    val reason = "resubmission reason"
+    enterResubmissionReason(reason)
+    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_HEADER, reason)
     submitPage()
   }
 
   def enterLengthierReasonAndContinue(reason: String) = {
     enterResubmissionReason(reason)
+    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_HEADER, reason)
     submitPage()
   }
 }

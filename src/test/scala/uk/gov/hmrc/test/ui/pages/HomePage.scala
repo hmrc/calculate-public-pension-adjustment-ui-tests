@@ -19,12 +19,12 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HOME_PAGE_HEADER, HOME_PAGE_TITLE}
+import util.DataCollectorMap
 
 object HomePage extends BasePage {
   val url: String = TestConfiguration.url("ui-frontend")
-  //val hmrcHeader  = driver.findElement(By.xpath("//div[@class='govuk-header__content']")).getText
 
-  def loadPage: this.type = {
+  def loadPage(): this.type = {
     driver.navigate().to(url)
     this
   }
@@ -35,9 +35,10 @@ object HomePage extends BasePage {
   }
 
   def goToHomepage(): Unit = {
-    loadPage
+    DataCollectorMap.checkAnswersGS.clear()
+    DataCollectorMap.checkAnswersAAS.clear()
+    loadPage()
     onPage(HOME_PAGE_TITLE)
     isHeader(HOME_PAGE_HEADER)
   }
-
 }

@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2013_PAGE_HEADER, PIA_PRE_REMEDY_2013_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.PiaPreRemedyPage2012.{enterAmount, submitPage}
 
 object PiaPreRemedyPage2013 extends BasePage {
   def onPiaPreRemedyPage2013Page() = {
@@ -28,6 +27,7 @@ object PiaPreRemedyPage2013 extends BasePage {
 
   def enterAmountAndClickContinue() = {
     enterAmount("4000")
+    checkYourAnswersAASMap(getHeader(), getEnteredAmount())
     submitPage()
   }
 }

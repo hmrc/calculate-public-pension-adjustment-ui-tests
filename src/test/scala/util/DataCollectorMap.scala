@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package util
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHAT_YOU_WILL_NEED_LTA_PAGE_HEADER, WHAT_YOU_WILL_NEED_LTA_PAGE_TITLE}
+import scala.collection.mutable
 
-object WhatYouWillNeedLtaPage extends BasePage {
+object DataCollectorMap {
+  val checkAnswersGS: mutable.Map[String, Any]  = mutable.Map[String, Any]()
+  val checkAnswersAAS: mutable.Map[String, Any] = mutable.Map[String, Any]()
+  def addToGSMap(key: String, value: Any): Unit =
+    checkAnswersGS += (key -> value)
 
-  val url: String = TestConfiguration.url("ui-frontend")
-  def onWhatYouWillNeedLtaPage() = {
-    driver.navigate().to(url + "/what-you-will-need-lta")
-    verifyPageUrl("what-you-will-need-lta")
-    onPage(WHAT_YOU_WILL_NEED_LTA_PAGE_TITLE)
-    isHeader(WHAT_YOU_WILL_NEED_LTA_PAGE_HEADER)
-  }
+  def addToAASMap(key: String, value: Any): Unit =
+    checkAnswersAAS += (key -> value)
 }

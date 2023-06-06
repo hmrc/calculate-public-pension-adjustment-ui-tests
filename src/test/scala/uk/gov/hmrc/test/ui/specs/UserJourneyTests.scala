@@ -42,7 +42,7 @@ class UserJourneyTests extends BaseSpec {
       SavingsStatementPage.validateRadioButtonError()
 
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -54,7 +54,7 @@ class UserJourneyTests extends BaseSpec {
       ResubmittingAdjustmentPage.validateRadioButtonError()
 
       When("I select option No and continue")
-      ResubmittingAdjustmentPage.selectNoAndContinue()
+      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
       Then("I Should see the reporting-change page")
       ReportingChangePage.onReportingChangePage()
@@ -64,6 +64,9 @@ class UserJourneyTests extends BaseSpec {
 
       Then("I Should see the error messages")
       ReportingChangePage.validateReportingChangePageErrorsWhenNoCheckBoxSelected()
+
+      When("I click sign out from the page")
+      ReportingChangePage.signOutPage()
     }
 
     /** Below journey covers 0,1,3(Y),4,5 pages in the mural board* */
@@ -78,13 +81,13 @@ class UserJourneyTests extends BaseSpec {
       SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
       When("I select I'm resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinue()
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
       ReasonForResubmissionPage.onReasonForResubmissionPage()
@@ -107,6 +110,9 @@ class UserJourneyTests extends BaseSpec {
       Then("I Should see the reporting-change page")
       ReportingChangePage.onReportingChangePage()
 
+      When("I click sign out from the page")
+      ReportingChangePage.signOutPage()
+
     }
 
     /** Below journey covers 0,1,3(Y),4,5(AA),6(Y),7 pages in the mural board* */
@@ -121,13 +127,13 @@ class UserJourneyTests extends BaseSpec {
       SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
       When("I select I'm resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinue()
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
       ReasonForResubmissionPage.onReasonForResubmissionPage()
@@ -141,6 +147,9 @@ class UserJourneyTests extends BaseSpec {
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
       Then("I Should see the scottish-taxpayer-from-2016 page")
       ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
 
@@ -151,7 +160,7 @@ class UserJourneyTests extends BaseSpec {
       ScottishTaxpayerFrom2016Page.validateScottishTaxPayerRadioButtonError()
 
       When("I select yes and continue to next page")
-      ScottishTaxpayerFrom2016Page.selectYesAndContinue()
+      ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
 
       Then("I Should see the which-years-scottish-taxpayer page")
       WhichYearsScottishTaxpayer.onWhichYearsScottishTaxpayerPage()
@@ -162,10 +171,13 @@ class UserJourneyTests extends BaseSpec {
       Then("I Should see the error message")
       WhichYearsScottishTaxpayer.validateWhichYearsScottishTaxpayerErrorsWhenNoCheckBoxSelected()
 
+      When("I click sign out from the page")
+      WhichYearsScottishTaxpayer.signOutPage()
+
     }
 
     /** Below journey covers 0,1,3(Y),4,5(AA),6(N),8(N),9,10(N),13 pages in the mural board* */
-    Scenario("User journey through Scottish taxpayer from 6 April 2016 (No) functionality", ZapTests) {
+    Scenario("User journey through Annual allowance functionality", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
@@ -176,13 +188,13 @@ class UserJourneyTests extends BaseSpec {
       SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
       When("I select I'm resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinue()
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
       ReasonForResubmissionPage.onReasonForResubmissionPage()
@@ -199,11 +211,14 @@ class UserJourneyTests extends BaseSpec {
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
       Then("I Should see the scottish-taxpayer-from-2016 page")
       ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
 
       When("I select no and continue to next page")
-      ScottishTaxpayerFrom2016Page.selectNoAndContinue()
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
 
       Then("I Should see the paying-into-public-pension-scheme page")
       PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
@@ -215,7 +230,7 @@ class UserJourneyTests extends BaseSpec {
       PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
-      PayingIntoPublicPensionSchemePage.selectNoAndContinue()
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
       WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
@@ -260,10 +275,70 @@ class UserJourneyTests extends BaseSpec {
       HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
 
       When("I select no and continue to next page")
-      HaveDefinedContributionPensionPage.selectNoAndContinue()
+      HaveDefinedContributionPensionPage.selectNoAndContinueForAASPage()
 
       Then("I Should see the pay-tax-charge-from2015-2016 page")
       PayTaxChargeFrom20152016Page.onPayTaxChargeFrom20152016Page()
+
+      When("I select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the Task list page")
+      TaskListPage.onTaskListPage()
+
+      Then("I verify annual allowance period shows up to 2022 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
+
+      When("I click change details of your AA background")
+      TaskListPage.clickChangeDetailsOfYourAA()
+
+      When("I click on when did you stop paying into PSPS")
+      CheckYourAnswersAnnualAllowanceSetupPage.clickChangeOnWhenDidYouStopPaying()
+
+      When("I update stop paying date")
+      WhenStopPayingPublicPensionPage.enterValid2017_2018_DateAndContinue()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify annual allowance period shows up to 2018 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2018")
+
+      When("I click change details of your AA background")
+      TaskListPage.clickChangeDetailsOfYourAA()
+
+      When("I click on when did you stop paying into PSPS")
+      CheckYourAnswersAnnualAllowanceSetupPage.clickChangeOnWhenDidYouStopPaying()
+
+      When("I update stop paying date")
+      WhenStopPayingPublicPensionPage.enterValid2016_2017_DateAndContinue()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify annual allowance period shows up to 2017 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2017")
+
+      When("I click change details of your AA background")
+      TaskListPage.clickChangeDetailsOfYourAA()
+
+      When("I click on when did you stop paying into PSPS")
+      CheckYourAnswersAnnualAllowanceSetupPage.clickChangeOnWhenDidYouStopPaying()
+
+      When("I update stop paying date")
+      WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify annual allowance period shows up to 2022 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
+
+      When("I click sign out from the page")
+      PayTaxChargeFrom20152016Page.signOutPage()
     }
 
     /** Below journey covers 0,1,3(Y),4,5(AA),6(N),8(Y),10(Y),11(Y),12,13 pages in the mural board* */
@@ -278,13 +353,13 @@ class UserJourneyTests extends BaseSpec {
       SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
       When("I select I'm resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinue()
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
       ReasonForResubmissionPage.onReasonForResubmissionPage()
@@ -301,29 +376,32 @@ class UserJourneyTests extends BaseSpec {
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
       Then("I Should see the scottish-taxpayer-from-2016 page")
       ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
 
       When("I select no and continue to next page")
-      ScottishTaxpayerFrom2016Page.selectNoAndContinue()
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForGSPage()
 
       Then("I Should see the paying-into-public-pension-scheme page")
       PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
 
       When("I select yes and continue to next page")
-      PayingIntoPublicPensionSchemePage.selectYesAndContinue()
+      PayingIntoPublicPensionSchemePage.selectYesAndContinueForGSPage()
 
       Then("I Should see the have-defined-contribution-pension page")
       HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
 
       When("I select yes and continue to next page")
-      HaveDefinedContributionPensionPage.selectYesAndContinue()
+      HaveDefinedContributionPensionPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the have-defined-contribution-pension page")
       HaveFlexiblyAccessedPensionPage.onHaveFlexiblyAccessedPensionPage()
 
       When("I select yes and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectYesAndContinue()
+      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the when-flexibly-access-pension page")
       WhenFlexiblyAccessPensionPage.onWhenFlexiblyAccessPensionPage()
@@ -336,6 +414,9 @@ class UserJourneyTests extends BaseSpec {
 
       Then("I Should see the pay-tax-charge-from2015-2016 page")
       PayTaxChargeFrom20152016Page.onPayTaxChargeFrom20152016Page()
+
+      When("I click sign out from the page")
+      PayTaxChargeFrom20152016Page.signOutPage()
 
     }
 
@@ -351,13 +432,13 @@ class UserJourneyTests extends BaseSpec {
       SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
       When("I select I'm resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinue()
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
       ReasonForResubmissionPage.onReasonForResubmissionPage()
@@ -374,35 +455,38 @@ class UserJourneyTests extends BaseSpec {
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
+      Then("I Should see the check your answers page with user selected values")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
       Then("I Should see the scottish-taxpayer-from-2016 page")
       ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
 
       When("I select no and continue to next page")
-      ScottishTaxpayerFrom2016Page.selectNoAndContinue()
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
 
       Then("I Should see the paying-into-public-pension-scheme page")
       PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
 
       When("I select yes and continue to next page")
-      PayingIntoPublicPensionSchemePage.selectYesAndContinue()
+      PayingIntoPublicPensionSchemePage.selectYesAndContinueForAASPage()
 
       Then("I Should see the have-defined-contribution-pension page")
       HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
 
       When("I select yes and continue to next page")
-      HaveDefinedContributionPensionPage.selectYesAndContinue()
+      HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
 
       Then("I Should see the have-flexible-accessed-pension page")
       HaveFlexiblyAccessedPensionPage.onHaveFlexiblyAccessedPensionPage()
 
       When("I select No and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectNoAndContinue()
+      HaveFlexiblyAccessedPensionPage.selectNoAndContinueForAASPage()
 
       Then("I Should see the pay-tax-charge-from2015-2016 page")
       PayTaxChargeFrom20152016Page.onPayTaxChargeFrom20152016Page()
 
       When("I select No and continue to next page")
-      PayTaxChargeFrom20152016Page.selectNoAndContinue()
+      PayTaxChargeFrom20152016Page.selectNoAndContinueForAASPage()
 
       Then("I Should see the pia-pre-remedy/2012 page")
       PiaPreRemedyPage2012.onPiaPreRemedyPage2012Page()
@@ -422,6 +506,11 @@ class UserJourneyTests extends BaseSpec {
       When("I enter amount for 2014-2015 and click continue")
       PiaPreRemedyPage2014.enterAmountAndClickContinue()
 
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I click sign out from the page")
+      CheckYourAnswersAnnualAllowanceSetupPage.signOutPage()
     }
 
     /** Below journey covers 4.1,4.3,4.4,4.5,4.6,4.7,4.8 pages in the mural board* */
@@ -432,23 +521,32 @@ class UserJourneyTests extends BaseSpec {
       When("I click start button")
       HomePage.clickStartButton()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
-
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the what-you-will-need-lta page")
-      WhatYouWillNeedLtaPage.onWhatYouWillNeedLtaPage()
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      When("I click continue")
-      WhatYouWillNeedLtaPage.clickContinueButton()
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify task list page and click add details for lifetime allowance")
+      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinue()
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
       DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
@@ -465,24 +563,198 @@ class UserJourneyTests extends BaseSpec {
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargPage.selectNewChargeRadioButtonAndContinue()
 
-      /*Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
+      When("I click sign out from the page")
+      PercentageCausedChangeInChargPage.signOutPage()
 
-      When("I select any radio button and click continue")
-      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
+    }
 
-      Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
+    /** Below journey covers 4.1,4.3,4.4,4.5,4.6,4.7,4.8 pages in the mural board* */
+    Scenario("LTA user journey through negative tests set 1") {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
 
-      When("I select any radio button and click continue")
-      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
+      When("I click start button")
+      HomePage.clickStartButton()
 
-      Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
-      When("I enter protection reference and click continue")
-      ProtectionReferencePage.enterProtectionReferenceAndContinue()*/
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify only lifetime allowance section is displayed")
+      TaskListPage.isLifeTimeAllowanceTitleDisplayed()
+      TaskListPage.isAnnualAllowanceTitleNotDisplayed()
+
+      Then("I verify the status of LA - details of your event is NOT STARTED")
+      assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.NOT_STARTED)
+
+      When("I click on setup questions link")
+      TaskListPage.clickOnChangeSetupQuestions()
+
+      When("I click on 'What are you reporting' question")
+      CheckYourAnswersPage.clickChangeOnWhatAreYouReportingQuestion()
+
+      When("I select only annual allowance check box")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      Then("I verify check your answers page with the updated information and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify check your answers page with the updated information and click continue")
+      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
+
+      When("I click back button")
+      ScottishTaxpayerFrom2016Page.clickBackButton()
+
+      When("I click change on what are ypu reporting question")
+      CheckYourAnswersPage.clickChangeOnWhatAreYouReportingQuestion()
+
+      When("I select only life time allowance on reporting change page")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      Then("I verify check your answers page with the updated information and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify only lifetime allowance section is displayed")
+      TaskListPage.isLifeTimeAllowanceTitleDisplayed()
+      TaskListPage.isAnnualAllowanceTitleNotDisplayed()
+
+      Then("I verify the status of LA - details of your event is NOT STARTED")
+      assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.NOT_STARTED)
+
+      When("I click sign out from the page")
+      TaskListPage.signOutPage()
+
+    }
+
+    /** Below journey covers 4.1,4.3,4.4,4.5,4.6,4.7,4.8 pages in the mural board* */
+    Scenario("LTA user journey through negative tests set 2") {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify task list page and click add details for lifetime allowance")
+      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      //######### Sandip
+      Then("I verify HadBenefitCrystallisationEventPage information")
+      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
+
+      When("I click back button")
+      HadBenefitCrystallisationEventPage.clickBackButton()
+
+      Then("I verify the status of LA - details of your event is NOT STARTED")
+      assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.NOT_STARTED)
+
+      When("I click on 'Add details of your event' on lifetime allowance section")
+      TaskListPage.clickAddDetailsForLifetimeAllowance()
+
+      When("I select yes and click continue")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
+      Then("I verify DateOfBenefitCrystallisationEventPage page")
+      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+
+      When("I click back button")
+      DateOfBenefitCrystallisationEventPage.clickBackButton()
+
+      When("I click back button")
+      HadBenefitCrystallisationEventPage.clickBackButton()
+
+      Then("I verify the status of LA - details of your event is IN Progress")
+      assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.IN_PROGRESS)
+
+      When("I click on change setup questions")
+      TaskListPage.clickOnChangeSetupQuestions()
+
+      When("I click on change 'What are you reporting?' question")
+      CheckYourAnswersPage.clickChangeOnWhatAreYouReportingQuestion()
+
+      When("I select only 'Annual allowance' and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      Then("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify ScottishTaxpayerFrom2016Page page")
+      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
+
+      When("I click back button")
+      ScottishTaxpayerFrom2016Page.clickBackButton()
+
+      When("I click on change 'What are you reporting?' question")
+      CheckYourAnswersPage.clickChangeOnWhatAreYouReportingQuestion()
+
+      When("I select only 'Lifetime allowance' and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      Then("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify only lifetime allowance section is displayed")
+      TaskListPage.isLifeTimeAllowanceTitleDisplayed()
+      TaskListPage.isAnnualAllowanceTitleNotDisplayed()
+
+      Then("I verify the status of LA - details of your event is NOT STARTED")
+      assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.IN_PROGRESS)
+
+      When("I click change details of your events link")
+      TaskListPage.clickChangeDetailsForLifetimeAllowance()
+
+      Then("I verify DateOfBenefitCrystallisationEventPage page")
+      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+
+      When("I click sign out from the page")
+      DateOfBenefitCrystallisationEventPage.signOutPage()
+
+      /**
+        * click Add details of your events --
+        * select Yes on Have you had a benefit crystallisation event in
+        * go back
+        * verify cya page status is inprogress
+        * go back
+        * change to annual allowance
+        * verify cya and continue
+        * landed to Were you ever a Scottish
+        * go back
+        * change to life time allowance
+        * verify status inprogress
+        * click Add details of your events NOT STARTED
+        * landed to What was the date of the
+        */
     }
 
     /** Below journey covers 4.1,4.3,4.4,4.5 pages in the mural board */
@@ -496,23 +768,32 @@ class UserJourneyTests extends BaseSpec {
       When("I click start button")
       HomePage.clickStartButton()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
-
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the what-you-will-need-lta page")
-      WhatYouWillNeedLtaPage.onWhatYouWillNeedLtaPage()
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      When("I click continue")
-      WhatYouWillNeedLtaPage.clickContinueButton()
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify task list page and click add details for lifetime allowance")
+      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinue()
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
       DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
@@ -525,6 +806,9 @@ class UserJourneyTests extends BaseSpec {
 
       Then("I Should see the not-able-to-use-this-service-lta page")
       NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()
+
+      When("I click sign out from the page")
+      NotAbleToUseThisServiceLtaPage.signOutPage()
     }
 
     /** Below journey covers 4.1,4.2 pages in the mural board* */
@@ -535,41 +819,56 @@ class UserJourneyTests extends BaseSpec {
       When("I click start button")
       HomePage.clickStartButton()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
-
       When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinue()
+      SavingsStatementPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the what-you-will-need-lta page")
-      WhatYouWillNeedLtaPage.onWhatYouWillNeedLtaPage()
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      When("I click continue")
-      WhatYouWillNeedLtaPage.clickContinueButton()
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify task list page and click add details for lifetime allowance")
+      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select No and continue to next page")
-      HadBenefitCrystallisationEventPage.selectNoAndContinue()
+      HadBenefitCrystallisationEventPage.selectNoAndContinueForLTAPage()
 
       Then("I Should see the not-able-to-use-this-service-lta page")
       NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()
+
+      When("I click sign out from the page")
+      NotAbleToUseThisServiceLtaPage.signOutPage()
     }
 
     /** Below journey covers 0,1,2 pages in the mural board* */
     Scenario("User Journey through savings statement 'NOT' received functionality", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
-      HomePage.loadPage
+      HomePage.loadPage()
 
       When("I click start button")
       HomePage.clickStartButton()
 
       When("I select option No and continue")
-      SavingsStatementPage.selectNoAndContinue()
+      SavingsStatementPage.selectNoAndContinueForGSPage()
 
       Then("I Should see the EligibilityPage page")
       EligibilityPage.onEligibilityPage()
+
+      When("I click sign out from the page")
+      EligibilityPage.signOutPage()
     }
   }
 }
