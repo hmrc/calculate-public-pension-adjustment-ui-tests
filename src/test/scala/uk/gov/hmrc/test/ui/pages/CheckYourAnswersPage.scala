@@ -15,8 +15,10 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
+
 import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HEADER, CHECK_YOUR_ANSWERS_PAGE_TITLE}
 import util.DataCollectorMap
+
 object CheckYourAnswersPage extends BasePage {
   def onCheckYourAnswersPage() = {
     verifyPageUrl("check-your-answers-setup")

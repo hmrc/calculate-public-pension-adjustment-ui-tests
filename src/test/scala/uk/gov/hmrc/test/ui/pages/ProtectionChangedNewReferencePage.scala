@@ -17,18 +17,19 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_REFERENCE_PAGE_HEADER, PROTECTION_REFERENCE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_CHANGED_NEW_REFERENCE_PAGE_HEADER, PROTECTION_CHANGED_NEW_REFERENCE_PAGE_TITLE}
 
-object ProtectionReferencePage extends BasePage {
-  def onProtectionReferencePage() = {
-    verifyPageUrl("protection-reference")
-    onPage(PROTECTION_REFERENCE_PAGE_TITLE)
-    isHeader(PROTECTION_REFERENCE_PAGE_HEADER)
+object ProtectionChangedNewReferencePage extends BasePage {
+  def onProtectionChangedNewReferencePage() = {
+    verifyPageUrl("protection-changed-new-reference")
+    onPage(PROTECTION_CHANGED_NEW_REFERENCE_PAGE_TITLE)
+    isHeader(PROTECTION_CHANGED_NEW_REFERENCE_PAGE_HEADER)
   }
+  def enterReference() = driver.findElement(By.xpath("")).sendKeys("")
 
-  def enterProtectionReferenceAndContinue(): Unit = {
-    driver.findElement(By.id("value")).clear()
-    driver.findElement(By.id("value")).sendKeys("asdfghjkqwertyu")
+  def enterReferenceAndContinue(): Unit = {
+    onProtectionChangedNewReferencePage()
+    enterReference()
     submitPage()
   }
 }

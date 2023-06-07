@@ -563,8 +563,26 @@ class UserJourneyTests extends BaseSpec {
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargPage.selectNewChargeRadioButtonAndContinue()
 
+      Then("I Should see the lta-protection-or-enhancements page")
+      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
+
+      When("I select any radio button and click continue")
+      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
+
+      Then("I Should see the protection-type page")
+      ProtectionTypePage.onProtectionTypePage()
+
+      When("I select any radio button and click continue")
+      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
+
+      Then("I Should see the protection-reference page")
+      ProtectionReferencePage.onProtectionReferencePage()
+
+      When("I enter protection reference and click continue")
+      ProtectionReferencePage.enterProtectionReferenceAndContinue()
+
       When("I click sign out from the page")
-      PercentageCausedChangeInChargPage.signOutPage()
+      ProtectionReferencePage.signOutPage()
 
     }
 
@@ -669,7 +687,6 @@ class UserJourneyTests extends BaseSpec {
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
-      //######### Sandip
       Then("I verify HadBenefitCrystallisationEventPage information")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
@@ -740,21 +757,6 @@ class UserJourneyTests extends BaseSpec {
       When("I click sign out from the page")
       DateOfBenefitCrystallisationEventPage.signOutPage()
 
-      /**
-        * click Add details of your events --
-        * select Yes on Have you had a benefit crystallisation event in
-        * go back
-        * verify cya page status is inprogress
-        * go back
-        * change to annual allowance
-        * verify cya and continue
-        * landed to Were you ever a Scottish
-        * go back
-        * change to life time allowance
-        * verify status inprogress
-        * click Add details of your events NOT STARTED
-        * landed to What was the date of the
-        */
     }
 
     /** Below journey covers 4.1,4.3,4.4,4.5 pages in the mural board */
@@ -809,6 +811,7 @@ class UserJourneyTests extends BaseSpec {
 
       When("I click sign out from the page")
       NotAbleToUseThisServiceLtaPage.signOutPage()
+
     }
 
     /** Below journey covers 4.1,4.2 pages in the mural board* */
