@@ -87,7 +87,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   }
 
   def isHeader2(header: String): Boolean = {
-    val headerText = driver.findElement(By.xpath("//h2")).getText
+    val headerText = driver.findElement(By.xpath("//div[@class='govuk-grid-column-two-thirds']/h2")).getText
     if (headerText != header)
       throw PageNotFoundException(
         s"Expected '$header', but found '$headerText'"

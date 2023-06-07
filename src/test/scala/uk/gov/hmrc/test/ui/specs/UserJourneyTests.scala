@@ -338,7 +338,7 @@ class UserJourneyTests extends BaseSpec {
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
 
       When("I click sign out from the page")
-      PayTaxChargeFrom20152016Page.signOutPage()
+      TaskListPage.signOutPage()
     }
 
     /** Below journey covers 0,1,3(Y),4,5(AA),6(N),8(Y),10(Y),11(Y),12,13 pages in the mural board* */
