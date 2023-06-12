@@ -28,7 +28,7 @@ object ProtectionReferencePage extends BasePage {
 
   def enterProtectionReferenceAndContinue(): Unit = {
     driver.findElement(By.id("value")).clear()
-    driver.findElement(By.id("value")).sendKeys("asdfghjkqwertyu")
+    driver.findElement(By.id("value")).sendKeys("R41AB5678TR2335")
     submitPage()
   }
 }

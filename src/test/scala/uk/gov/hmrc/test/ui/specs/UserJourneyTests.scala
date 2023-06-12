@@ -581,8 +581,92 @@ class UserJourneyTests extends BaseSpec {
       When("I enter protection reference and click continue")
       ProtectionReferencePage.enterProtectionReferenceAndContinue()
 
+      Then("I Should see the ProtectionChangedPage and select Yes and continue")
+      ProtectionChangedPage.selectYesAndClickOnContinue()
+
+      Then("I Should see the ProtectionChangedNewTypePage and select enhanced protection and continue")
+      ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
+
+      Then("I Should see the ProtectionChangedNewReferencePage and enter reference and continue")
+      ProtectionChangedNewReferencePage.enterReferenceAndContinue()
+
       When("I click sign out from the page")
-      ProtectionReferencePage.signOutPage()
+      ProtectionChangedNewReferencePage.signOutPage()
+
+    }
+
+    Scenario("LTA user journey through LTA> Protection changed (No) functionality") {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify task list page and click add details for lifetime allowance")
+      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      Then("I Should see the had-benefit-crystallisation-event page")
+      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
+
+      When("I select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
+      Then("I Should see the date-of-benefit-crystallisation-event page")
+      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+
+      When("I enter date and click continue")
+      DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
+
+      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
+      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
+
+      Then("I Should see the percentage-caused-change-in-charge page")
+      PercentageCausedChangeInChargPage.onPercentageCausedChangeInChargPage()
+
+      When("I select any radio button and click continue")
+      PercentageCausedChangeInChargPage.selectNewChargeRadioButtonAndContinue()
+
+      Then("I Should see the lta-protection-or-enhancements page")
+      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
+
+      When("I select any radio button and click continue")
+      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
+
+      Then("I Should see the protection-type page")
+      ProtectionTypePage.onProtectionTypePage()
+
+      When("I select any radio button and click continue")
+      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
+
+      Then("I Should see the protection-reference page")
+      ProtectionReferencePage.onProtectionReferencePage()
+
+      When("I enter protection reference and click continue")
+      ProtectionReferencePage.enterProtectionReferenceAndContinue()
+
+      Then("I Should see the ProtectionChangedPage and select No and continue")
+      ProtectionChangedPage.selectNoAndContinueForLTAPage()
+
+      When("I click sign out from the page")
+      ProtectionChangedPage.signOutPage()
 
     }
 

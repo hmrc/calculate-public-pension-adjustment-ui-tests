@@ -26,7 +26,8 @@ object ProtectionChangedNewTypePage extends BasePage {
     isHeader(PROTECTION_CHANGED_NEW_TYPE_PAGE_HEADER)
   }
 
-  def selectEnhancedProtection() = driver.findElement(By.xpath("")).click()
+  def selectEnhancedProtection() =
+    driver.findElement(By.xpath("//label[contains(text(),'Enhanced protection')]")).click()
   def selectEnhancedProtectionAndContinue() = {
     onProtectionChangedNewTypePage()
     selectEnhancedProtection()
