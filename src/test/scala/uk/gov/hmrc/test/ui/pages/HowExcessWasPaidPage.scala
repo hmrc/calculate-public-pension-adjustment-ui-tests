@@ -25,7 +25,7 @@ object HowExcessWasPaidPage extends BasePage {
     onPage(HOW_EXCESS_WAS_PAID_PAGE_TITLE)
     isHeader(HOW_EXCESS_WAS_PAID_PAGE_HEADER)
   }
-  def selectAnnualPayment() = driver.findElement(By.xpath("")).click()
+  def selectAnnualPayment() = driver.findElement(By.xpath("//input[@id='value_0']")).click()
 
   def selectRadioButtonAnnualPaymentAndContinue() = {
     onHowExcessWasPaidPage()

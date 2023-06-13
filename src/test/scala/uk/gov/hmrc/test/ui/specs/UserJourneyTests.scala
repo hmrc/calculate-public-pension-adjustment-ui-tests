@@ -590,8 +590,17 @@ class UserJourneyTests extends BaseSpec {
       Then("I Should see the ProtectionChangedNewReferencePage and enter reference and continue")
       ProtectionChangedNewReferencePage.enterReferenceAndContinue()
 
+      Then("I Should see the LtaCharge20152023Page and select Yes and continue")
+      LtaCharge20152023Page.selectYesAndContinueForLTAPage()
+
+      Then("I Should see the HowExcessWasPaidPage and select Annual payment and continue")
+      HowExcessWasPaidPage.selectRadioButtonAnnualPaymentAndContinue()
+
+      Then("I Should see the HowMuchLtaChargePage and enter charges and continue")
+      HowMuchLtaChargePage.verifyPageEnterChargeAmountAndContinue()
+
       When("I click sign out from the page")
-      ProtectionChangedNewReferencePage.signOutPage()
+      HowMuchLtaChargePage.signOutPage()
 
     }
 
@@ -665,8 +674,11 @@ class UserJourneyTests extends BaseSpec {
       Then("I Should see the ProtectionChangedPage and select No and continue")
       ProtectionChangedPage.selectNoAndContinueForLTAPage()
 
+      Then("I Should be on the LtaCharge20152023Page")
+      LtaCharge20152023Page.onLtaCharge20152023Page()
+
       When("I click sign out from the page")
-      ProtectionChangedPage.signOutPage()
+      LtaCharge20152023Page.signOutPage()
 
     }
 

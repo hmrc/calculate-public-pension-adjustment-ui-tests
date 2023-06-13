@@ -26,7 +26,7 @@ object HowMuchLtaChargePage extends BasePage {
     isHeader(HOW_MUCH_LTA_CHARGE_PAGE_HEADER)
   }
 
-  def enterCharge() = driver.findElement(By.xpath("")).sendKeys("")
+  def enterCharge() = driver.findElement(By.xpath("//input[@id='value']")).sendKeys("200000000")
   def verifyPageEnterChargeAmountAndContinue() = {
     onHowMuchLtaChargePage()
     enterCharge()
