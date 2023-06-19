@@ -21,9 +21,13 @@ import scala.collection.mutable
 object DataCollectorMap {
   val checkAnswersGS: mutable.Map[String, Any]  = mutable.Map[String, Any]()
   val checkAnswersAAS: mutable.Map[String, Any] = mutable.Map[String, Any]()
+  val checkAnswersLAS: mutable.Map[String, Any] = mutable.Map[String, Any]()
   def addToGSMap(key: String, value: Any): Unit =
     checkAnswersGS += (key -> value)
 
   def addToAASMap(key: String, value: Any): Unit =
     checkAnswersAAS += (key -> value)
+
+  def addToLASMap(key: String, value: Any): Unit =
+    checkAnswersLAS += (key -> value)
 }

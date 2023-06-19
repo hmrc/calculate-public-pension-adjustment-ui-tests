@@ -17,26 +17,26 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_PAID_LTA_CHARGE_PAGE_HEADER, WHO_PAID_LTA_CHARGE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_HEADER, WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_TITLE}
 
-object WhoPaidLtaChargePage extends BasePage {
-  def onWhoPaidLtaChargePage() = {
-    verifyPageUrl("who-paid-lta-charge")
-    onPage(WHO_PAID_LTA_CHARGE_PAGE_TITLE)
-    isHeader(WHO_PAID_LTA_CHARGE_PAGE_HEADER)
+object WhoPayingExtraLtaChargePage extends BasePage {
+  def onWhoPayingExtraLtaChargePage() = {
+    verifyPageUrl("who-paying-extra-lta-charge")
+    onPage(WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_TITLE)
+    isHeader(WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_HEADER)
   }
+  def selectUser() = driver.findElement(By.xpath("")).click()
 
-  def selectYou()           = driver.findElement(By.xpath("//input[@id='value_0']")).click()
-  def selectPensionScheme() = driver.findElement(By.xpath("//input[@id='value_1']")).click()
+  def selectPensionScheme() = driver.findElement(By.xpath("")).click()
 
-  def selectYouAndClickOnContinue() = {
-    onWhoPaidLtaChargePage()
-    selectYou()
+  def selectUserAndContinue() = {
+    onWhoPayingExtraLtaChargePage()
+    selectUser()
     submitPage()
   }
 
-  def selectPensionSchemeAndClickOnContinue() = {
-    onWhoPaidLtaChargePage()
+  def selectPensionSchemeAndContinue() = {
+    onWhoPayingExtraLtaChargePage()
     selectPensionScheme()
     submitPage()
   }
