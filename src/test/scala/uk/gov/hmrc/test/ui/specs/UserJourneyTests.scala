@@ -600,7 +600,7 @@ class UserJourneyTests extends BaseSpec {
       HowMuchLtaChargePage.verifyPageEnterChargeAmountAndContinue()
 
       Then("I Should see the WhoPaidLtaChargePage , select Pension Scheme and continue")
-      WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue
+      WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
 
       Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
       SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue()

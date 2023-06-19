@@ -27,12 +27,5 @@ trait BrowserDriver extends LazyLogging with Eventually {
     s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
   )
 
-  val chromeOptions = new ChromeOptions()
-  chromeOptions.addArguments("--remote-allow-origins=*")
-
-  implicit var driver: WebDriver = sys.props.get("browser") match {
-    case Some("chrome") => SingletonDriver.getInstance(Some(chromeOptions))
-    case _              => SingletonDriver.getInstance()
-  }
-
+  implicit var driver: WebDriver = SingletonDriver.getInstance()
 }
