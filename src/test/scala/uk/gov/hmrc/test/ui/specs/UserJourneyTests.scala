@@ -590,17 +590,23 @@ class UserJourneyTests extends BaseSpec {
       Then("I Should see the ProtectionChangedNewReferencePage and enter reference and continue")
       ProtectionChangedNewReferencePage.enterReferenceAndContinue()
 
-      Then("I Should see the LtaCharge20152023Page and select Yes and continue")
+      Then("I Should see the LtaCharge20152023Page , select Yes and continue")
       LtaCharge20152023Page.selectYesAndContinueForLTAPage()
 
-      Then("I Should see the HowExcessWasPaidPage and select Annual payment and continue")
+      Then("I Should see the HowExcessWasPaidPage , select Annual payment and continue")
       HowExcessWasPaidPage.selectRadioButtonAnnualPaymentAndContinue()
 
-      Then("I Should see the HowMuchLtaChargePage and enter charges and continue")
+      Then("I Should see the HowMuchLtaChargePage , enter charges and continue")
       HowMuchLtaChargePage.verifyPageEnterChargeAmountAndContinue()
 
+      Then("I Should see the WhoPaidLtaChargePage , select Pension Scheme and continue")
+      WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue
+
+      Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
+      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue()
+
       When("I click sign out from the page")
-      HowMuchLtaChargePage.signOutPage()
+      SchemePaidLtaChargePage.signOutPage()
 
     }
 

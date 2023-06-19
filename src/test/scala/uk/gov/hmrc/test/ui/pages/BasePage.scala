@@ -39,6 +39,10 @@ trait GSDataCollector {
 trait AASDataCollector {
   def checkYourAnswersAASMap(key: String, value: Any): Unit
 }
+
+trait LADataCollector {
+  def checkYourAnswersLASMap(key: String, value: Any): Unit
+}
 trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector with Matchers {
 
   def checkYourAnswersGSMap(key: String, value: Any): Unit =
@@ -46,6 +50,9 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
 
   def checkYourAnswersAASMap(key: String, value: Any): Unit =
     DataCollectorMap.addToAASMap(key, value)
+
+  def checkYourAnswersLASMap(key: String, value: Any): Unit =
+    DataCollectorMap.addToLASMap(key, value)
   def submitPage(): Unit                                    =
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
