@@ -19,15 +19,17 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER, PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE}
 
-object PercentageCausedChangeInChargPage extends BasePage {
-  def onPercentageCausedChangeInChargPage() = {
+object PercentageCausedChangeInChargePage extends BasePage {
+  def onPercentageCausedChangeInChargePage() = {
     verifyPageUrl("percentage-caused-change-in-charge")
     onPage(PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE)
     isHeader(PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER)
   }
 
   def selectNewChargeRadioButtonAndContinue(): Unit = {
-    driver.findElement(By.xpath("//label[contains(text(),'New charge')]")).click()
+    val text = "New charge"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
 }

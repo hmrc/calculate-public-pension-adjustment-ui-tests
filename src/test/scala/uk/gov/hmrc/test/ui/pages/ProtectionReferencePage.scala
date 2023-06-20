@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_REFERENCE_PAGE_HEADER, PROTECTION_REFERENCE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.ProtectionTypePage.{checkYourAnswersLASMap, getHeader}
 
 object ProtectionReferencePage extends BasePage {
   def onProtectionReferencePage() = {
@@ -27,8 +28,10 @@ object ProtectionReferencePage extends BasePage {
   }
 
   def enterProtectionReferenceAndContinue(): Unit = {
+    val text = "R41AB5678TR2335"
     driver.findElement(By.id("value")).clear()
-    driver.findElement(By.id("value")).sendKeys("R41AB5678TR2335")
+    driver.findElement(By.id("value")).sendKeys(text)
+    checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
 }

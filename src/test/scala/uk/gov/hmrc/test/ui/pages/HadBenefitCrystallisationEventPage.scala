@@ -24,4 +24,10 @@ object HadBenefitCrystallisationEventPage extends BasePage {
     onPage(HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE)
     isHeader(HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER)
   }
+
+  def verifyPageSelectYesAndContinue() = {
+    onHadBenefitCrystallisationEventPage()
+    selectYesAndContinueForLTAPage()
+  }
+
 }

@@ -26,8 +26,16 @@ object WhoPaidLtaChargePage extends BasePage {
     isHeader(WHO_PAID_LTA_CHARGE_PAGE_HEADER)
   }
 
-  def selectYou()           = driver.findElement(By.xpath("//input[@id='value_0']")).click()
-  def selectPensionScheme() = driver.findElement(By.xpath("//input[@id='value_1']")).click()
+  def selectYou() = {
+    driver.findElement(By.xpath("//input[@id='value_0']")).click()
+    val text = driver.findElement(By.xpath("//input[@id='value_0']/following-sibling::label")).getText.trim
+    checkYourAnswersLASMap(getHeader(), text)
+  }
+  def selectPensionScheme() = {
+    driver.findElement(By.xpath("//input[@id='value_1']")).click()
+    val text = driver.findElement(By.xpath("//input[@id='value_1']/following-sibling::label")).getText.trim
+    checkYourAnswersLASMap(getHeader(), text)
+  }
 
   def selectYouAndClickOnContinue() = {
     onWhoPaidLtaChargePage()

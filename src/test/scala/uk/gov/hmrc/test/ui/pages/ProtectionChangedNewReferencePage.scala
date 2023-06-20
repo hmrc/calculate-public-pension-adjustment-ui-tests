@@ -25,7 +25,11 @@ object ProtectionChangedNewReferencePage extends BasePage {
     onPage(PROTECTION_CHANGED_NEW_REFERENCE_PAGE_TITLE)
     isHeader(PROTECTION_CHANGED_NEW_REFERENCE_PAGE_HEADER)
   }
-  def enterReference() = driver.findElement(By.xpath("//input[@id='value']")).sendKeys("R41AB5678TR2335")
+  def enterReference() = {
+    val text = "R41AB5678TR2335"
+    driver.findElement(By.xpath("//input[@id='value']")).sendKeys(text)
+    checkYourAnswersLASMap(getHeader(), text)
+  }
 
   def enterReferenceAndContinue(): Unit = {
     onProtectionChangedNewReferencePage()

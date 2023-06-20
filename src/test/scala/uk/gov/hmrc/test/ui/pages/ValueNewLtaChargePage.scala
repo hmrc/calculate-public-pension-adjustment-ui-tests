@@ -26,14 +26,42 @@ object ValueNewLtaChargePage extends BasePage {
     isHeader(VALUE_NEW_LTA_CHARGE_PAGE_HEADER)
   }
 
-  def enterLifetimeAllowanceCharge() = {
-    driver.findElement(By.xpath("")).clear()
-    driver.findElement(By.xpath("")).sendKeys("950000000")
+  def enterNewLTAChargeMoreThanPreviousCharge() = {
+    val text = "950000000"
+    driver.findElement(By.id("value")).clear()
+    driver.findElement(By.id("value")).sendKeys(text)
+    checkYourAnswersLASMap(getHeader(), text)
   }
 
-  def enterLifeTimeAllowanceAndContinue() = {
+  def enterNewLTAChargeLessThanPreviousCharge() = {
+    val text = "100000000"
+    driver.findElement(By.id("value")).clear()
+    driver.findElement(By.id("value")).sendKeys(text)
+    checkYourAnswersLASMap(getHeader(), text)
+  }
+
+  def enterNewLTACharge() = {
+    val text = "450000000"
+    driver.findElement(By.id("value")).clear()
+    driver.findElement(By.id("value")).sendKeys(text)
+    checkYourAnswersLASMap(getHeader(), text)
+  }
+
+  def verifyPageEnterLTAChargeMoreThanPreviousChargeAndContinue() = {
     onValueNewLtaChargePage()
-    enterLifetimeAllowanceCharge()
+    enterNewLTAChargeMoreThanPreviousCharge()
+    submitPage()
+  }
+
+  def verifyPageEnterLTAChargeLessThanPreviousChargeAndContinue() = {
+    onValueNewLtaChargePage()
+    enterNewLTAChargeLessThanPreviousCharge()
+    submitPage()
+  }
+
+  def verifyPageEnterLTAChargeAndContinue() = {
+    onValueNewLtaChargePage()
+    enterNewLTACharge()
     submitPage()
   }
 }

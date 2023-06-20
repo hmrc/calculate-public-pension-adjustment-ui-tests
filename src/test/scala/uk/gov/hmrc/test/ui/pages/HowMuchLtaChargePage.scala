@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_MUCH_LTA_CHARGE_PAGE_HEADER, HOW_MUCH_LTA_CHARGE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.HowExcessWasPaidPage.{checkYourAnswersLASMap, getHeader}
 
 object HowMuchLtaChargePage extends BasePage {
   def onHowMuchLtaChargePage() = {
@@ -26,7 +27,11 @@ object HowMuchLtaChargePage extends BasePage {
     isHeader(HOW_MUCH_LTA_CHARGE_PAGE_HEADER)
   }
 
-  def enterCharge() = driver.findElement(By.xpath("//input[@id='value']")).sendKeys("200000000")
+  def enterCharge() = {
+    val text = "200000000"
+    driver.findElement(By.xpath("//input[@id='value']")).sendKeys(text)
+    checkYourAnswersLASMap(getHeader(), text)
+  }
   def verifyPageEnterChargeAmountAndContinue() = {
     onHowMuchLtaChargePage()
     enterCharge()

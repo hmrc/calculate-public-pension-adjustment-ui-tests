@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_EXCESS_WAS_PAID_PAGE_HEADER, HOW_EXCESS_WAS_PAID_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.ProtectionReferencePage.{checkYourAnswersLASMap, getHeader}
 
 object HowExcessWasPaidPage extends BasePage {
   def onHowExcessWasPaidPage() = {
@@ -25,7 +26,11 @@ object HowExcessWasPaidPage extends BasePage {
     onPage(HOW_EXCESS_WAS_PAID_PAGE_TITLE)
     isHeader(HOW_EXCESS_WAS_PAID_PAGE_HEADER)
   }
-  def selectAnnualPayment() = driver.findElement(By.xpath("//input[@id='value_0']")).click()
+  def selectAnnualPayment() = {
+    driver.findElement(By.xpath("//input[@id='value_0']")).click()
+    val text = driver.findElement(By.xpath("//input[@id='value_0']/following-sibling::label")).getText.trim
+    checkYourAnswersLASMap(getHeader(), text)
+  }
 
   def selectRadioButtonAnnualPaymentAndContinue() = {
     onHowExcessWasPaidPage()
