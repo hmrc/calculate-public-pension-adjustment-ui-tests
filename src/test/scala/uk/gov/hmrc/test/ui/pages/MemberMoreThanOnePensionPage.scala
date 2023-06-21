@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.specs.BaseSpec
+import uk.gov.hmrc.test.ui.constants.PageInformation.{MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER, MEMBER_MORE_THAN_ONE_PENSION_PAGE_TITLE}
 
-class AdminUserJourney extends BaseSpec {
-
-  Feature("Calculate public pension adjustment Admin user journey") {}
+object MemberMoreThanOnePensionPage extends BasePage {
+  def onMemberMoreThanOnePensionPage() = {
+    //verifyPageUrl("member-more-than-one-pension")
+    onPage(MEMBER_MORE_THAN_ONE_PENSION_PAGE_TITLE)
+    isHeader(MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER)
+  }
 }

@@ -24,7 +24,6 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import util.DataCollectorMap
-import util.DataCollectorMap.checkAnswersLAS
 
 import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
@@ -335,7 +334,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     driver.findElement(By.xpath("//dt[contains(text(),'" + question + "')]/ancestor::div[1]//a")).click()
 
   def signOutPage(): this.type = {
-    driver.findElement(By.xpath("//a[contains(text(),'Sign out')]")).click()
+    driver.manage.deleteAllCookies()
     this
   }
 }

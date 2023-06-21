@@ -171,4 +171,8 @@ object PageInformation {
     "What is the name and tax reference of the scheme that paid the lifetime allowance charge? - Calculate Public Pension Adjustment service - GOV.UK"
   val SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER          =
     "What is the name and tax reference of the scheme that paid the lifetime allowance charge?"
+  val MEMBER_MORE_THAN_ONE_PENSION_PAGE_TITLE           =
+    "Were you a member of more than one public service pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
+  val MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER          =
+    "Were you a member of more than one public service pension scheme?"
 }

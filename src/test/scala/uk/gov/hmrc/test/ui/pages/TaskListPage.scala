@@ -116,4 +116,52 @@ object TaskListPage extends BasePage {
     }
   }
 
+  def clickAddDetailsFor6AprilTo8July2015() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 6 April to 8 July 2015')]")).click()
+
+  def clickChangeDetailsFor6AprilTo8July2015() =
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 6 April to 8 July 2015')]")).click()
+
+  def clickAddDetailsFor9JulyTo8July2016() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 9 July to 5 April 2016')]")).click()
+
+  def clickChangeDetailsFor9JulyTo8July2016() =
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 9 July to 5 April 2016')]")).click()
+
+  def clickAddDetailsFor2016To2017() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 2016 to 2017')]")).click()
+
+  def clickChangeDetailsForFor2016To2017() =
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 2016 to 2017')]")).click()
+
+  def clickAddDetailsFor2017To2018() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 2017 to 2018')]")).click()
+
+  def clickChangeDetailsFor2017To2018() =
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 2017 to 2018')]")).click()
+
+  def clickAddDetailsFor2018To2019() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 2018 to 2019')]")).click()
+
+  def clickChangeDetailsFor2018To2019() =
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 2018 to 2019')]")).click()
+
+  def clickAddDetailsFor2019To2020() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 2019 to 2020')]")).click()
+
+  def clickChangeDetailsFor2019To2020() =
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 2019 to 2020')]")).click()
+
+  def clickAddDetailsFor2020To2021() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 2020 to 2021')]")).click()
+
+  def clickChangeDetailsFor2020To2021() =
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 2020 to 2021')]")).click()
+
+  def clickAddDetailsFor2021To2022() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 2021 to 2022')]")).click()
+
+  def clickChangeDetailsFor2021To2022() =
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 2021 to 2022')]")).click()
+
 }
