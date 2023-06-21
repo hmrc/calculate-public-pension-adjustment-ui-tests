@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_TYPE_PAGE_HEADER, PROTECTION_TYPE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.PercentageCausedChangeInChargePage.{checkYourAnswersLASMap, getHeader}
 
 object ProtectionTypePage extends BasePage {
   def onProtectionTypePage() = {
@@ -27,7 +28,9 @@ object ProtectionTypePage extends BasePage {
   }
 
   def selectEnhancedProtectionRadioButtonAndContinue(): Unit = {
-    driver.findElement(By.xpath("//label[contains(text(),'Enhanced Protection')]")).click()
+    val text = "Enhanced Protection"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
 

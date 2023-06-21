@@ -25,19 +25,24 @@ object WhoPayingExtraLtaChargePage extends BasePage {
     onPage(WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_TITLE)
     isHeader(WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_HEADER)
   }
-  def selectUser() = driver.findElement(By.xpath("")).click()
-
-  def selectPensionScheme() = driver.findElement(By.xpath("")).click()
-
-  def selectUserAndContinue() = {
+  def selectPaidByYou() = {
+    driver.findElement(By.id("value_0")).click()
+    val text = driver.findElement(By.xpath("//input[@id='value_0']/following-sibling::label")).getText.trim
+    checkYourAnswersLASMap(getHeader(), text)
+  }
+  def selectPaidByPensionScheme() = {
+    driver.findElement(By.id("value_1")).click()
+    val text = driver.findElement(By.xpath("//input[@id='value_1']/following-sibling::label")).getText.trim
+    checkYourAnswersLASMap(getHeader(), text)
+  }
+  def verifyPageSelectYouAndContinue() = {
     onWhoPayingExtraLtaChargePage()
-    selectUser()
+    selectPaidByYou()
     submitPage()
   }
-
-  def selectPensionSchemeAndContinue() = {
+  def verifyPageSelectPensionSchemeAndContinue() = {
     onWhoPayingExtraLtaChargePage()
-    selectPensionScheme()
+    selectPaidByPensionScheme()
     submitPage()
   }
 }

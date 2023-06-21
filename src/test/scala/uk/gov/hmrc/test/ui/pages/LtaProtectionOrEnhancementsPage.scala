@@ -27,7 +27,9 @@ object LtaProtectionOrEnhancementsPage extends BasePage {
   }
 
   def selectProtectionRadioButtonAndContinue(): Unit = {
-    driver.findElement(By.xpath("//label[contains(text(),'Protection')]")).click()
+    val text = "Protection"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
 }

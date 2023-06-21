@@ -24,6 +24,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import util.DataCollectorMap
+import util.DataCollectorMap.checkAnswersLAS
 
 import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
@@ -238,11 +239,13 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
 
   def selectYesAndContinueForLTAPage() = {
     selectYesOption()
+    checkYourAnswersLASMap(getHeader(), selectedOption())
     submitPage()
   }
 
   def selectNoAndContinueForLTAPage() = {
     selectNoOption()
+    checkYourAnswersLASMap(getHeader(), selectedOption())
     submitPage()
   }
 
@@ -301,6 +304,28 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
         val dtText = dtElement.text().trim()
         val ddText = ddElements.find(_.text().trim().nonEmpty).map(_.text().trim()).getOrElse("")
         map.put(dtText, ddText)
+      }
+    }
+    map
+  }
+
+  def returnLTACheckYourAnswersPageInformation(): List[(String, Any)] = {
+    var map         = List[(String, Any)]()
+    // Extract <dt> and the first non-empty <dd> text for each <div>
+    val dlElement   = driver.findElement(By.xpath("//dl[@class='govuk-summary-list']"))
+    // Get the HTML content of the <dl> element
+    val html        = dlElement.getAttribute("innerHTML")
+    // Parse the HTML using Jsoup
+    val document    = Jsoup.parse(html)
+    // Extract <dt> and the first non-empty <dd> text for each <div>
+    val divElements = document.select("div")
+    divElements.forEach { divElement =>
+      val dtElement  = divElement.selectFirst("dt")
+      val ddElements = divElement.select("dd").asScala
+      if (dtElement != null && ddElements.nonEmpty) {
+        val dtText = dtElement.text().trim()
+        val ddText = ddElements.find(_.text().trim().nonEmpty).map(_.text().trim()).getOrElse("")
+        map = map :+ (dtText, ddText)
       }
     }
     map

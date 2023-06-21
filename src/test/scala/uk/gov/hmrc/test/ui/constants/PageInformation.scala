@@ -155,10 +155,6 @@ object PageInformation {
     "Who paid your lifetime allowance charge? - Calculate Public Pension Adjustment service - GOV.UK"
   val WHO_PAID_LTA_CHARGE_PAGE_HEADER                   =
     "Who paid your lifetime allowance charge?"
-  val MCSC_251_PAGE_TITLE                               =
-    "What is the name and tax reference of the scheme that paid the charge? - Calculate Public Pension Adjustment service - GOV.UK"
-  val MCSC_251_PAGE_HEADER                              =
-    "What is the name and tax reference of the scheme that paid the charge?"
   val VALUE_NEW_LTA_CHARGE_PAGE_TITLE                   =
     "What is the value of the new lifetime allowance charge? - Calculate Public Pension Adjustment service - GOV.UK"
   val VALUE_NEW_LTA_CHARGE_PAGE_HEADER                  =
@@ -171,5 +167,8 @@ object PageInformation {
     "What is the name and tax reference of the scheme that paid the lifetime allowance charge? - Calculate Public Pension Adjustment service - GOV.UK"
   val SCHEME_PAID_LTA_CHARGE_PAGE_HEADER                =
     "What is the name and tax reference of the scheme that paid the lifetime allowance charge?"
-
+  val SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_TITLE           =
+    "What is the name and tax reference of the scheme that paid the lifetime allowance charge? - Calculate Public Pension Adjustment service - GOV.UK"
+  val SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER          =
+    "What is the name and tax reference of the scheme that paid the lifetime allowance charge?"
 }

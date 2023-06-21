@@ -29,6 +29,7 @@ object DateOfBenefitCrystallisationEventPage extends BasePage {
     enterDay("25")
     enterMonth("06")
     enterYear("2017")
+    checkYourAnswersLASMap(getHeader(), getDate())
     submitPage()
   }
 }

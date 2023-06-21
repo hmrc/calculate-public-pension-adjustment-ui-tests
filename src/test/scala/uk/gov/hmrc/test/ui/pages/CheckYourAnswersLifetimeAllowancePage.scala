@@ -28,7 +28,7 @@ object CheckYourAnswersLifetimeAllowancePage extends BasePage {
 
   def verifyCheckYourAnswersPageAndContinue() = {
     onCheckYourAnswersLifetimeAllowancePage()
-    require(DataCollectorMap.checkAnswersLAS == returnCheckYourAnswersPageInformation(), "Data not matching")
+    require(DataCollectorMap.checkAnswersLAS == returnLTACheckYourAnswersPageInformation(), "Data not matching")
     clickContinueButton()
   }
 

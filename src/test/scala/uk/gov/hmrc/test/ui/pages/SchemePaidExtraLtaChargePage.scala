@@ -17,16 +17,16 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{SCHEME_PAID_LTA_CHARGE_PAGE_HEADER, SCHEME_PAID_LTA_CHARGE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER, SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_TITLE}
 
-object SchemePaidLtaChargePage extends BasePage {
+object SchemePaidExtraLtaChargePage extends BasePage {
 
   val pension_scheme_name =
     "pensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
   def onSchemePaidLtaChargePage() = {
-    verifyPageUrl("scheme-paid-lta-charge")
-    onPage(SCHEME_PAID_LTA_CHARGE_PAGE_TITLE)
-    isHeader(SCHEME_PAID_LTA_CHARGE_PAGE_HEADER)
+    verifyPageUrl("scheme-paid-extra-lta-charge")
+    onPage(SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_TITLE)
+    isHeader(SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER)
   }
 
   def enterPensionScheme() = {
@@ -36,11 +36,12 @@ object SchemePaidLtaChargePage extends BasePage {
 
   def enterPensionSchemeTaxReference() = {
     driver.findElement(By.xpath("//input[@id='taxRef']")).clear()
-    driver.findElement(By.xpath("//input[@id='taxRef']")).sendKeys("00348916RT")
+    driver.findElement(By.xpath("//input[@id='taxRef']")).sendKeys("10348916RT")
   }
 
   def getPensionSchemeName() = driver.findElement(By.xpath("//input[@id='name']")).getAttribute("value")
-  def getTaxReference()      = driver.findElement(By.xpath("//input[@id='taxRef']")).getAttribute("value")
+
+  def getTaxReference() = driver.findElement(By.xpath("//input[@id='taxRef']")).getAttribute("value")
 
   def enterPensionSchemeInformationAndContinue() = {
     onSchemePaidLtaChargePage()
