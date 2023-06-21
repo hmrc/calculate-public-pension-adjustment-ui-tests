@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 class AnnualAllowanceUserJourney extends BaseSpec {
@@ -79,7 +80,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       WhichYearsScottishTaxpayer.validateWhichYearsScottishTaxpayerErrorsWhenNoCheckBoxSelected()
 
       When("I click sign out from the page")
-      WhichYearsScottishTaxpayer.signOutPage()
+      signOutPage()
 
     }
 
@@ -421,6 +422,185 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       When("I click sign out from the page")
       TaskListPage.signOutPage()
+    }
+
+    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(AA),1.6,2.1(N),2.3(N),2.4,2.5(N),2.8(Y),2.12,TaskList
+      * 3.1,3.2 pages in the mural board*
+      */
+    Scenario("Annual allowance AA info loop user journey ", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ResubmittingAdjustmentPage page")
+      ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ReasonForResubmissionPage page")
+      ReasonForResubmissionPage.onReasonForResubmissionPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      Then("I Should see the reporting-change page")
+      ReportingChangePage.onReportingChangePage()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the scottish-taxpayer-from-2016 page")
+      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
+
+      When("I select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+
+      Then("I Should see the paying-into-public-pension-scheme page")
+      PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
+
+      When("I click continue button")
+      PayingIntoPublicPensionSchemePage.submitPage()
+
+      Then("I Should see the error message")
+      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+
+      When("I select no and continue to next page")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the when-stop-paying-public-pension page")
+      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+
+      When("I enter a valid future date")
+      WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
+
+      Then("I Should see the have-defined-contribution-pension page")
+      HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
+
+      When("I select no and continue to next page")
+      HaveDefinedContributionPensionPage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the pay-tax-charge-from2015-2016 page")
+      PayTaxChargeFrom20152016Page.onPayTaxChargeFrom20152016Page()
+
+      When("I select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the Task list page")
+      TaskListPage.onTaskListPage()
+
+      Then("I verify annual allowance period shows up to 2022 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
+
+      When("I click click AddDetailsFor6AprilTo8July2015")
+      TaskListPage.clickAddDetailsFor6AprilTo8July2015()
+
+      When("I verify 2016 pre page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+
+      When("I click back sign and click Add details for 9 July to 5 April 2016")
+      MemberMoreThanOnePensionPage.clickBackButton()
+      WhatYouWillNeedAaPage.clickBackButton()
+      TaskListPage.clickAddDetailsFor9JulyTo8July2016()
+
+      When("I verify 2016 post page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+
+      When("I click back sign and click Add details for 2016 to 2017")
+      MemberMoreThanOnePensionPage.clickBackButton()
+      WhatYouWillNeedAaPage.clickBackButton()
+      TaskListPage.clickAddDetailsFor2016To2017()
+
+      When("I verify what-you-will-need-aa/2017 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+
+      When("I click back sign and click Add details for 2017 to 2018")
+      MemberMoreThanOnePensionPage.clickBackButton()
+      WhatYouWillNeedAaPage.clickBackButton()
+      TaskListPage.clickAddDetailsFor2017To2018()
+
+      When("I verify what-you-will-need-aa/2018 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2018Page()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+
+      When("I click back sign and click Add details for 2018 to 2019")
+      MemberMoreThanOnePensionPage.clickBackButton()
+      WhatYouWillNeedAaPage.clickBackButton()
+      TaskListPage.clickAddDetailsFor2018To2019()
+
+      When("I verify what-you-will-need-aa/2019 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2019Page()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+
+      When("I click back sign and click Add details for 2019 to 2020")
+      MemberMoreThanOnePensionPage.clickBackButton()
+      WhatYouWillNeedAaPage.clickBackButton()
+      TaskListPage.clickAddDetailsFor2019To2020()
+
+      When("I verify what-you-will-need-aa/2020 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2020Page()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+
+      When("I click back sign and click Add details for 2020 to 2021")
+      MemberMoreThanOnePensionPage.clickBackButton()
+      WhatYouWillNeedAaPage.clickBackButton()
+      TaskListPage.clickAddDetailsFor2020To2021()
+
+      When("I verify what-you-will-need-aa/2021 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2021Page()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+
+      When("I click back sign and click Add details for 2021 to 2022")
+      MemberMoreThanOnePensionPage.clickBackButton()
+      WhatYouWillNeedAaPage.clickBackButton()
+      TaskListPage.clickAddDetailsFor2021To2022()
+
+      When("I verify what-you-will-need-aa/2022 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2022Page()
+
+      When("I sign out from the page")
+      WhatYouWillNeedAaPage.signOutPage()
     }
   }
 
