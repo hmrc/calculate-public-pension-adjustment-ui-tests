@@ -43,6 +43,10 @@ trait AASDataCollector {
 trait LADataCollector {
   def checkYourAnswersLASMap(key: String, value: Any): Unit
 }
+
+trait AAPeriodDataCollector {
+  def checkYourAnswersAAPeriodMap(key: String, value: Any): Unit
+}
 trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector with Matchers {
 
   def checkYourAnswersGSMap(key: String, value: Any): Unit =
@@ -53,7 +57,10 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
 
   def checkYourAnswersLASMap(key: String, value: Any): Unit =
     DataCollectorMap.addToLASMap(key, value)
-  def submitPage(): Unit                                    =
+
+  def checkYourAnswersAAPeriodMap(key: String, value: Any): Unit =
+    DataCollectorMap.addToAAPeriodMap(key, value)
+  def submitPage(): Unit                                         =
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
   def clickContinueButton(): Unit =
@@ -230,9 +237,21 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     submitPage()
   }
 
+  def selectYesAndContinueForAAPeriodPage() = {
+    selectYesOption()
+    checkYourAnswersAAPeriodMap(getHeader(), selectedOption())
+    submitPage()
+  }
+
   def selectNoAndContinueForAASPage() = {
     selectNoOption()
     checkYourAnswersAASMap(getHeader(), selectedOption())
+    submitPage()
+  }
+
+  def selectNoAndContinueForAAPeriodPage() = {
+    selectNoOption()
+    checkYourAnswersAAPeriodMap(getHeader(), selectedOption())
     submitPage()
   }
 
@@ -308,7 +327,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     map
   }
 
-  def returnLTACheckYourAnswersPageInformation(): List[(String, Any)] = {
+  def returnCheckYourAnswersPageInformationAsAList(): List[(String, Any)] = {
     var map         = List[(String, Any)]()
     // Extract <dt> and the first non-empty <dd> text for each <div>
     val dlElement   = driver.findElement(By.xpath("//dl[@class='govuk-summary-list']"))

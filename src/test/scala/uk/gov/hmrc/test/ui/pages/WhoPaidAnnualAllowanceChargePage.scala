@@ -16,18 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2014_PAGE_HEADER, PIA_PRE_REMEDY_2014_PAGE_TITLE}
+object WhoPaidAnnualAllowanceChargePage extends BasePage {
+  val WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_TITLE  =
+    "Who paid the annual allowance charge for [period selected]? - Calculate Public Pension Adjustment service - GOV.UK"
+  val WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_HEADER =
+    "Who paid the annual allowance charge for [period selected]?"
 
-object PiaPreRemedyPage2014 extends BasePage {
-  def onPiaPreRemedyPage2014Page() = {
-    verifyPageUrl("pia-pre-remedy/2015")
-    onPage(PIA_PRE_REMEDY_2014_PAGE_TITLE)
-    isHeader(PIA_PRE_REMEDY_2014_PAGE_HEADER)
-  }
-
-  def enterAmountAndClickContinue() = {
-    enterAmount("300000000")
-    checkYourAnswersAASMap(getHeader(), getEnteredAmount())
-    submitPage()
+  def onPensionSchemeInputAmountsPage() = {
+    verifyPageUrl("who-paid-annual-allowance-charge-[year]-[year]")
+    onPage(WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_TITLE)
+    isHeader(WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_HEADER)
   }
 }

@@ -509,31 +509,77 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
 
-      When("I click click AddDetailsFor6AprilTo8July2015")
+      /** AA Loop */
+      /** --- 2016 Pre --- */
+      When("I click AddDetailsFor6AprilTo8July2015")
       TaskListPage.clickAddDetailsFor6AprilTo8July2015()
-
       When("I verify 2016 pre page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
 
       /** page url needs to finalize */
-      Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+      Then("I verify member-more-than-one-pension page,select Yes and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "0",
+        "100000000",
+        "200000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-pre", "0")
 
-      When("I click back sign and click Add details for 9 July to 5 April 2016")
-      MemberMoreThanOnePensionPage.clickBackButton()
-      WhatYouWillNeedAaPage.clickBackButton()
+      /** Verify header and title */
+      AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "1", "PensionScheme2", "00348916TR")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "1",
+        "300000000",
+        "400000000",
+        "PensionScheme2"
+      )
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-pre", "1")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      /** --- 2016 Post --- */
+      When("I click Add details for 9 July to 5 April 2016")
       TaskListPage.clickAddDetailsFor9JulyTo8July2016()
-
-      When("I verify 2016 post page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-post",
+        "0",
+        "500000000",
+        "600000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      WhichSchemeDetailsPage.verifyPageSelectNewSchemeAndContinue("2016-post", "1")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-post", "1", "PensionScheme3", "00348916AB")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-post",
+        "1",
+        "700000000",
+        "800000000",
+        "PensionScheme3"
+      )
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "1")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "1")
 
-      When("I click back sign and click Add details for 2016 to 2017")
-      MemberMoreThanOnePensionPage.clickBackButton()
-      WhatYouWillNeedAaPage.clickBackButton()
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      /** --- 2017 */
+      When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
 
       When("I verify what-you-will-need-aa/2017 page and click continue")

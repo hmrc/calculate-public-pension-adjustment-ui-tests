@@ -121,6 +121,8 @@ object PageInformation {
     "Check your answers"
   val CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER2            =
     "Annual allowance setup questions"
+  val CHECK_YOUR_PERIOD_ANSWERS_PAGE_FOR_AA_HEADER2     =
+    "Annual allowance"
   val TASK_LISTS_PAGE_TITLE                             =
     "Calculate Public Service Pension Adjustment - Calculate Public Pension Adjustment service - GOV.UK"
   val TASK_LISTS_PAGE_HEADER                            =
@@ -175,4 +177,16 @@ object PageInformation {
     "Were you a member of more than one public service pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
   val MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER          =
     "Were you a member of more than one public service pension scheme?"
+  val WHICH_SCHEME_DETAILS_PAGE_TITLE                   =
+    "Which scheme are you entering details for? - Calculate Public Pension Adjustment service - GOV.UK"
+  val WHICH_SCHEME_DETAILS_PAGE_HEADER                  =
+    "Which scheme are you entering details for?"
+  val PENSION_SCHEME_DETAILS_PAGE_TITLE                 =
+    "What is the name and tax reference of the pension scheme? - Calculate Public Pension Adjustment service - GOV.UK"
+  val PENSION_SCHEME_DETAILS_PAGE_HEADER                =
+    "What is the name and tax reference of the pension scheme?"
+  val DID_YOU_PAY_A_CHARGE_PAGE_TITLE                   =
+    "Did you pay a charge? - Calculate Public Pension Adjustment service - GOV.UK"
+  val DID_YOU_PAY_A_CHARGE_PAGE_HEADER                  =
+    "Did you pay a charge?"
 }

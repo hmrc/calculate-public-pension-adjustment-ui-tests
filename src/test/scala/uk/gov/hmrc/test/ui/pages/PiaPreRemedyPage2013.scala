@@ -26,7 +26,7 @@ object PiaPreRemedyPage2013 extends BasePage {
   }
 
   def enterAmountAndClickContinue() = {
-    enterAmount("4000")
+    enterAmount("200000000")
     checkYourAnswersAASMap(getHeader(), getEnteredAmount())
     submitPage()
   }
