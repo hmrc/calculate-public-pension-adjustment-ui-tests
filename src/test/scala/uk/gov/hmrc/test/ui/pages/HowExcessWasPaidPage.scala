@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_EXCESS_WAS_PAID_PAGE_HEADER, HOW_EXCESS_WAS_PAID_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.ProtectionReferencePage.{checkYourAnswersLASMap, getHeader}
 
 object HowExcessWasPaidPage extends BasePage {
   def onHowExcessWasPaidPage() = {

@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_TYPE_PAGE_HEADER, PROTECTION_TYPE_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.PercentageCausedChangeInChargePage.{checkYourAnswersLASMap, getHeader}
 
 object ProtectionTypePage extends BasePage {
   def onProtectionTypePage() = {

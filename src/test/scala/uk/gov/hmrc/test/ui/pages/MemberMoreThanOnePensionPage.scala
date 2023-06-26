@@ -24,4 +24,13 @@ object MemberMoreThanOnePensionPage extends BasePage {
     onPage(MEMBER_MORE_THAN_ONE_PENSION_PAGE_TITLE)
     isHeader(MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER)
   }
+  def verifyPageSelectYesAndContinue() = {
+    onMemberMoreThanOnePensionPage()
+    selectYesAndContinueForAAPeriodPage()
+  }
+
+  def verifyPageSelectNoAndContinue() = {
+    onMemberMoreThanOnePensionPage()
+    selectNoAndContinueForAAPeriodPage()
+  }
 }

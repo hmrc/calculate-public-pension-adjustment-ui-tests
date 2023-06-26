@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_REFERENCE_PAGE_HEADER, PROTECTION_REFERENCE_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.ProtectionTypePage.{checkYourAnswersLASMap, getHeader}
 
 object ProtectionReferencePage extends BasePage {
   def onProtectionReferencePage() = {

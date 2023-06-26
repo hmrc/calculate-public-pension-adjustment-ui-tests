@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import util.DataCollectorMap
+
 object WhatYouWillNeedAaPage extends BasePage {
 
   val YEAR_2016_PRE_PAGE_TITLE   =
@@ -47,48 +49,56 @@ object WhatYouWillNeedAaPage extends BasePage {
     verifyPageUrl("what-you-will-need-aa/2016-pre")
     onPage(YEAR_2016_PRE_PAGE_TITLE)
     isHeader(YEAR_2016_PRE_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     submitPage()
   }
   def onWhatYouWillNeedAa2016PostPage() = {
     verifyPageUrl("what-you-will-need-aa/2016-post")
     onPage(YEAR_2016_POST_PAGE_TITLE)
     isHeader(YEAR_2016_POST_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     submitPage()
   }
   def onWhatYouWillNeedAa2017Page() = {
     verifyPageUrl("what-you-will-need-aa/2017")
     onPage(YEAR_2017_PAGE_TITLE)
     isHeader(YEAR_2017_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     submitPage()
   }
   def onWhatYouWillNeedAa2018Page() = {
     verifyPageUrl("what-you-will-need-aa/2018")
     onPage(YEAR_2018_PAGE_TITLE)
     isHeader(YEAR_2018_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     submitPage()
   }
   def onWhatYouWillNeedAa2019Page() = {
     verifyPageUrl("what-you-will-need-aa/2019")
     onPage(YEAR_2019_PAGE_TITLE)
     isHeader(YEAR_2019_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     submitPage()
   }
   def onWhatYouWillNeedAa2020Page() = {
     verifyPageUrl("what-you-will-need-aa/2020")
     onPage(YEAR_2020_PAGE_TITLE)
     isHeader(YEAR_2020_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     submitPage()
   }
   def onWhatYouWillNeedAa2021Page() = {
     verifyPageUrl("what-you-will-need-aa/2021")
     onPage(YEAR_2021_PAGE_TITLE)
     isHeader(YEAR_2021_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     submitPage()
   }
   def onWhatYouWillNeedAa2022Page() = {
     verifyPageUrl("what-you-will-need-aa/2022")
     onPage(YEAR_2022_PAGE_TITLE)
     isHeader(YEAR_2022_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     submitPage()
   }
 

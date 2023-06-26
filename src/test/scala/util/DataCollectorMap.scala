@@ -22,6 +22,7 @@ object DataCollectorMap {
   val checkAnswersGS: mutable.Map[String, Any]  = mutable.Map[String, Any]()
   val checkAnswersAAS: mutable.Map[String, Any] = mutable.Map[String, Any]()
   var checkAnswersLAS: List[(String, Any)]      = List[(String, Any)]()
+  var checkAnswersAAPeriod: List[(String, Any)] = List[(String, Any)]()
   def addToGSMap(key: String, value: Any): Unit =
     checkAnswersGS += (key -> value)
 
@@ -30,4 +31,7 @@ object DataCollectorMap {
 
   def addToLASMap(key: String, value: Any): Unit =
     checkAnswersLAS = checkAnswersLAS :+ (key, value)
+
+  def addToAAPeriodMap(key: String, value: Any): Unit =
+    checkAnswersAAPeriod = checkAnswersAAPeriod :+ (key, value)
 }

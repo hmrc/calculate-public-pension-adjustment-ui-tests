@@ -16,18 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2014_PAGE_HEADER, PIA_PRE_REMEDY_2014_PAGE_TITLE}
+object AddAnotherSchemePage extends BasePage {
+  def onAddAnotherSchemePage(period: String, pensionSchemeNumber: String) =
+    verifyPageUrl("add-another-scheme/" + period + "/" + pensionSchemeNumber)
 
-object PiaPreRemedyPage2014 extends BasePage {
-  def onPiaPreRemedyPage2014Page() = {
-    verifyPageUrl("pia-pre-remedy/2015")
-    onPage(PIA_PRE_REMEDY_2014_PAGE_TITLE)
-    isHeader(PIA_PRE_REMEDY_2014_PAGE_HEADER)
-  }
+  def verifyPageSelectYesAndContinue(period: String, pensionSchemeNumber: String) =
+    selectYesAndContinueForAAPeriodPage()
 
-  def enterAmountAndClickContinue() = {
-    enterAmount("300000000")
-    checkYourAnswersAASMap(getHeader(), getEnteredAmount())
-    submitPage()
-  }
+  def verifyPageSelectNoAndContinue(period: String, pensionSchemeNumber: String) =
+    selectNoAndContinueForAAPeriodPage()
 }
