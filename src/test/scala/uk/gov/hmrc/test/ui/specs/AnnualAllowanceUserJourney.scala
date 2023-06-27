@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pages.{MemberMoreThanOnePensionPage, _}
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 class AnnualAllowanceUserJourney extends BaseSpec {
 
@@ -425,9 +425,9 @@ class AnnualAllowanceUserJourney extends BaseSpec {
     }
 
     /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(AA),1.6,2.1(N),2.3(N),2.4,2.5(N),2.8(Y),2.12,TaskList
-      * 3.1,3.2 pages in the mural board*
+      * 3.1,3.2,3.3,3.4,3.5,3.9,3.2.1,  pages in the mural board*
       */
-    Scenario("Annual allowance AA info loop user journey ", ZapTests) {
+    Scenario("Annual allowance AA info loop user journey - was a charge paid (No) ", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
@@ -577,6 +577,329 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.signOutPage()
+    }
+
+    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(AA),1.6,2.1(N),2.3(N),2.4,2.5(N),2.8(Y),2.12,TaskList
+      * 3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.9,3.8,3.2.1 pages in the mural board*
+      */
+    Scenario("Annual allowance AA info loop user journey - was a charge paid(Yes) ", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ResubmittingAdjustmentPage page")
+      ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ReasonForResubmissionPage page")
+      ReasonForResubmissionPage.onReasonForResubmissionPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      Then("I Should see the reporting-change page")
+      ReportingChangePage.onReportingChangePage()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the scottish-taxpayer-from-2016 page")
+      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
+
+      When("I select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+
+      Then("I Should see the paying-into-public-pension-scheme page")
+      PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
+
+      When("I click continue button")
+      PayingIntoPublicPensionSchemePage.submitPage()
+
+      Then("I Should see the error message")
+      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+
+      When("I select no and continue to next page")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the when-stop-paying-public-pension page")
+      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+
+      When("I enter a valid future date")
+      WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
+
+      Then("I Should see the have-defined-contribution-pension page")
+      HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
+
+      When("I select no and continue to next page")
+      HaveDefinedContributionPensionPage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the pay-tax-charge-from2015-2016 page")
+      PayTaxChargeFrom20152016Page.onPayTaxChargeFrom20152016Page()
+
+      When("I select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the Task list page")
+      TaskListPage.onTaskListPage()
+
+      Then("I verify annual allowance period shows up to 2022 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
+
+      /** AA Loop */
+      /** --- 2016 Pre --- */
+      When("I click AddDetailsFor6AprilTo8July2015")
+      TaskListPage.clickAddDetailsFor6AprilTo8July2015()
+      When("I verify 2016 pre page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page,select Yes and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "0",
+        "100000000",
+        "200000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
+
+      /** Verify header and title */
+      AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "1", "PensionScheme2", "00348916TR")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "1",
+        "300000000",
+        "400000000",
+        "PensionScheme2"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "1", "200000000")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      /** --- 2016 Post --- */
+      When("I click Add details for 9 July to 5 April 2016")
+      TaskListPage.clickAddDetailsFor9JulyTo8July2016()
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-post",
+        "0",
+        "500000000",
+        "600000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectPensionSchemeAndContinue(
+        "2016-post",
+        "0",
+        "9 July 2015 to 5 April 2016"
+      )
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-post", "0", "200000000")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "0")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.signOutPage()
+    }
+
+    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(AA),1.6,2.1(N),2.3(N),2.4,2.5(N),2.8(Y),2.12,TaskList
+      * 3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.9,3.8,3.2.1 pages in the mural board*
+      */
+    Scenario("Annual allowance AA info loop user journey - Who paid(Both) ", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ResubmittingAdjustmentPage page")
+      ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ReasonForResubmissionPage page")
+      ReasonForResubmissionPage.onReasonForResubmissionPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      Then("I Should see the reporting-change page")
+      ReportingChangePage.onReportingChangePage()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the scottish-taxpayer-from-2016 page")
+      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
+
+      When("I select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+
+      Then("I Should see the paying-into-public-pension-scheme page")
+      PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
+
+      When("I click continue button")
+      PayingIntoPublicPensionSchemePage.submitPage()
+
+      Then("I Should see the error message")
+      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+
+      When("I select no and continue to next page")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the when-stop-paying-public-pension page")
+      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+
+      When("I enter a valid future date")
+      WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
+
+      Then("I Should see the have-defined-contribution-pension page")
+      HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
+
+      When("I select no and continue to next page")
+      HaveDefinedContributionPensionPage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the pay-tax-charge-from2015-2016 page")
+      PayTaxChargeFrom20152016Page.onPayTaxChargeFrom20152016Page()
+
+      When("I select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the Task list page")
+      TaskListPage.onTaskListPage()
+
+      Then("I verify annual allowance period shows up to 2022 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
+
+      /** AA Loop */
+      /** --- 2016 Pre --- */
+      When("I click AddDetailsFor6AprilTo8July2015")
+      TaskListPage.clickAddDetailsFor6AprilTo8July2015()
+      When("I verify 2016 pre page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page,select Yes and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "0",
+        "100000000",
+        "200000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
+
+      /** Verify header and title */
+      AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "1", "PensionScheme2", "00348916TR")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "1",
+        "300000000",
+        "400000000",
+        "PensionScheme2"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "1", "200000000")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      /** --- 2016 Post --- */
+      When("I click Add details for 9 July to 5 April 2016")
+      TaskListPage.clickAddDetailsFor9JulyTo8July2016()
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-post",
+        "0",
+        "500000000",
+        "600000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-post",
+        "0",
+        "9 July 2015 to 5 April 2016"
+      )
+      HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-post", "0", "100000000")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-post", "0", "200000000")
+
+      /** Verify header and title */
+      AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "1", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-post",
+        "1",
+        "300000000",
+        "400000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "1")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-post", "1", "200000000")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "1")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 */
       When("I click Add details for 2016 to 2017")
@@ -648,6 +971,307 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I sign out from the page")
       WhatYouWillNeedAaPage.signOutPage()
     }
-  }
 
+    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(AA),1.6,2.1(N),2.3(N),2.4,2.5(N),2.8(Y),2.12,TaskList
+      * 3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.9,3.8,3.2.1 pages in the mural board*
+      */
+    Scenario("Annual allowance AA info loop user journey - Add another Scheme N & DC=No ", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ResubmittingAdjustmentPage page")
+      ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ReasonForResubmissionPage page")
+      ReasonForResubmissionPage.onReasonForResubmissionPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      Then("I Should see the reporting-change page")
+      ReportingChangePage.onReportingChangePage()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the scottish-taxpayer-from-2016 page")
+      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
+
+      When("I select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+
+      Then("I Should see the paying-into-public-pension-scheme page")
+      PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
+
+      When("I click continue button")
+      PayingIntoPublicPensionSchemePage.submitPage()
+
+      Then("I Should see the error message")
+      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+
+      When("I select no and continue to next page")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the when-stop-paying-public-pension page")
+      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+
+      When("I enter a valid future date")
+      WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
+
+      Then("I Should see the have-defined-contribution-pension page")
+      HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
+
+      When("I select no and continue to next page")
+      HaveDefinedContributionPensionPage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the pay-tax-charge-from2015-2016 page")
+      PayTaxChargeFrom20152016Page.onPayTaxChargeFrom20152016Page()
+
+      When("I select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the Task list page")
+      TaskListPage.onTaskListPage()
+
+      Then("I verify annual allowance period shows up to 2022 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
+
+      /** AA Loop */
+      /** --- 2016 Pre --- */
+      When("I click AddDetailsFor6AprilTo8July2015")
+      TaskListPage.clickAddDetailsFor6AprilTo8July2015()
+      When("I verify 2016 pre page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page,select Yes and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "0",
+        "100000000",
+        "200000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
+
+      /** Verify header and title */
+      AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "1", "PensionScheme2", "00348916TR")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "1",
+        "300000000",
+        "400000000",
+        "PensionScheme2"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "1", "200000000")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
+
+      /** MCSC-292 */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      /** --- 2016 Post --- */
+      When("I click Add details for 9 July to 5 April 2016")
+      TaskListPage.clickAddDetailsFor9JulyTo8July2016()
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-post",
+        "0",
+        "500000000",
+        "600000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "0")
+
+      /** MCSC-292 */
+      AddAnotherSchemePage.signOutPage()
+    }
+
+    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(AA),1.6,2.1(N),2.3(N),2.4,2.5(N),2.8(Y),2.12,TaskList
+      * 3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.9,3.8,3.2.1 pages in the mural board*
+      */
+    Scenario("Annual allowance AA info loop user journey - Add another Scheme N & DC=Yes ", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click start button")
+      HomePage.clickStartButton()
+
+      Then("I Should see the SavingsStatementPage page")
+      SavingsStatementPage.onSavingsStatementPage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ResubmittingAdjustmentPage page")
+      ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      Then("I Should see the ReasonForResubmissionPage page")
+      ReasonForResubmissionPage.onReasonForResubmissionPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      Then("I Should see the reporting-change page")
+      ReportingChangePage.onReportingChangePage()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the scottish-taxpayer-from-2016 page")
+      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
+
+      When("I select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+
+      Then("I Should see the paying-into-public-pension-scheme page")
+      PayingIntoPublicPensionSchemePage.onPayingIntoPublicPensionSchemePage()
+
+      When("I click continue button")
+      PayingIntoPublicPensionSchemePage.submitPage()
+
+      Then("I Should see the error message")
+      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+
+      When("I select no and continue to next page")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the when-stop-paying-public-pension page")
+      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+
+      When("I enter a valid future date")
+      WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
+
+      Then("I Should see the have-defined-contribution-pension page")
+      HaveDefinedContributionPensionPage.onHaveDefinedContributionPensionPage()
+
+      When("I select no and continue to next page")
+      HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
+
+      Then("I Should see the have-flexible-accessed-pension page")
+      HaveFlexiblyAccessedPensionPage.onHaveFlexiblyAccessedPensionPage()
+
+      When("I select No and continue to next page")
+      HaveFlexiblyAccessedPensionPage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the pay-tax-charge-from2015-2016 page")
+      PayTaxChargeFrom20152016Page.onPayTaxChargeFrom20152016Page()
+
+      When("I select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I Should see the Task list page")
+      TaskListPage.onTaskListPage()
+
+      Then("I verify annual allowance period shows up to 2022 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
+
+      /** AA Loop */
+      /** --- 2016 Pre --- */
+      When("I click AddDetailsFor6AprilTo8July2015")
+      TaskListPage.clickAddDetailsFor6AprilTo8July2015()
+      When("I verify 2016 pre page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page,select Yes and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "0",
+        "100000000",
+        "200000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
+
+      /** Verify header and title */
+      AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "1", "PensionScheme2", "00348916TR")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-pre",
+        "1",
+        "300000000",
+        "400000000",
+        "PensionScheme2"
+      )
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1")
+      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "1", "200000000")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
+
+      /** MCSC-292 */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      /** --- 2016 Post --- */
+      When("I click Add details for 9 July to 5 April 2016")
+      TaskListPage.clickAddDetailsFor9JulyTo8July2016()
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
+
+      /** page url needs to finalize */
+      Then("I verify member-more-than-one-pension page")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      PensionSchemeInputAmountsPage.enterPensionAmountsAndContinue(
+        "2016-post",
+        "0",
+        "500000000",
+        "600000000",
+        "PensionScheme1"
+      )
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "0")
+
+      /** MCSC-292 */
+      AddAnotherSchemePage.signOutPage()
+    }
+  }
 }
