@@ -20,14 +20,27 @@ import org.openqa.selenium.By
 
 object PiaForDbPensionPage extends BasePage {
   val PIA_FOR_DB_PENSION_PAGE_TITLE  =
-    "What was your pension input amount for defined contribution pension schemes for (day) (month) (year) to (day) (month) (year)? - Calculate Public Pension Adjustment service - GOV.UK"
+    "What was your pension input amount for defined benefit pension schemes for fromDayMonthYear to toDayMonthYear? - Calculate Public Pension Adjustment service - GOV.UK"
   val PIA_FOR_DB_PENSION_PAGE_HEADER =
-    "What was your pension input amount for defined contribution pension schemes for (day) (month) (year) to (day) (month) (year)?"
+    "What was your pension input amount for defined benefit pension schemes for fromDayMonthYear to toDayMonthYear?"
 
-  def onPiaForDbPensionPage(year: String, pensionSchemeNumber: String) = {
+  def onPiaForDbPensionPage(
+    year: String,
+    pensionSchemeNumber: String,
+    fromDayMonthYear: String,
+    toDayMonthYear: String
+  ) = {
     verifyPageUrl("pia-for-db-pension/" + year + "/" + pensionSchemeNumber)
-    onPage(PIA_FOR_DB_PENSION_PAGE_TITLE)
-    isHeader(PIA_FOR_DB_PENSION_PAGE_HEADER)
+    onPage(
+      PIA_FOR_DB_PENSION_PAGE_TITLE
+        .replaceAll("fromDayMonthYear", fromDayMonthYear)
+        .replaceAll("toDayMonthYear", toDayMonthYear)
+    )
+    isHeader(
+      PIA_FOR_DB_PENSION_PAGE_HEADER
+        .replaceAll("fromDayMonthYear", fromDayMonthYear)
+        .replaceAll("toDayMonthYear", toDayMonthYear)
+    )
   }
 
   def enterPensionInputAmountForDB(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
@@ -35,9 +48,11 @@ object PiaForDbPensionPage extends BasePage {
   def verifyPageEnterPensionInputAmountForDBAndContinue(
     year: String,
     pensionSchemeNumber: String,
-    adjustedIncome: String
+    adjustedIncome: String,
+    fromDayMonthYear: String,
+    toDayMonthYear: String
   ) = {
-    onPiaForDbPensionPage(year, pensionSchemeNumber)
+    onPiaForDbPensionPage(year, pensionSchemeNumber, fromDayMonthYear, toDayMonthYear)
     enterPensionInputAmountForDB(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

@@ -17,23 +17,64 @@
 package uk.gov.hmrc.test.ui.pages
 
 object ThresholdIncomePage extends BasePage {
-  val THRESHOLD_INCOME_PAGE_TITLE  =
-    "Was your threshold income above [£110,000/£200,000] from 6 April (year) to 5 April (year)? - Calculate Public Pension Adjustment service - GOV.UK"
-  val THRESHOLD_INCOME_PAGE_HEADER =
-    "Was your threshold income above [£110,000/£200,000] from 6 April (year) to 5 April (year)?"
-  def onThresholdIncomePage(year: String, pensionSchemeNumber: String) = {
+  val THRESHOLD_INCOME_PAGE_2017_TO_2020_TITLE  =
+    "Was your threshold income above £110,000 from 6 April fromYear to 5 April toYear? - Calculate Public Pension Adjustment service - GOV.UK"
+  val THRESHOLD_INCOME_PAGE_2017_TO_2020_HEADER =
+    "Was your threshold income above £110,000 from 6 April fromYear to 5 April toYear?"
+
+  val THRESHOLD_INCOME_PAGE_2021_TO_2023_TITLE  =
+    "Was your threshold income above £200,000 from 6 April fromYear to 5 April toYear? - Calculate Public Pension Adjustment service - GOV.UK"
+  val THRESHOLD_INCOME_PAGE_2021_TO_2023_HEADER =
+    "Was your threshold income above £200,000 from 6 April fromYear to 5 April toYear?"
+  def onThresholdIncome2017TO2020Page(fromYear: String, toYear: String, year: String, pensionSchemeNumber: String) = {
     verifyPageUrl("threshold-income/" + year + "/" + pensionSchemeNumber)
-    onPage(THRESHOLD_INCOME_PAGE_TITLE)
-    isHeader(THRESHOLD_INCOME_PAGE_HEADER)
+    onPage(THRESHOLD_INCOME_PAGE_2017_TO_2020_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
+    isHeader(THRESHOLD_INCOME_PAGE_2017_TO_2020_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
   }
 
-  def verifyPageSelectYesAndContinue(year: String, pensionSchemeNumber: String) = {
-    onThresholdIncomePage(year, pensionSchemeNumber)
+  def onThresholdIncome2021TO2023Page(fromYear: String, toYear: String, year: String, pensionSchemeNumber: String) = {
+    verifyPageUrl("threshold-income/" + year + "/" + pensionSchemeNumber)
+    onPage(THRESHOLD_INCOME_PAGE_2021_TO_2023_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
+    isHeader(THRESHOLD_INCOME_PAGE_2021_TO_2023_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
+  }
+
+  def verify2017TO2020PageSelectYesAndContinue(
+    fromYear: String,
+    toYear: String,
+    year: String,
+    pensionSchemeNumber: String
+  ) = {
+    onThresholdIncome2017TO2020Page(fromYear, toYear, year, pensionSchemeNumber)
     selectYesAndContinueForAAPeriodPage()
   }
 
-  def verifyPageSelectNoAndContinue(year: String, pensionSchemeNumber: String) = {
-    onThresholdIncomePage(year, pensionSchemeNumber)
+  def verify2017TO2020PageSelectNoAndContinue(
+    fromYear: String,
+    toYear: String,
+    year: String,
+    pensionSchemeNumber: String
+  ) = {
+    onThresholdIncome2017TO2020Page(fromYear, toYear, year, pensionSchemeNumber)
+    selectNoAndContinueForAAPeriodPage()
+  }
+
+  def verify2021TO2023PageSelectYesAndContinue(
+    fromYear: String,
+    toYear: String,
+    year: String,
+    pensionSchemeNumber: String
+  ) = {
+    onThresholdIncome2021TO2023Page(fromYear, toYear, year, pensionSchemeNumber)
+    selectYesAndContinueForAAPeriodPage()
+  }
+
+  def verify2021TO2023PageSelectNoAndContinue(
+    fromYear: String,
+    toYear: String,
+    year: String,
+    pensionSchemeNumber: String
+  ) = {
+    onThresholdIncome2021TO2023Page(fromYear, toYear, year, pensionSchemeNumber)
     selectNoAndContinueForAAPeriodPage()
   }
 

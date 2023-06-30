@@ -18,18 +18,18 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 
-object PiaForDcPensionPage extends BasePage {
+object PiaForDcPensionFlexiblePage extends BasePage {
   val PIA_FOR_DC_PENSION_PAGE_TITLE  =
     "What was your pension input amount for defined contribution pension schemes for fromDayMonthYear to toDayMonthYear? - Calculate Public Pension Adjustment service - GOV.UK"
   val PIA_FOR_DC_PENSION_PAGE_HEADER =
     "What was your pension input amount for defined contribution pension schemes for fromDayMonthYear to toDayMonthYear?"
-  def onPiaForDcPensionPage(
+  def onPiaForDcPensionFlexiblePage(
     year: String,
     pensionSchemeNumber: String,
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    verifyPageUrl("pia-for-dc-pension/" + year + "/" + pensionSchemeNumber)
+    verifyPageUrl("pia-for-dc-pension-flexible/" + year + "/" + pensionSchemeNumber)
     onPage(
       PIA_FOR_DC_PENSION_PAGE_TITLE
         .replaceAll("fromDayMonthYear", fromDayMonthYear)
@@ -51,7 +51,7 @@ object PiaForDcPensionPage extends BasePage {
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    onPiaForDcPensionPage(year, pensionSchemeNumber, fromDayMonthYear, toDayMonthYear)
+    onPiaForDcPensionFlexiblePage(year, pensionSchemeNumber, fromDayMonthYear, toDayMonthYear)
     enterPensionInputAmountForDC(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

@@ -204,5 +204,5 @@ object PageInformation {
   val WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_TITLE  =
     "Which have you contributed to during the remedy period? - Calculate Public Pension Adjustment service - GOV.UK"
   val WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER =
-    "Which have you contributed to during the remedy period??"
+    "Which have you contributed to during the remedy period?"
 }

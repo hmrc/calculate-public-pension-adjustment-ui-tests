@@ -21,20 +21,29 @@ import uk.gov.hmrc.test.ui.pages.HowMuchYouPayChargePage.{checkYourAnswersAAPeri
 
 object AdjustedIncomePage extends BasePage {
   val ADJUSTED_INCOME_PAGE_TITLE  =
-    "What was your adjusted income from 6 April (year) to 5 April (year)? - Calculate Public Pension Adjustment service - GOV.UK"
-  val ADJUSTED_INCOME_PAGE_HEADER = "What was your adjusted income from 6 April (year) to 5 April (year)?"
-  def onAdjustedIncomePage(year: String, pensionSchemeNumber: String) = {
+    "What was your adjusted income from 6 April fromYear to 5 April toYear? - Calculate Public Pension Adjustment service - GOV.UK"
+  val ADJUSTED_INCOME_TITLE       =
+    "What was your adjusted income from 6 April fromYear to 5 April toYear?"
+  val ADJUSTED_INCOME_PAGE_HEADER = "Adjusted income"
+  def onAdjustedIncomePage(fromYear: String, toYear: String, year: String, pensionSchemeNumber: String) = {
     verifyPageUrl("adjusted-income/" + year + "/" + pensionSchemeNumber)
-    onPage(ADJUSTED_INCOME_PAGE_TITLE)
+    onPage(ADJUSTED_INCOME_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     isHeader(ADJUSTED_INCOME_PAGE_HEADER)
   }
 
   def enterAdjustedIncome(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
-  def verifyPageEnterAdjustedIncomeAndContinue(year: String, pensionSchemeNumber: String, adjustedIncome: String) = {
-    onAdjustedIncomePage(year, pensionSchemeNumber)
+  def verifyPageEnterAdjustedIncomeAndContinue(
+    fromYear: String,
+    toYear: String,
+    year: String,
+    pensionSchemeNumber: String,
+    adjustedIncome: String
+  ) = {
+    val newTitle = ADJUSTED_INCOME_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear)
+    onAdjustedIncomePage(fromYear, toYear, year, pensionSchemeNumber)
     enterAdjustedIncome(adjustedIncome)
-    checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
+    checkYourAnswersAAPeriodMap(newTitle, "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()
   }
 }

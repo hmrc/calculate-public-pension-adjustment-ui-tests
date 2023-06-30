@@ -21,9 +21,9 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{TASK_LISTS_PAGE_HEADER, TA
 
 object TaskListPage extends BasePage {
 
-  val NOT_STARTED = "NOT STARTED"
-  val COMPLETED   = "COMPLETED"
-  val IN_PROGRESS = "IN PROGRESS"
+  val NOT_STARTED = "Not started"
+  val COMPLETED   = "Completed"
+  val IN_PROGRESS = "In progress"
 
   val AddDetailsOfYourAA          = By.xpath("//a[contains(text(),'Add details of your annual allowance background')]")
   val changeDetailsOfYourAA       = By.xpath("//a[contains(text(),'Change details of your annual allowance background')]")
