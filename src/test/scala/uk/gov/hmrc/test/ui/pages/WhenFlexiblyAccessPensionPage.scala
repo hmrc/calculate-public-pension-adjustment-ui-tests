@@ -20,6 +20,7 @@ import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER, WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.WhenStopPayingPublicPensionPage.{checkYourAnswersAASMap, getDate, getHeader}
 
 object WhenFlexiblyAccessPensionPage extends BasePage {
   def validateNoInputDateError(): Assertion =
@@ -122,9 +123,9 @@ object WhenFlexiblyAccessPensionPage extends BasePage {
   }
 
   def enterAFutureDateAndClickContinue() = {
-    val (month, date, year) = getCurrentDateTime()
+    val (month, date, year) = getFutureDateTime()
     clearDate()
-    enterDay((date + 1).toString)
+    enterDay(date.toString)
     enterMonth(month.toString)
     enterYear(year.toString)
     submitPage()
@@ -152,6 +153,15 @@ object WhenFlexiblyAccessPensionPage extends BasePage {
     enterDay(date.toString)
     enterMonth(month.toString)
     enterYear(year.toString)
+    submitPage()
+  }
+
+  def enterFlexiAcessDateAndClickContinue(date: String, month: String, year: String) = {
+    clearDate()
+    enterDay(date)
+    enterMonth(month)
+    enterYear(year)
+    checkYourAnswersAASMap(getHeader(), getDate())
     submitPage()
   }
 

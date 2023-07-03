@@ -20,19 +20,25 @@ import org.openqa.selenium.By
 
 object TotalIncomePage extends BasePage {
   val TOTAL_INCOME_PAGE_TITLE  =
-    "What was your adjusted income from 6 April (year) to 5 April (year)? - Calculate Public Pension Adjustment service - GOV.UK"
-  val TOTAL_INCOME_PAGE_HEADER = "What was your adjusted income from 6 April (year) to 5 April (year)?"
+    "What was your total income from 6 April fromYear to 5 April toYear? - Calculate Public Pension Adjustment service - GOV.UK"
+  val TOTAL_INCOME_PAGE_HEADER = "What was your total income from 6 April fromYear to 5 April toYear?"
 
-  def onTotalIncomePage(year: String, pensionSchemeNumber: String) = {
+  def onTotalIncomePage(fromYear: String, toYear: String, year: String, pensionSchemeNumber: String) = {
     verifyPageUrl("total-income/" + year + "/" + pensionSchemeNumber)
-    onPage(TOTAL_INCOME_PAGE_TITLE)
-    isHeader(TOTAL_INCOME_PAGE_HEADER)
+    onPage(TOTAL_INCOME_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
+    isHeader(TOTAL_INCOME_PAGE_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
   }
 
   def enterTotalIncome(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
-  def verifyPageEnterTotalIncomeAndContinue(year: String, pensionSchemeNumber: String, adjustedIncome: String) = {
-    onTotalIncomePage(year, pensionSchemeNumber)
+  def verifyPageEnterTotalIncomeAndContinue(
+    fromYear: String,
+    toYear: String,
+    year: String,
+    pensionSchemeNumber: String,
+    adjustedIncome: String
+  ) = {
+    onTotalIncomePage(fromYear, toYear, year, pensionSchemeNumber)
     enterTotalIncome(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()
