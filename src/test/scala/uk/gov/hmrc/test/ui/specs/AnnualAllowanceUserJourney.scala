@@ -573,7 +573,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -628,7 +628,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916AB")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme3", "00348916AB")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -688,7 +688,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2020", "0", "00348916AC")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2020", "0", "PensionScheme4", "00348916AC")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -748,7 +748,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2021", "0", "00348916AD")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2021", "0", "PensionScheme5", "00348916AD")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -891,7 +891,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select you and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -934,7 +934,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1082,7 +1082,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -1130,7 +1130,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1162,7 +1162,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "1", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1374,7 +1374,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -1422,7 +1422,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1562,7 +1562,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -1613,7 +1613,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1650,7 +1650,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1822,7 +1822,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -1845,7 +1845,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1875,7 +1875,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2027,7 +2027,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -2064,7 +2064,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2109,7 +2109,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2277,7 +2277,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -2314,7 +2314,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2359,7 +2359,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2526,7 +2526,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -2571,7 +2571,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       Then("I verify member-more-than-one-pension page")
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2625,7 +2625,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2805,7 +2805,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -2851,7 +2851,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2904,7 +2904,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       Then("I verify member-more-than-one-pension page")
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3092,7 +3092,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -3147,7 +3147,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3201,7 +3201,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3358,7 +3358,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify 2016 pre page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
 
-      /** page url needs to finalize */
+      /** page url needs to finalize, Add this to check your answers page */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
@@ -3377,7 +3377,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to July 8 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -3409,8 +3409,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       )
 
       /** verify check your answers page */
-      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
@@ -3423,7 +3422,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3474,8 +3473,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
 
       /** verify check your answers page */
-      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
 
       /** --- 2017 --- */
       When("I click Add details for 2017 to 2017")
@@ -3487,7 +3485,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3535,8 +3533,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "0", "430000000")
 
       /** verify check your answers page */
-      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
   }
