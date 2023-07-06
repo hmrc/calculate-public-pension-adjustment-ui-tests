@@ -21,8 +21,8 @@ import util.DataCollectorMap
 object WhatYouWillNeedAaPage extends BasePage {
 
   val YEAR_2016_PRE_PAGE_TITLE   =
-    "6 April 2015 to July 8 2015 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
-  val YEAR_2016_PRE_PAGE_HEADER  = "6 April 2015 to July 8 2015 remedy period"
+    "6 April 2015 to 8 July 2015 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+  val YEAR_2016_PRE_PAGE_HEADER  = "6 April 2015 to 8 July 2015 remedy period"
   val YEAR_2016_POST_PAGE_TITLE  =
     "9 July 2015 to 5 April 2016 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
   val YEAR_2016_POST_PAGE_HEADER = "9 July 2015 to 5 April 2016 remedy period"
@@ -50,56 +50,56 @@ object WhatYouWillNeedAaPage extends BasePage {
     onPage(YEAR_2016_PRE_PAGE_TITLE)
     isHeader(YEAR_2016_PRE_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
-    submitPage()
+    clickContinueButton()
   }
   def onWhatYouWillNeedAa2016PostPage() = {
     verifyPageUrl("what-you-will-need-aa/2016-post")
     onPage(YEAR_2016_POST_PAGE_TITLE)
     isHeader(YEAR_2016_POST_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
-    submitPage()
+    clickContinueButton()
   }
   def onWhatYouWillNeedAa2017Page() = {
     verifyPageUrl("what-you-will-need-aa/2017")
     onPage(YEAR_2017_PAGE_TITLE)
     isHeader(YEAR_2017_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
-    submitPage()
+    clickContinueButton()
   }
   def onWhatYouWillNeedAa2018Page() = {
     verifyPageUrl("what-you-will-need-aa/2018")
     onPage(YEAR_2018_PAGE_TITLE)
     isHeader(YEAR_2018_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
-    submitPage()
+    clickContinueButton()
   }
   def onWhatYouWillNeedAa2019Page() = {
     verifyPageUrl("what-you-will-need-aa/2019")
     onPage(YEAR_2019_PAGE_TITLE)
     isHeader(YEAR_2019_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
-    submitPage()
+    clickContinueButton()
   }
   def onWhatYouWillNeedAa2020Page() = {
     verifyPageUrl("what-you-will-need-aa/2020")
     onPage(YEAR_2020_PAGE_TITLE)
     isHeader(YEAR_2020_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
-    submitPage()
+    clickContinueButton()
   }
   def onWhatYouWillNeedAa2021Page() = {
     verifyPageUrl("what-you-will-need-aa/2021")
     onPage(YEAR_2021_PAGE_TITLE)
     isHeader(YEAR_2021_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
-    submitPage()
+    clickContinueButton()
   }
   def onWhatYouWillNeedAa2022Page() = {
     verifyPageUrl("what-you-will-need-aa/2022")
     onPage(YEAR_2022_PAGE_TITLE)
     isHeader(YEAR_2022_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
-    submitPage()
+    clickContinueButton()
   }
 
 }

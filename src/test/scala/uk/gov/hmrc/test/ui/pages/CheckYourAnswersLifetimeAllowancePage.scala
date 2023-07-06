@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HEADER, CHECK_YOUR_ANSWERS_PAGE_TITLE}
-import util.DataCollectorMap
+import util.DataCollectorMap.checkAnswersLAS
 
 object CheckYourAnswersLifetimeAllowancePage extends BasePage {
   def onCheckYourAnswersLifetimeAllowancePage() = {
@@ -28,7 +28,8 @@ object CheckYourAnswersLifetimeAllowancePage extends BasePage {
 
   def verifyCheckYourAnswersPageAndContinue() = {
     onCheckYourAnswersLifetimeAllowancePage()
-    require(DataCollectorMap.checkAnswersLAS == returnCheckYourAnswersPageInformationAsAList(), "Data not matching")
+    val sortedCheckAnswersAAPeriod = checkAnswersLAS.sortBy(_._1)
+    require(sortedCheckAnswersAAPeriod == returnCheckYourAnswersPageInformationAsAList(), "Data not matching")
     clickContinueButton()
   }
 

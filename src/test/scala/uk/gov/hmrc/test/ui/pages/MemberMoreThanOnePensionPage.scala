@@ -31,6 +31,8 @@ object MemberMoreThanOnePensionPage extends BasePage {
 
   def verifyPageSelectNoAndContinue() = {
     onMemberMoreThanOnePensionPage()
-    selectNoAndContinueForAAPeriodPage()
+    selectNoOption()
+    submitPage()
+    //selectNoAndContinueForAAPeriodPage()
   }
 }

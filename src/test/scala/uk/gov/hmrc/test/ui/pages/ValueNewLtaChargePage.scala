@@ -30,21 +30,21 @@ object ValueNewLtaChargePage extends BasePage {
     val text = "950000000"
     driver.findElement(By.id("value")).clear()
     driver.findElement(By.id("value")).sendKeys(text)
-    checkYourAnswersLASMap(getHeader(), text)
+    checkYourAnswersLASMap(getHeader(), "£" + text)
   }
 
   def enterNewLTAChargeLessThanPreviousCharge() = {
     val text = "100000000"
     driver.findElement(By.id("value")).clear()
     driver.findElement(By.id("value")).sendKeys(text)
-    checkYourAnswersLASMap(getHeader(), text)
+    checkYourAnswersLASMap(getHeader(), "£" + text)
   }
 
   def enterNewLTACharge() = {
     val text = "450000000"
     driver.findElement(By.id("value")).clear()
     driver.findElement(By.id("value")).sendKeys(text)
-    checkYourAnswersLASMap(getHeader(), text)
+    checkYourAnswersLASMap(getHeader(), "£" + text)
   }
 
   def verifyPageEnterLTAChargeMoreThanPreviousChargeAndContinue() = {

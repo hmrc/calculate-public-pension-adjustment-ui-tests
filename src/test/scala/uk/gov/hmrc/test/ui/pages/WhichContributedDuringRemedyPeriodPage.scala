@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER, WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.PensionSchemeInputAmountsPage.{checkYourAnswersAAPeriodMap, getHeader}
 
 object WhichContributedDuringRemedyPeriodPage extends BasePage {
   def onThresholdIncomePage(year: String, pensionSchemeNumber: String) = {
@@ -32,8 +31,10 @@ object WhichContributedDuringRemedyPeriodPage extends BasePage {
   def defSelectBothDCAndDB() = {
     selectDefinedContribution()
     selectDefinedBenefit()
-    checkYourAnswersAAPeriodMap(getHeader(), "Defined contribution")
-    checkYourAnswersAAPeriodMap(getHeader(), "Defined benefit")
+    checkYourAnswersAAPeriodMap(
+      getHeader(),
+      "Defined contribution," + " Defined benefit"
+    )
   }
 
   def verifyPageSelectDCAndContinue(year: String, pensionSchemeNumber: String): Unit = {

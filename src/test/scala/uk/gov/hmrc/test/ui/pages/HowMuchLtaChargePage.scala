@@ -29,7 +29,7 @@ object HowMuchLtaChargePage extends BasePage {
   def enterCharge() = {
     val text = "200000000"
     driver.findElement(By.xpath("//input[@id='value']")).sendKeys(text)
-    checkYourAnswersLASMap(getHeader(), text)
+    checkYourAnswersLASMap(getHeader(), "£" + text)
   }
   def verifyPageEnterChargeAmountAndContinue() = {
     onHowMuchLtaChargePage()

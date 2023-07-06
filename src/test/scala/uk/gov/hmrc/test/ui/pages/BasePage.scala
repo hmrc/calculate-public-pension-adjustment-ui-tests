@@ -354,7 +354,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
         map = map :+ (dtText, ddText)
       }
     }
-    map
+    map.sortBy(_._1)
   }
 
   def clickOnChangeLink(question: String) =
