@@ -20,8 +20,8 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER, WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_TITLE}
 
 object WhichContributedDuringRemedyPeriodPage extends BasePage {
-  def onThresholdIncomePage(year: String, pensionSchemeNumber: String) = {
-    verifyPageUrl("which-contributed-during-remedy-period/" + year + "/" + pensionSchemeNumber)
+  def onThresholdIncomePage(year: String) = {
+    verifyPageUrl("which-contributed-during-remedy-period/" + year)
     onPage(WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_TITLE)
     isHeader(WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER)
   }
@@ -37,22 +37,22 @@ object WhichContributedDuringRemedyPeriodPage extends BasePage {
     )
   }
 
-  def verifyPageSelectDCAndContinue(year: String, pensionSchemeNumber: String): Unit = {
-    onThresholdIncomePage(year, pensionSchemeNumber)
+  def verifyPageSelectDCAndContinue(year: String): Unit = {
+    onThresholdIncomePage(year)
     selectDefinedContribution()
     checkYourAnswersAAPeriodMap(getHeader(), "Defined contribution")
     submitPage()
   }
 
-  def verifyPageSelectDBAndContinue(year: String, pensionSchemeNumber: String): Unit = {
-    onThresholdIncomePage(year, pensionSchemeNumber)
+  def verifyPageSelectDBAndContinue(year: String): Unit = {
+    onThresholdIncomePage(year)
     selectDefinedBenefit()
     checkYourAnswersAAPeriodMap(getHeader(), "Defined benefit")
     submitPage()
   }
 
-  def verifyPageSelectDBAndDCANDContinue(year: String, pensionSchemeNumber: String): Unit = {
-    onThresholdIncomePage(year, pensionSchemeNumber)
+  def verifyPageSelectDBAndDCANDContinue(year: String): Unit = {
+    onThresholdIncomePage(year)
     defSelectBothDCAndDB()
     submitPage()
   }

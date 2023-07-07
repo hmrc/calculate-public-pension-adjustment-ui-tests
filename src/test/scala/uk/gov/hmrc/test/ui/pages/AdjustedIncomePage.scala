@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.HowMuchYouPayChargePage.{checkYourAnswersAAPeriodMap, driver, getHeader}
 
 object AdjustedIncomePage extends BasePage {
   val ADJUSTED_INCOME_PAGE_TITLE  =
@@ -26,7 +25,7 @@ object AdjustedIncomePage extends BasePage {
     "What was your adjusted income from 6 April fromYear to 5 April toYear?"
   val ADJUSTED_INCOME_PAGE_HEADER = "Adjusted income"
   def onAdjustedIncomePage(fromYear: String, toYear: String, year: String, pensionSchemeNumber: String) = {
-    verifyPageUrl("adjusted-income/" + year + "/" + pensionSchemeNumber)
+    verifyPageUrl("adjusted-income/" + year)
     onPage(ADJUSTED_INCOME_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     isHeader(ADJUSTED_INCOME_PAGE_HEADER)
   }
@@ -37,11 +36,10 @@ object AdjustedIncomePage extends BasePage {
     fromYear: String,
     toYear: String,
     year: String,
-    pensionSchemeNumber: String,
     adjustedIncome: String
   ) = {
     val newTitle = ADJUSTED_INCOME_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear)
-    onAdjustedIncomePage(fromYear, toYear, year, pensionSchemeNumber)
+    onAdjustedIncomePage(fromYear, toYear, year, adjustedIncome)
     enterAdjustedIncome(adjustedIncome)
     checkYourAnswersAAPeriodMap(newTitle, "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

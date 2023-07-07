@@ -26,11 +26,10 @@ object PiaForDbPensionPage extends BasePage {
 
   def onPiaForDbPensionPage(
     year: String,
-    pensionSchemeNumber: String,
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    verifyPageUrl("pia-for-db-pension/" + year + "/" + pensionSchemeNumber)
+    verifyPageUrl("pia-for-db-pension/" + year)
     onPage(
       PIA_FOR_DB_PENSION_PAGE_TITLE
         .replaceAll("fromDayMonthYear", fromDayMonthYear)
@@ -47,12 +46,11 @@ object PiaForDbPensionPage extends BasePage {
 
   def verifyPageEnterPensionInputAmountForDBAndContinue(
     year: String,
-    pensionSchemeNumber: String,
     adjustedIncome: String,
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    onPiaForDbPensionPage(year, pensionSchemeNumber, fromDayMonthYear, toDayMonthYear)
+    onPiaForDbPensionPage(year, fromDayMonthYear, toDayMonthYear)
     enterPensionInputAmountForDB(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()
