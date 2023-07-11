@@ -25,11 +25,10 @@ object PiaForDcPensionFlexiblePage extends BasePage {
     "What was your pension input amount for defined contribution pension schemes for fromDayMonthYear to toDayMonthYear?"
   def onPiaForDcPensionFlexiblePage(
     year: String,
-    pensionSchemeNumber: String,
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    verifyPageUrl("pia-for-dc-pension-flexible/" + year + "/" + pensionSchemeNumber)
+    verifyPageUrl("pia-for-dc-pension-flexible/" + year)
     onPage(
       PIA_FOR_DC_PENSION_PAGE_TITLE
         .replaceAll("fromDayMonthYear", fromDayMonthYear)
@@ -46,12 +45,11 @@ object PiaForDcPensionFlexiblePage extends BasePage {
 
   def verifyPageEnterPensionInputAmountForDCAndContinue(
     year: String,
-    pensionSchemeNumber: String,
     adjustedIncome: String,
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    onPiaForDcPensionFlexiblePage(year, pensionSchemeNumber, fromDayMonthYear, toDayMonthYear)
+    onPiaForDcPensionFlexiblePage(year, fromDayMonthYear, toDayMonthYear)
     enterPensionInputAmountForDC(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

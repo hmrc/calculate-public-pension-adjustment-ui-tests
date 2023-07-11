@@ -516,9 +516,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify 2016 pre page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -568,9 +567,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       Then("I verify WhatYouWillNeedAaPage with the remedy period")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -613,7 +611,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** verify url once fixed */
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "1", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -623,9 +621,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       TaskListPage.clickAddDetailsFor2016To2017()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme3", "00348916AB")
@@ -667,13 +664,13 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2017", "1")
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "1")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "1", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "1", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -683,9 +680,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       TaskListPage.clickAddDetailsFor2019To2020()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2020Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2020")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2020", "0", "PensionScheme4", "00348916AC")
@@ -727,13 +723,13 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2020", "1")
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2019", "2020", "2020", "1")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2019", "2020", "2020")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2019", "2020", "2020", "1", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2019", "2020", "2020", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2019", "2020", "2020", "1", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2019", "2020", "2020", "430000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -743,9 +739,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       TaskListPage.clickAddDetailsFor2020To2021()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2021Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2021")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2021", "0", "PensionScheme5", "00348916AD")
@@ -767,10 +762,10 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2021", "1")
 
       When("I verify ThresholdIncomePage(2021-2023) page, select no and continue")
-      ThresholdIncomePage.verify2021TO2023PageSelectNoAndContinue("2020", "2021", "2021", "0")
+      ThresholdIncomePage.verify2021TO2023PageSelectNoAndContinue("2020", "2021", "2021")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2020", "2021", "2021", "0", "440000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2020", "2021", "2021", "440000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -871,9 +866,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify 2016 pre page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -929,9 +923,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       Then("I verify WhatYouWillNeedAaPage with the remedy period")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -963,7 +956,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** verify url once fixed */
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -1062,9 +1055,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify 2016 pre page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -1125,9 +1117,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       Then("I verify WhatYouWillNeedAaPage with the remedy period")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -1184,7 +1175,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** verify url once fixed */
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "1", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -1196,9 +1187,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify what-you-will-need-aa/2017 page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage("2017")
 
       When("I click back sign and click Add details for 2017 to 2018")
       MemberMoreThanOnePensionPage.clickBackButton()
@@ -1209,9 +1199,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify what-you-will-need-aa/2018 page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2018Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage("2018")
 
       When("I click back sign and click Add details for 2018 to 2019")
       MemberMoreThanOnePensionPage.clickBackButton()
@@ -1221,9 +1210,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify what-you-will-need-aa/2019 page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2019Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage("2019")
 
       When("I click back sign and click Add details for 2019 to 2020")
       MemberMoreThanOnePensionPage.clickBackButton()
@@ -1233,9 +1221,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify what-you-will-need-aa/2020 page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2020Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage("2020")
 
       When("I click back sign and click Add details for 2020 to 2021")
       MemberMoreThanOnePensionPage.clickBackButton()
@@ -1245,9 +1232,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify what-you-will-need-aa/2021 page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2021Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage()
+      MemberMoreThanOnePensionPage.onMemberMoreThanOnePensionPage("2021")
 
       When("I click back sign and click Add details for 2021 to 2022")
       MemberMoreThanOnePensionPage.clickBackButton()
@@ -1354,9 +1340,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify 2016 pre page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -1407,7 +1392,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
 
-      /** MCSC-292 */
+      /** --- verify check your answers page --- */
+      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2016 Post --- */
@@ -1417,9 +1403,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       Then("I verify WhatYouWillNeedAaPage with the remedy period")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -1542,9 +1527,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify 2016 pre page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -1596,9 +1580,10 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
 
       When("I verify ContributedOtherDbDcSchemePage page, select no and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
+      ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2016-pre")
 
       /** Verify check your answers page */
+      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2016 Post --- */
@@ -1608,9 +1593,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       Then("I verify WhatYouWillNeedAaPage with the remedy period")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -1631,13 +1615,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "0")
 
       When("I verify ContributedOtherDbDcSchemePage page, select no and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2016-post")
 
       /** verify url once fixed */
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
+      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
@@ -1645,9 +1630,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       TaskListPage.clickAddDetailsFor2016To2017()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
 
-      /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
@@ -1689,19 +1673,19 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2017", "1")
 
       When("I verify ContributedOtherDbDcSchemePage page, select no and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2017", "1")
+      ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "1")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "1", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "1", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      // CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
 
@@ -1804,7 +1788,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -1831,7 +1815,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
@@ -1842,7 +1826,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -1860,10 +1844,10 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
 
       /** --- 2017 --- */
       When("I click Add details for 2017 to 2017")
@@ -1872,7 +1856,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
@@ -1890,16 +1874,16 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "0")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "0", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "0", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
 
@@ -2009,7 +1993,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -2036,22 +2020,21 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DC and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue("2016-pre", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue("2016-pre")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-pre",
-        "0",
         "750000000",
         "6 April 2015",
         "8 July 2015"
       )
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
@@ -2061,7 +2044,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -2079,25 +2062,24 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DC and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue("2016-post", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue("2016-post")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-post",
-        "0",
         "850000000",
         "9 July 2015",
         "5 April 2016"
       )
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
 
       /** --- 2017 --- */
       When("I click Add details for 2017 to 2017")
@@ -2106,7 +2088,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
@@ -2124,31 +2106,30 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DC and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue("2017", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue("2017")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2017",
-        "0",
         "850000000",
         "6 April 2016",
         "5 April 2017"
       )
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "0")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "0", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "0", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
 
@@ -2259,7 +2240,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -2286,22 +2267,21 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue("2016-pre", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue("2016-pre")
 
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-pre",
-        "0",
         "750000000",
         "6 April 2015",
         "8 July 2015"
       )
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
@@ -2311,7 +2291,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -2329,25 +2309,24 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue("2016-post", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue("2016-post")
 
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-post",
-        "0",
         "850000000",
         "9 July 2015",
         "5 April 2016"
       )
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
 
       /** --- 2017 --- */
       When("I click Add details for 2017 to 2017")
@@ -2356,7 +2335,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
@@ -2374,31 +2353,30 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue("2017", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue("2017")
 
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2017",
-        "0",
         "850000000",
         "6 April 2016",
         "5 April 2017"
       )
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "0")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "0", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "0", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
 
@@ -2508,7 +2486,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -2535,16 +2513,15 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-pre", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-pre")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-pre",
-        "0",
         "760000000",
         "6 April 2015",
         "8 July 2015"
@@ -2552,14 +2529,13 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-pre",
-        "0",
         "750000000",
         "6 April 2015",
         "8 July 2015"
       )
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
@@ -2569,7 +2545,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
 
@@ -2586,15 +2562,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-post",
-        "0",
         "860000000",
         "9 July 2015",
         "5 April 2016"
@@ -2603,17 +2578,16 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-post",
-        "0",
         "850000000",
         "9 July 2015",
         "5 April 2016"
       )
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
 
       /** --- 2017 --- */
       When("I click Add details for 2017 to 2017")
@@ -2622,7 +2596,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
@@ -2640,15 +2614,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2017", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2017")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2017",
-        "0",
         "850000000",
         "6 April 2016",
         "5 April 2017"
@@ -2657,23 +2630,22 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2017",
-        "0",
         "850000000",
         "6 April 2016",
         "5 April 2017"
       )
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "0")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "0", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "0", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
 
@@ -2787,7 +2759,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -2814,15 +2786,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-pre", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-pre")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-pre",
-        "0",
         "760000000",
         "6 April 2015",
         "8 July 2015"
@@ -2831,14 +2802,13 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-pre",
-        "0",
         "750000000",
         "6 April 2015",
         "8 July 2015"
       )
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
@@ -2848,7 +2818,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -2866,15 +2836,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-post",
-        "0",
         "860000000",
         "9 July 2015",
         "5 April 2016"
@@ -2883,17 +2852,16 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-post",
-        "0",
         "850000000",
         "9 July 2015",
         "5 April 2016"
       )
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
 
       /** --- 2017 --- */
       When("I click Add details for 2017 to 2017")
@@ -2902,7 +2870,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
 
@@ -2919,15 +2887,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2017", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2017")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2017",
-        "0",
         "160000000",
         "6 April 2016",
         "25 April 2016"
@@ -2936,7 +2903,6 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
       PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2017",
-        "0",
         "180000000",
         "26 April 2016",
         "5 April 2017"
@@ -2945,23 +2911,22 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2017",
-        "0",
         "120000000",
         "6 April 2016",
         "5 April 2017"
       )
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "0")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "0", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "0", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
 
@@ -3074,7 +3039,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -3101,15 +3066,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-pre", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-pre")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-pre",
-        "0",
         "360000000",
         "6 April 2015",
         "25 April 2015"
@@ -3118,7 +3082,6 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
       PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-pre",
-        "0",
         "180000000",
         "26 April 2015",
         "8 July 2015"
@@ -3127,14 +3090,13 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-pre",
-        "0",
         "750000000",
         "6 April 2015",
         "8 July 2015"
       )
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
@@ -3144,7 +3106,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -3162,15 +3124,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-post",
-        "0",
         "860000000",
         "9 July 2015",
         "5 April 2016"
@@ -3179,17 +3140,16 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-post",
-        "0",
         "850000000",
         "9 July 2015",
         "5 April 2016"
       )
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
 
       /** --- 2017 --- */
       When("I click Add details for 2017 to 2017")
@@ -3198,7 +3158,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
@@ -3216,15 +3176,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2017", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2017")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2017",
-        "0",
         "160000000",
         "6 April 2016",
         "5 April 2017"
@@ -3232,22 +3191,21 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2017",
-        "0",
         "120000000",
         "6 April 2016",
         "5 April 2017"
       )
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "0")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "0", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "0", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
 
@@ -3358,9 +3316,8 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify 2016 pre page and click continue")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
 
-      /** page url needs to finalize, Add this to check your answers page */
       Then("I verify member-more-than-one-pension page,select Yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
@@ -3386,15 +3343,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-pre", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-pre")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-pre",
-        "0",
         "360000000",
         "6 April 2015",
         "8 July 2015"
@@ -3402,7 +3358,6 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-pre",
-        "0",
         "750000000",
         "6 April 2015",
         "8 July 2015"
@@ -3419,7 +3374,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
@@ -3437,15 +3392,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-post",
-        "0",
         "860000000",
         "9 July 2015",
         "19 October 2015"
@@ -3454,7 +3408,6 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
       PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-post",
-        "0",
         "180000000",
         "20 October 2015",
         "5 April 2016"
@@ -3463,14 +3416,13 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2016-post",
-        "0",
         "850000000",
         "9 July 2015",
         "5 April 2016"
       )
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "0", "400000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
@@ -3482,7 +3434,7 @@ class AnnualAllowanceUserJourney extends BaseSpec {
 
       /** page url needs to finalize */
       Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
@@ -3500,15 +3452,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017", "0")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichContributedDuringRemedyPeriodPage, select DB & DC both and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2017", "0")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2017")
 
       When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2017",
-        "0",
         "160000000",
         "6 April 2016",
         "5 April 2017"
@@ -3517,20 +3468,19 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       When("I verify PiaForDbPensionPage, input amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "2017",
-        "0",
         "120000000",
         "6 April 2016",
         "5 April 2017"
       )
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017", "0")
+      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
 
       When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "0", "550000000")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2016", "2017", "2017", "550000000")
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "0", "430000000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2016", "2017", "2017", "430000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
