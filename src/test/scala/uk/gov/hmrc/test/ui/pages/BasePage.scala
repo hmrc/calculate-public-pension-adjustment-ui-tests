@@ -225,6 +225,19 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     submitPage()
   }
 
+  def selectYesAndContinueForGSPage(option: String) =
+    option match {
+      case "true"  =>
+        selectYesOption()
+        checkYourAnswersGSMap(getHeader(), selectedOption())
+        submitPage()
+      case "false" =>
+        selectNoOption()
+        checkYourAnswersGSMap(getHeader(), selectedOption())
+        submitPage()
+      case _       => fail("No data found")
+    }
+
   def selectNoAndContinueForGSPage() = {
     selectNoOption()
     checkYourAnswersGSMap(getHeader(), selectedOption())

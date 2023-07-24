@@ -44,8 +44,6 @@ object ReportingChangePage extends BasePage {
       driver.findElement(By.id("value_0")).click()
     } else if (driver.findElement(By.id("value_1")).isSelected) {
       driver.findElement(By.id("value_1")).click()
-    } else if (driver.findElement(By.id("value_2")).isSelected) {
-      driver.findElement(By.id("value_2")).click()
     }
 
   def onReportingChangePage() = {
@@ -89,10 +87,8 @@ object ReportingChangePage extends BasePage {
     if (driver.findElement(By.id("value_1")).isSelected) {
       selectedOptions += "Lifetime allowance"
     }
-    if (driver.findElement(By.id("value_2")).isSelected) {
-      selectedOptions += "Other compensation"
-    }
-    val resultString: String                = selectedOptions.mkString(", ")
+
+    val resultString: String = selectedOptions.mkString(", ")
     checkYourAnswersGSMap(REPORTING_CHANGE_PAGE_HEADER, resultString)
     submitPage()
   }
