@@ -16,17 +16,23 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2013_PAGE_HEADER, PIA_PRE_REMEDY_2013_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2012_PAGE_HEADER, PIA_PRE_REMEDY_2012_PAGE_TITLE}
 
 object PiaPreRemedyPage2013 extends BasePage {
-  def onPiaPreRemedyPage2013Page() = {
-    verifyPageUrl("pia-pre-remedy/2014")
-    onPage(PIA_PRE_REMEDY_2013_PAGE_TITLE)
-    isHeader(PIA_PRE_REMEDY_2013_PAGE_HEADER)
+  def onPiaPreRemedyPage2012Page() = {
+    verifyPageUrl("pia-pre-remedy/2013")
+    onPage(PIA_PRE_REMEDY_2012_PAGE_TITLE)
+    isHeader(PIA_PRE_REMEDY_2012_PAGE_HEADER)
   }
 
   def enterAmountAndClickContinue() = {
-    enterAmount("200000000")
+    enterAmount("100000000")
+    checkYourAnswersAASMap(getHeader(), getEnteredAmount())
+    submitPage()
+  }
+
+  def enterAmountAndClickContinue(amount: String) = {
+    enterAmount(amount)
     checkYourAnswersAASMap(getHeader(), getEnteredAmount())
     submitPage()
   }

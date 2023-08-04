@@ -20,8 +20,10 @@ import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER, WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.pages.WhichContributedDuringRemedyPeriodPage.{checkYourAnswersAAPeriodMap, getHeader}
 
 object WhichYearsScottishTaxpayer extends BasePage {
+  var taxYears = ""
   def onWhichYearsScottishTaxpayerPage() = {
     verifyPageUrl("which-years-scottish-taxpayer")
     onPage(WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE)
@@ -41,4 +43,23 @@ object WhichYearsScottishTaxpayer extends BasePage {
         .getText
         .contains(Errors.WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_ERROR_SUMMARY)
     )
+  def selectScottishTaxPayerYear(year: String) = {
+    driver
+      .findElement(
+        By.xpath(
+          "//div[@class='govuk-checkboxes__item']//label[contains(text(),'to " + year + "')]//preceding-sibling::input"
+        )
+      )
+      .click()
+    val fullText = driver
+      .findElement(By.xpath("//div[@class='govuk-checkboxes__item']//label[contains(text(),'to " + year + "')]"))
+      .getText
+      .trim
+    if (taxYears.nonEmpty) {
+      taxYears = taxYears + "," + fullText
+    } else {
+      taxYears = fullText
+    }
+    checkYourAnswersAAPeriodMap(getHeader(), taxYears)
+  }
 }

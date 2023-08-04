@@ -131,6 +131,16 @@ object WhenFlexiblyAccessPensionPage extends BasePage {
     submitPage()
   }
 
+  def enterDateAndClickContinue(dateinFull: String) = {
+    val (year, month, date) = parseDate(dateinFull)
+    clearDate()
+    enterDay(date.toString)
+    enterMonth(month.toString)
+    enterYear(year.toString)
+    checkYourAnswersAASMap(getHeader(), getDate())
+    submitPage()
+  }
+
   def enterAPreRemedyDateAndClickContinue() = {
     clearDate()
     enterDay("05")

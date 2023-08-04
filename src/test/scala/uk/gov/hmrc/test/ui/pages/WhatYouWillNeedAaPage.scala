@@ -44,6 +44,9 @@ object WhatYouWillNeedAaPage extends BasePage {
   val YEAR_2022_PAGE_TITLE       =
     "6 April 2021 to 5 April 2022 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
   val YEAR_2022_PAGE_HEADER      = "6 April 2021 to 5 April 2022 remedy period"
+  val YEAR_2023_PAGE_TITLE       =
+    "6 April 2022 to 5 April 2023 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+  val YEAR_2023_PAGE_HEADER      = "6 April 2022 to 5 April 2023 remedy period"
 
   def onWhatYouWillNeedAa2016PrePage() = {
     verifyPageUrl("what-you-will-need-aa/2016-pre")
@@ -98,6 +101,13 @@ object WhatYouWillNeedAaPage extends BasePage {
     verifyPageUrl("what-you-will-need-aa/2022")
     onPage(YEAR_2022_PAGE_TITLE)
     isHeader(YEAR_2022_PAGE_HEADER)
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
+    clickContinueButton()
+  }
+  def onWhatYouWillNeedAa2023Page() = {
+    verifyPageUrl("what-you-will-need-aa/2023")
+    onPage(YEAR_2023_PAGE_TITLE)
+    isHeader(YEAR_2023_PAGE_HEADER)
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     clickContinueButton()
   }

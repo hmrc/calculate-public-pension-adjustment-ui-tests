@@ -225,7 +225,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     submitPage()
   }
 
-  def selectYesAndContinueForGSPage(option: String) =
+  def selectOptionAndContinueForGSPage(option: String) =
     option match {
       case "true"  =>
         selectYesOption()
@@ -318,6 +318,16 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     val currentMonth    = currentDateTime.getMonthValue
     val currentYear     = currentDateTime.getYear
     (currentMonth, currentDate, currentYear)
+  }
+
+  def parseDate(inputDate: String): (Int, Int, Int) = {
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val localDate = LocalDate.parse(inputDate, formatter)
+    val year      = localDate.getYear
+    val month     = localDate.getMonthValue
+    val day       = localDate.getDayOfMonth
+
+    (year, month, day)
   }
 
   def enterAmount(amount: String) =
