@@ -396,22 +396,22 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       PayTaxChargeFrom20152016Page.selectNoAndContinueForAASPage()
 
       Then("I Should see the pia-pre-remedy/2012 page")
-      PiaPreRemedyPage2012.onPiaPreRemedyPage2012Page()
+      PiaPreRemedyPage2013.onPiaPreRemedyPage2012Page()
 
       When("I enter amount for 2012-2013 and click continue")
-      PiaPreRemedyPage2012.enterAmountAndClickContinue()
-
-      Then("I Should see the pia-pre-remedy/2013 page")
-      PiaPreRemedyPage2013.onPiaPreRemedyPage2013Page()
-
-      When("I enter amount for 2013-2014 and click continue")
       PiaPreRemedyPage2013.enterAmountAndClickContinue()
 
+      Then("I Should see the pia-pre-remedy/2013 page")
+      PiaPreRemedyPage2014.onPiaPreRemedyPage2013Page()
+
+      When("I enter amount for 2013-2014 and click continue")
+      PiaPreRemedyPage2014.enterAmountAndClickContinue()
+
       Then("I Should see the pia-pre-remedy/2014 page")
-      PiaPreRemedyPage2014.onPiaPreRemedyPage2014Page()
+      PiaPreRemedyPage2015.onPiaPreRemedyPage2014Page()
 
       When("I enter amount for 2014-2015 and click continue")
-      PiaPreRemedyPage2014.enterAmountAndClickContinue()
+      PiaPreRemedyPage2015.enterAmountAndClickContinue()
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
@@ -560,13 +560,14 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
+
+
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
       TaskListPage.clickAddDetailsFor9JulyTo8July2016()
 
       Then("I verify WhatYouWillNeedAaPage with the remedy period")
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
-
       Then("I verify member-more-than-one-pension page")
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 

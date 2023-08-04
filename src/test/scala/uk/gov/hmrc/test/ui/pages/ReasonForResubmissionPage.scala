@@ -78,6 +78,12 @@ object ReasonForResubmissionPage extends BasePage {
     submitPage()
   }
 
+  def enterReasonAndContinue(reason: String) = {
+    enterResubmissionReason(reason)
+    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_HEADER, reason)
+    submitPage()
+  }
+
   def enterLengthierReasonAndContinue(reason: String) = {
     enterResubmissionReason(reason)
     checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_HEADER, reason)
