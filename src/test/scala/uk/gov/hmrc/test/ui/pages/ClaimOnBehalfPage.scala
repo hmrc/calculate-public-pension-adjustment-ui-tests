@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.dto.bussinessResponse
+package uk.gov.hmrc.test.ui.pages
 
-import play.api.libs.json.JsResult
-import uk.gov.hmrc.test.ui.dto.bussinessRequest.{RequestDTO, TaxYear}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
 
-class ResponseDTOUtil {
-  def getOutDatesInformation(year: String, field: OutDate => Option[Any], myObject: JsResult[ResponseDTO]): Any =
-    myObject.asOpt
-      .flatMap(_.outDates.find(_.period == year))
-      .flatMap(field)
-      .getOrElse("0")
-
+object ClaimOnBehalfPage extends BasePage {
+  def verifyClaimOnBehalfPage() = {
+    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
+    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
+  }
+  def verifyPageSelectYesAndContinue() = {
+    verifyClaimOnBehalfPage()
+    selectYesOption()
+    submitPage()
+  }
+  def verifyPageSelectNoAndContinue() = {
+    verifyClaimOnBehalfPage()
+    selectNoOption()
+    submitPage()
+  }
 }

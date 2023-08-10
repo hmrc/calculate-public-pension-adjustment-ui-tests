@@ -560,8 +560,6 @@ class AnnualAllowanceUserJourney extends BaseSpec {
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
-
-
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
       TaskListPage.clickAddDetailsFor9JulyTo8July2016()

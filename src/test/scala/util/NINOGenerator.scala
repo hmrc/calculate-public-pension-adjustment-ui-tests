@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.dto.bussinessResponse
+package util
 
-import play.api.libs.json.JsResult
-import uk.gov.hmrc.test.ui.dto.bussinessRequest.{RequestDTO, TaxYear}
+import scala.util.Random
 
-class ResponseDTOUtil {
-  def getOutDatesInformation(year: String, field: OutDate => Option[Any], myObject: JsResult[ResponseDTO]): Any =
-    myObject.asOpt
-      .flatMap(_.outDates.find(_.period == year))
-      .flatMap(field)
-      .getOrElse("0")
-
+object NINOGenerator {
+  val nino = {
+    val firstTwoLetters = "ABCEHJKLMPRSTWXY"
+    val letterPart      = Random.shuffle(firstTwoLetters.toList).take(2).mkString
+    val numberPart      = Random.nextInt(999999).toString.reverse.padTo(6, '0').reverse
+    val lastLetters     = "ABCD"
+    val lastLetterPart  = Random.shuffle(lastLetters.toList).take(1).mkString
+    s"$letterPart$numberPart$lastLetterPart"
+  }
 }

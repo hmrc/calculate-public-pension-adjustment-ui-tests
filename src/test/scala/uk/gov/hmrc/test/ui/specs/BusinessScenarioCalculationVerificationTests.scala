@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import com.google.common.io.Files
 import play.api.libs.json.{JsValue, Json}
 import uk.gov.hmrc.test.ui.dto.bussinessRequest.{RequestDTO, RequestDTOUtil, TaxYear, TaxYearSchemes}
 import uk.gov.hmrc.test.ui.dto.bussinessResponse.{OutDate, ResponseDTO, ResponseDTOUtil}
@@ -23,20 +24,27 @@ import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.DateUtil
+import java.io.File
 
-class BusinessScenarioAAJourneyTest extends BaseSpec {
+class BusinessScenarioCalculationVerificationTests extends BaseSpec {
 
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
       Array(
-        "Scenario_MultipleSchemeCredit2"
-        /*"Scenario_MultipleSchemeDebit",
-        "Scenario_SingleSchemeDebit",
-        "Scenario_MultipleSchemeCredit",
-        "Scenario_SingleSchemeCredit",
-        "Scenario_MultipleSchemeDebit2",
-        "Scenario_MultipleSchemeCredit2"
-         */
+        "Scenario_1a",
+        "Scenario_1b",
+        "Scenario_1c",
+        "Scenario_1d",
+        "Scenario_2a",
+        "Scenario_2b",
+        "Scenario_2c",
+        "Scenario_2d",
+        "Scenario_11",
+        "Scenario_12",
+        "Scenario_14",
+        "Scenario_16",
+        "Scenario_17",
+        "Scenario_18"
       )
     requestArray.indices.foreach { index =>
       Scenario(s"Calculate Business Journey $index", ZapTests) {
@@ -126,11 +134,9 @@ class BusinessScenarioAAJourneyTest extends BaseSpec {
 
         /** Retrieve response information */
 
-        val responseStream =
+        val responseStream                    =
           getClass.getResourceAsStream(
-            "/businessCases/response/Scenario_2a_Response.json"
-
-            //"/businessCases/response/" + requestArray(index) + "_Response.json"
+            "/businessCases/response/" + requestArray(index) + "_Response.json"
           )
         val jsonResponseString                = scala.io.Source.fromInputStream(responseStream).mkString
         val jsonResponse: JsValue             = Json.parse(jsonResponseString)
@@ -902,10 +908,113 @@ class BusinessScenarioAAJourneyTest extends BaseSpec {
             }
         }
         TaskListPage.clickCalculateButton()
-        CalculationResultPage.clickContinueSignIn()
-        AuthorityWizardPage.authorizedLoginUser()
-        When("I verify ClaimOnBehalfPage, select no and click continue button")
-        ClaimOnBehalfPage.verifyPageSelectNoAndContinue()
+
+        /** TaskList verification */
+        val outDatesCompensation = responseDTOResult.asOpt.map(_.totalAmounts.outDatesCompensation).getOrElse(0)
+        val inDatesDebit         = responseDTOResult.asOpt.map(_.totalAmounts.inDatesDebit).getOrElse(0)
+        val inDatesCredit        = responseDTOResult.asOpt.map(_.totalAmounts.inDatesCredit).getOrElse(0)
+
+        assert(CalculationResultPage.getTotCompensation() == outDatesCompensation)
+        assert(CalculationResultPage.getIncreasedTaxCharges() == inDatesDebit)
+        assert(CalculationResultPage.getDecreasedTaxCharges() == inDatesCredit)
+
+        val responseTaxYears: Option[List[OutDate]] = responseDTOResult.asOpt.map(_.outDates)
+        responseTaxYears match {
+          case Some(filteredTaxYears) =>
+            filteredTaxYears.foreach { taxYear =>
+              val chargePaidBySchemes                 =
+                myResponseObject
+                  .getOutDatesInformation(taxYear.period, _.chargePaidBySchemes, responseDTOResult)
+                  .toString
+              val chargePaidByMember                  =
+                myResponseObject
+                  .getOutDatesInformation(taxYear.period, _.chargePaidByMember, responseDTOResult)
+                  .toString
+              val revisedChargableAmountAfterTaxRate  =
+                myResponseObject
+                  .getOutDatesInformation(taxYear.period, _.revisedChargableAmountAfterTaxRate, responseDTOResult)
+                  .toString
+              val revisedChargableAmountBeforeTaxRate =
+                myResponseObject
+                  .getOutDatesInformation(taxYear.period, _.revisedChargableAmountBeforeTaxRate, responseDTOResult)
+                  .toString
+              val directCompensation                  =
+                myResponseObject
+                  .getOutDatesInformation(taxYear.period, _.directCompensation, responseDTOResult)
+                  .toString
+              val indirectCompensation                =
+                myResponseObject
+                  .getOutDatesInformation(taxYear.period, _.indirectCompensation, responseDTOResult)
+                  .toString
+              val unusedAnnualAllowance               =
+                myResponseObject
+                  .getOutDatesInformation(taxYear.period, _.unusedAnnualAllowance, responseDTOResult)
+                  .toString
+              assert(
+                CalculationResultPage
+                  .getTaskListtaxYearInformation(
+                    taxYear.period,
+                    "Previous annual allowance tax charge amount that you paid"
+                  )
+                  .getOrElse(0) == chargePaidByMember.toInt,
+                taxYear.period + " chargePaidByMember is different"
+              )
+              assert(
+                CalculationResultPage
+                  .getTaskListtaxYearInformation(
+                    taxYear.period,
+                    "Previous annual allowance tax charge amount paid by your scheme"
+                  )
+                  .getOrElse(0) == chargePaidBySchemes.toInt,
+                taxYear.period + " chargePaidBySchemes is different"
+              )
+              assert(
+                CalculationResultPage
+                  .getTaskListtaxYearInformation(
+                    taxYear.period,
+                    "Updated annual allowance tax charge amount"
+                  )
+                  .getOrElse(0) == revisedChargableAmountAfterTaxRate.toInt,
+                taxYear.period + " revisedChargableAmountAfterTaxRate is different"
+              )
+              assert(
+                CalculationResultPage
+                  .getTaskListtaxYearInformation(
+                    taxYear.period,
+                    "Updated amount on which tax is due"
+                  )
+                  .getOrElse(0) == revisedChargableAmountBeforeTaxRate.toInt,
+                taxYear.period + " revisedChargableAmountBeforeTaxRate is different"
+              )
+              assert(
+                CalculationResultPage
+                  .getTaskListtaxYearInformation(
+                    taxYear.period,
+                    "Amount of compensation that will be paid to you"
+                  )
+                  .getOrElse(0) == directCompensation.toInt,
+                taxYear.period + " directCompensation is different"
+              )
+              assert(
+                CalculationResultPage
+                  .getTaskListtaxYearInformation(
+                    taxYear.period,
+                    "Amount of compensation that will be paid as an increase to your scheme benefits"
+                  )
+                  .getOrElse(0) == indirectCompensation.toInt,
+                taxYear.period + " indirectCompensation is different"
+              )
+              assert(
+                CalculationResultPage
+                  .getTaskListtaxYearInformation(
+                    taxYear.period,
+                    "Unused annual allowance"
+                  )
+                  .getOrElse(0) == unusedAnnualAllowance.toInt,
+                taxYear.period + " unusedAnnualAllowance is different"
+              )
+            }
+        }
         signOutPage()
       }
     }

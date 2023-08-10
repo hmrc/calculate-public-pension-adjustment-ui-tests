@@ -205,4 +205,9 @@ object PageInformation {
     "Which have you contributed to during the remedy period? - Calculate Public Pension Adjustment service - GOV.UK"
   val WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER =
     "Which have you contributed to during the remedy period?"
+  val CLAIM_ON_BEHALF_PAGE_TITLE                         =
+    "Are you making a claim on behalf of a member for whom you have a lasting power of attorney or deputyship? - Submit Public Pension Adjustment service - GOV.UK"
+  val CLAIM_ON_BEHALF_PAGE_HEADER                        =
+    "Are you making a claim on behalf of a member for whom you have a lasting power of attorney or deputyship?"
+
 }
