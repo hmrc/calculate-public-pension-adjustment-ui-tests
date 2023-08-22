@@ -17,24 +17,23 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import util.NINOGenerator
+import uk.gov.hmrc.test.ui.constants.PageInformation.{TAX_RELIEF_AMOUNT_PAGE_HEADER, TAX_RELIEF_AMOUNT_PAGE_TITLE}
 
-object AuthorityWizardPage extends BasePage {
+object TaxReliefAmountPage extends BasePage {
 
-  val authUrl: String = TestConfiguration.url("auth-frontend")
-
-  def authorizedLoginUser(): Unit = {
-    driver.get(driver.getCurrentUrl)
-    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.nino)
-    selectConfidenceLevel("250")
-    driver.findElement(By.id("submit-top")).submit()
+  val taxReliefAmount = "230000000"
+  def verifyTaxReliefAmountPage() = {
+    verifyPageUrl("tax-relief-amount")
+    onPage(TAX_RELIEF_AMOUNT_PAGE_TITLE)
+    isHeader(TAX_RELIEF_AMOUNT_PAGE_HEADER)
   }
 
-  def selectConfidenceLevel(confidenceLevel: String) = {
-    val selectElement = driver.findElement(By.id("confidenceLevel"))
-    val dropdown      = new Select(selectElement)
-    dropdown.selectByValue(confidenceLevel)
+  def enterTaxReliefAmount() = driver.findElement(By.id("value")).sendKeys(taxReliefAmount)
+
+  def verifyPageEnterTaxReliefAndContinue() = {
+    verifyTaxReliefAmountPage()
+    enterTaxReliefAmount()
+    checkYourAnswersCalculationsMap(getHeader(), taxReliefAmount)
+    submitPage()
   }
 }

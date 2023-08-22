@@ -16,19 +16,22 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{DECLARATION_PAGE_HEADER, DECLARATION_PAGE_TITLE}
 
-object ClaimOnBehalfPage extends BasePage {
-  def verifyClaimOnBehalfPage() = {
-    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
-    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
+object DeclarationsPage extends BasePage {
+  def verifyDeclarationsPage() = {
+    verifyPageUrl("declarations")
+    onPage(DECLARATION_PAGE_TITLE)
+    isHeader(DECLARATION_PAGE_HEADER)
   }
-  def verifyPageSelectYesAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectYesAndContinueCalculationsPage()
+
+  def clickConfirmButton() = driver.findElement(By.xpath("//a[contains(text(),'Confirm')]")).click()
+
+  /** remove navigation to url */
+  def verifyPageAndConfirm() = {
+    verifyDeclarationsPage()
+    clickConfirmButton()
   }
-  def verifyPageSelectNoAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectNoAndContinueCalculationsPage()
-  }
+
 }

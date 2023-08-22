@@ -14,11 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.specs.BaseSpec
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{STATUS_OF_USER_PAGE_HEADER, STATUS_OF_USER_PAGE_TITLE}
 
-class AdminUserJourney extends BaseSpec {
-
-  Feature("Calculate public pension adjustment Admin user journey") {}
+object StatusOfUserPage extends BasePage {
+  def verifyStatusOfUserPage() = {
+    onPage(STATUS_OF_USER_PAGE_TITLE)
+    isHeader(STATUS_OF_USER_PAGE_HEADER)
+  }
+  def selectDeputyship() = driver.findElement(By.id("value_0")).click()
+  def verifyPageSelectDeputyshipAndContinue() = {
+    verifyStatusOfUserPage()
+    selectDeputyship()
+    checkYourAnswersCalculationsMap(getHeader(), getCheckedOptions())
+    submitPage()
+  }
 }

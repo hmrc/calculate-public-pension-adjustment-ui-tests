@@ -38,6 +38,7 @@ object HomePage extends BasePage {
     DataCollectorMap.checkAnswersGS.clear()
     DataCollectorMap.checkAnswersAAS.clear()
     DataCollectorMap.checkAnswersLAS = List.empty[(String, Any)]
+    DataCollectorMap.checkAnswersCalculationsPage = List.empty[(String, Any)]
     loadPage()
     onPage(HOME_PAGE_TITLE)
     isHeader(HOME_PAGE_HEADER)

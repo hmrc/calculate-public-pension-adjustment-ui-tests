@@ -1,14 +1,34 @@
+/*
+ * Copyright 2023 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package uk.gov.hmrc.test.ui.specs
 
-import play.api.libs.json.{JsValue, Json}
+import org.openqa.selenium.WebElement
+import play.api.libs.json.{JsError, JsSuccess, JsValue, Json}
 import uk.gov.hmrc.test.ui.dto.bussinessRequest.{RequestDTO, RequestDTOUtil, TaxYear, TaxYearSchemes}
 import uk.gov.hmrc.test.ui.dto.bussinessResponse.{ResponseDTO, ResponseDTOUtil}
-import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import util.DateUtil
 
+import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
+import scala.jdk.CollectionConverters.CollectionHasAsScala
+
 class CommonCalculationJourney extends BaseSpec {
-  def createCalculationJourney(fileName: String) = {
+  def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
     /*"Scenario_MultipleSchemeDebit",
         "Scenario_SingleSchemeDebit",
         "Scenario_MultipleSchemeCredit",
@@ -18,13 +38,25 @@ class CommonCalculationJourney extends BaseSpec {
      */
 
     /** Retrieve request information */
-    val requestStream    =
+    val requestStream                           =
       getClass.getResourceAsStream(
         "/businessCases/request/" + fileName + "_Request.json"
       )
-    val jsonString       = scala.io.Source.fromInputStream(requestStream).mkString
-    val json: JsValue    = Json.parse(jsonString)
-    val requestDTOResult = Json.fromJson[RequestDTO](json)
+    val jsonString                              = scala.io.Source.fromInputStream(requestStream).mkString
+    val json: JsValue                           = Json.parse(jsonString)
+    val requestDTOResult                        = Json.fromJson[RequestDTO](json)
+    val mutableMap: mutable.Map[String, String] = mutable.Map.empty
+    requestDTOResult match {
+      case JsSuccess(requestDTO, _) =>
+        val allTaxYearSchemes: List[TaxYearSchemes] =
+          requestDTO.annualAllowance.taxYears.flatMap(_.taxYearSchemes.getOrElse(List.empty))
+        allTaxYearSchemes.foreach { scheme =>
+          mutableMap += scheme.name -> scheme.pensionSchemeTaxReference
+        }
+
+      case JsError(errors) =>
+        println(s"Failed to parse JSON: $errors")
+    }
 
     /** Outer Json common fields */
     val isResubmission                             = requestDTOResult.asOpt.map(_.resubmission.isResubmission)
@@ -33,6 +65,15 @@ class CommonCalculationJourney extends BaseSpec {
     val scottishTaxYears: Option[List[String]]     = requestDTOResult.asOpt.map(_.annualAllowance.scottishTaxYears)
     val filteredTaxYearsOpt: Option[List[TaxYear]] = taxYears.map(_.filter(_.period >= "2017"))
     val taxYearsBefore2016                         = taxYears.map(_.filter(_.period <= "2015"))
+    val inDatesYearsList: Option[List[TaxYear]]    = taxYears.map(_.filter(_.period >= "2020"))
+    val inDatesYears: ArrayBuffer[Int]             = ArrayBuffer()
+
+    inDatesYearsList match {
+      case Some(filteredTaxYears) =>
+        filteredTaxYears.foreach { taxYear =>
+          inDatesYears += taxYear.period.toInt
+        }
+    }
 
     val lastPeriodOpt: String = filteredTaxYearsOpt
       .flatMap { filteredTaxYears =>
@@ -92,13 +133,11 @@ class CommonCalculationJourney extends BaseSpec {
       myObject.getTaxYearInformation("2016-post", _.totalIncome, requestDTOResult).toString
 
     val postYear                     = "2016-post"
-    val postFromDate                 = "9 July 2015"
-    val postToDate                   = "5 April 2016"
     val post2016FlexiAccessDate      =
       myObject.getTaxYearInformation(postYear, _.flexiAccessDate, requestDTOResult).toString
     val incomeAboveThresholdpost2016 =
       myObject.getIncomeDetails(postYear, _.incomeAboveThreshold, requestDTOResult).toString
-    var adjustedIncome2016post       = myObject.getIncomeDetails(postYear, _.adjustedIncome, requestDTOResult).toString
+    val adjustedIncome2016post       = myObject.getIncomeDetails(postYear, _.adjustedIncome, requestDTOResult).toString
 
     /** Retrieve response information */
 
@@ -108,10 +147,7 @@ class CommonCalculationJourney extends BaseSpec {
 
         //"/businessCases/response/" + requestArray(index) + "_Response.json"
       )
-    val jsonResponseString                = scala.io.Source.fromInputStream(responseStream).mkString
-    val jsonResponse: JsValue             = Json.parse(jsonResponseString)
-    val responseDTOResult                 = Json.fromJson[ResponseDTO](jsonResponse)
-    val myResponseObject: ResponseDTOUtil = new ResponseDTOUtil()
+    val jsonResponseString = scala.io.Source.fromInputStream(responseStream).mkString
     println(" File name : " + fileName)
 
     /** Test */
@@ -687,87 +723,171 @@ class CommonCalculationJourney extends BaseSpec {
             MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue(year.toString)
           }
           taxYear.taxYearSchemes.foreach { taxYearSchemesList =>
-            for ((taxYearScheme, index) <- taxYearSchemesList.zipWithIndex) {
-              var paidByScheme: Int = taxYearScheme.chargePaidByScheme
-              WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue(
-                year.toString,
-                index.toString,
-                taxYearScheme.name,
-                taxYearScheme.pensionSchemeTaxReference
-              )
-              PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
-                year.toString,
-                index.toString,
-                taxYearScheme.originalPensionInputAmount.toString,
-                taxYearScheme.revisedPensionInputAmount.toString,
-                taxYearScheme.name
-              )
-              if (paidByScheme == 0 && chargePaidByMember == 0) {
-                DidYouPayAChargePage.verifyPageSelectNoAndContinue(year.toString, index.toString)
+            for ((taxYearScheme, index) <- taxYearSchemesList.zipWithIndex)
+              if (!(WhichSchemeDetailsPage.isSchemeAvailable(taxYearScheme.pensionSchemeTaxReference))) {
+                var chargePaidByScheme = taxYearScheme.chargePaidByScheme
+                WhichSchemeDetailsPage.verifyPageSelectNewSchemeAndContinue(year.toString, index.toString)
+                PensionSchemeDetailsPage.enterTaxInformationAndContinue(
+                  year.toString,
+                  index.toString,
+                  taxYearScheme.name,
+                  taxYearScheme.pensionSchemeTaxReference
+                )
+                PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
+                  year.toString,
+                  index.toString,
+                  taxYearScheme.originalPensionInputAmount.toString,
+                  taxYearScheme.revisedPensionInputAmount.toString,
+                  taxYearScheme.name.toString
+                )
+                if (chargePaidByScheme == 0 && chargePaidByMember2016pre.toInt == 0) {
+                  DidYouPayAChargePage.verifyPageSelectNoAndContinue(year.toString, index.toString)
+                } else {
+                  DidYouPayAChargePage.verifyPageSelectYesAndContinue(year.toString, index.toString)
+                  if (chargePaidByScheme > 0 && chargePaidByMember2016pre.toInt > 0) {
+                    WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+                      year.toString,
+                      index.toString,
+                      taxPeriod
+                    )
+                    HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      chargePaidByMember2016pre
+                    )
+                    chargePaidByMember2016pre = "0"
+
+                    HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      taxYearScheme.chargePaidByScheme.toString
+                    )
+                    chargePaidByScheme = 0
+                  }
+                  if (chargePaidByScheme > 0 && chargePaidByMember2016post.toInt == 0 && index < 1) {
+                    WhoPaidAnnualAllowanceChargePage.verifyPageSelectPensionSchemeAndContinue(
+                      year.toString,
+                      index.toString,
+                      taxPeriod
+                    )
+                    HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      chargePaidByScheme.toString
+                    )
+                    chargePaidByScheme = 0
+                  }
+                  if (chargePaidByScheme > 0 && chargePaidByMember2016post.toInt == 0 && index >= 1) {
+                    HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      chargePaidByScheme.toString
+                    )
+                    chargePaidByScheme = 0
+                  }
+                  if (chargePaidByScheme == 0 && chargePaidByMember2016post.toInt > 0) {
+                    WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue(
+                      year.toString,
+                      index.toString,
+                      taxPeriod
+                    )
+                    HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue(
+                      year.toString,
+                      "0",
+                      chargePaidByMember2016pre
+                    )
+                    chargePaidByMember2016pre = "0"
+                  }
+                }
+                if ((taxYearSchemesList.size > 1) && (index == taxYearSchemesList.size - 1)) {
+                  AddAnotherSchemePage.verifyPageSelectNoAndContinue(year.toString, index.toString)
+                } else {
+                  if (!(taxYearSchemesList.size == 1)) {
+                    AddAnotherSchemePage.verifyPageSelectYesAndContinue(year.toString, index.toString)
+                  }
+                }
               } else {
-                DidYouPayAChargePage.verifyPageSelectYesAndContinue(year.toString, index.toString)
-                if (paidByScheme > 0 && chargePaidByMember.toString.toInt > 0) {
-                  WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
-                    year.toString,
-                    index.toString,
-                    taxPeriod
-                  )
-                  HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue(
-                    year.toString,
-                    index.toString,
-                    chargePaidByMember.toString
-                  )
-                  chargePaidByMember = 0
-                  HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                    year.toString,
-                    index.toString,
-                    paidByScheme.toString
-                  )
-                  paidByScheme = 0
+
+                var paidByScheme: Int = taxYearScheme.chargePaidByScheme
+                WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue(
+                  year.toString,
+                  index.toString,
+                  taxYearScheme.name,
+                  taxYearScheme.pensionSchemeTaxReference
+                )
+                PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
+                  year.toString,
+                  index.toString,
+                  taxYearScheme.originalPensionInputAmount.toString,
+                  taxYearScheme.revisedPensionInputAmount.toString,
+                  taxYearScheme.name
+                )
+                if (paidByScheme == 0 && chargePaidByMember == 0) {
+                  DidYouPayAChargePage.verifyPageSelectNoAndContinue(year.toString, index.toString)
+                } else {
+                  DidYouPayAChargePage.verifyPageSelectYesAndContinue(year.toString, index.toString)
+                  if (paidByScheme > 0 && chargePaidByMember.toString.toInt > 0) {
+                    WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+                      year.toString,
+                      index.toString,
+                      taxPeriod
+                    )
+                    HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      chargePaidByMember.toString
+                    )
+                    chargePaidByMember = 0
+                    HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      paidByScheme.toString
+                    )
+                    paidByScheme = 0
+                  }
+                  if (paidByScheme > 0 && chargePaidByMember == 0 && index < 1) {
+                    WhoPaidAnnualAllowanceChargePage.verifyPageSelectPensionSchemeAndContinue(
+                      year.toString,
+                      index.toString,
+                      taxPeriod
+                    )
+                    HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      paidByScheme.toString
+                    )
+                    paidByScheme = 0
+                  }
+                  if (paidByScheme > 0 && chargePaidByMember == 0 && index >= 1) {
+                    HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      paidByScheme.toString
+                    )
+                    paidByScheme = 0
+                  }
+                  if (paidByScheme == 0 && chargePaidByMember.toString.toInt > 0) {
+                    WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue(
+                      year.toString,
+                      index.toString,
+                      taxPeriod
+                    )
+                    HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue(
+                      year.toString,
+                      index.toString,
+                      chargePaidByMember.toString
+                    )
+                    chargePaidByMember = 0
+                  }
                 }
-                if (paidByScheme > 0 && chargePaidByMember == 0 && index < 1) {
-                  WhoPaidAnnualAllowanceChargePage.verifyPageSelectPensionSchemeAndContinue(
-                    year.toString,
-                    index.toString,
-                    taxPeriod
-                  )
-                  HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                    year.toString,
-                    index.toString,
-                    paidByScheme.toString
-                  )
-                  paidByScheme = 0
-                }
-                if (paidByScheme > 0 && chargePaidByMember == 0 && index >= 1) {
-                  HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                    year.toString,
-                    index.toString,
-                    paidByScheme.toString
-                  )
-                  paidByScheme = 0
-                }
-                if (paidByScheme == 0 && chargePaidByMember.toString.toInt > 0) {
-                  WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue(
-                    year.toString,
-                    index.toString,
-                    taxPeriod
-                  )
-                  HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue(
-                    year.toString,
-                    index.toString,
-                    chargePaidByMember.toString
-                  )
-                  chargePaidByMember = 0
+                if ((taxYearSchemesList.size > 1) && (index == taxYearSchemesList.size - 1)) {
+                  AddAnotherSchemePage.verifyPageSelectNoAndContinue(year.toString, index.toString)
+                } else {
+                  if (!(taxYearSchemesList.size == 1)) {
+                    AddAnotherSchemePage.verifyPageSelectYesAndContinue(year.toString, index.toString)
+                  }
                 }
               }
-              if ((taxYearSchemesList.size > 1) && (index == taxYearSchemesList.size - 1)) {
-                AddAnotherSchemePage.verifyPageSelectNoAndContinue(year.toString, index.toString)
-              } else {
-                if (!(taxYearSchemesList.size == 1)) {
-                  AddAnotherSchemePage.verifyPageSelectYesAndContinue(year.toString, index.toString)
-                }
-              }
-            }
           }
           if ((flexiAccessDate == "0") && !(definedBenefitInputAmount == 0 && definedContributionInputAmount == 0)) {
             ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue(year.toString)
@@ -872,7 +992,13 @@ class CommonCalculationJourney extends BaseSpec {
         }
     }
     TaskListPage.clickCalculateButton()
+    val debitYearsList: java.util.List[WebElement] = CalculationResultPage.getDebitYears()
+    var debitYears: ArrayBuffer[Int]               = ArrayBuffer()
+    debitYearsList.asScala.foreach { webElement =>
+      debitYears += webElement.getText.split(" ").last.replaceAll("[^\\d]", "").toInt
+    }
     CalculationResultPage.clickContinueSignIn()
     AuthorityWizardPage.authorizedLoginUser()
+    (mutableMap, inDatesYears, debitYears)
   }
 }

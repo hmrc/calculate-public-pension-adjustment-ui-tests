@@ -16,19 +16,20 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_RESIDENCE_PAGE_HEADER, THEIR_RESIDENCE_PAGE_TITLE}
 
-object ClaimOnBehalfPage extends BasePage {
-  def verifyClaimOnBehalfPage() = {
-    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
-    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
+object TheirResidencePage extends BasePage {
+  def verifyTheirResidencePage() = {
+    verifyPageUrl("their-residence")
+    onPage(THEIR_RESIDENCE_PAGE_TITLE)
+    isHeader(THEIR_RESIDENCE_PAGE_HEADER)
   }
-  def verifyPageSelectYesAndContinue() = {
-    verifyClaimOnBehalfPage()
+  def verifyPageSelectYesAnContinue() = {
+    verifyTheirResidencePage()
     selectYesAndContinueCalculationsPage()
   }
-  def verifyPageSelectNoAndContinue() = {
-    verifyClaimOnBehalfPage()
+  def verifyPageSelectNoAnContinue() = {
+    verifyTheirResidencePage()
     selectNoAndContinueCalculationsPage()
   }
 }

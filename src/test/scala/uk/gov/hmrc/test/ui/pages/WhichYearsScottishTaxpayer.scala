@@ -20,7 +20,6 @@ import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER, WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.WhichContributedDuringRemedyPeriodPage.{checkYourAnswersAAPeriodMap, getHeader}
 
 object WhichYearsScottishTaxpayer extends BasePage {
   var taxYears = ""

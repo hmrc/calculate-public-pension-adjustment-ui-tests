@@ -146,6 +146,11 @@ object CalculationResultPage extends BasePage {
   }
   def clickContinueSignIn()                                             = driver.findElement(By.xpath("//button[contains(text(),'Continue to sign in')]")).click()
 
+  def getDebitYears() = driver.findElements(
+    By.xpath(
+      "//table//th[contains(text(),'Amount of increased tax charge that is due to HMRC')]/following-sibling::td[not(text()='0')]/preceding::h2[1]"
+    )
+  )
 }
 
 case class TableData(yourResult: String, amount: Int)

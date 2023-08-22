@@ -16,19 +16,23 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_DOB_PAGE_HEADER, THEIR_DOB_PAGE_TITLE}
 
-object ClaimOnBehalfPage extends BasePage {
-  def verifyClaimOnBehalfPage() = {
-    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
-    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
+object TheirDOBPage extends BasePage {
+  def verifyTheirDOBPage() = {
+    onPage(THEIR_DOB_PAGE_TITLE)
+    isHeader(THEIR_DOB_PAGE_HEADER)
   }
-  def verifyPageSelectYesAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectYesAndContinueCalculationsPage()
+  def enterBirthday() = {
+    clearDate()
+    enterDay("28")
+    enterMonth("11")
+    enterYear("1964")
   }
-  def verifyPageSelectNoAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectNoAndContinueCalculationsPage()
+  def verifyPageEnterBirthdayAndContinue() = {
+    verifyTheirDOBPage()
+    enterBirthday()
+    checkYourAnswersCalculationsMap(getHeader(), getDate())
+    submitPage()
   }
 }

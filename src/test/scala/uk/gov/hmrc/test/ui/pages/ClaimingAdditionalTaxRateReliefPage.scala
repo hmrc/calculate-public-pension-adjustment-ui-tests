@@ -16,19 +16,22 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER, CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE}
 
-object ClaimOnBehalfPage extends BasePage {
-  def verifyClaimOnBehalfPage() = {
-    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
-    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
+object ClaimingAdditionalTaxRateReliefPage extends BasePage {
+  def verifyClaimingAdditionalTaxRateReliefPage() = {
+    verifyPageUrl("claiming-additional-tax-rate-relief")
+    onPage(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE)
+    isHeader(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER)
   }
-  def verifyPageSelectYesAndContinue() = {
-    verifyClaimOnBehalfPage()
+
+  def verifyPageClickYesAndContinue() = {
+    verifyClaimingAdditionalTaxRateReliefPage()
     selectYesAndContinueCalculationsPage()
   }
-  def verifyPageSelectNoAndContinue() = {
-    verifyClaimOnBehalfPage()
+
+  def verifyPageClickNoAndContinue() = {
+    verifyClaimingAdditionalTaxRateReliefPage()
     selectNoAndContinueCalculationsPage()
   }
 }

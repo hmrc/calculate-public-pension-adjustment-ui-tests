@@ -16,19 +16,23 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_PAGE_HEADER, THEIR_NINO_PAGE_TITLE}
+import util.NINOGenerator
 
-object ClaimOnBehalfPage extends BasePage {
-  def verifyClaimOnBehalfPage() = {
-    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
-    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
+object TheirNinoPage extends BasePage {
+
+  val nino        = NINOGenerator.nino
+  def verifyTheirNinoPage() = {
+    verifyPageUrl("their-nino")
+    onPage(THEIR_NINO_PAGE_TITLE)
+    isHeader(THEIR_NINO_PAGE_HEADER)
   }
-  def verifyPageSelectYesAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectYesAndContinueCalculationsPage()
-  }
-  def verifyPageSelectNoAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectNoAndContinueCalculationsPage()
+  def enterNINO() = driver.findElement(By.id("value")).sendKeys(nino)
+  def verifyPageEnterNinoAndContinue() = {
+    verifyTheirNinoPage()
+    enterNINO()
+    checkYourAnswersCalculationsMap(getHeader(), nino)
+    submitPage()
   }
 }

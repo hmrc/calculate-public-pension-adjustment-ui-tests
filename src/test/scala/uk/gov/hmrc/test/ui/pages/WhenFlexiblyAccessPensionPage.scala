@@ -20,7 +20,6 @@ import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER, WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.WhenStopPayingPublicPensionPage.{checkYourAnswersAASMap, getDate, getHeader}
 
 object WhenFlexiblyAccessPensionPage extends BasePage {
   def validateNoInputDateError(): Assertion =

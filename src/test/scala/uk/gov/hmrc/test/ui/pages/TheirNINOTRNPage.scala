@@ -16,19 +16,20 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_TRN_HEADER, THEIR_NINO_TRN_TITLE}
+object TheirNINOTRNPage extends BasePage {
+  def verifyTheirNINOTRN(): Boolean = {
+    onPage(THEIR_NINO_TRN_TITLE)
+    isHeader(THEIR_NINO_TRN_HEADER)
+  }
 
-object ClaimOnBehalfPage extends BasePage {
-  def verifyClaimOnBehalfPage() = {
-    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
-    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
-  }
-  def verifyPageSelectYesAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectYesAndContinueCalculationsPage()
-  }
-  def verifyPageSelectNoAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectNoAndContinueCalculationsPage()
+  def enterNINOTRN(): Unit =
+    driver.findElement(By.id("value")).sendKeys("00348916RT")
+
+  def verifyPageEnterNINOAndContinue(): Unit = {
+    verifyTheirNINOTRN()
+    enterNINOTRN()
+    submitPage()
   }
 }

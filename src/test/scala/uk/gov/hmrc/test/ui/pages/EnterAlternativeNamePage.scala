@@ -16,19 +16,22 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{ENTER_ALTERNATIVE_NAME_PAGE_HEADER, ENTER_ALTERNATIVE_NAME_PAGE_TITLE}
 
-object ClaimOnBehalfPage extends BasePage {
-  def verifyClaimOnBehalfPage() = {
-    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
-    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
+object EnterAlternativeNamePage extends BasePage {
+
+  val name = "ABC BCDEFGH"
+  def verifyEnterAlternativeNamePage() = {
+    verifyPageUrl("enter-alternative-name")
+    onPage(ENTER_ALTERNATIVE_NAME_PAGE_TITLE)
+    isHeader(ENTER_ALTERNATIVE_NAME_PAGE_HEADER)
   }
-  def verifyPageSelectYesAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectYesAndContinueCalculationsPage()
-  }
-  def verifyPageSelectNoAndContinue() = {
-    verifyClaimOnBehalfPage()
-    selectNoAndContinueCalculationsPage()
+
+  def verifyPageEnterNameAndContinue() = {
+    verifyEnterAlternativeNamePage()
+    driver.findElement(By.id("value")).sendKeys(name)
+    checkYourAnswersCalculationsMap(getHeader(), name)
+    submitPage()
   }
 }

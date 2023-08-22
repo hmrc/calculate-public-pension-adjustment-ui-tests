@@ -17,24 +17,22 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import util.NINOGenerator
+import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER, WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE}
 
-object AuthorityWizardPage extends BasePage {
+object WhenWillYouAskPensionSchemeToPay extends BasePage {
 
-  val authUrl: String = TestConfiguration.url("auth-frontend")
-
-  def authorizedLoginUser(): Unit = {
-    driver.get(driver.getCurrentUrl)
-    driver.findElement(By.id("nino")).sendKeys(NINOGenerator.nino)
-    selectConfidenceLevel("250")
-    driver.findElement(By.id("submit-top")).submit()
+  def verifyWhenWillYouAskPensionSchemeToPayPage(year: Int) = {
+    verifyPageUrl("when-will-you-ask-pension-scheme-to-pay/" + year)
+    onPage(WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE)
+    isHeader(WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER)
   }
 
-  def selectConfidenceLevel(confidenceLevel: String) = {
-    val selectElement = driver.findElement(By.id("confidenceLevel"))
-    val dropdown      = new Select(selectElement)
-    dropdown.selectByValue(confidenceLevel)
+  def selectQuarter() = driver.findElement(By.id("value_0")).click()
+
+  def verifyPageSelectQuarterAndContinue(year: Int) = {
+    verifyWhenWillYouAskPensionSchemeToPayPage(year)
+    selectQuarter()
+    submitPage()
   }
+
 }
