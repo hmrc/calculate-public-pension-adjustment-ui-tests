@@ -168,6 +168,6 @@ object TaskListPage extends BasePage {
     driver.findElement(By.xpath("//a[contains(text(),'Add details for 2022 to 2023')]")).click()
 
   def clickCalculateButton() =
-    driver.findElement(By.xpath("//button[@class='govuk-button']")).click()
+    driver.findElement(By.xpath("//span/a[contains(text(),'Calculate')]")).click()
 
 }
