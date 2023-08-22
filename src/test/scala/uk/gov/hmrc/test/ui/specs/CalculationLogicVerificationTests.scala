@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import com.google.common.io.Files
 import play.api.libs.json.{JsValue, Json}
 import uk.gov.hmrc.test.ui.dto.bussinessRequest.{RequestDTO, RequestDTOUtil, TaxYear, TaxYearSchemes}
 import uk.gov.hmrc.test.ui.dto.bussinessResponse.{OutDate, ResponseDTO, ResponseDTOUtil}
@@ -24,9 +23,8 @@ import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 import util.DateUtil
-import java.io.File
 
-class BusinessScenarioAAJourneyTest extends BaseSpec {
+class CalculationLogicVerificationTests extends BaseSpec {
 
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
@@ -124,8 +122,6 @@ class BusinessScenarioAAJourneyTest extends BaseSpec {
           myObject.getTaxYearInformation("2016-post", _.totalIncome, requestDTOResult).toString
 
         val postYear                     = "2016-post"
-        val postFromDate                 = "9 July 2015"
-        val postToDate                   = "5 April 2016"
         val post2016FlexiAccessDate      =
           myObject.getTaxYearInformation(postYear, _.flexiAccessDate, requestDTOResult).toString
         val incomeAboveThresholdpost2016 =
@@ -428,6 +424,7 @@ class BusinessScenarioAAJourneyTest extends BaseSpec {
         /**
           * Check your answers page is failing to verify as its failing to save add another scheme page information
           */
+        //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
         CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
         /** --- 2016 Post --- */
@@ -612,7 +609,8 @@ class BusinessScenarioAAJourneyTest extends BaseSpec {
             "2016",
             totalIncome2016post
           )
-        } //      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
+        }
+        // CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
         CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
         /** --- 2017 and above years --- */
@@ -903,7 +901,7 @@ class BusinessScenarioAAJourneyTest extends BaseSpec {
               /**
                 * Check your answers page is failing to verify as its failing to save add another scheme page information
                 */
-              //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
+              //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue(taxToYear)
               CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
             }
         }

@@ -14,11 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.specs.BaseSpec
+import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
 
-class AdminUserJourney extends BaseSpec {
-
-  Feature("Calculate public pension adjustment Admin user journey") {}
+object ClaimOnBehalfPage extends BasePage {
+  def verifyClaimOnBehalfPage() = {
+    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
+    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
+  }
+  def verifyPageSelectYesAndContinue() = {
+    verifyClaimOnBehalfPage()
+    selectYesAndContinueCalculationsPage()
+  }
+  def verifyPageSelectNoAndContinue() = {
+    verifyClaimOnBehalfPage()
+    selectNoAndContinueCalculationsPage()
+  }
 }

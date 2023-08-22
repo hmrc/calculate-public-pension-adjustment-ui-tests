@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 
-package util
+package uk.gov.hmrc.test.ui.pages
 
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import uk.gov.hmrc.test.ui.constants.PageInformation.{RESIDENCE_PAGE_HEADER, RESIDENCE_PAGE_TITLE}
 
-object DateUtil {
-  def formatDate(inputDate: String, daysToAdd: Int): String = {
-    val formatter       = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val date            = LocalDate.parse(inputDate, formatter)
-    val modifiedDate    = date.plusDays(daysToAdd)
-    val outputFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-    modifiedDate.format(outputFormatter)
+object ResidencePage extends BasePage {
+  def verifyResidencePage() = {
+    verifyPageUrl("residence")
+    onPage(RESIDENCE_PAGE_TITLE)
+    isHeader(RESIDENCE_PAGE_HEADER)
   }
-
+  def verifyPageSelectYesAndContinue() = {
+    verifyResidencePage()
+    selectYesAndContinueCalculationsPage()
+  }
+  def verifyPageSelectNoAndContinue() = {
+    verifyResidencePage()
+    selectNoAndContinueCalculationsPage()
+  }
 }

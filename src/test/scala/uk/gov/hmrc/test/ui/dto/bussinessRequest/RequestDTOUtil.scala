@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.dto.bussinessRequest
 
-import play.api.libs.json.{JsResult, JsValue, Json}
+import play.api.libs.json.JsResult
 
 class RequestDTOUtil {
   def getTaxYearInformation(year: String, field: TaxYear => Option[Any], myObject: JsResult[RequestDTO]): Any =

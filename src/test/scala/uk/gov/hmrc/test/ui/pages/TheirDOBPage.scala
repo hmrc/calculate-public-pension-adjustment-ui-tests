@@ -14,18 +14,25 @@
  * limitations under the License.
  */
 
-package util
+package uk.gov.hmrc.test.ui.pages
 
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_DOB_PAGE_HEADER, THEIR_DOB_PAGE_TITLE}
 
-object DateUtil {
-  def formatDate(inputDate: String, daysToAdd: Int): String = {
-    val formatter       = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val date            = LocalDate.parse(inputDate, formatter)
-    val modifiedDate    = date.plusDays(daysToAdd)
-    val outputFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-    modifiedDate.format(outputFormatter)
+object TheirDOBPage extends BasePage {
+  def verifyTheirDOBPage() = {
+    onPage(THEIR_DOB_PAGE_TITLE)
+    isHeader(THEIR_DOB_PAGE_HEADER)
   }
-
+  def enterBirthday() = {
+    clearDate()
+    enterDay("28")
+    enterMonth("11")
+    enterYear("1964")
+  }
+  def verifyPageEnterBirthdayAndContinue() = {
+    verifyTheirDOBPage()
+    enterBirthday()
+    checkYourAnswersCalculationsMap(getHeader(), getDate())
+    submitPage()
+  }
 }

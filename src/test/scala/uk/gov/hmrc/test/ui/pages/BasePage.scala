@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.jsoup.Jsoup
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, WebElement}
 import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
@@ -44,10 +44,17 @@ trait LADataCollector {
   def checkYourAnswersLASMap(key: String, value: Any): Unit
 }
 
+trait CalculationDataCollector {
+  def checkYourAnswersLASMap(key: String, value: Any): Unit
+}
+
 trait AAPeriodDataCollector {
-  def checkYourAnswersAAPeriodMap(key: String, value: Any): Unit
+  def checkYourAnswersCalculationsMap(key: String, value: Any): Unit
 }
 trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector with Matchers {
+
+  def checkYourAnswersCalculationsMap(key: String, value: Any): Unit =
+    DataCollectorMap.addToCalculationsPeriodMap(key, value)
 
   def checkYourAnswersGSMap(key: String, value: Any): Unit =
     DataCollectorMap.addToGSMap(key, value)
@@ -167,7 +174,13 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
 
   def verifyPageUrl(name: String): Assertion = {
     val currentUrl: String = driver.getCurrentUrl
-    val lastPart           = currentUrl.replaceAll(TestConfiguration.url("ui-frontend") + "/", "")
+    var domain             = ""
+    if (currentUrl.contains("submit-public")) {
+      domain = TestConfiguration.url("submit-ui-frontend") + "/"
+    } else {
+      domain = TestConfiguration.url("ui-frontend") + "/"
+    }
+    val lastPart           = currentUrl.replaceAll(domain, "")
     lastPart shouldEqual name
   }
 
@@ -274,6 +287,17 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     submitPage()
   }
 
+  def selectNoAndContinueCalculationsPage() = {
+    selectNoOption()
+    checkYourAnswersCalculationsMap(getHeader(), selectedOption())
+    submitPage()
+  }
+
+  def selectYesAndContinueCalculationsPage() = {
+    selectYesOption()
+    checkYourAnswersCalculationsMap(getHeader(), selectedOption())
+    submitPage()
+  }
   def selectNoAndContinueForLTAPage() = {
     selectNoOption()
     checkYourAnswersLASMap(getHeader(), selectedOption())
@@ -386,6 +410,17 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   def signOutPage(): this.type = {
     driver.manage.deleteAllCookies()
     this
+  }
+
+  def getCheckedOptions(): String = {
+    var selectedText               = ""
+    val elements: List[WebElement] =
+      driver.findElements(By.xpath("//input[@class='govuk-radios__input']")).asScala.toList
+    for (checkbox <- elements)
+      if (checkbox.isSelected) {
+        selectedText = checkbox.findElement(By.xpath("//following-sibling::label")).getText()
+      }
+    selectedText
   }
 }
 case class PageNotFoundException(s: String) extends Exception(s)

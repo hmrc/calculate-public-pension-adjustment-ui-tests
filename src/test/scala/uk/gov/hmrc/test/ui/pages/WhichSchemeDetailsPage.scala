@@ -49,4 +49,7 @@ object WhichSchemeDetailsPage extends BasePage {
     submitPage()
   }
 
+  def isSchemeAvailable(schemeName: String): Boolean =
+    driver.findElements(By.xpath("//label[contains(text(),'" + schemeName + "')]")).size > 0
+
 }

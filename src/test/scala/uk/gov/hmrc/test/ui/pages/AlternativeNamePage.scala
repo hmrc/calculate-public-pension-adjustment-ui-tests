@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 
-package util
+package uk.gov.hmrc.test.ui.pages
 
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import uk.gov.hmrc.test.ui.constants.PageInformation.{ALTERNATIVE_NAME_PAGE_HEADER, ALTERNATIVE_NAME_PAGE_TITLE}
 
-object DateUtil {
-  def formatDate(inputDate: String, daysToAdd: Int): String = {
-    val formatter       = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val date            = LocalDate.parse(inputDate, formatter)
-    val modifiedDate    = date.plusDays(daysToAdd)
-    val outputFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-    modifiedDate.format(outputFormatter)
+object AlternativeNamePage extends BasePage {
+  def verifyAlternativeNamePage() = {
+    verifyPageUrl("alternative-name")
+    onPage(ALTERNATIVE_NAME_PAGE_TITLE)
+    isHeader(ALTERNATIVE_NAME_PAGE_HEADER)
   }
-
+  def verifyPageSelectYesAndContinue() = {
+    verifyAlternativeNamePage()
+    selectYesAndContinueCalculationsPage()
+  }
+  def verifyPageSelectNoAndContinue() = {
+    verifyAlternativeNamePage()
+    selectNoAndContinueCalculationsPage()
+  }
 }

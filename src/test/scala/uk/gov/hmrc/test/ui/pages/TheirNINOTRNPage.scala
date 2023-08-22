@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 
-package util
+package uk.gov.hmrc.test.ui.pages
 
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-
-object DateUtil {
-  def formatDate(inputDate: String, daysToAdd: Int): String = {
-    val formatter       = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val date            = LocalDate.parse(inputDate, formatter)
-    val modifiedDate    = date.plusDays(daysToAdd)
-    val outputFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-    modifiedDate.format(outputFormatter)
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_TRN_HEADER, THEIR_NINO_TRN_TITLE}
+object TheirNINOTRNPage extends BasePage {
+  def verifyTheirNINOTRN(): Boolean = {
+    onPage(THEIR_NINO_TRN_TITLE)
+    isHeader(THEIR_NINO_TRN_HEADER)
   }
 
+  def enterNINOTRN(): Unit =
+    driver.findElement(By.id("value")).sendKeys("00348916RT")
+
+  def verifyPageEnterNINOAndContinue(): Unit = {
+    verifyTheirNINOTRN()
+    enterNINOTRN()
+    submitPage()
+  }
 }

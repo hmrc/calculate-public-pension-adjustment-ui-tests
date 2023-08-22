@@ -14,18 +14,21 @@
  * limitations under the License.
  */
 
-package util
+package uk.gov.hmrc.test.ui.pages
 
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{STATUS_OF_USER_PAGE_HEADER, STATUS_OF_USER_PAGE_TITLE}
 
-object DateUtil {
-  def formatDate(inputDate: String, daysToAdd: Int): String = {
-    val formatter       = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val date            = LocalDate.parse(inputDate, formatter)
-    val modifiedDate    = date.plusDays(daysToAdd)
-    val outputFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-    modifiedDate.format(outputFormatter)
+object StatusOfUserPage extends BasePage {
+  def verifyStatusOfUserPage() = {
+    onPage(STATUS_OF_USER_PAGE_TITLE)
+    isHeader(STATUS_OF_USER_PAGE_HEADER)
   }
-
+  def selectDeputyship() = driver.findElement(By.id("value_0")).click()
+  def verifyPageSelectDeputyshipAndContinue() = {
+    verifyStatusOfUserPage()
+    selectDeputyship()
+    checkYourAnswersCalculationsMap(getHeader(), getCheckedOptions())
+    submitPage()
+  }
 }

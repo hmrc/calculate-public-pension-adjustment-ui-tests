@@ -14,18 +14,24 @@
  * limitations under the License.
  */
 
-package util
+package uk.gov.hmrc.test.ui.pages
 
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{DECLARATION_PAGE_HEADER, DECLARATION_PAGE_TITLE}
 
-object DateUtil {
-  def formatDate(inputDate: String, daysToAdd: Int): String = {
-    val formatter       = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val date            = LocalDate.parse(inputDate, formatter)
-    val modifiedDate    = date.plusDays(daysToAdd)
-    val outputFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-    modifiedDate.format(outputFormatter)
+object DeclarationsPage extends BasePage {
+  def verifyDeclarationsPage() = {
+    verifyPageUrl("declarations")
+    onPage(DECLARATION_PAGE_TITLE)
+    isHeader(DECLARATION_PAGE_HEADER)
+  }
+
+  def clickConfirmButton() = driver.findElement(By.xpath("//a[contains(text(),'Confirm')]")).click()
+
+  /** remove navigation to url */
+  def verifyPageAndConfirm() = {
+    verifyDeclarationsPage()
+    clickConfirmButton()
   }
 
 }
