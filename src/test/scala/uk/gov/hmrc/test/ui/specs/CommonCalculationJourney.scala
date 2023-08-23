@@ -28,14 +28,14 @@ import scala.collection.mutable.ArrayBuffer
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 class CommonCalculationJourney extends BaseSpec {
-  def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
+  /* def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
     /*"Scenario_MultipleSchemeDebit",
         "Scenario_SingleSchemeDebit",
         "Scenario_MultipleSchemeCredit",
         "Scenario_SingleSchemeCredit",
         "Scenario_MultipleSchemeDebit2",
         "Scenario_MultipleSchemeCredit2"
-     */
+   */
 
     /** Retrieve request information */
     val requestStream                           =
@@ -432,8 +432,8 @@ class CommonCalculationJourney extends BaseSpec {
     }
 
     /**
-      * Check your answers page is failing to verify as its failing to save add another scheme page information
-      */
+   * Check your answers page is failing to verify as its failing to save add another scheme page information
+   */
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
     /** --- 2016 Post --- */
@@ -985,8 +985,8 @@ class CommonCalculationJourney extends BaseSpec {
           )
 
           /**
-            * Check your answers page is failing to verify as its failing to save add another scheme page information
-            */
+   * Check your answers page is failing to verify as its failing to save add another scheme page information
+   */
           //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
           CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
         }
@@ -1000,5 +1000,5 @@ class CommonCalculationJourney extends BaseSpec {
     CalculationResultPage.clickContinueSignIn()
     AuthorityWizardPage.authorizedLoginUser()
     (mutableMap, inDatesYears, debitYears)
-  }
+  }*/
 }

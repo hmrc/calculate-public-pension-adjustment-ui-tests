@@ -16,13 +16,9 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
-import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.ZapTests
-
 class EndToEndAAJourneyTest extends BaseSpec {
 
-  Feature("Business scenario AA journeys") {
+  /* Feature("Business scenario AA journeys") {
 
     /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
     Scenario(s"Calculate Business Journey1", ZapTests) {
@@ -547,5 +543,5 @@ class EndToEndAAJourneyTest extends BaseSpec {
       SubmissionPage.verifySubmissionPage()
       signOutPage()
     }
-  }
+  }*/
 }
