@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.specs
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
-class AnnualAllowanceUserJourney extends BaseSpec {
+class CalculationUserJourney extends BaseSpec {
 
   Feature("Calculate public pension adjustment Annual Allowance user journey") {
 

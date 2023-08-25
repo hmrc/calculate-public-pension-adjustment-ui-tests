@@ -24,7 +24,7 @@ import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
 import scala.collection.mutable
 
-class EndToEndAAJourneyTest extends BaseSpec with BeforeAndAfter {
+class EndToEndAAJourney2Test extends BaseSpec with BeforeAndAfter {
   var taxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
   var inDateYears: mutable.ArrayBuffer[Int]   = mutable.ArrayBuffer.empty[Int]
   var debitYears: mutable.ArrayBuffer[Int]    = mutable.ArrayBuffer.empty[Int]
@@ -36,7 +36,7 @@ class EndToEndAAJourneyTest extends BaseSpec with BeforeAndAfter {
 
     val commonCalculationJourney                 = new CommonCalculation()
     val (taxSchemes1, inDateYears1, debitYears1) =
-      commonCalculationJourney.createCalculationJourney("Scenario_MultipleSchemeDebitAndCredit")
+      commonCalculationJourney.createCalculationJourney("Scenario_SingleSchemeCredit")
     taxSchemes ++= taxSchemes1
     inDateYears ++= inDateYears1
     debitYears ++= debitYears1
@@ -44,8 +44,8 @@ class EndToEndAAJourneyTest extends BaseSpec with BeforeAndAfter {
 
   Feature("Business scenario AA journeys") {
 
-    /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
-    Scenario(s"Calculate Business Journey1", ZapTests) {
+    /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(N), 5.15, 5.16, 5.17, 5.18(N), 5.20(Single Scheme), 5.21,5.22, 5.23, 5.25, 5.26 */
+    Scenario(s"Calculate Business Journey2", ZapTests) {
 
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectYesAndContinue()
@@ -65,14 +65,14 @@ class EndToEndAAJourneyTest extends BaseSpec with BeforeAndAfter {
       When("I verify TheirNinoPage enter NINO and continue")
       TheirNinoPage.verifyPageEnterNinoAndContinue()
 
-      When("I verify TheirUTRPage enter tax reference and continue")
-      TheirUTRPage.verifyPageEnterUTRAndContinue()
+      When("I verify TheirUTRPage and continue without tax reference")
+      TheirUTRPage.verifyPageContinueWithoutTaxReference()
 
-      When("I verify TheirResidencePage, select yes and continue")
-      TheirResidencePage.verifyPageSelectYesAnContinue()
+      When("I verify TheirResidencePage, select no and continue")
+      TheirResidencePage.verifyPageSelectNoAnContinue()
 
-      When("I verify TheirUKAddressPage, Enter Address information and continue")
-      TheirUKAddressPage.verifyPageEnterAddressAndContinue()
+      When("I verify TheirInternationalAddressPage, Enter Address information and continue")
+      TheirInternationalAddressPage.verifyPageEnterAddressAndContinue()
 
       When("I verify AlternativeNamePage, select No and continue")
       AlternativeNamePage.verifyPageSelectNoAndContinue()
@@ -103,16 +103,13 @@ class EndToEndAAJourneyTest extends BaseSpec with BeforeAndAfter {
       When("I verify TaxReliefAmountPage Page, enter tax relief and click continue")
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue()
 
-      When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
-      WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 2")
-
       When("I verify Bank Details Page, enter bank details and click continue")
       BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
 
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
 
-      /* Then("I verify check your answers page and click continue")
+      /*Then("I verify check your answers page and click continue")
       CheckYourAnswersCalculationJourneyPage.verifyCheckYourAnswersPageAndContinue()*/
       CheckYourAnswersCalculationJourneyPage.clickContinueButton()
 
