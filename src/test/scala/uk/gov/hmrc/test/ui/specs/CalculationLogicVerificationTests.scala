@@ -138,7 +138,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
         val jsonResponse: JsValue             = Json.parse(jsonResponseString)
         val responseDTOResult                 = Json.fromJson[ResponseDTO](jsonResponse)
         val myResponseObject: ResponseDTOUtil = new ResponseDTOUtil()
-        println(" File name : " + requestArray(index))
 
         /** Test */
         Given("I am on the Public Service Pensions Remediation home page")
@@ -626,7 +625,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
 
               year match {
                 case 2017 =>
-                  println("----------2017------------")
                   TaskListPage.clickAddDetailsFor2016To2017()
                   WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
                   taxPeriod = "6 April 2016 to 5 April 2017"
@@ -635,7 +633,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   taxFromYear = "2016"
                   taxToYear = "2017"
                 case 2018 =>
-                  println("---------2018-------------")
                   TaskListPage.clickAddDetailsFor2017To2018()
                   WhatYouWillNeedAaPage.onWhatYouWillNeedAa2018Page()
                   taxPeriod = "6 April 2017 to 5 April 2018"
@@ -644,7 +641,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   taxFromYear = "2017"
                   taxToYear = "2018"
                 case 2019 =>
-                  println("---------2019-------------")
                   TaskListPage.clickAddDetailsFor2018To2019()
                   WhatYouWillNeedAaPage.onWhatYouWillNeedAa2019Page()
                   taxPeriod = "6 April 2018 to 5 April 2019"
@@ -653,7 +649,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   taxFromYear = "2018"
                   taxToYear = "2019"
                 case 2020 =>
-                  println("-------2020---------------")
                   TaskListPage.clickAddDetailsFor2019To2020()
                   WhatYouWillNeedAaPage.onWhatYouWillNeedAa2020Page()
                   taxPeriod = "6 April 2019 to 5 April 2020"
@@ -662,7 +657,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   taxFromYear = "2019"
                   taxToYear = "2020"
                 case 2021 =>
-                  println("---------2021-------------")
                   TaskListPage.clickAddDetailsFor2020To2021()
                   WhatYouWillNeedAaPage.onWhatYouWillNeedAa2021Page()
                   taxPeriod = "6 April 2020 to 5 April 2021"
@@ -671,7 +665,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   taxFromYear = "2020"
                   taxToYear = "2021"
                 case 2022 =>
-                  println("----------2022------------")
                   TaskListPage.clickAddDetailsFor2021To2022()
                   WhatYouWillNeedAaPage.onWhatYouWillNeedAa2022Page()
                   taxPeriod = "6 April 2021 to 5 April 2022"
@@ -680,7 +673,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   taxFromYear = "2021"
                   taxToYear = "2022"
                 case 2023 =>
-                  println("---------2023-------------")
                   TaskListPage.clickAddDetailsFor2022To2023()
                   WhatYouWillNeedAaPage.onWhatYouWillNeedAa2023Page()
                   taxPeriod = "6 April 2022 to 5 April 2023"
@@ -689,7 +681,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   taxFromYear = "2022"
                   taxToYear = "2023"
                 case _    =>
-                  println("----------------------")
               }
               val noOfPensionSchemes             = taxYear.taxYearSchemes.get.size
               var chargePaidByMember             = taxYear.chargePaidByMember.getOrElse(0)
