@@ -27,7 +27,7 @@ object ProtectionTypePage extends BasePage {
   }
 
   def selectEnhancedProtectionRadioButtonAndContinue(): Unit = {
-    val text = "Enhanced Protection"
+    val text = "Enhanced protection"
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
