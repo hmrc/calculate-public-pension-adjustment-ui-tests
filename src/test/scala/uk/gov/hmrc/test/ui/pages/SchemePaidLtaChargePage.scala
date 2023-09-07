@@ -21,31 +21,29 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{SCHEME_PAID_LTA_CHARGE_PAG
 
 object SchemePaidLtaChargePage extends BasePage {
 
-  val pension_scheme_name =
-    "pensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
   def onSchemePaidLtaChargePage() = {
     verifyPageUrl("scheme-paid-lta-charge")
     onPage(SCHEME_PAID_LTA_CHARGE_PAGE_TITLE)
     isHeader(SCHEME_PAID_LTA_CHARGE_PAGE_HEADER)
   }
 
-  def enterPensionScheme() = {
+  def enterPensionScheme(pensionName: String) = {
     driver.findElement(By.xpath("//input[@id='name']")).clear()
-    driver.findElement(By.xpath("//input[@id='name']")).sendKeys(pension_scheme_name)
+    driver.findElement(By.xpath("//input[@id='name']")).sendKeys(pensionName)
   }
 
-  def enterPensionSchemeTaxReference() = {
+  def enterPensionSchemeTaxReference(taxRef: String) = {
     driver.findElement(By.xpath("//input[@id='taxRef']")).clear()
-    driver.findElement(By.xpath("//input[@id='taxRef']")).sendKeys("00348916RT")
+    driver.findElement(By.xpath("//input[@id='taxRef']")).sendKeys(taxRef)
   }
 
   def getPensionSchemeName() = driver.findElement(By.xpath("//input[@id='name']")).getAttribute("value")
   def getTaxReference()      = driver.findElement(By.xpath("//input[@id='taxRef']")).getAttribute("value")
 
-  def enterPensionSchemeInformationAndContinue() = {
+  def enterPensionSchemeInformationAndContinue(taxRef: String, pensionName: String) = {
     onSchemePaidLtaChargePage()
-    enterPensionScheme()
-    enterPensionSchemeTaxReference()
+    enterPensionScheme(pensionName)
+    enterPensionSchemeTaxReference(taxRef)
     checkYourAnswersLASMap(getHeader(), getPensionSchemeName() + " / " + getTaxReference())
     submitPage()
   }
