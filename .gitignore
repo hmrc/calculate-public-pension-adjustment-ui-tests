@@ -18,6 +18,7 @@ logs
 /.idea_modules
 eclipse
 .scala_dependencies
+/*browserstack.json
 
 # sbt files
 dist
