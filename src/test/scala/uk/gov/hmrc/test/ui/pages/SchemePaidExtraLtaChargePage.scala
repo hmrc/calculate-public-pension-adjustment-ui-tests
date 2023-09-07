@@ -29,24 +29,24 @@ object SchemePaidExtraLtaChargePage extends BasePage {
     isHeader(SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER)
   }
 
-  def enterPensionScheme() = {
+  def enterPensionScheme(schemeName: String) = {
     driver.findElement(By.xpath("//input[@id='name']")).clear()
-    driver.findElement(By.xpath("//input[@id='name']")).sendKeys(pension_scheme_name)
+    driver.findElement(By.xpath("//input[@id='name']")).sendKeys(schemeName)
   }
 
-  def enterPensionSchemeTaxReference() = {
+  def enterPensionSchemeTaxReference(taxRef: String) = {
     driver.findElement(By.xpath("//input[@id='taxRef']")).clear()
-    driver.findElement(By.xpath("//input[@id='taxRef']")).sendKeys("10348916RT")
+    driver.findElement(By.xpath("//input[@id='taxRef']")).sendKeys(taxRef)
   }
 
   def getPensionSchemeName() = driver.findElement(By.xpath("//input[@id='name']")).getAttribute("value")
 
   def getTaxReference() = driver.findElement(By.xpath("//input[@id='taxRef']")).getAttribute("value")
 
-  def enterPensionSchemeInformationAndContinue() = {
+  def enterPensionSchemeInformationAndContinue(taxRef: String, schemeName: String) = {
     onSchemePaidLtaChargePage()
-    enterPensionScheme()
-    enterPensionSchemeTaxReference()
+    enterPensionScheme(schemeName)
+    enterPensionSchemeTaxReference(taxRef)
     checkYourAnswersLASMap(getHeader(), getPensionSchemeName() + " / " + getTaxReference())
     submitPage()
   }

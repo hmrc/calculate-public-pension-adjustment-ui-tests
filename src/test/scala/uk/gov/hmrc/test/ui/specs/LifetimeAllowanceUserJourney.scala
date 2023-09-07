@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.ZapTests
+import uk.gov.hmrc.test.ui.specs.tags.{BSTests, ZapTests}
 class LifetimeAllowanceUserJourney extends BaseSpec {
 
   Feature("Calculate public pension adjustment Lifetime Allowance user journey") {
@@ -209,7 +209,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
 
       Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue()
+      SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
@@ -308,7 +308,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
 
       Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue()
+      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
 
       Then("I Should see the ValueNewLtaChargePage, enter LTA charge and continue")
       ValueNewLtaChargePage.verifyPageEnterLTAChargeLessThanPreviousChargeAndContinue()
@@ -410,7 +410,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
 
       Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue()
+      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
 
       Then("I Should see the ValueNewLtaChargePage, enter LTA charge and continue")
       ValueNewLtaChargePage.verifyPageEnterLTAChargeMoreThanPreviousChargeAndContinue()
@@ -419,7 +419,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
 
       Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue()
+      SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
@@ -519,7 +519,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
 
       Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue()
+      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
 
       Then("I Should see the ValueNewLtaChargePage, enter LTA charge and continue")
       ValueNewLtaChargePage.verifyPageEnterLTAChargeMoreThanPreviousChargeAndContinue()

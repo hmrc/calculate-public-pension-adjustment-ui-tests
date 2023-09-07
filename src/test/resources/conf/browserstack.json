@@ -1,0 +1,46 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "",
+  "key": "",
+  "capabilities": {
+      "buildName": "Public Pensions Adjustments web tests",
+      "sessionName": "Public Pensions Adjustments session",
+      "browserstack_local": true,
+      "browserstack_localIdentifier": "Test124",
+      "debug": true
+  },
+  "environments": [
+    {
+      "testSet1": {
+        "os": "Windows",
+        "os_version": "11",
+        "browserName": "chrome",
+        "browserVersion": "latest"
+      }
+    },
+    {
+      "testSet2": {
+        "os": "Windows",
+        "os_version": "11",
+        "browserName": "Edge",
+        "browserVersion": "latest"
+      }
+    },
+    {
+      "testSet3": {
+        "os": "Windows",
+        "os_version": "11",
+        "browserName": "Firefox",
+        "browserVersion": "latest"
+      }
+    },
+    {
+      "testSet4": {
+        "os": "Galaxy S6",
+        "os_version": "5.0",
+        "browserName": "Chrome",
+        "browserVersion": "latest"
+      }
+    }
+  ]
+}
