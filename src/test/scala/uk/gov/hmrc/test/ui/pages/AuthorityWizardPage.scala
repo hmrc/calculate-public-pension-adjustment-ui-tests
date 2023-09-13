@@ -29,6 +29,12 @@ object AuthorityWizardPage extends BasePage {
     driver.get(driver.getCurrentUrl)
     driver.findElement(By.id("nino")).sendKeys(NINOGenerator.nino)
     selectConfidenceLevel("250")
+    driver.findElement(By.id("add-preset")).click()
+    driver.findElement(By.id("input-4-0-value")).sendKeys("123456789")
+    driver.findElement(By.id("itmp.givenName")).sendKeys("Lari")
+    driver.findElement(By.id("itmp.middleName")).sendKeys("Tharu")
+    driver.findElement(By.id("itmp.familyName")).sendKeys("Jonson")
+    driver.findElement(By.id("itmp.dateOfBirth")).sendKeys("1948-08-02")
     driver.findElement(By.id("submit-top")).submit()
   }
 
