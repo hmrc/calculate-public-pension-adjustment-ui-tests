@@ -3,11 +3,11 @@
   "user": "",
   "key": "",
   "capabilities": {
-      "buildName": "Public Pensions Adjustments web tests",
-      "sessionName": "Public Pensions Adjustments session",
-      "browserstack_local": true,
-      "browserstack_localIdentifier": "Test124",
-      "debug": true
+    "buildName": "Public Pensions Adjustments web tests",
+    "sessionName": "Public Pensions Adjustments session",
+    "browserstack_local": true,
+    "browserstack_localIdentifier": "Test124",
+    "debug": true
   },
   "environments": [
     {
@@ -36,8 +36,24 @@
     },
     {
       "testSet4": {
-        "os": "Galaxy S6",
-        "os_version": "5.0",
+        "os": "OS X",
+        "os_version": "Ventura",
+        "browserName": "Firefox",
+        "browserVersion": "latest"
+      }
+    },
+    {
+      "testSet5": {
+        "os": "OS X",
+        "os_version": "Ventura",
+        "browserName": "Chrome",
+        "browserVersion": "latest"
+      }
+    },
+    {
+      "mobileTestSet1": {
+        "os": "Galaxy S23",
+        "os_version": "13.0",
         "browserName": "Chrome",
         "browserVersion": "latest"
       }
