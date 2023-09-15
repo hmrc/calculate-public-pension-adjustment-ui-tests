@@ -37,7 +37,7 @@ object PayingIntoPublicPensionSchemePage extends BasePage {
     )
 
   def onPayingIntoPublicPensionSchemePage() = {
-    verifyPageUrl("paying-into-public-pension-scheme")
+    verifyPageUrl("annual-allowance/paying-into-public-service-pension")
     onPage(PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_TITLE)
     isHeader(PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_HEADER)
   }

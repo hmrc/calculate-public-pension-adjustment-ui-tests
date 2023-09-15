@@ -25,31 +25,31 @@ object Errors {
     "o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789otests"
   val REASON_FOR_RESUBMISSION_CHARACTER_LIMITATION_ERROR                 = "Your submission reason must be 500 characters or less"
   val SCOTTISH_TAX_PAYER_FROM_2016_PAGE_ERROR_SUMMARY                    =
-    "Select yes if you were ever a Scottish taxpayer from 6 April 2016 onwards"
+    "Select yes if you were ever a Scottish taxpayer from 6 April 2016"
   val WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_ERROR_SUMMARY                   =
-    "Select which years you were a Scottish taxpayer"
+    "Select which tax years you were a Scottish taxpayer"
   val PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_ERROR_SUMMARY               =
-    "Select yes if you are paying into a public service pension scheme"
+    "Select yes if you are still paying into a public service pension scheme"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_NO_INPUT_ERROR_SUMMARY        =
-    "Enter a date when you stopped paying into a public service pension scheme into the spaces provided as day, month, year"
+    "Enter the date when you stopped paying into a public service pension scheme"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_FUTURE_DATE_ERROR_SUMMARY     =
-    "You have entered a future date when you stopped paying into a public service pension scheme, it must be within the remedy period 6 April 2015 to 5 April 2022"
+    "The date when you stopped paying into a public service pension scheme must be today or in the past"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_REAL_DATE_ERROR_SUMMARY       =
-    "Enter a real date for when you stopped paying into a public service pension scheme into the spaces provided as day, month, year"
+    "The date when you stopped paying into a public service pension scheme must only include numbers 0 to 9"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY =
-    "You have entered a pre-remedy date when you stopped paying into a public service pension scheme, it must be within the remedy period 6 April 2015 to 5 April 2022"
+    "The date when you stopped paying into a public service pension scheme must be after 6 April 2015"
   val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_ERROR_SUMMARY               =
     "Select yes if you have a defined contribution pension scheme"
   val HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_ERROR_SUMMARY                  =
     "Select yes if you have flexibly accessed your defined contribution pension saving"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_NO_INPUT_DATA_ERROR_SUMMARY      =
-    "Enter the date that you flexibly accessed your defined contribution pension savings as day, month, year"
+    "Enter a date when you first flexibly accessed your defined contribution pension in the right format, with a date, month and year"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_REAL_DATE_ERROR_SUMMARY          =
-    "Enter a real date for the date that you flexibly accessed your defined contribution pension savings as day, month, year"
+    "Enter the date when you stopped paying into a public service pension scheme in the right format, with a date, month and year"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_FUTURE_DATE_ERROR_SUMMARY        =
-    "You have entered a future date for the date that you flexibly accessed your defined contribution pension savings, it must be within the remedy period"
+    "The date when you first flexibly accessed your defined contribution pension must be today or in the past"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY    =
-    "You have entered a date for the date that you flexibly accessed your defined contribution pension savings before the remedy period, enter a date after 5 April 2015"
+    "The date when you first flexibly accessed your defined contribution pension must be after 5 April 2015"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_DATES_FORMAT_ERROR_SUMMARY       =
     "Enter a date that you flexibly accessed your defined contribution pension savings as day, month, year"
 
