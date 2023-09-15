@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 
 object AdjustedIncomePage extends BasePage {
   val ADJUSTED_INCOME_PAGE_TITLE  =
-    "What was your adjusted income from 6 April fromYear to 5 April toYear? - Calculate Public Pension Adjustment service - GOV.UK"
+    "What was your adjusted income from 6 April fromYear to 5 April toYear? - Calculate your public service pension adjustment - GOV.UK"
   val ADJUSTED_INCOME_TITLE       =
     "What was your adjusted income from 6 April fromYear to 5 April toYear?"
   val ADJUSTED_INCOME_PAGE_HEADER = "Adjusted income"

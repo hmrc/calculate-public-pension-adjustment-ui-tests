@@ -56,8 +56,17 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   def checkYourAnswersCalculationsMap(key: String, value: Any): Unit =
     DataCollectorMap.addToCalculationsPeriodMap(key, value)
 
-  def checkYourAnswersGSMap(key: String, value: Any): Unit =
-    DataCollectorMap.addToGSMap(key, value)
+  def checkYourAnswersGSMap(key: String, value: Any): Unit = {
+
+    val displayLabel = value match {
+      case s: String     =>
+        s.replace("Annual allowance", "Annual allowance tax charges")
+          .replace("Lifetime allowance", "Lifetime allowance tax charges")
+      case selectedValue => selectedValue
+    }
+
+    DataCollectorMap.addToGSMap(key, displayLabel)
+  }
 
   def checkYourAnswersAASMap(key: String, value: Any): Unit =
     DataCollectorMap.addToAASMap(key, value)
@@ -184,18 +193,18 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     lastPart shouldEqual name
   }
 
-  def validateRadioButtonError(): Assertion =
+  def validateRadioButtonError(expectedErrorMessage: String): Assertion =
     assert(
       driver
         .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
         .getText
-        .contains(Errors.RADIO_BUTTON_ERROR_SUMMARY) && driver
+        .contains(expectedErrorMessage) && driver
         .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
         .getText
         .contains(Errors.ERROR_SUMMARY_TITLE) && driver
         .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
         .getText
-        .contains(Errors.RADIO_BUTTON_ERROR_SUMMARY)
+        .contains(expectedErrorMessage)
     )
 
   def getHeader(): String = {

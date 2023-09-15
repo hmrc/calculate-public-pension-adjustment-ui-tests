@@ -18,12 +18,12 @@ package uk.gov.hmrc.test.ui.pages
 
 object ThresholdIncomePage extends BasePage {
   val THRESHOLD_INCOME_PAGE_2017_TO_2020_TITLE  =
-    "Was your threshold income above £110,000 from 6 April fromYear to 5 April toYear? - Calculate Public Pension Adjustment service - GOV.UK"
+    "Was your threshold income above £110,000 from 6 April fromYear to 5 April toYear? - Calculate your public service pension adjustment - GOV.UK"
   val THRESHOLD_INCOME_PAGE_2017_TO_2020_HEADER =
     "Was your threshold income above £110,000 from 6 April fromYear to 5 April toYear?"
 
   val THRESHOLD_INCOME_PAGE_2021_TO_2023_TITLE  =
-    "Was your threshold income above £200,000 from 6 April fromYear to 5 April toYear? - Calculate Public Pension Adjustment service - GOV.UK"
+    "Was your threshold income above £200,000 from 6 April fromYear to 5 April toYear? - Calculate your public service pension adjustment - GOV.UK"
   val THRESHOLD_INCOME_PAGE_2021_TO_2023_HEADER =
     "Was your threshold income above £200,000 from 6 April fromYear to 5 April toYear?"
   def onThresholdIncome2017TO2020Page(fromYear: String, toYear: String, year: String) = {

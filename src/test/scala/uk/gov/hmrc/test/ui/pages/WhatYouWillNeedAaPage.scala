@@ -21,31 +21,31 @@ import util.DataCollectorMap
 object WhatYouWillNeedAaPage extends BasePage {
 
   val YEAR_2016_PRE_PAGE_TITLE   =
-    "6 April 2015 to 8 July 2015 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "6 April 2015 to 8 July 2015 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2016_PRE_PAGE_HEADER  = "6 April 2015 to 8 July 2015 remedy period"
   val YEAR_2016_POST_PAGE_TITLE  =
-    "9 July 2015 to 5 April 2016 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "9 July 2015 to 5 April 2016 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2016_POST_PAGE_HEADER = "9 July 2015 to 5 April 2016 remedy period"
   val YEAR_2017_PAGE_TITLE       =
-    "6 April 2016 to 5 April 2017 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "6 April 2016 to 5 April 2017 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2017_PAGE_HEADER      = "6 April 2016 to 5 April 2017 remedy period"
   val YEAR_2018_PAGE_TITLE       =
-    "6 April 2017 to 5 April 2018 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "6 April 2017 to 5 April 2018 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2018_PAGE_HEADER      = "6 April 2017 to 5 April 2018 remedy period"
   val YEAR_2019_PAGE_TITLE       =
-    "6 April 2018 to 5 April 2019 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "6 April 2018 to 5 April 2019 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2019_PAGE_HEADER      = "6 April 2018 to 5 April 2019 remedy period"
   val YEAR_2020_PAGE_TITLE       =
-    "6 April 2019 to 5 April 2020 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "6 April 2019 to 5 April 2020 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2020_PAGE_HEADER      = "6 April 2019 to 5 April 2020 remedy period"
   val YEAR_2021_PAGE_TITLE       =
-    "6 April 2020 to 5 April 2021 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "6 April 2020 to 5 April 2021 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2021_PAGE_HEADER      = "6 April 2020 to 5 April 2021 remedy period"
   val YEAR_2022_PAGE_TITLE       =
-    "6 April 2021 to 5 April 2022 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "6 April 2021 to 5 April 2022 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2022_PAGE_HEADER      = "6 April 2021 to 5 April 2022 remedy period"
   val YEAR_2023_PAGE_TITLE       =
-    "6 April 2022 to 5 April 2023 remedy period - Calculate Public Pension Adjustment service - GOV.UK"
+    "6 April 2022 to 5 April 2023 remedy period - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2023_PAGE_HEADER      = "6 April 2022 to 5 April 2023 remedy period"
 
   def onWhatYouWillNeedAa2016PrePage() = {

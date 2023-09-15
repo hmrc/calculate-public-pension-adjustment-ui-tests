@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{REPORTING_CHANGE_PAGE_HEADER, REPORTING_CHANGE_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{REPORTING_CHANGE_PAGE_HEADER, REPORTING_CHANGE_PAGE_LABEL, REPORTING_CHANGE_PAGE_TITLE}
 
 import scala.collection.mutable.ListBuffer
 
@@ -30,13 +30,13 @@ object ReportingChangePage extends BasePage {
       driver
         .findElement(By.xpath("//div[@class='govuk-form-group govuk-form-group--error']//p[@id='value-error']"))
         .getText
-        .contains(Errors.CHECK_BOX_ERROR_SUMMARY) && driver
+        .contains(Errors.REPORTING_CHANGE_CHECK_BOX_ERROR_SUMMARY) && driver
         .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
         .getText
         .contains(Errors.ERROR_SUMMARY_TITLE) && driver
         .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
         .getText
-        .contains(Errors.CHECK_BOX_ERROR_SUMMARY)
+        .contains(Errors.REPORTING_CHANGE_CHECK_BOX_ERROR_SUMMARY)
     )
 
   def clearAllOptions() =
@@ -47,7 +47,7 @@ object ReportingChangePage extends BasePage {
     }
 
   def onReportingChangePage() = {
-    verifyPageUrl("reporting-change")
+    verifyPageUrl("charges")
     onPage(REPORTING_CHANGE_PAGE_TITLE)
     isHeader(REPORTING_CHANGE_PAGE_HEADER)
   }
@@ -96,7 +96,8 @@ object ReportingChangePage extends BasePage {
     }
 
     val resultString: String = selectedOptions.mkString(", ")
-    checkYourAnswersGSMap(REPORTING_CHANGE_PAGE_HEADER, resultString)
+
+    checkYourAnswersGSMap(REPORTING_CHANGE_PAGE_LABEL, resultString)
     submitPage()
   }
 

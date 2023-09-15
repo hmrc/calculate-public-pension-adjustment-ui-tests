@@ -16,7 +16,8 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.constants.Errors.TEXT_WITH_501_CHARACTERS
+import uk.gov.hmrc.test.ui.constants.Errors
+import uk.gov.hmrc.test.ui.constants.Errors.{TEXT_WITH_500_CHARACTERS, TEXT_WITH_501_CHARACTERS}
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
@@ -39,7 +40,7 @@ class UserJourneyValidationTests extends BaseSpec {
       SavingsStatementPage.submitPage()
 
       Then("I Should see the error messages")
-      SavingsStatementPage.validateRadioButtonError()
+      SavingsStatementPage.validateRadioButtonError(Errors.SAVINGS_STATEMENT_RADIO_BUTTON_ERROR_SUMMARY)
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -51,7 +52,7 @@ class UserJourneyValidationTests extends BaseSpec {
       ResubmittingAdjustmentPage.submitPage()
 
       Then("I Should see the error messages")
-      ResubmittingAdjustmentPage.validateRadioButtonError()
+      ResubmittingAdjustmentPage.validateRadioButtonError(Errors.RESUBMITTING_ADJUSTMENT_RADIO_BUTTON_ERROR_SUMMARY)
 
       When("I select option No and continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
@@ -98,11 +99,13 @@ class UserJourneyValidationTests extends BaseSpec {
       Then("I Should see the error messages")
       ReasonForResubmissionPage.validateReasonForResubmissionPageErrorsWhenNoTextAsReason()
 
-      When("I enter resubmission reason with  503 characters")
+      When("I enter resubmission reason with 501 characters")
       ReasonForResubmissionPage.enterResubmissionReason(TEXT_WITH_501_CHARACTERS)
 
       Then("I Should see only 500 characters in the resubmission reason text box")
-      assert(ReasonForResubmissionPage.verifiedMaxCharacterLength())
+      ReasonForResubmissionPage.enterResubmissionReason(TEXT_WITH_500_CHARACTERS)
+
+      ReasonForResubmissionPage.verifiedMaxCharacterLength()
 
       Then("I click continue")
       ReasonForResubmissionPage.submitPage()
@@ -112,7 +115,6 @@ class UserJourneyValidationTests extends BaseSpec {
 
       When("I click sign out from the page")
       ReportingChangePage.signOutPage()
-
     }
 
     Scenario("LTA user journey - Task list validation Test 1") {
