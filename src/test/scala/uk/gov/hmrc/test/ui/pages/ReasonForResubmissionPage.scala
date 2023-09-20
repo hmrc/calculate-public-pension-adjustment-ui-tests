@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.Errors.TEXT_WITH_500_CHARACTERS
-import uk.gov.hmrc.test.ui.constants.PageInformation.{REASON_FOR_RESUBMISSION_PAGE_HEADER, REASON_FOR_RESUBMISSION_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{REASON_FOR_RESUBMISSION_PAGE_HEADER, REASON_FOR_RESUBMISSION_PAGE_LABEL, REASON_FOR_RESUBMISSION_PAGE_TITLE}
 
 object ReasonForResubmissionPage extends BasePage {
 
@@ -32,21 +32,31 @@ object ReasonForResubmissionPage extends BasePage {
   def getResubmissionReason(): String =
     driver.findElement(By.xpath("//textarea[@id='value']")).getAttribute("value")
 
-  def verifiedMaxCharacterLength(): Boolean                                  =
+  def verifiedMaxCharacterLength(): Boolean =
     getResubmissionReason() == TEXT_WITH_500_CHARACTERS
-  def validateReasonForResubmissionPageErrorsWhenNoTextAsReason(): Assertion =
+
+  def validateReasonForResubmissionPageErrorsWhenNoTextAsReason() = {
     assert(
       driver
         .findElement(By.xpath("//div[@class='govuk-form-group govuk-form-group--error']//p[@id='value-error']"))
         .getText
-        .contains(Errors.TEXT_AREA_ERROR_SUMMARY) && driver
+        .contains(Errors.RESUBMISSION_TEXT_AREA_ERROR_SUMMARY)
+    )
+
+    assert(
+      driver
         .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
         .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
+        .contains(Errors.ERROR_SUMMARY_TITLE)
+    )
+
+    assert(
+      driver
         .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
         .getText
-        .contains(Errors.TEXT_AREA_ERROR_SUMMARY)
+        .contains(Errors.RESUBMISSION_TEXT_AREA_ERROR_SUMMARY)
     )
+  }
 
   def validateReasonForResubmissionPageErrorsReasonExceedCharLimit(): Assertion =
     assert(
@@ -66,7 +76,7 @@ object ReasonForResubmissionPage extends BasePage {
     driver.findElement(By.xpath("//textarea[@id='value']")).clear()
 
   def onReasonForResubmissionPage() = {
-    verifyPageUrl("reason-for-resubmission")
+    verifyPageUrl("change-reason")
     onPage(REASON_FOR_RESUBMISSION_PAGE_TITLE)
     isHeader(REASON_FOR_RESUBMISSION_PAGE_HEADER)
   }
@@ -74,19 +84,19 @@ object ReasonForResubmissionPage extends BasePage {
   def enterReasonAndContinue() = {
     val reason = "resubmission reason"
     enterResubmissionReason(reason)
-    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_HEADER, reason)
+    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_LABEL, reason)
     submitPage()
   }
 
   def enterReasonAndContinue(reason: String) = {
     enterResubmissionReason(reason)
-    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_HEADER, reason)
+    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_LABEL, reason)
     submitPage()
   }
 
   def enterLengthierReasonAndContinue(reason: String) = {
     enterResubmissionReason(reason)
-    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_HEADER, reason)
+    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_LABEL, reason)
     submitPage()
   }
 }

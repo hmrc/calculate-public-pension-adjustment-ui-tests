@@ -144,7 +144,10 @@ object CalculationResultPage extends BasePage {
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
       }
   }
-  def clickContinueSignIn()                                             = driver.findElement(By.xpath("//button[contains(text(),'Continue to sign in')]")).click()
+  def clickContinueSignIn() = {
+    Thread.sleep(2000)
+    driver.findElement(By.xpath("//button[contains(text(),'Continue to sign in')]")).click()
+  }
 
   def getDebitYears() = driver.findElements(
     By.xpath(

@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{RESUBMITTING_ADJUSTMENT_PA
 
 object ResubmittingAdjustmentPage extends BasePage {
   def onResubmittingAdjustmentPage() = {
-    verifyPageUrl("resubmitting-adjustment")
+    verifyPageUrl("change-previous-adjustment")
     onPage(RESUBMITTING_ADJUSTMENT_PAGE_TITLE)
     isHeader(RESUBMITTING_ADJUSTMENT_PAGE_HEADER)
   }

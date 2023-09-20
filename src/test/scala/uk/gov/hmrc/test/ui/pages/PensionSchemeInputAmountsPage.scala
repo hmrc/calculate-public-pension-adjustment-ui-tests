@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 
 object PensionSchemeInputAmountsPage extends BasePage {
   val PENSION_SCHEME_INPUT_AMOUNTS_PAGE_TITLE  =
-    "Pension scheme pensionName input amounts - Calculate Public Pension Adjustment service - GOV.UK"
+    "Pension scheme pensionName input amounts - Calculate your public service pension adjustment - GOV.UK"
   val PENSION_SCHEME_INPUT_AMOUNTS_PAGE_HEADER =
     "Pension scheme pensionName input amounts"
 

@@ -18,8 +18,6 @@ package uk.gov.hmrc.test.ui.constants
 
 object Errors {
   val ERROR_SUMMARY_TITLE                                                = "There is a problem"
-  val RADIO_BUTTON_ERROR_SUMMARY                                         = "You must select one of the options"
-  val TEXT_AREA_ERROR_SUMMARY                                            = "Enter your reason"
   val CHECK_BOX_ERROR_SUMMARY                                            = "You must select at least one of the options"
   val TEXT_WITH_500_CHARACTERS                                           =
     "o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789o'1-=2 3 456789otest"
@@ -54,4 +52,15 @@ object Errors {
     "You have entered a date for the date that you flexibly accessed your defined contribution pension savings before the remedy period, enter a date after 5 April 2015"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_DATES_FORMAT_ERROR_SUMMARY       =
     "Enter a date that you flexibly accessed your defined contribution pension savings as day, month, year"
+
+  val SAVINGS_STATEMENT_RADIO_BUTTON_ERROR_SUMMARY =
+    "Select yes if you have been told about the calculate your public service pension adjustment"
+
+  val RESUBMITTING_ADJUSTMENT_RADIO_BUTTON_ERROR_SUMMARY = "Select yes if you want to resubmit an adjustment"
+
+  val REPORTING_CHANGE_CHECK_BOX_ERROR_SUMMARY = "Select which charges you would like adjusted"
+
+  val RESUBMISSION_ERROR_SUMMARY_TITLE = "Enter the reason you want to resubmit an adjustment"
+
+  val RESUBMISSION_TEXT_AREA_ERROR_SUMMARY = "Enter the reason you want to resubmit an adjustment"
 }

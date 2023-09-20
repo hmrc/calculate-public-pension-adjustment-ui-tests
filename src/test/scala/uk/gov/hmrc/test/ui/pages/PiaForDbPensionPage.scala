@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 
 object PiaForDbPensionPage extends BasePage {
   val PIA_FOR_DB_PENSION_PAGE_TITLE  =
-    "What was your pension input amount for defined benefit pension schemes for fromDayMonthYear to toDayMonthYear? - Calculate Public Pension Adjustment service - GOV.UK"
+    "What was your pension input amount for defined benefit pension schemes for fromDayMonthYear to toDayMonthYear? - Calculate your public service pension adjustment - GOV.UK"
   val PIA_FOR_DB_PENSION_PAGE_HEADER =
     "What was your pension input amount for defined benefit pension schemes for fromDayMonthYear to toDayMonthYear?"
 

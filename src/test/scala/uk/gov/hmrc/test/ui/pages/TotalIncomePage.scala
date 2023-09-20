@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 
 object TotalIncomePage extends BasePage {
   val TOTAL_INCOME_PAGE_TITLE  =
-    "What was your total income from 6 April fromYear to 5 April toYear? - Calculate Public Pension Adjustment service - GOV.UK"
+    "What was your total income from 6 April fromYear to 5 April toYear? - Calculate your public service pension adjustment - GOV.UK"
   val TOTAL_INCOME_PAGE_HEADER = "What was your total income from 6 April fromYear to 5 April toYear?"
 
   def onTotalIncomePage(fromYear: String, toYear: String, year: String) = {

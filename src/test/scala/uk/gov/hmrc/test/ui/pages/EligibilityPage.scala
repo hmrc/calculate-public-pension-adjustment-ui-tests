@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ELIGIBILITY_PAG
 
 object EligibilityPage extends BasePage {
   def onEligibilityPage() = {
-    verifyPageUrl("ineligible")
+    verifyPageUrl("cannot-use-service")
     onPage(CHECK_YOUR_ELIGIBILITY_PAGE_TITLE)
     isHeader(CHECK_YOUR_ELIGIBILITY_PAGE_HEADER)
   }

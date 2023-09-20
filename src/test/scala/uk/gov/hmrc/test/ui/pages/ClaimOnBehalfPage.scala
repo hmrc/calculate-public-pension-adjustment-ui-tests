@@ -24,11 +24,12 @@ object ClaimOnBehalfPage extends BasePage {
     isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
   }
   def verifyPageSelectYesAndContinue() = {
-    Thread.sleep(2000)
+    Thread.sleep(10000)
     verifyClaimOnBehalfPage()
     selectYesAndContinueCalculationsPage()
   }
   def verifyPageSelectNoAndContinue() = {
+    Thread.sleep(10000)
     verifyClaimOnBehalfPage()
     selectNoAndContinueCalculationsPage()
   }
