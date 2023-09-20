@@ -20,15 +20,15 @@ import org.openqa.selenium.By
 
 object PiaForDcPensionFlexiblePage extends BasePage {
   val PIA_FOR_DC_PENSION_PAGE_TITLE  =
-    "What was your pension input amount for defined contribution pension schemes for fromDayMonthYear to toDayMonthYear? - Calculate your public service pension adjustment - GOV.UK"
+    "What was your pension input amount for defined contribution pension schemes from fromDayMonthYear to toDayMonthYear? - Calculate Public Pension Adjustment service - GOV.UK"
   val PIA_FOR_DC_PENSION_PAGE_HEADER =
-    "What was your pension input amount for defined contribution pension schemes for fromDayMonthYear to toDayMonthYear?"
+    "What was your pension input amount for defined contribution pension schemes from fromDayMonthYear to toDayMonthYear?"
   def onPiaForDcPensionFlexiblePage(
     year: String,
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    verifyPageUrl("pia-for-dc-pension-flexible/" + year)
+    verifyPageUrl(s"annual-allowance/$year/flexible-pension-input-amount-defined-contribution")
     onPage(
       PIA_FOR_DC_PENSION_PAGE_TITLE
         .replaceAll("fromDayMonthYear", fromDayMonthYear)

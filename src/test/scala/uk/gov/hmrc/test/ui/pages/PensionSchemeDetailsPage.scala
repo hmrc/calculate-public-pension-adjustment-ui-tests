@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{PENSION_SCHEME_DETAILS_PAG
 
 object PensionSchemeDetailsPage extends BasePage {
   def onPensionSchemeDetailsPage(period: String, pensionSchemeNumber: String) = {
-    verifyPageUrl("pension-scheme-details/" + period + "/" + pensionSchemeNumber)
+    verifyPageUrl(s"annual-allowance/$period/scheme-name-reference/$pensionSchemeNumber")
     onPage(PENSION_SCHEME_DETAILS_PAGE_TITLE)
     isHeader(PENSION_SCHEME_DETAILS_PAGE_HEADER)
   }

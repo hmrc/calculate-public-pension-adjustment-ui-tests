@@ -18,22 +18,21 @@ package uk.gov.hmrc.test.ui.pages
 
 object ThresholdIncomePage extends BasePage {
   val THRESHOLD_INCOME_PAGE_2017_TO_2020_TITLE  =
-    "Was your threshold income above £110,000 from 6 April fromYear to 5 April toYear? - Calculate your public service pension adjustment - GOV.UK"
+    "Threshold income - Calculate Public Pension Adjustment service - GOV.UK"
   val THRESHOLD_INCOME_PAGE_2017_TO_2020_HEADER =
-    "Was your threshold income above £110,000 from 6 April fromYear to 5 April toYear?"
-
+    "Threshold income"
   val THRESHOLD_INCOME_PAGE_2021_TO_2023_TITLE  =
-    "Was your threshold income above £200,000 from 6 April fromYear to 5 April toYear? - Calculate your public service pension adjustment - GOV.UK"
+    "Threshold income - Calculate Public Pension Adjustment service - GOV.UK"
   val THRESHOLD_INCOME_PAGE_2021_TO_2023_HEADER =
-    "Was your threshold income above £200,000 from 6 April fromYear to 5 April toYear?"
+    "Threshold income"
   def onThresholdIncome2017TO2020Page(fromYear: String, toYear: String, year: String) = {
-    verifyPageUrl("threshold-income/" + year)
+    verifyPageUrl(s"annual-allowance/$year/threshold-income")
     onPage(THRESHOLD_INCOME_PAGE_2017_TO_2020_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     isHeader(THRESHOLD_INCOME_PAGE_2017_TO_2020_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
   }
 
   def onThresholdIncome2021TO2023Page(fromYear: String, toYear: String, year: String) = {
-    verifyPageUrl("threshold-income/" + year)
+    verifyPageUrl(s"annual-allowance/$year/threshold-income")
     onPage(THRESHOLD_INCOME_PAGE_2021_TO_2023_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     isHeader(THRESHOLD_INCOME_PAGE_2021_TO_2023_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
   }
