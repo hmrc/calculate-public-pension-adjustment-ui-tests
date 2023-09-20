@@ -181,7 +181,7 @@ object PageInformation {
   val SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER           =
     "What is the name and tax reference of the scheme that paid the lifetime allowance charge?"
   val MEMBER_MORE_THAN_ONE_PENSION_PAGE_TITLE            =
-    "Multiple public service pension schemes - Calculate Public Pension Adjustment service - GOV.UK"
+    "Multiple public service pension schemes - Calculate your public service pension adjustment - GOV.UK"
   val MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER           =
     "Multiple public service pension schemes"
   val WHICH_SCHEME_DETAILS_PAGE_TITLE                    =
@@ -193,15 +193,15 @@ object PageInformation {
   val PENSION_SCHEME_DETAILS_PAGE_HEADER                 =
     "What is the name and tax reference of the pension scheme?"
   val DID_YOU_PAY_A_CHARGE_PAGE_TITLE                    =
-    "Did you pay an annual allowance tax charge for pension scheme pensionSchemeNumber? - Calculate Public Pension Adjustment service - GOV.UK"
+    "Did you pay an annual allowance tax charge for pension scheme pensionSchemeNumber? - Calculate your public service pension adjustment - GOV.UK"
   val DID_YOU_PAY_A_CHARGE_PAGE_HEADER                   =
     "Did you pay an annual allowance tax charge for"
   val HOW_MUCH_PENSION_PAY_CHARGE_PAGE_TITLE             =
-    "How much annual allowance tax charge did your pension scheme pay? - Calculate Public Pension Adjustment service - GOV.UK"
+    "How much annual allowance tax charge did your pension scheme pay? - Calculate your public service pension adjustment - GOV.UK"
   val HOW_MUCH_PENSION_PAY_CHARGE_PAGE_HEADER            =
     "How much annual allowance tax charge did your pension scheme pay?"
   val HOW_MUCH_YOU_PAY_CHARGE_PAGE_TITLE                 =
-    "How much annual allowance tax charge did you pay? - Calculate Public Pension Adjustment service - GOV.UK"
+    "How much annual allowance tax charge did you pay? - Calculate your public service pension adjustment - GOV.UK"
   val HOW_MUCH_YOU_PAY_CHARGE_PAGE_HEADER                =
     "How much annual allowance tax charge did you pay?"
   val CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_TITLE          =

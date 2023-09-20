@@ -21,31 +21,31 @@ import util.DataCollectorMap
 object WhatYouWillNeedAaPage extends BasePage {
 
   val YEAR_2016_PRE_PAGE_TITLE   =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2016_PRE_PAGE_HEADER  = "What you will need"
   val YEAR_2016_POST_PAGE_TITLE  =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2016_POST_PAGE_HEADER = "What you will need"
   val YEAR_2017_PAGE_TITLE       =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2017_PAGE_HEADER      = "What you will need"
   val YEAR_2018_PAGE_TITLE       =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2018_PAGE_HEADER      = "What you will need"
   val YEAR_2019_PAGE_TITLE       =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2019_PAGE_HEADER      = "What you will need"
   val YEAR_2020_PAGE_TITLE       =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2020_PAGE_HEADER      = "What you will need"
   val YEAR_2021_PAGE_TITLE       =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2021_PAGE_HEADER      = "What you will need"
   val YEAR_2022_PAGE_TITLE       =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2022_PAGE_HEADER      = "What you will need"
   val YEAR_2023_PAGE_TITLE       =
-    "What you will need - Calculate Public Pension Adjustment service - GOV.UK"
+    "What you will need - Calculate your public service pension adjustment - GOV.UK"
   val YEAR_2023_PAGE_HEADER      = "What you will need"
 
   def onWhatYouWillNeedAa2016PrePage() = {

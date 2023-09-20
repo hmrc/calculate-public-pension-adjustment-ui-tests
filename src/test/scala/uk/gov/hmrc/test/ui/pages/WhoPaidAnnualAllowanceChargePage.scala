@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 
 object WhoPaidAnnualAllowanceChargePage extends BasePage {
   val WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_TITLE  =
-    "Who paid the annual allowance tax charge for pensionSchemeNumber? - Calculate Public Pension Adjustment service - GOV.UK"
+    "Who paid the annual allowance tax charge for pensionSchemeNumber? - Calculate your public service pension adjustment - GOV.UK"
   val WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_HEADER =
     "Who paid the annual allowance tax charge for schemeName?"
 
