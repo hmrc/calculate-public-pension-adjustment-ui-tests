@@ -29,7 +29,7 @@ object PiaForDbPensionPage extends BasePage {
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    verifyPageUrl("pia-for-db-pension/" + year)
+    verifyPageUrl(s"annual-allowance/$year/pension-input-amount-defined-benefit")
     onPage(
       PIA_FOR_DB_PENSION_PAGE_TITLE
         .replaceAll("fromDayMonthYear", fromDayMonthYear)

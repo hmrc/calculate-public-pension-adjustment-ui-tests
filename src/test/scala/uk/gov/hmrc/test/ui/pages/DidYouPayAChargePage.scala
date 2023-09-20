@@ -19,19 +19,20 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.constants.PageInformation.{DID_YOU_PAY_A_CHARGE_PAGE_HEADER, DID_YOU_PAY_A_CHARGE_PAGE_TITLE}
 
 object DidYouPayAChargePage extends BasePage {
-  def onPensionSchemeInputAmountsPage(period: String, pensionSchemeNumber: String) = {
-    verifyPageUrl("did-you-pay-a-charge/" + period + "/" + pensionSchemeNumber)
-    onPage(DID_YOU_PAY_A_CHARGE_PAGE_TITLE)
-    isHeader(DID_YOU_PAY_A_CHARGE_PAGE_HEADER)
+  def onPensionSchemeInputAmountsPage(period: String, pensionSchemeNumber: String, pensionSchemeName: String) = {
+    verifyPageUrl(s"annual-allowance/$period/pension-scheme-$pensionSchemeNumber/annual-allowance-charge")
+
+    onPage(DID_YOU_PAY_A_CHARGE_PAGE_TITLE.replaceAll("pensionSchemeNumber", pensionSchemeNumber))
+    isHeader(DID_YOU_PAY_A_CHARGE_PAGE_HEADER + s" $pensionSchemeName?")
   }
 
-  def verifyPageSelectNoAndContinue(period: String, pensionSchemeNumber: String) = {
-    onPensionSchemeInputAmountsPage(period, pensionSchemeNumber)
+  def verifyPageSelectNoAndContinue(period: String, pensionSchemeNumber: String, pensionSchemeName: String) = {
+    onPensionSchemeInputAmountsPage(period, pensionSchemeNumber, pensionSchemeName)
     selectNoAndContinueForAAPeriodPage()
   }
 
-  def verifyPageSelectYesAndContinue(period: String, pensionSchemeNumber: String) = {
-    onPensionSchemeInputAmountsPage(period, pensionSchemeNumber)
+  def verifyPageSelectYesAndContinue(period: String, pensionSchemeNumber: String, pensionSchemeName: String) = {
+    onPensionSchemeInputAmountsPage(period, pensionSchemeNumber, pensionSchemeName)
     selectYesAndContinueForAAPeriodPage()
   }
 }

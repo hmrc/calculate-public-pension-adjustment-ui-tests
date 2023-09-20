@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{CONTRIBUTED_OTHER_DB_DC_SC
 
 object ContributedOtherDbDcSchemePage extends BasePage {
   def onContributedOtherDbDcSchemePage(year: String) = {
-    verifyPageUrl("contributed-other-db-dc-scheme/" + year)
+    verifyPageUrl(s"annual-allowance/$year/contributed-to-any-other-dc-or-db-scheme")
     onPage(CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_TITLE)
     isHeader(CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_HEADER)
   }

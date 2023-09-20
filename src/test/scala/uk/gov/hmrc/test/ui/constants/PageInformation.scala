@@ -129,7 +129,7 @@ object PageInformation {
   val CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER2             =
     "Annual allowance setup questions"
   val CHECK_YOUR_PERIOD_ANSWERS_PAGE_FOR_AA_HEADER2      =
-    "Annual allowance"
+    "Annual allowance questions"
   val TASK_LISTS_PAGE_TITLE                              =
     "Calculate Public Service Pension Adjustment - Calculate your public service pension adjustment - GOV.UK"
   val TASK_LISTS_PAGE_HEADER                             =
@@ -181,9 +181,9 @@ object PageInformation {
   val SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER           =
     "What is the name and tax reference of the scheme that paid the lifetime allowance charge?"
   val MEMBER_MORE_THAN_ONE_PENSION_PAGE_TITLE            =
-    "Were you a member of more than one public service pension scheme? - Calculate your public service pension adjustment - GOV.UK"
+    "Multiple public service pension schemes - Calculate your public service pension adjustment - GOV.UK"
   val MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER           =
-    "Were you a member of more than one public service pension scheme?"
+    "Multiple public service pension schemes"
   val WHICH_SCHEME_DETAILS_PAGE_TITLE                    =
     "Which scheme are you entering details for? - Calculate your public service pension adjustment - GOV.UK"
   val WHICH_SCHEME_DETAILS_PAGE_HEADER                   =
@@ -193,17 +193,17 @@ object PageInformation {
   val PENSION_SCHEME_DETAILS_PAGE_HEADER                 =
     "What is the name and tax reference of the pension scheme?"
   val DID_YOU_PAY_A_CHARGE_PAGE_TITLE                    =
-    "Did you pay a charge? - Calculate your public service pension adjustment - GOV.UK"
+    "Did you pay an annual allowance tax charge for pension scheme pensionSchemeNumber? - Calculate your public service pension adjustment - GOV.UK"
   val DID_YOU_PAY_A_CHARGE_PAGE_HEADER                   =
-    "Did you pay a charge?"
+    "Did you pay an annual allowance tax charge for"
   val HOW_MUCH_PENSION_PAY_CHARGE_PAGE_TITLE             =
-    "How much of the charge did your pension scheme pay? - Calculate your public service pension adjustment - GOV.UK"
+    "How much annual allowance tax charge did your pension scheme pay? - Calculate your public service pension adjustment - GOV.UK"
   val HOW_MUCH_PENSION_PAY_CHARGE_PAGE_HEADER            =
-    "How much of the charge did your pension scheme pay?"
+    "How much annual allowance tax charge did your pension scheme pay?"
   val HOW_MUCH_YOU_PAY_CHARGE_PAGE_TITLE                 =
-    "How much of the charge did you pay? - Calculate your public service pension adjustment - GOV.UK"
+    "How much annual allowance tax charge did you pay? - Calculate your public service pension adjustment - GOV.UK"
   val HOW_MUCH_YOU_PAY_CHARGE_PAGE_HEADER                =
-    "How much of the charge did you pay?"
+    "How much annual allowance tax charge did you pay?"
   val CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_TITLE          =
     "Have you contributed to any other defined benefit or defined contribution scheme? - Calculate your public service pension adjustment - GOV.UK"
   val CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_HEADER         =

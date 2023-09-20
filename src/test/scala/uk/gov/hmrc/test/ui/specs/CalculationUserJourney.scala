@@ -532,7 +532,7 @@ class CalculationUserJourney extends BaseSpec {
       )
       When("I verify DidYouPayAChargePage page, select no and continue")
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-pre", "0", "PensionScheme1")
 
       /** Verify header and title */
       When("I verify AddAnotherSchemePage page, select Yes and continue")
@@ -551,7 +551,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-pre", "1")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-pre", "1", "PensionScheme2")
 
       When("I verify AddAnotherSchemePage page, select No and continue")
       When("I verify AddAnotherSchemePage page, select no and continue")
@@ -582,7 +582,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify AddAnotherSchemePage page, select Yes and continue")
       AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
@@ -603,7 +603,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "1")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "1", "PensionScheme3")
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "1")
@@ -636,7 +636,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme3")
 
       When("I verify AddAnotherSchemePage page, select Yes and continue")
       AddAnotherSchemePage.verifyPageSelectYesAndContinue("2017", "0")
@@ -657,7 +657,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "1")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "1", "PensionScheme4")
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2017", "1")
@@ -695,7 +695,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2020", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2020", "0", "PensionScheme4")
 
       When("I verify AddAnotherSchemePage page, select Yes and continue")
       AddAnotherSchemePage.verifyPageSelectYesAndContinue("2020", "0")
@@ -716,7 +716,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2020", "1")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2020", "1", "PensionScheme5")
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2020", "1")
@@ -754,7 +754,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2021", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2021", "0", "PensionScheme5")
 
       /** need a dev fix here to avoid add another scheme page as 5 schemes already added */
       When("I verify AddAnotherSchemePage page, select no and continue")
@@ -881,10 +881,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select you and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -905,7 +910,7 @@ class CalculationUserJourney extends BaseSpec {
         "PensionScheme2"
       )
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1", "PensionScheme2")
 
       When("I verify HowMuchPensionPayChargePage, enter pension pay and continue")
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "1", "200000000")
@@ -938,13 +943,14 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select pension scheme and continue")
       WhoPaidAnnualAllowanceChargePage.verifyPageSelectPensionSchemeAndContinue(
         "2016-post",
         "0",
-        "9 July 2015 to 5 April 2016"
+        "9 July 2015 to 5 April 2016",
+        "PensionScheme1"
       )
 
       When("I verify HowMuchPensionPayChargePage, enter pension pay and continue")
@@ -1070,10 +1076,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -1098,7 +1109,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1", "PensionScheme2")
 
       When("I verify HowMuchPensionPayChargePage, enter pension pay and continue")
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "1", "200000000")
@@ -1132,13 +1143,14 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
       WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
         "2016-post",
         "0",
-        "9 July 2015 to 5 April 2016"
+        "9 July 2015 to 5 April 2016",
+        "PensionScheme1"
       )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
@@ -1164,7 +1176,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "1")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", "1", "PensionScheme1")
 
       When("I verify HowMuchPensionPayChargePage, enter pension pay and continue")
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-post", "1", "200000000")
@@ -1355,10 +1367,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -1383,7 +1400,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1", "PensionScheme2")
 
       When("I verify HowMuchPensionPayChargePage, enter pension pay and continue")
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "1", "200000000")
@@ -1418,7 +1435,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "0")
@@ -1542,10 +1559,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -1570,7 +1592,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "1", "PensionScheme2")
 
       When("I verify HowMuchPensionPayChargePage, enter pension pay and continue")
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "1", "200000000")
@@ -1608,7 +1630,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "0")
@@ -1645,7 +1667,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme1")
 
       When("I verify AddAnotherSchemePage page, select Yes and continue")
       AddAnotherSchemePage.verifyPageSelectYesAndContinue("2017", "0")
@@ -1666,7 +1688,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "1")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "1", "PensionScheme4")
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2017", "1")
@@ -1802,10 +1824,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -1840,7 +1867,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
@@ -1870,7 +1897,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme1")
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
       ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2016", "2017", "2017")
@@ -2007,10 +2034,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -2058,7 +2090,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
@@ -2102,7 +2134,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
@@ -2254,10 +2286,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -2305,7 +2342,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
@@ -2349,7 +2386,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
@@ -2500,10 +2537,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -2558,7 +2600,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
@@ -2610,7 +2652,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
@@ -2773,10 +2815,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -2832,7 +2879,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
@@ -2883,7 +2930,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
@@ -3053,10 +3100,15 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -3120,7 +3172,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
@@ -3172,7 +3224,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")
@@ -3330,10 +3382,15 @@ class CalculationUserJourney extends BaseSpec {
         "PensionScheme1"
       )
       When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0")
+      DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-pre", "0", "PensionScheme1")
 
       When("I verify WhoPaidAnnualAllowanceChargePage, select both and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue("2016-pre", "0", "6 April 2015 to 8 July 2015")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
+        "2016-pre",
+        "0",
+        "6 April 2015 to 8 July 2015",
+        "PensionScheme1"
+      )
 
       When("I verify HowMuchYouPayChargePage, select you pay and continue")
       HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("2016-pre", "0", "100000000")
@@ -3388,7 +3445,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
@@ -3448,7 +3505,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       When("I verify DidYouPayAChargePage page, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue("2017", "0", "PensionScheme1")
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2017")

@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_CONTRIBUTED_DURING_R
 
 object WhichContributedDuringRemedyPeriodPage extends BasePage {
   def onThresholdIncomePage(year: String) = {
-    verifyPageUrl("which-contributed-during-remedy-period/" + year)
+    verifyPageUrl(s"annual-allowance/$year/contributed-to-dc-or-db-scheme")
     onPage(WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_TITLE)
     isHeader(WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER)
   }

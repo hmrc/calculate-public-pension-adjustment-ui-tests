@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_MUCH_PENSION_PAY_CHARG
 
 object HowMuchPensionPayChargePage extends BasePage {
   def onHowMuchPensionPayChargePage(year: String, pensionSchemeNumber: String) = {
-    verifyPageUrl("how-much-pension-pay-charge/" + year + "/" + pensionSchemeNumber)
+    verifyPageUrl(s"annual-allowance/$year/pension-scheme-$pensionSchemeNumber/charge-amount-pension-scheme-paid")
     onPage(HOW_MUCH_PENSION_PAY_CHARGE_PAGE_TITLE)
     isHeader(HOW_MUCH_PENSION_PAY_CHARGE_PAGE_HEADER)
   }

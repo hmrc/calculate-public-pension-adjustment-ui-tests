@@ -20,14 +20,14 @@ import org.openqa.selenium.By
 
 object PensionSchemeInputAmountsPage extends BasePage {
   val PENSION_SCHEME_INPUT_AMOUNTS_PAGE_TITLE  =
-    "Pension scheme pensionName input amounts - Calculate your public service pension adjustment - GOV.UK"
+    "Pension input amounts for the pension scheme - Calculate your public service pension adjustment - GOV.UK"
   val PENSION_SCHEME_INPUT_AMOUNTS_PAGE_HEADER =
-    "Pension scheme pensionName input amounts"
+    "Pension input amounts for thePensionSchemeName"
 
   def onPensionSchemeInputAmountsPage(period: String, pensionSchemeNumber: String, schemeName: String) = {
-    verifyPageUrl("pension-scheme-input-amounts/" + period + "/" + pensionSchemeNumber)
-    onPage(PENSION_SCHEME_INPUT_AMOUNTS_PAGE_TITLE.replaceAll("pensionName", schemeName))
-    isHeader(PENSION_SCHEME_INPUT_AMOUNTS_PAGE_HEADER.replaceAll("pensionName", schemeName))
+    verifyPageUrl(s"annual-allowance/$period/pension-scheme-$pensionSchemeNumber/pension-input-amount")
+    onPage(PENSION_SCHEME_INPUT_AMOUNTS_PAGE_TITLE.replaceAll("thePensionSchemeName", schemeName))
+    isHeader(PENSION_SCHEME_INPUT_AMOUNTS_PAGE_HEADER.replaceAll("thePensionSchemeName", schemeName))
   }
 
   def enterPensionInputAmount(pensionInputAmount: String) = {

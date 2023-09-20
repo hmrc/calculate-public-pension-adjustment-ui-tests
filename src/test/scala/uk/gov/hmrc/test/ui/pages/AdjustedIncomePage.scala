@@ -25,7 +25,7 @@ object AdjustedIncomePage extends BasePage {
     "What was your adjusted income from 6 April fromYear to 5 April toYear?"
   val ADJUSTED_INCOME_PAGE_HEADER = "Adjusted income"
   def onAdjustedIncomePage(fromYear: String, toYear: String, year: String, pensionSchemeNumber: String) = {
-    verifyPageUrl("adjusted-income/" + year)
+    verifyPageUrl(s"annual-allowance/$year/adjusted-income")
     onPage(ADJUSTED_INCOME_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     isHeader(ADJUSTED_INCOME_PAGE_HEADER)
   }
