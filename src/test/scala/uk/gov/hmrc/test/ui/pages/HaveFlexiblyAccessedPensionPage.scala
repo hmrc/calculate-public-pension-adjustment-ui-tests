@@ -37,7 +37,7 @@ object HaveFlexiblyAccessedPensionPage extends BasePage {
     )
 
   def onHaveFlexiblyAccessedPensionPage() = {
-    verifyPageUrl("have-flexibly-accessed-pension")
+    verifyPageUrl("annual-allowance/flexibly-accessed")
     onPage(HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_TITLE)
     isHeader(HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_HEADER)
   }

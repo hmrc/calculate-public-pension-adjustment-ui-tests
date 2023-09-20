@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2013_PAGE_H
 
 object PiaPreRemedyPage2014 extends BasePage {
   def onPiaPreRemedyPage2013Page() = {
-    verifyPageUrl("pia-pre-remedy/2014")
+    verifyPageUrl("annual-allowance/pension-input-amount/2014")
     onPage(PIA_PRE_REMEDY_2013_PAGE_TITLE)
     isHeader(PIA_PRE_REMEDY_2013_PAGE_HEADER)
   }

@@ -37,7 +37,7 @@ object ScottishTaxpayerFrom2016Page extends BasePage {
     )
 
   def onScottishTaxpayerFrom2016Page() = {
-    verifyPageUrl("scottish-taxpayer-from-2016")
+    verifyPageUrl("annual-allowance/scottish-taxpayer")
     onPage(SCOTTISH_TAX_PAYER_FROM_2016_PAGE_TITLE)
     isHeader(SCOTTISH_TAX_PAYER_FROM_2016_PAGE_HEADER)
   }

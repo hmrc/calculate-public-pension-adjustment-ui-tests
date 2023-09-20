@@ -24,7 +24,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_YEARS_SCOTTISH_TAXPA
 object WhichYearsScottishTaxpayer extends BasePage {
   var taxYears = ""
   def onWhichYearsScottishTaxpayerPage() = {
-    verifyPageUrl("which-years-scottish-taxpayer")
+    verifyPageUrl("annual-allowance/scottish-taxpayer-years")
     onPage(WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE)
     isHeader(WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER)
   }
@@ -46,12 +46,14 @@ object WhichYearsScottishTaxpayer extends BasePage {
     driver
       .findElement(
         By.xpath(
-          "//div[@class='govuk-checkboxes__item']//label[contains(text(),'to " + year + "')]//preceding-sibling::input"
+          "//div[@class='govuk-checkboxes__item']//label[contains(text(),'to 5 April " + year + "')]//preceding-sibling::input"
         )
       )
       .click()
     val fullText = driver
-      .findElement(By.xpath("//div[@class='govuk-checkboxes__item']//label[contains(text(),'to " + year + "')]"))
+      .findElement(
+        By.xpath("//div[@class='govuk-checkboxes__item']//label[contains(text(),'to 5 April " + year + "')]")
+      )
       .getText
       .trim
     if (taxYears.nonEmpty) {

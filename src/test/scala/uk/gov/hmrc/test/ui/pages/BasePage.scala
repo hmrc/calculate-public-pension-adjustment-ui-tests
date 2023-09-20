@@ -51,6 +51,7 @@ trait CalculationDataCollector {
 trait AAPeriodDataCollector {
   def checkYourAnswersCalculationsMap(key: String, value: Any): Unit
 }
+
 trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector with Matchers {
 
   def checkYourAnswersCalculationsMap(key: String, value: Any): Unit =
@@ -76,7 +77,8 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
 
   def checkYourAnswersAAPeriodMap(key: String, value: Any): Unit =
     DataCollectorMap.addToAAPeriodMap(key, value)
-  def submitPage(): Unit                                         =
+
+  def submitPage(): Unit =
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
   def clickContinueButton(): Unit =
@@ -307,6 +309,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     checkYourAnswersCalculationsMap(getHeader(), selectedOption())
     submitPage()
   }
+
   def selectNoAndContinueForLTAPage() = {
     selectNoOption()
     checkYourAnswersLASMap(getHeader(), selectedOption())
@@ -370,22 +373,24 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     "£" + driver.findElement(By.id("value")).getAttribute("value")
 
   def returnCheckYourAnswersPageInformation(): mutable.Map[String, Any] = {
-    val map         = mutable.Map[String, Any]()
+    val map        = mutable.Map[String, Any]()
     // Extract <dt> and the first non-empty <dd> text for each <div>
-    val dlElement   = driver.findElement(By.xpath("//dl[@class='govuk-summary-list']"))
-    // Get the HTML content of the <dl> element
-    val html        = dlElement.getAttribute("innerHTML")
-    // Parse the HTML using Jsoup
-    val document    = Jsoup.parse(html)
-    // Extract <dt> and the first non-empty <dd> text for each <div>
-    val divElements = document.select("div")
-    divElements.forEach { divElement =>
-      val dtElement  = divElement.selectFirst("dt")
-      val ddElements = divElement.select("dd").asScala
-      if (dtElement != null && ddElements.nonEmpty) {
-        val dtText = dtElement.text().trim()
-        val ddText = ddElements.find(_.text().trim().nonEmpty).map(_.text().trim()).getOrElse("")
-        map.put(dtText, ddText)
+    val dlElements = driver.findElements(By.xpath("//dl[@class='govuk-summary-list']"))
+    dlElements.forEach { dlElement =>
+      // Get the HTML content of the <dl> element
+      val html        = dlElement.getAttribute("innerHTML")
+      // Parse the HTML using Jsoup
+      val document    = Jsoup.parse(html)
+      // Extract <dt> and the first non-empty <dd> text for each <div>
+      val divElements = document.select("div")
+      divElements.forEach { divElement =>
+        val dtElement  = divElement.selectFirst("dt")
+        val ddElements = divElement.select("dd").asScala
+        if (dtElement != null && ddElements.nonEmpty) {
+          val dtText = dtElement.text().trim()
+          val ddText = ddElements.find(_.text().trim().nonEmpty).map(_.text().trim()).getOrElse("")
+          map.put(dtText, ddText)
+        }
       }
     }
     map
@@ -432,4 +437,5 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     selectedText
   }
 }
+
 case class PageNotFoundException(s: String) extends Exception(s)

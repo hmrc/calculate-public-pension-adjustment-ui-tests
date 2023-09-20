@@ -37,7 +37,7 @@ object HaveDefinedContributionPensionPage extends BasePage {
     )
 
   def onHaveDefinedContributionPensionPage() = {
-    verifyPageUrl("have-defined-contribution-pension")
+    verifyPageUrl("annual-allowance/defined-contributions-scheme")
     onPage(HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_TITLE)
     isHeader(HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_HEADER)
   }

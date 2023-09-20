@@ -79,7 +79,7 @@ object WhenStopPayingPublicPensionPage extends BasePage {
     )
 
   def onWhenStopPayingPublicPensionPage() = {
-    verifyPageUrl("when-stop-paying-public-pension")
+    verifyPageUrl("annual-allowance/stopped-paying-into-public-service-pension")
     onPage(WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE)
     isHeader(WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER)
   }

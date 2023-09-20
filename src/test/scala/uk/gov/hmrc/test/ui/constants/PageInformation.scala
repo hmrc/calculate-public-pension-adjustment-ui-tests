@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.constants
 
 object PageInformation {
+
   val HOME_PAGE_TITLE                     =
     "Calculate Public Service Pension Adjustment - Calculate your public service pension adjustment - GOV.UK"
   val HOME_PAGE_HEADER                    = "Calculate Public Service Pension Adjustment"
@@ -40,49 +41,49 @@ object PageInformation {
   val REPORTING_CHANGE_PAGE_LABEL                        = "Charges to be adjusted"
   val REPORTING_CHANGE_PAGE_HEADER                       = "Which tax charges would you like adjusted?"
   val SCOTTISH_TAX_PAYER_FROM_2016_PAGE_TITLE            =
-    "Were you ever a Scottish taxpayer from 6 April 2016 onwards? - Calculate your public service pension adjustment - GOV.UK"
+    "Were you ever a Scottish taxpayer from 6 April 2016? - Calculate your public service pension adjustment - GOV.UK"
   val SCOTTISH_TAX_PAYER_FROM_2016_PAGE_HEADER           =
-    "Were you ever a Scottish taxpayer from 6 April 2016 onwards?"
+    "Were you ever a Scottish taxpayer from 6 April 2016?"
   val WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE           =
-    "In which years were you a Scottish taxpayer? - Calculate your public service pension adjustment - GOV.UK"
+    "Which tax years were you a Scottish taxpayer? - Calculate your public service pension adjustment - GOV.UK"
   val WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER          =
-    "In which years were you a Scottish taxpayer?"
+    "Which tax years were you a Scottish taxpayer?"
   val PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_TITLE       =
-    "Are you paying into a public service pension scheme? - Calculate your public service pension adjustment - GOV.UK"
+    "Are you still paying into or increasing a public service pension scheme? - Calculate your public service pension adjustment - GOV.UK"
   val PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_HEADER      =
-    "Are you paying into a public service pension scheme?"
+    "Are you still paying into or increasing a public service pension scheme?"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE         =
     "When did you stop paying into a public service pension scheme? - Calculate your public service pension adjustment - GOV.UK"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER        =
     "When did you stop paying into a public service pension scheme?"
   val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_TITLE       =
-    "Do you have a defined contribution pension scheme? - Calculate your public service pension adjustment - GOV.UK"
+    "Do you have any other pension schemes apart from your public service ones? - Calculate your public service pension adjustment - GOV.UK"
   val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_HEADER      =
-    "Do you have a defined contribution pension scheme?"
+    "Do you have any other pension schemes apart from your public service ones?"
   val HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_TITLE          =
-    "Have you flexibly accessed your defined contribution pension savings? - Calculate your public service pension adjustment - GOV.UK"
+    "Have you flexibly accessed your defined contribution pension? - Calculate your public service pension adjustment - GOV.UK"
   val HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_HEADER         =
-    "Have you flexibly accessed your defined contribution pension savings?"
+    "Have you flexibly accessed your defined contribution pension?"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_TITLE            =
-    "When did you start flexibly accessing defined contribution pension savings? - Calculate your public service pension adjustment - GOV.UK"
+    "When did you first flexibly access your defined contribution pension? - Calculate your public service pension adjustment - GOV.UK"
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER           =
-    "When did you start flexibly accessing defined contribution pension savings?"
+    "When did you first flexibly access your defined contribution pension?"
   val PAY_TAX_CHARGE_FROM2015_2016_PAGE_TITLE            =
-    "Did you pay a tax charge between 6 April 2015 and 5 April 2016? - Calculate your public service pension adjustment - GOV.UK"
+    "Did you pay a tax charge between 6 April 2015 to 5 April 2016? - Calculate your public service pension adjustment - GOV.UK"
   val PAY_TAX_CHARGE_FROM2015_2016_PAGE_HEADER           =
-    "Did you pay a tax charge between 6 April 2015 and 5 April 2016?"
+    "Did you pay a tax charge between 6 April 2015 to 5 April 2016?"
   val PIA_PRE_REMEDY_2012_PAGE_TITLE                     =
-    "What was your pension input amount between 6 April 2012 and 5 April 2013? - Calculate your public service pension adjustment - GOV.UK"
+    "What was your pension input amount from 6 April 2012 and 5 April 2013? - Calculate your public service pension adjustment - GOV.UK"
   val PIA_PRE_REMEDY_2012_PAGE_HEADER                    =
-    "What was your pension input amount between 6 April 2012 and 5 April 2013?"
+    "What was your pension input amount from 6 April 2012 and 5 April 2013?"
   val PIA_PRE_REMEDY_2013_PAGE_TITLE                     =
-    "What was your pension input amount between 6 April 2013 and 5 April 2014? - Calculate your public service pension adjustment - GOV.UK"
+    "What was your pension input amount from 6 April 2013 and 5 April 2014? - Calculate your public service pension adjustment - GOV.UK"
   val PIA_PRE_REMEDY_2013_PAGE_HEADER                    =
-    "What was your pension input amount between 6 April 2013 and 5 April 2014?"
+    "What was your pension input amount from 6 April 2013 and 5 April 2014?"
   val PIA_PRE_REMEDY_2014_PAGE_TITLE                     =
-    "What was your pension input amount between 6 April 2014 and 5 April 2015? - Calculate your public service pension adjustment - GOV.UK"
+    "What was your pension input amount from 6 April 2014 and 5 April 2015? - Calculate your public service pension adjustment - GOV.UK"
   val PIA_PRE_REMEDY_2014_PAGE_HEADER                    =
-    "What was your pension input amount between 6 April 2014 and 5 April 2015?"
+    "What was your pension input amount from 6 April 2014 and 5 April 2015?"
   val WHAT_YOU_WILL_NEED_LTA_PAGE_TITLE                  =
     "Lifetime allowance - Calculate your public service pension adjustment - GOV.UK"
   val WHAT_YOU_WILL_NEED_LTA_PAGE_HEADER                 = "Lifetime allowance"

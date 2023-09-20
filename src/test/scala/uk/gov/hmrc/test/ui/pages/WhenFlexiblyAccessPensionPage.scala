@@ -92,7 +92,7 @@ object WhenFlexiblyAccessPensionPage extends BasePage {
         .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_DATES_FORMAT_ERROR_SUMMARY)
     )
   def onWhenFlexiblyAccessPensionPage() = {
-    verifyPageUrl("when-flexibly-access-pension")
+    verifyPageUrl("annual-allowance/flexibly-accessed-date")
     onPage(WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_TITLE)
     isHeader(WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER)
   }
