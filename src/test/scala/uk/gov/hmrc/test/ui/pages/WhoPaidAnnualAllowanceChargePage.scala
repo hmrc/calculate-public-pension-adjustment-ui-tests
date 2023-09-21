@@ -24,7 +24,6 @@ object WhoPaidAnnualAllowanceChargePage extends BasePage {
   val WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_HEADER =
     "Who paid the annual allowance tax charge for schemeName?"
 
-  // TODO requires a minor change on top of the changes in MCSC-390 for this to work
   def onWhoPaidAnnualAllowanceChargePage(
     year: String,
     pensionSchemeNumber: String,
@@ -35,9 +34,9 @@ object WhoPaidAnnualAllowanceChargePage extends BasePage {
     onPage(WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_TITLE.replaceAll("pensionSchemeNumber", pensionSchemeNumber))
     isHeader(WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_HEADER.replaceAll("schemeName", schemeName))
   }
-  def selectYou()           = driver.findElement(By.id("value_0")).click()
-  def selectPensionScheme() = driver.findElement(By.id("value_1")).click()
-  def selectBoth()          = driver.findElement(By.id("value_2")).click()
+  def selectYou()                                  = driver.findElement(By.id("value_0")).click()
+  def selectPensionScheme()                        = driver.findElement(By.id("value_1")).click()
+  def selectBoth()                                 = driver.findElement(By.id("value_2")).click()
 
   def verifyPageSelectYouAndContinue(year: String, pensionSchemeNumber: String, period: String, schemeName: String) = {
     onWhoPaidAnnualAllowanceChargePage(year, pensionSchemeNumber, period, schemeName)

@@ -72,6 +72,12 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
 
+      When("I should see the multiple benefit crystallisation event page")
+      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+
+      When("I select any radio button and click continue")
+      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
+
       Then("I Should see the lta-protection-or-enhancements page")
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
@@ -119,7 +125,6 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I click sign out from the page")
       CheckYourAnswersLifetimeAllowancePage.signOutPage()
-
     }
 
     /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(LTA),1.6,TaskList,4.1(Y),4.3,4.4(Y),4.5,4.6,4.7,4.8,4.9(Y),4.10,4.11,4.12(N),4.17(Decrease),4.18(Scheme),4.19,4.20 pages in the mural board */
@@ -171,6 +176,12 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
+
+      When("I should see the multiple benefit crystallisation event page")
+      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+
+      When("I select any radio button and click continue")
+      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
@@ -267,6 +278,12 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
+
+      When("I should see the multiple benefit crystallisation event page")
+      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+
+      When("I select any radio button and click continue")
+      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
@@ -369,6 +386,12 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
+
+      When("I should see the multiple benefit crystallisation event page")
+      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+
+      When("I select any radio button and click continue")
+      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
@@ -479,6 +502,12 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
 
+      When("I should see the multiple benefit crystallisation event page")
+      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+
+      When("I select any radio button and click continue")
+      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
+
       Then("I Should see the lta-protection-or-enhancements page")
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
@@ -584,6 +613,12 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
+
+      When("I should see the multiple benefit crystallisation event page")
+      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+
+      When("I select any radio button and click continue")
+      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
