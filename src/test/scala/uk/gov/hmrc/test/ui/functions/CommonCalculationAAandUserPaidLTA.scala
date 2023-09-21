@@ -996,6 +996,8 @@ class CommonCalculationAAandUserPaidLTA extends BaseSpec {
     ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
     PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
     PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
+    MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+    MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
     LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
     LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
     ProtectionTypePage.onProtectionTypePage()
