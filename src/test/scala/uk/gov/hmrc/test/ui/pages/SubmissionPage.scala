@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{SUBMISSION_PAGE_HEADER, SU
 
 object SubmissionPage extends BasePage {
   def verifySubmissionPage() = {
+    Thread.sleep(5000)
     verifyPageUrl("submission")
     onPage(SUBMISSION_PAGE_TITLE)
     isHeader(SUBMISSION_PAGE_HEADER)
