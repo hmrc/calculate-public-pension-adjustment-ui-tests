@@ -28,7 +28,7 @@ object InternationalAddressPage extends BasePage {
   val country       = "France"
 
   def verifyTheirUKAddressPage() = {
-    verifyPageUrl("international-address")
+    verifyPageUrl("submission-service/your-international-address")
     onPage(INTERNATIONAL_ADDRESS_PAGE_TITLE)
     isHeader(INTERNATIONAL_ADDRESS_PAGE_HEADER)
   }

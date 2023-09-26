@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_TYPE_PAGE_HEADE
 
 object ProtectionTypePage extends BasePage {
   def onProtectionTypePage() = {
-    verifyPageUrl("protection-type")
+    verifyPageUrl("lifetime-allowance/protection-type")
     onPage(PROTECTION_TYPE_PAGE_TITLE)
     isHeader(PROTECTION_TYPE_PAGE_HEADER)
   }

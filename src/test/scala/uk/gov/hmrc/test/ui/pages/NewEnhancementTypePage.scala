@@ -17,26 +17,37 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER, PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE}
+import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_ENHANCEMENT_TYPE_PAGE_HEADER, NEW_ENHANCEMENT_TYPE_PAGE_TITLE}
 
-object PercentageCausedChangeInChargePage extends BasePage {
-  def onPercentageCausedChangeInChargePage() = {
-    verifyPageUrl("lifetime-allowance/lifetime-allowance-charge-change")
-    onPage(PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE)
-    isHeader(PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER)
+object NewEnhancementTypePage extends BasePage {
+  def onNewEnhancementTypePage() = {
+    verifyPageUrl("lifetime-allowance/new-enhancement-type")
+    onPage(NEW_ENHANCEMENT_TYPE_PAGE_TITLE)
+    isHeader(NEW_ENHANCEMENT_TYPE_PAGE_HEADER)
   }
 
-  def selectNewChargeRadioButtonAndContinue(): Unit = {
-    val text = "New charge"
+  def selectInternationalEnhancementRadioButtonAndContinue(): Unit = {
+    val text = "International enhancement"
+    onNewEnhancementTypePage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
 
-  def selectNoneRadioButtonAndContinue(): Unit = {
-    val text = "No charge"
+  def selectPensionCreditRadioButtonAndContinue(): Unit = {
+    val text = "Pension credit"
+    onNewEnhancementTypePage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
+
+  def selectBothRadioButtonAndContinue(): Unit = {
+    val text = "Both"
+    onNewEnhancementTypePage()
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+    submitPage()
+  }
+
 }

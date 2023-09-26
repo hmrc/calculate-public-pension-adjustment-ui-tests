@@ -23,7 +23,7 @@ object EnterAlternativeNamePage extends BasePage {
 
   val name = "ABC BCDEFGH"
   def verifyEnterAlternativeNamePage() = {
-    verifyPageUrl("enter-alternative-name")
+    verifyPageUrl("submission-service/enter-name-pension-scheme-holds")
     onPage(ENTER_ALTERNATIVE_NAME_PAGE_TITLE)
     isHeader(ENTER_ALTERNATIVE_NAME_PAGE_HEADER)
   }

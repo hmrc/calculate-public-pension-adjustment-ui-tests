@@ -17,17 +17,21 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{VALUE_OF_LUMP_SUM_PAGE_HEADER, VALUE_OF_LUMP_SUM_PAGE_TITLE}
 
-object MultipleBenefitCrystallisationEventPage extends BasePage {
+object ValueOfLumpSumPage extends BasePage {
+  def onLtaProtectionOrEnhancementsPage() = {
+    verifyPageUrl("lifetime-allowance/value-of-lump-sum")
+    onPage(VALUE_OF_LUMP_SUM_PAGE_TITLE)
+    isHeader(VALUE_OF_LUMP_SUM_PAGE_HEADER)
+  }
 
-  def onMultipleBenefitCrystallisationEventPage() =
-    verifyPageUrl("lifetime-allowance/more-than-one-benefit-crystallisation-event")
-  // TODO Page content validations to be added.
+  def enterLumpSum(value: String) =
+    driver.findElement(By.id("value")).sendKeys(value)
 
-  def selectNoRadioButtonAndContinue(): Unit = {
-    val text = "No"
-    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
-    checkYourAnswersLASMap(getHeader(), text)
+  def enterLumpSumAndContinue(value: String) = {
+    onLtaProtectionOrEnhancementsPage()
+    enterLumpSum(value)
     submitPage()
   }
 }

@@ -16,22 +16,22 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_CHANGED_PAGE_HEADER, PROTECTION_CHANGED_PAGE_TITLE}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{VALUE_OF_ANNUAL_PAYMENT_PAGE_HEADER, VALUE_OF_ANNUAL_PAYMENT_PAGE_TITLE}
 
-object ProtectionChangedPage extends BasePage {
-  def onProtectionChangedPage() = {
-    verifyPageUrl("protection-changed")
-    onPage(PROTECTION_CHANGED_PAGE_TITLE)
-    isHeader(PROTECTION_CHANGED_PAGE_HEADER)
+object ValueOfAnnualPaymentPage extends BasePage {
+  def onAnnualPaymentPage() = {
+    verifyPageUrl("lifetime-allowance/value-of-annual-payment")
+    onPage(VALUE_OF_ANNUAL_PAYMENT_PAGE_TITLE)
+    isHeader(VALUE_OF_ANNUAL_PAYMENT_PAGE_HEADER)
   }
 
-  def selectYesAndClickOnContinue() = {
-    onProtectionChangedPage()
-    selectYesAndContinueForLTAPage()
-  }
+  def enterAnnualPayment(value: String) =
+    driver.findElement(By.id("value")).sendKeys(value)
 
-  def selectNoAndClickOnContinue() = {
-    onProtectionChangedPage()
-    selectNoAndContinueForLTAPage()
+  def enterAnnualPaymentAndContinue(value: String) = {
+    onAnnualPaymentPage()
+    enterAnnualPayment(value)
+    submitPage()
   }
 }

@@ -25,9 +25,10 @@ import uk.gov.hmrc.test.ui.specs.tags.{BSTests, ZapTests}
 import scala.collection.mutable
 
 class EndToEndAAAndLTAJourney3Test extends BaseSpec with BeforeAndAfter {
-  var taxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
-  var inDateYears: mutable.ArrayBuffer[Int]   = mutable.ArrayBuffer.empty[Int]
-  var debitYears: mutable.ArrayBuffer[Int]    = mutable.ArrayBuffer.empty[Int]
+  var taxSchemes: mutable.Map[String, String]       = mutable.Map.empty[String, String]
+  var inDateYears: mutable.ArrayBuffer[Int]         = mutable.ArrayBuffer.empty[Int]
+  var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
+  var uniqueTaxSchemes: mutable.Map[String, String] = mutable.Map.empty[String, String]
 
   before {
     taxSchemes.clear()
@@ -40,6 +41,13 @@ class EndToEndAAAndLTAJourney3Test extends BaseSpec with BeforeAndAfter {
     taxSchemes ++= taxSchemes1
     inDateYears ++= inDateYears1
     debitYears ++= debitYears1
+    var seenValues                               = Set[String]()
+    uniqueTaxSchemes = taxSchemes.filter {
+      case (_, value) if !seenValues.contains(value) =>
+        seenValues += value
+        true
+      case _                                         => false
+    }
   }
 
   Feature("Business scenario AA journeys") {
@@ -89,7 +97,7 @@ class EndToEndAAAndLTAJourney3Test extends BaseSpec with BeforeAndAfter {
       When("I verify InternationalAddressPage enter address and Continue")
       InternationalAddressPage.verifyPageEnterAddressAndContinue()
 
-      taxSchemes.foreach { case (key, value) =>
+      uniqueTaxSchemes.foreach { case (key, value) =>
         When("I verify LegacyPensionSchemeReferencePage enter reference and Continue")
         LegacyPensionSchemeReferencePage.verifyPageEnterReferenceAndContinue(key, value)
 

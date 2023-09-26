@@ -30,9 +30,6 @@ class UserJourneyValidationTests extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
 
@@ -74,9 +71,6 @@ class UserJourneyValidationTests extends BaseSpec {
     Scenario("User Journey error validation till general setup page - Resubmission(Yes) workflow") {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -120,9 +114,6 @@ class UserJourneyValidationTests extends BaseSpec {
     Scenario("LTA user journey - Task list validation Test 1") {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -192,9 +183,6 @@ class UserJourneyValidationTests extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
@@ -216,17 +204,22 @@ class UserJourneyValidationTests extends BaseSpec {
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
+
       Then("I verify HadBenefitCrystallisationEventPage information")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I click back button")
       HadBenefitCrystallisationEventPage.clickBackButton()
 
+      LifetimeAllowancePage.clickBackButton()
       Then("I verify the status of LA - details of your event is NOT STARTED")
       assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.NOT_STARTED)
 
       When("I click on 'Add details of your event' on lifetime allowance section")
       TaskListPage.clickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       When("I select yes and click continue")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
@@ -239,6 +232,8 @@ class UserJourneyValidationTests extends BaseSpec {
 
       When("I click back button")
       HadBenefitCrystallisationEventPage.clickBackButton()
+
+      LifetimeAllowancePage.clickBackButton()
 
       Then("I verify the status of LA - details of your event is IN Progress")
       assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.IN_PROGRESS)
@@ -280,6 +275,11 @@ class UserJourneyValidationTests extends BaseSpec {
       When("I click change details of your events link")
       TaskListPage.clickChangeDetailsForLifetimeAllowance()
 
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
+
+      When("I select yes and click continue")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
       Then("I verify DateOfBenefitCrystallisationEventPage page")
       DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
@@ -292,9 +292,6 @@ class UserJourneyValidationTests extends BaseSpec {
     Scenario("User Journey general setup page - kick out page", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.loadPage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       When("I select option No and continue")
       SavingsStatementPage.selectNoAndContinueForGSPage()

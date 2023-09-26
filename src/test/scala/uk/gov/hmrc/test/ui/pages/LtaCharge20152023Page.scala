@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{LTA_CHARGE_2015_2023_PAGE_
 
 object LtaCharge20152023Page extends BasePage {
   def onLtaCharge20152023Page() = {
-    verifyPageUrl("lta-charge-2015-2023")
+    verifyPageUrl("lifetime-allowance/charge-2015-2023")
     onPage(LTA_CHARGE_2015_2023_PAGE_TITLE)
     isHeader(LTA_CHARGE_2015_2023_PAGE_HEADER)
   }

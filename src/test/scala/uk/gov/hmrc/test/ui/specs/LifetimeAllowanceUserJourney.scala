@@ -27,9 +27,6 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
@@ -50,6 +47,8 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
@@ -97,7 +96,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ProtectionReferencePage.enterProtectionReferenceAndContinue()
 
       Then("I Should see the ProtectionChangedPage and select Yes and continue")
-      ProtectionChangedPage.selectYesAndClickOnContinue()
+      ProtectionEnhancementChangedPage.selectProtectionAndClickOnContinue()
 
       Then("I Should see the ProtectionChangedNewTypePage and select enhanced protection and continue")
       ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
@@ -108,17 +107,20 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       Then("I Should see the LtaCharge20152023Page , select Yes and continue")
       LtaCharge20152023Page.selectYesAndContinueForLTAPage()
 
-      Then("I Should see the HowExcessWasPaidPage , select Annual payment and continue")
-      HowExcessWasPaidPage.selectRadioButtonAnnualPaymentAndContinue()
+      Then("I Should see the HowExcessWasPaidPage , select both payment and continue")
+      HowExcessWasPaidPage.selectRadioButtonLumpSumAndContinue()
 
-      Then("I Should see the HowMuchLtaChargePage , enter charges and continue")
-      HowMuchLtaChargePage.verifyPageEnterChargeAmountAndContinue()
+      Then("I Should see the ValueOfLumpSumPage , enter lump sum and continue")
+      ValueOfLumpSumPage.enterLumpSumAndContinue("1000")
 
       Then("I Should see the WhoPaidLtaChargePage , select you and continue")
       WhoPaidLtaChargePage.selectYouAndClickOnContinue()
 
-      Then("I Should see the ValueNewLtaChargePage, enter LTA charge and continue")
-      ValueNewLtaChargePage.verifyPageEnterLTAChargeLessThanPreviousChargeAndContinue()
+      SchemeNameReferencePage.enterSchemeNameReferenceAndContinue()
+
+      NewExcessPaidPage.selectLumpSumRadioButtonAndContinue()
+
+      NewValueOfLumpSumPage.enterLumpSumAndContinue("900")
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
@@ -132,9 +134,6 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
@@ -155,6 +154,8 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
@@ -187,148 +188,19 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
-      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
+      LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
 
-      Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
-
-      When("I select any radio button and click continue")
-      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
-
-      Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
-
-      When("I enter protection reference and click continue")
-      ProtectionReferencePage.enterProtectionReferenceAndContinue()
-
-      Then("I Should see the ProtectionChangedPage and select Yes and continue")
-      ProtectionChangedPage.selectYesAndClickOnContinue()
-
-      Then("I Should see the ProtectionChangedNewTypePage and select enhanced protection and continue")
-      ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
-
-      Then("I Should see the ProtectionChangedNewReferencePage and enter reference and continue")
-      ProtectionChangedNewReferencePage.enterReferenceAndContinue()
-
-      Then("I Should see the LtaCharge20152023Page , select Yes and continue")
+      EnhancementType.selectBothRadioButtonAndContinue()
+      InternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+      PensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+      ProtectionEnhancementChangedPage.selectNoAndClickOnContinue()
       LtaCharge20152023Page.selectNoAndContinueForLTAPage()
+      NewExcessPaidPage.selectLumpSumRadioButtonAndContinue()
 
-      Then("I Should see the ValueNewLtaChargePage, enter LTA charge and continue")
-      ValueNewLtaChargePage.verifyPageEnterLTAChargeAndContinue()
+      NewValueOfLumpSumPage.enterLumpSumAndContinue("1000")
 
       Then("I Should see the onWhoPayingExtraLtaChargePage, select pension scheme and continue")
-      WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
-
-      Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
-
-      When("I verify check your answers page for annual allowance and click continue")
-      CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
-
-      When("I click sign out from the page")
-      CheckYourAnswersLifetimeAllowancePage.signOutPage()
-    }
-
-    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(LTA),1.6,TaskList,4.1(Y),4.3,4.4(Y),4.5,4.6,4.7,4.8,4.9(Y),4.10,4.11,4.12(Y),4.13,4.14,4.15(Scheme),4.16,4.17(Decrease),4.20 pages in the mural board* */
-    Scenario("LTA previous LTA change(Yes) journey", ZapTests) {
-      Given("I am on the Public Service Pensions Remediation home page")
-      HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
-      When("I select I'm resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
-
-      When("I enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
-
-      When("I clear all selected options ")
-      ReportingChangePage.clearAllOptions()
-
-      When("I click Annual allowance and click continue")
-      ReportingChangePage.selectLifetimeAllowanceAndContinue()
-
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
-
-      When("I verify task list page and click add details for lifetime allowance")
-      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
-
-      Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
-
-      When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
-      Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
-
-      When("I enter date and click continue")
-      DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
-
-      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
-      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-
-      Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
-
-      When("I select any radio button and click continue")
-      PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
-
-      When("I should see the multiple benefit crystallisation event page")
-      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
-
-      When("I select any radio button and click continue")
-      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
-
-      Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
-
-      When("I select any radio button and click continue")
-      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
-
-      Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
-
-      When("I select any radio button and click continue")
-      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
-
-      Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
-
-      When("I enter protection reference and click continue")
-      ProtectionReferencePage.enterProtectionReferenceAndContinue()
-
-      Then("I Should see the ProtectionChangedPage and select Yes and continue")
-      ProtectionChangedPage.selectYesAndClickOnContinue()
-
-      Then("I Should see the ProtectionChangedNewTypePage and select enhanced protection and continue")
-      ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
-
-      Then("I Should see the ProtectionChangedNewReferencePage and enter reference and continue")
-      ProtectionChangedNewReferencePage.enterReferenceAndContinue()
-
-      Then("I Should see the LtaCharge20152023Page , select Yes and continue")
-      LtaCharge20152023Page.selectYesAndContinueForLTAPage()
-
-      Then("I Should see the HowExcessWasPaidPage , select Annual payment and continue")
-      HowExcessWasPaidPage.selectRadioButtonAnnualPaymentAndContinue()
-
-      Then("I Should see the HowMuchLtaChargePage , enter charges and continue")
-      HowMuchLtaChargePage.verifyPageEnterChargeAmountAndContinue()
-
-      Then("I Should see the WhoPaidLtaChargePage , select Pension Scheme and continue")
-      WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
-
-      Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
-
-      Then("I Should see the ValueNewLtaChargePage, enter LTA charge and continue")
-      ValueNewLtaChargePage.verifyPageEnterLTAChargeLessThanPreviousChargeAndContinue()
+      WhoPayingExtraLtaChargePage.verifyPageSelectYouAndContinue()
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
@@ -342,9 +214,6 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
@@ -365,6 +234,8 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
@@ -397,52 +268,23 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
-      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
+      LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
 
-      Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
-
-      When("I select any radio button and click continue")
-      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
-
-      Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
-
-      When("I enter protection reference and click continue")
-      ProtectionReferencePage.enterProtectionReferenceAndContinue()
-
-      Then("I Should see the ProtectionChangedPage and select Yes and continue")
-      ProtectionChangedPage.selectYesAndClickOnContinue()
-
-      Then("I Should see the ProtectionChangedNewTypePage and select enhanced protection and continue")
-      ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
-
-      Then("I Should see the ProtectionChangedNewReferencePage and enter reference and continue")
-      ProtectionChangedNewReferencePage.enterReferenceAndContinue()
-
-      Then("I Should see the LtaCharge20152023Page , select Yes and continue")
+      EnhancementType.selectPensionCreditRadioButtonAndContinue()
+      PensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+      ProtectionEnhancementChangedPage.selectEnhancementsRadioButtonAndContinue()
+      NewEnhancementTypePage.selectInternationalEnhancementRadioButtonAndContinue()
+      NewInternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
       LtaCharge20152023Page.selectYesAndContinueForLTAPage()
-
-      Then("I Should see the HowExcessWasPaidPage , select Annual payment and continue")
-      HowExcessWasPaidPage.selectRadioButtonAnnualPaymentAndContinue()
-
-      Then("I Should see the HowMuchLtaChargePage , enter charges and continue")
-      HowMuchLtaChargePage.verifyPageEnterChargeAmountAndContinue()
-
-      Then("I Should see the WhoPaidLtaChargePage , select Pension Scheme and continue")
-      WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
-
-      Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
-
-      Then("I Should see the ValueNewLtaChargePage, enter LTA charge and continue")
-      ValueNewLtaChargePage.verifyPageEnterLTAChargeMoreThanPreviousChargeAndContinue()
+      HowExcessWasPaidPage.selectRadioButtonLumpSumAndContinue()
+      ValueOfLumpSumPage.enterLumpSumAndContinue("2000")
+      WhoPaidLtaChargePage.selectYouAndClickOnContinue()
+      SchemeNameReferencePage.enterSchemeNameReferenceAndContinue()
+      NewExcessPaidPage.selectLumpSumRadioButtonAndContinue()
+      NewValueOfLumpSumPage.enterLumpSumAndContinue("3000")
 
       Then("I Should see the onWhoPayingExtraLtaChargePage, select pension scheme and continue")
-      WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
-
-      Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
+      WhoPayingExtraLtaChargePage.verifyPageSelectYouAndContinue()
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
@@ -457,9 +299,6 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
@@ -480,6 +319,8 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
@@ -509,52 +350,25 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
+      LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
 
-      When("I select any radio button and click continue")
-      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
-
-      Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
-
-      When("I select any radio button and click continue")
-      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
-
-      Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
-
-      When("I enter protection reference and click continue")
-      ProtectionReferencePage.enterProtectionReferenceAndContinue()
-
-      Then("I Should see the ProtectionChangedPage and select Yes and continue")
-      ProtectionChangedPage.selectYesAndClickOnContinue()
-
-      Then("I Should see the ProtectionChangedNewTypePage and select enhanced protection and continue")
-      ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
-
-      Then("I Should see the ProtectionChangedNewReferencePage and enter reference and continue")
-      ProtectionChangedNewReferencePage.enterReferenceAndContinue()
-
-      Then("I Should see the LtaCharge20152023Page , select Yes and continue")
+      EnhancementType.selectPensionCreditRadioButtonAndContinue()
+      PensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+      ProtectionEnhancementChangedPage.selectEnhancementsRadioButtonAndContinue()
+      NewEnhancementTypePage.selectInternationalEnhancementRadioButtonAndContinue()
+      NewInternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
       LtaCharge20152023Page.selectYesAndContinueForLTAPage()
-
-      Then("I Should see the HowExcessWasPaidPage , select Annual payment and continue")
       HowExcessWasPaidPage.selectRadioButtonAnnualPaymentAndContinue()
-
-      Then("I Should see the HowMuchLtaChargePage , enter charges and continue")
-      HowMuchLtaChargePage.verifyPageEnterChargeAmountAndContinue()
-
-      Then("I Should see the WhoPaidLtaChargePage , select Pension Scheme and continue")
-      WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
-
-      Then("I Should see the SchemePaidLtaChargePage, enter pension scheme, enter tax reference and continue")
-      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue("00348916RA", "scheme23")
-
-      Then("I Should see the ValueNewLtaChargePage, enter LTA charge and continue")
-      ValueNewLtaChargePage.verifyPageEnterLTAChargeMoreThanPreviousChargeAndContinue()
+      ValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("1000")
+      WhoPaidLtaChargePage.selectYouAndClickOnContinue()
+      SchemeNameReferencePage.enterSchemeNameReferenceAndContinue()
+      NewExcessPaidPage.selectAnnualPaymentRadioButtonAndContinue()
+      NewValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("2000")
 
       Then("I Should see the onWhoPayingExtraLtaChargePage, select pension scheme and continue")
-      WhoPayingExtraLtaChargePage.verifyPageSelectYouAndContinue()
+      WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
+
+      SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue("scheme 1", "00348916KU")
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
@@ -569,9 +383,6 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
@@ -592,6 +403,8 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
@@ -624,38 +437,45 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
-      LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
+      LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
+      EnhancementType.selectBothRadioButtonAndContinue()
+      InternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+      PensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+      ProtectionEnhancementChangedPage.selectBothRadioButtonAndContinue()
+      ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
+      ProtectionChangedNewReferencePage.enterReferenceAndContinue()
+      NewEnhancementTypePage.selectBothRadioButtonAndContinue()
+      NewInternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+      NewPensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+      LtaCharge20152023Page.selectYesAndContinueForLTAPage()
+      HowExcessWasPaidPage.selectRadioButtonBothAndContinue()
+      ValueOfLumpSumPage.enterLumpSumAndContinue("1000")
+      ValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("3000")
+      WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
+      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue("AAABBB", "00348916AS")
+      QuarterChargeWasPaidPage.selectQuarterAndContinue()
+      YearChargeWasPaidPage.selectYearAndContinue()
+      NewExcessPaidPage.selectBothRadioButtonAndContinue()
+      NewValueOfLumpSumPage.enterLumpSumAndContinue("2300")
+      NewValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("2000")
 
-      Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
+      Then("I Should see the onWhoPayingExtraLtaChargePage, select pension scheme and continue")
+      WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
 
-      When("I select any radio button and click continue")
-      ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
+      SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue("scheme 2", "00348916CD")
 
-      Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
-
-      When("I enter protection reference and click continue")
-      ProtectionReferencePage.enterProtectionReferenceAndContinue()
-
-      Then("I Should see the ProtectionChangedPage and select No and continue")
-      ProtectionChangedPage.selectNoAndContinueForLTAPage()
-
-      Then("I Should be on the LtaCharge20152023Page")
-      LtaCharge20152023Page.onLtaCharge20152023Page()
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
 
       When("I click sign out from the page")
-      LtaCharge20152023Page.signOutPage()
+      CheckYourAnswersLifetimeAllowancePage.signOutPage()
 
     }
 
-    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(LTA),1.6,TaskList,4.1(Y),4.3,4.4(N),4.2 pages in the mural board */
-    Scenario("LTA change of Benefit Crystallisation Event(No) journey", ZapTests) {
+    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(LTA),1.6,TaskList,4.1(Y),4.3,4.4(Y),4.5,4.6,4.7,4.8,4.9(N),4.12 pages in the mural board */
+    Scenario("LTA Value decrease journey") {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -677,6 +497,97 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
 
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
+
+      Then("I Should see the had-benefit-crystallisation-event page")
+      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
+
+      When("I select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
+      Then("I Should see the date-of-benefit-crystallisation-event page")
+      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+
+      When("I enter date and click continue")
+      DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
+
+      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
+      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
+
+      Then("I Should see the percentage-caused-change-in-charge page")
+      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+
+      When("I select any radio button and click continue")
+      PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
+
+      When("I should see the multiple benefit crystallisation event page")
+      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+
+      When("I select any radio button and click continue")
+      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
+
+      Then("I Should see the lta-protection-or-enhancements page")
+      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
+
+      When("I select any radio button and click continue")
+      LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
+      EnhancementType.selectBothRadioButtonAndContinue()
+      InternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+      PensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+      ProtectionEnhancementChangedPage.selectBothRadioButtonAndContinue()
+      ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
+      ProtectionChangedNewReferencePage.enterReferenceAndContinue()
+      NewEnhancementTypePage.selectBothRadioButtonAndContinue()
+      NewInternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+      NewPensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+      LtaCharge20152023Page.selectYesAndContinueForLTAPage()
+      HowExcessWasPaidPage.selectRadioButtonBothAndContinue()
+      ValueOfLumpSumPage.enterLumpSumAndContinue("1000")
+      ValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("3000")
+      WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
+      SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue("AAABBB", "00348916AS")
+      QuarterChargeWasPaidPage.selectQuarterAndContinue()
+      YearChargeWasPaidPage.selectYearAndContinue()
+      NewExcessPaidPage.selectBothRadioButtonAndContinue()
+      NewValueOfLumpSumPage.enterLumpSumAndContinue("500")
+      NewValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("600")
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I click sign out from the page")
+      CheckYourAnswersLifetimeAllowancePage.signOutPage()
+
+    }
+
+    /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(LTA),1.6,TaskList,4.1(Y),4.3,4.4(N),4.2 pages in the mural board */
+    Scenario("LTA change of Benefit Crystallisation Event(No) journey", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify task list page and click add details for lifetime allowance")
+      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
@@ -706,8 +617,46 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      When("I enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I clear all selected options ")
+      ReportingChangePage.clearAllOptions()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectLifetimeAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify task list page and click add details for lifetime allowance")
+      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
+
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
+
+      Then("I Should see the had-benefit-crystallisation-event page")
+      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
+
+      When("I select No and continue to next page")
+      HadBenefitCrystallisationEventPage.selectNoAndContinueForLTAPage()
+
+      Then("I Should see the not-able-to-use-this-service-lta page")
+      NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()
+
+      When("I click sign out from the page")
+      NotAbleToUseThisServiceLtaPage.signOutPage()
+    }
+
+    /** ---Below journey covers 4.0, 4.1, 4.3, 4.4, 4.5, 4.2 */
+    Scenario("LTA previous LTA change(Yes) journey", ZapTests) {
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -730,11 +679,28 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
+      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
+
       Then("I Should see the had-benefit-crystallisation-event page")
       HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
-      When("I select No and continue to next page")
-      HadBenefitCrystallisationEventPage.selectNoAndContinueForLTAPage()
+      When("I select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
+      Then("I Should see the date-of-benefit-crystallisation-event page")
+      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+
+      When("I enter date and click continue")
+      DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
+
+      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
+      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
+
+      Then("I Should see the percentage-caused-change-in-charge page")
+      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+
+      When("I select any radio button and click continue")
+      PercentageCausedChangeInChargePage.selectNoneRadioButtonAndContinue()
 
       Then("I Should see the not-able-to-use-this-service-lta page")
       NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()

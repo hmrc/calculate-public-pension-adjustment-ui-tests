@@ -17,17 +17,21 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_VALUE_OF_ANNUAL_PAYMENT_PAGE_HEADER, NEW_VALUE_OF_ANNUAL_PAYMENT_PAGE_TITLE}
 
-object MultipleBenefitCrystallisationEventPage extends BasePage {
+object NewValueOfAnnualPaymentPage extends BasePage {
+  def onNewValueOfAnnualPaymentPage() = {
+    verifyPageUrl("lifetime-allowance/new-value-of-annual-payment")
+    onPage(NEW_VALUE_OF_ANNUAL_PAYMENT_PAGE_TITLE)
+    isHeader(NEW_VALUE_OF_ANNUAL_PAYMENT_PAGE_HEADER)
+  }
 
-  def onMultipleBenefitCrystallisationEventPage() =
-    verifyPageUrl("lifetime-allowance/more-than-one-benefit-crystallisation-event")
-  // TODO Page content validations to be added.
+  def enterAnnualPayment(value: String) =
+    driver.findElement(By.id("value")).sendKeys(value)
 
-  def selectNoRadioButtonAndContinue(): Unit = {
-    val text = "No"
-    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
-    checkYourAnswersLASMap(getHeader(), text)
+  def enterAnnualPaymentAndContinue(value: String) = {
+    onNewValueOfAnnualPaymentPage()
+    enterAnnualPayment(value)
     submitPage()
   }
 }

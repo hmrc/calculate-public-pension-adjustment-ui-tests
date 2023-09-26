@@ -27,25 +27,18 @@ import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-class CommonCalculation extends BaseSpec {
+class CommonCalculationAAandMultipleSchemesPaidLTA extends BaseSpec {
   def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
-    /*"Scenario_MultipleSchemeDebit",
-        "Scenario_SingleSchemeDebit",
-        "Scenario_MultipleSchemeCredit",
-        "Scenario_SingleSchemeCredit",
-        "Scenario_MultipleSchemeDebit2",
-        "Scenario_MultipleSchemeCredit2"
-     */
 
     /** Retrieve request information */
-    val requestStream                           =
+    val requestStream    =
       getClass.getResourceAsStream(
         "/businessCases/request/" + fileName + "_Request.json"
       )
-    val jsonString                              = scala.io.Source.fromInputStream(requestStream).mkString
-    val json: JsValue                           = Json.parse(jsonString)
-    val requestDTOResult                        = Json.fromJson[RequestDTO](json)
-    val mutableMap: mutable.Map[String, String] = mutable.Map.empty
+    val jsonString       = scala.io.Source.fromInputStream(requestStream).mkString
+    val json: JsValue    = Json.parse(jsonString)
+    val requestDTOResult = Json.fromJson[RequestDTO](json)
+    val mutableMap       = mutable.LinkedHashMap[String, String]()
     requestDTOResult match {
       case JsSuccess(requestDTO, _) =>
         val allTaxYearSchemes: List[TaxYearSchemes] =
@@ -144,7 +137,11 @@ class CommonCalculation extends BaseSpec {
     val responseStream =
       getClass.getResourceAsStream(
         "/businessCases/response/Scenario_2a_Response.json"
+
+        //"/businessCases/response/" + requestArray(index) + "_Response.json"
       )
+    val jsonResponseString = scala.io.Source.fromInputStream(responseStream).mkString
+    println(" File name : " + fileName)
 
     /** Test */
     Given("I am on the Public Service Pensions Remediation home page")
@@ -156,7 +153,7 @@ class CommonCalculation extends BaseSpec {
     } else {
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
     }
-    ReportingChangePage.selectAnnualAllowanceAndContinue()
+    ReportingChangePage.selectBothAAAndLTAContinue()
     CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
     if (!(scottishTaxYears.exists(_.isEmpty))) {
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
@@ -990,6 +987,50 @@ class CommonCalculation extends BaseSpec {
           CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
         }
     }
+    TaskListPage.clickAddDetailsForLifetimeAllowance()
+    LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
+    HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
+    HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+    DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
+    DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
+    ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
+    PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+    PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
+    MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+    MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
+    LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
+    LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
+    EnhancementType.selectBothRadioButtonAndContinue()
+    InternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+    PensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+    ProtectionEnhancementChangedPage.selectBothRadioButtonAndContinue()
+    ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
+    ProtectionChangedNewReferencePage.enterReferenceAndContinue()
+    NewEnhancementTypePage.selectBothRadioButtonAndContinue()
+    NewInternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+    NewPensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+    LtaCharge20152023Page.selectYesAndContinueForLTAPage()
+    HowExcessWasPaidPage.selectRadioButtonBothAndContinue()
+    ValueOfLumpSumPage.enterLumpSumAndContinue("1000")
+    ValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("3000")
+    WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
+    val pension_scheme_name  =
+      "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
+    val taxRef               = "00348916RX"
+    SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue(pension_scheme_name, taxRef)
+    QuarterChargeWasPaidPage.selectQuarterAndContinue()
+    YearChargeWasPaidPage.selectYearAndContinue()
+    NewExcessPaidPage.selectBothRadioButtonAndContinue()
+    NewValueOfLumpSumPage.enterLumpSumAndContinue("2300")
+    NewValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("2000")
+    WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
+    val pension_scheme_name2 =
+      "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsion2"
+    val taxRef2              = "00348916RG"
+    SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue(pension_scheme_name2, taxRef2)
+    mutableMap += (pension_scheme_name  -> taxRef)
+    mutableMap += (pension_scheme_name2 -> taxRef2)
+    CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
     TaskListPage.clickCalculateButton()
     val debitYearsList: java.util.List[WebElement] = CalculationResultPage.getDebitYears()
     var debitYears: ArrayBuffer[Int]               = ArrayBuffer()

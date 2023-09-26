@@ -24,30 +24,30 @@ object SchemePaidExtraLtaChargePage extends BasePage {
   val pension_scheme_name =
     "pensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
   def onSchemePaidLtaChargePage() = {
-    verifyPageUrl("scheme-paid-extra-lta-charge")
+    verifyPageUrl("lifetime-allowance/scheme-paying-extra-charge")
     onPage(SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_TITLE)
     isHeader(SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER)
   }
 
   def enterPensionScheme(schemeName: String) = {
-    driver.findElement(By.xpath("//input[@id='name']")).clear()
-    driver.findElement(By.xpath("//input[@id='name']")).sendKeys(schemeName)
+    driver.findElement(By.id("name")).clear()
+    driver.findElement(By.id("name")).sendKeys(schemeName)
   }
 
   def enterPensionSchemeTaxReference(taxRef: String) = {
-    driver.findElement(By.xpath("//input[@id='taxRef']")).clear()
-    driver.findElement(By.xpath("//input[@id='taxRef']")).sendKeys(taxRef)
+    driver.findElement(By.id("taxRef")).clear()
+    driver.findElement(By.id("taxRef")).sendKeys(taxRef)
   }
 
   def getPensionSchemeName() = driver.findElement(By.xpath("//input[@id='name']")).getAttribute("value")
 
-  def getTaxReference() = driver.findElement(By.xpath("//input[@id='taxRef']")).getAttribute("value")
+  def getTaxReference() = driver.findElement(By.id("taxRef")).getAttribute("value")
 
-  def enterPensionSchemeInformationAndContinue(taxRef: String, schemeName: String) = {
+  def enterPensionSchemeInformationAndContinue(schemeName: String, taxRef: String) = {
     onSchemePaidLtaChargePage()
     enterPensionScheme(schemeName)
     enterPensionSchemeTaxReference(taxRef)
-    checkYourAnswersLASMap(getHeader(), getPensionSchemeName() + " / " + getTaxReference())
+    checkYourAnswersLASMap(getHeader(), getTaxReference())
     submitPage()
   }
 }

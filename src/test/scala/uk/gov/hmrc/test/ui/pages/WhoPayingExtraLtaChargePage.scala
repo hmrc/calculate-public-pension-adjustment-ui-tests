@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_PAYING_EXTRA_LTA_CHARG
 
 object WhoPayingExtraLtaChargePage extends BasePage {
   def onWhoPayingExtraLtaChargePage() = {
-    verifyPageUrl("who-paying-extra-lta-charge")
+    verifyPageUrl("lifetime-allowance/who-paid-extra-charge")
     onPage(WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_TITLE)
     isHeader(WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_HEADER)
   }

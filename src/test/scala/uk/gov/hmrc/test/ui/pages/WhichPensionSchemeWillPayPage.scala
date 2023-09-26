@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.WhoWillPayPage.verifyPageUrl
 
 object WhichPensionSchemeWillPayPage extends BasePage {
   def verifyWhichPensionSchemeWillPayPage(year: Int) = {
-    verifyPageUrl("which-pension-scheme-will-pay/" + year)
+    verifyPageUrl("submission-service/" + year + "/which-pension-scheme-will-pay-tax-charge")
     onPage(WHICH_PENSION_SCHEME_WILL_PAY_PAGE_TITLE)
     isHeader(WHICH_PENSION_SCHEME_WILL_PAY_PAGE_HEADER)
   }

@@ -341,7 +341,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   }
 
   def getCurrentDateTime(): (Int, Int, Int) = {
-    val currentDateTime = LocalDateTime.now(ZoneId.of("GMT+1"))
+    val currentDateTime = LocalDateTime.now(ZoneId.of("GMT"))
     val currentDate     = currentDateTime.getDayOfMonth
     val currentMonth    = currentDateTime.getMonthValue
     val currentYear     = currentDateTime.getYear

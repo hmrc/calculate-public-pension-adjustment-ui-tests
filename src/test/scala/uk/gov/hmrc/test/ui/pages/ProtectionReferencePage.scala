@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_REFERENCE_PAGE_
 
 object ProtectionReferencePage extends BasePage {
   def onProtectionReferencePage() = {
-    verifyPageUrl("protection-reference")
+    verifyPageUrl("lifetime-allowance/protection-reference")
     onPage(PROTECTION_REFERENCE_PAGE_TITLE)
     isHeader(PROTECTION_REFERENCE_PAGE_HEADER)
   }

@@ -28,7 +28,7 @@ object TheirUKAddressPage extends BasePage {
   val postCode     = "AB2 5ED"
 
   def verifyTheirUKAddressPage() = {
-    verifyPageUrl("their-uk-address")
+    verifyPageUrl("submission-service/address-someone-else")
     onPage(THEIR_UK_ADDRESS_PAGE_TITLE)
     isHeader(THEIR_UK_ADDRESS_PAGE_HEADER)
   }

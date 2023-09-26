@@ -28,9 +28,6 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
 
@@ -88,9 +85,6 @@ class CalculationUserJourney extends BaseSpec {
     Scenario("AA User Scottish tax payer(No) journey", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -254,9 +248,6 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
 
@@ -331,9 +322,6 @@ class CalculationUserJourney extends BaseSpec {
     Scenario("AA User define contribution scheme(Yes) journey", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -430,9 +418,6 @@ class CalculationUserJourney extends BaseSpec {
     Scenario("Annual allowance AA info loop user journey - was a charge paid (No) ", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -779,9 +764,6 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
 
@@ -974,9 +956,6 @@ class CalculationUserJourney extends BaseSpec {
     Scenario("Annual allowance AA info loop user journey - Who paid(Both) ", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -1265,9 +1244,6 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
 
@@ -1450,9 +1426,6 @@ class CalculationUserJourney extends BaseSpec {
     Scenario("Annual allowance AA info loop user journey - Add another Scheme N & DC=Yes ", ZapTests) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -1721,9 +1694,6 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
 
@@ -1925,9 +1895,6 @@ class CalculationUserJourney extends BaseSpec {
     ) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -2177,9 +2144,6 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
 
@@ -2428,9 +2392,6 @@ class CalculationUserJourney extends BaseSpec {
     ) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -2702,9 +2663,6 @@ class CalculationUserJourney extends BaseSpec {
     ) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
@@ -2989,9 +2947,6 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I click start button")
-      HomePage.clickStartButton()
-
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()
 
@@ -3272,9 +3227,6 @@ class CalculationUserJourney extends BaseSpec {
     ) {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I click start button")
-      HomePage.clickStartButton()
 
       Then("I Should see the SavingsStatementPage page")
       SavingsStatementPage.onSavingsStatementPage()

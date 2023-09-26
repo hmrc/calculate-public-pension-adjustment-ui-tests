@@ -21,13 +21,27 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{LTA_PROTECTION_OR_ENHANCEM
 
 object LtaProtectionOrEnhancementsPage extends BasePage {
   def onLtaProtectionOrEnhancementsPage() = {
-    verifyPageUrl("lta-protection-or-enhancements")
+    verifyPageUrl("lifetime-allowance/protection-enhancements")
     onPage(LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_TITLE)
     isHeader(LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_HEADER)
   }
 
   def selectProtectionRadioButtonAndContinue(): Unit = {
     val text = "Protection"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+    submitPage()
+  }
+
+  def selectEnhancementsRadioButtonAndContinue(): Unit = {
+    val text = "Enhancements"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+    submitPage()
+  }
+
+  def selectBothRadioButtonAndContinue(): Unit = {
+    val text = "Both"
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()

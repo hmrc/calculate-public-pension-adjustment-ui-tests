@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{HAD_BENEFIT_CRYSTALLISATIO
 
 object HadBenefitCrystallisationEventPage extends BasePage {
   def onHadBenefitCrystallisationEventPage() = {
-    verifyPageUrl("had-benefit-crystallisation-event")
+    verifyPageUrl("lifetime-allowance/benefit-crystallisation-event")
     onPage(HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE)
     isHeader(HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER)
   }

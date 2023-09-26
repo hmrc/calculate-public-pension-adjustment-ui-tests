@@ -27,7 +27,7 @@ import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
-class CommonCalculationAAandSchemePaidLTA extends BaseSpec {
+class CommonCalculationAAandSchemeUserPaidLTA extends BaseSpec {
   def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
 
     /** Retrieve request information */
@@ -146,7 +146,6 @@ class CommonCalculationAAandSchemePaidLTA extends BaseSpec {
     /** Test */
     Given("I am on the Public Service Pensions Remediation home page")
     HomePage.goToHomepage()
-    HomePage.clickStartButton()
     SavingsStatementPage.selectYesAndContinueForGSPage()
     if (isResubmission.mkString == "true") {
       ResubmittingAdjustmentPage.selectOptionAndContinueForGSPage(isResubmission.mkString)
@@ -989,6 +988,7 @@ class CommonCalculationAAandSchemePaidLTA extends BaseSpec {
         }
     }
     TaskListPage.clickAddDetailsForLifetimeAllowance()
+    LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
     HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
     HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
     DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
@@ -996,31 +996,35 @@ class CommonCalculationAAandSchemePaidLTA extends BaseSpec {
     ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
     PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
     PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
+    MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
+    MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
     LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
-    LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
-    ProtectionTypePage.onProtectionTypePage()
-    ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
-    ProtectionReferencePage.onProtectionReferencePage()
-    ProtectionReferencePage.enterProtectionReferenceAndContinue()
-    ProtectionChangedPage.selectYesAndClickOnContinue()
+    LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
+    EnhancementType.selectBothRadioButtonAndContinue()
+    InternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+    PensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
+    ProtectionEnhancementChangedPage.selectBothRadioButtonAndContinue()
     ProtectionChangedNewTypePage.selectEnhancedProtectionAndContinue()
     ProtectionChangedNewReferencePage.enterReferenceAndContinue()
+    NewEnhancementTypePage.selectBothRadioButtonAndContinue()
+    NewInternationalEnhancementReferencePage.enterInternationalEnhancementReferenceAndContinue()
+    NewPensionCreditReferencePage.enterPensionCreditReferenceAndContinue()
     LtaCharge20152023Page.selectYesAndContinueForLTAPage()
-    HowExcessWasPaidPage.selectRadioButtonAnnualPaymentAndContinue()
-    HowMuchLtaChargePage.verifyPageEnterChargeAmountAndContinue()
+    HowExcessWasPaidPage.selectRadioButtonBothAndContinue()
+    ValueOfLumpSumPage.enterLumpSumAndContinue("1000")
+    ValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("3000")
     WhoPaidLtaChargePage.selectPensionSchemeAndClickOnContinue()
-    val pension_scheme_name  =
-      "pensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
-    val taxRef               = "00348916RX"
-    SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue(taxRef, pension_scheme_name)
-    ValueNewLtaChargePage.verifyPageEnterLTAChargeMoreThanPreviousChargeAndContinue()
-    WhoPayingExtraLtaChargePage.verifyPageSelectPensionSchemeAndContinue()
-    val pension_scheme_name2 =
-      "pension12345pensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
-    val taxRef2              = "00348916RG"
-    SchemePaidExtraLtaChargePage.enterPensionSchemeInformationAndContinue(taxRef2, pension_scheme_name2)
-    mutableMap += (pension_scheme_name  -> taxRef)
-    mutableMap += (pension_scheme_name2 -> taxRef2)
+    val pension_scheme_name =
+      "Tensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
+    val taxRef              = "00348916RX"
+    mutableMap += (pension_scheme_name -> taxRef)
+    SchemePaidLtaChargePage.enterPensionSchemeInformationAndContinue(pension_scheme_name, taxRef)
+    QuarterChargeWasPaidPage.selectQuarterAndContinue()
+    YearChargeWasPaidPage.selectYearAndContinue()
+    NewExcessPaidPage.selectBothRadioButtonAndContinue()
+    NewValueOfLumpSumPage.enterLumpSumAndContinue("2300")
+    NewValueOfAnnualPaymentPage.enterAnnualPaymentAndContinue("2000")
+    WhoPayingExtraLtaChargePage.verifyPageSelectYouAndContinue()
     CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
     TaskListPage.clickCalculateButton()
     val debitYearsList: java.util.List[WebElement] = CalculationResultPage.getDebitYears()
