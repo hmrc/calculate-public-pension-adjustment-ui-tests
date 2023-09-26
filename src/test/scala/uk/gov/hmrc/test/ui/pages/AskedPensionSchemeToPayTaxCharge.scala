@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{ASKED_PENSION_SCHEME_TO_PA
 object AskedPensionSchemeToPayTaxCharge extends BasePage {
 
   def verifyAskedPensionSchemeToPayTaxCharge(year: Int) = {
-    verifyPageUrl("asked-pension-scheme-to-pay-tax-charge/" + year)
+    verifyPageUrl("submission-service/" + year + "/asked-pension-scheme-to-pay-tax-charge")
     onPage(ASKED_PENSION_SCHEME_TO_PAY_TITLE)
     isHeader(ASKED_PENSION_SCHEME_TO_PAY_HEADER)
   }

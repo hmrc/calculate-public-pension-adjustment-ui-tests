@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_WILL_PAY_PAGE_HEADER, 
 
 object WhoWillPayPage extends BasePage {
   def verifyWhoWillPayPage(year: Int) = {
-    verifyPageUrl("who-will-pay/" + year)
+    verifyPageUrl("submission-service/" + year + "/who-will-pay-new-tax-charge")
     onPage(WHO_WILL_PAY_PAGE_TITLE)
     isHeader(WHO_WILL_PAY_PAGE_HEADER)
   }

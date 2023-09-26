@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{UK_ADDRESS_PAGE_HEADER, UK
 
 object UKAddressPage extends BasePage {
   def verifyTheirUKAddressPage() = {
-    verifyPageUrl("uk-address")
+    verifyPageUrl("submission-service/your-address")
     onPage(UK_ADDRESS_PAGE_TITLE)
     isHeader(UK_ADDRESS_PAGE_HEADER)
   }

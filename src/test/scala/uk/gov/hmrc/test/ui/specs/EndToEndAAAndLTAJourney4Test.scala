@@ -17,14 +17,14 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.BeforeAndAfter
-import uk.gov.hmrc.test.ui.functions.{CommonCalculationAAandMultipleSchemesPaidLTA, CommonCalculationAAandUserPaidLTA}
+import uk.gov.hmrc.test.ui.functions.CommonCalculationAAandSchemeUserPaidLTA
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{BSTests, ZapTests}
+import uk.gov.hmrc.test.ui.specs.tags.BSTests
 
 import scala.collection.mutable
 
-class EndToEndAAAndLTAJourney2Test extends BaseSpec with BeforeAndAfter {
+class EndToEndAAAndLTAJourney4Test extends BaseSpec with BeforeAndAfter {
   var taxSchemes: mutable.Map[String, String]       = mutable.Map.empty[String, String]
   var inDateYears: mutable.ArrayBuffer[Int]         = mutable.ArrayBuffer.empty[Int]
   var debitYears: mutable.ArrayBuffer[Int]          = mutable.ArrayBuffer.empty[Int]
@@ -34,12 +34,12 @@ class EndToEndAAAndLTAJourney2Test extends BaseSpec with BeforeAndAfter {
     inDateYears.clear()
     debitYears.clear()
 
-    val commonCalculationAAAndSchemePaidLTA      = new CommonCalculationAAandMultipleSchemesPaidLTA()
+    val commonCalculationAAAndLTA                = new CommonCalculationAAandSchemeUserPaidLTA()
     val (taxSchemes1, inDateYears1, debitYears1) =
-      commonCalculationAAAndSchemePaidLTA.createCalculationJourney("Scenario_MultipleSchemeCredit2")
-    taxSchemes = taxSchemes1
-    inDateYears = inDateYears1
-    debitYears = debitYears1
+      commonCalculationAAAndLTA.createCalculationJourney("Scenario_MultipleSchemeDebitAndCredit")
+    taxSchemes ++= taxSchemes1
+    inDateYears ++= inDateYears1
+    debitYears ++= debitYears1
     var seenValues                               = Set[String]()
     uniqueTaxSchemes = taxSchemes.filter {
       case (_, value) if !seenValues.contains(value) =>
@@ -51,8 +51,8 @@ class EndToEndAAAndLTAJourney2Test extends BaseSpec with BeforeAndAfter {
 
   Feature("Business scenario AA journeys") {
 
-    /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.25, 5.26 */
-    Scenario(s"Calculate Business Journey2", BSTests) {
+    /** 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8(Y), 5.15, 5.16, 5.17, 5.18(N), 5.20(Multiple Scheme), 5.21, 5.22, 5.23, 5.24, 5.25, 5.26 */
+    Scenario(s"Calculate Business Journey1", BSTests) {
 
       When("I verify ClaimOnBehalfPage, select yes and click continue button")
       ClaimOnBehalfPage.verifyPageSelectYesAndContinue()
@@ -105,7 +105,13 @@ class EndToEndAAAndLTAJourney2Test extends BaseSpec with BeforeAndAfter {
       }
 
       When("I verify ClaimingAdditionalTaxRateRelief Page , select yes and click continue")
-      ClaimingAdditionalTaxRateReliefPage.verifyPageClickNoAndContinue()
+      ClaimingAdditionalTaxRateReliefPage.verifyPageClickYesAndContinue()
+
+      When("I verify TaxReliefAmountPage Page, enter tax relief and click continue")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue()
+
+      When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
+      WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 2")
 
       When("I verify Bank Details Page, enter bank details and click continue")
       BankDetailsPage.verifyPageEnterBankDetailsClickContinue()

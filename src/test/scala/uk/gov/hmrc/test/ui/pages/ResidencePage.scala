@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{RESIDENCE_PAGE_HEADER, RES
 
 object ResidencePage extends BasePage {
   def verifyResidencePage() = {
-    verifyPageUrl("residence")
+    verifyPageUrl("submission-service/uk-resident")
     onPage(RESIDENCE_PAGE_TITLE)
     isHeader(RESIDENCE_PAGE_HEADER)
   }

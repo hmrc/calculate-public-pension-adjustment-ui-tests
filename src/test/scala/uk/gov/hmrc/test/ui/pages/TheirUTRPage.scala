@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_UTR_HEADER, THEIR_UT
 object TheirUTRPage extends BasePage {
   val utr = "1234567890"
   def verifyTheirUTRPage() = {
-    verifyPageUrl("their-UTR")
+    verifyPageUrl("submission-service/unique-taxpayer-reference-someone-else")
     onPage(THEIR_UTR_TITLE)
     isHeader(THEIR_UTR_HEADER)
   }

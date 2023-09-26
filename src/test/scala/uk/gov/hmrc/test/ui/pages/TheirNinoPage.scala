@@ -24,7 +24,7 @@ object TheirNinoPage extends BasePage {
 
   val nino        = NINOGenerator.nino
   def verifyTheirNinoPage() = {
-    verifyPageUrl("their-nino")
+    verifyPageUrl("submission-service/national-insurance-number-someone-else")
     onPage(THEIR_NINO_PAGE_TITLE)
     isHeader(THEIR_NINO_PAGE_HEADER)
   }

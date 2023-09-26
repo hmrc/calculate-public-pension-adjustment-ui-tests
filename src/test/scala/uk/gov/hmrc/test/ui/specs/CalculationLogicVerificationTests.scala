@@ -142,7 +142,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
         /** Test */
         Given("I am on the Public Service Pensions Remediation home page")
         HomePage.goToHomepage()
-        HomePage.clickStartButton()
         SavingsStatementPage.selectYesAndContinueForGSPage()
         if (isResubmission.mkString == "true") {
           ResubmittingAdjustmentPage.selectOptionAndContinueForGSPage(isResubmission.mkString)

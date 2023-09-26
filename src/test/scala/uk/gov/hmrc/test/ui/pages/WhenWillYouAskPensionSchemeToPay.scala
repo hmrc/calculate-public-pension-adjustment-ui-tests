@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_WILL_YOU_ASK_PENSION_
 object WhenWillYouAskPensionSchemeToPay extends BasePage {
 
   def verifyWhenWillYouAskPensionSchemeToPayPage(year: Int) = {
-    verifyPageUrl("when-will-you-ask-pension-scheme-to-pay/" + year)
+    verifyPageUrl("submission-service/" + year + "/date-you-will-ask-pension-scheme-to-pay")
     onPage(WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE)
     isHeader(WHEN_WILL_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER)
   }

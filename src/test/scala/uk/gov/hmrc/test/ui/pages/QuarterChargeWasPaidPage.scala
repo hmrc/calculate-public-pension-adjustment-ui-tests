@@ -17,15 +17,18 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{QUARTER_CHARGE_WAS_PAID_PAGE_HEADER, QUARTER_CHARGE_WAS_PAID_PAGE_TITLE, YEAR_CHARGE_WAS_PAID_PAGE_HEADER, YEAR_CHARGE_WAS_PAID_PAGE_TITLE}
 
-object MultipleBenefitCrystallisationEventPage extends BasePage {
+object QuarterChargeWasPaidPage extends BasePage {
+  def onQuarterChargeWasPaidPage() = {
+    verifyPageUrl("lifetime-allowance/quarter-charge-was-paid")
+    onPage(QUARTER_CHARGE_WAS_PAID_PAGE_TITLE)
+    isHeader(QUARTER_CHARGE_WAS_PAID_PAGE_HEADER)
+  }
 
-  def onMultipleBenefitCrystallisationEventPage() =
-    verifyPageUrl("lifetime-allowance/more-than-one-benefit-crystallisation-event")
-  // TODO Page content validations to be added.
-
-  def selectNoRadioButtonAndContinue(): Unit = {
-    val text = "No"
+  def selectQuarterAndContinue(): Unit = {
+    val text = "6 April to 5 July"
+    onQuarterChargeWasPaidPage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()

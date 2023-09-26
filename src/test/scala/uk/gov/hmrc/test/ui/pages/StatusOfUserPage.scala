@@ -24,7 +24,7 @@ object StatusOfUserPage extends BasePage {
     onPage(STATUS_OF_USER_PAGE_TITLE)
     isHeader(STATUS_OF_USER_PAGE_HEADER)
   }
-  def selectDeputyship() = driver.findElement(By.id("value_0")).click()
+  def selectDeputyship() = driver.findElement(By.id("value_1")).click()
   def verifyPageSelectDeputyshipAndContinue() = {
     verifyStatusOfUserPage()
     selectDeputyship()

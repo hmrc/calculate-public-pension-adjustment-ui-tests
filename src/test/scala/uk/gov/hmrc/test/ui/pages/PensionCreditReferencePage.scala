@@ -17,17 +17,21 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.constants.PageInformation.{PENSION_CREDIT_REFERENCE_PAGE_HEADER, PENSION_CREDIT_REFERENCE_PAGE_TITLE}
 
-object MultipleBenefitCrystallisationEventPage extends BasePage {
+object PensionCreditReferencePage extends BasePage {
+  def onPensionCreditReferencePage() = {
+    verifyPageUrl("lifetime-allowance/pension-credit-reference")
+    onPage(PENSION_CREDIT_REFERENCE_PAGE_TITLE)
+    isHeader(PENSION_CREDIT_REFERENCE_PAGE_HEADER)
+  }
 
-  def onMultipleBenefitCrystallisationEventPage() =
-    verifyPageUrl("lifetime-allowance/more-than-one-benefit-crystallisation-event")
-  // TODO Page content validations to be added.
-
-  def selectNoRadioButtonAndContinue(): Unit = {
-    val text = "No"
-    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
-    checkYourAnswersLASMap(getHeader(), text)
+  def enterPensionCreditReferenceAndContinue(): Unit = {
+    val reference = "1234567890ZXCVB"
+    onPensionCreditReferencePage()
+    driver.findElement(By.id("value")).sendKeys(reference)
+    checkYourAnswersLASMap(getHeader(), reference)
     submitPage()
   }
+
 }

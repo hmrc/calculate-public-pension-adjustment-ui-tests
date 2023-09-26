@@ -28,7 +28,7 @@ object TheirDateOfDeathPage extends BasePage {
     clearDate()
     enterDay(date.toString)
     enterMonth(month.toString)
-    enterYear(year.toString)
+    enterYear("2022")
   }
   def verifyPageEnterDateOfDeathAndContinue() = {
     verifyTheirDateOfDeathPage()

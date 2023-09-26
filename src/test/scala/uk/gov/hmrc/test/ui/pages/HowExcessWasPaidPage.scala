@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_EXCESS_WAS_PAID_PAGE_H
 
 object HowExcessWasPaidPage extends BasePage {
   def onHowExcessWasPaidPage() = {
-    verifyPageUrl("how-excess-was-paid")
+    verifyPageUrl("lifetime-allowance/excess-paid")
     onPage(HOW_EXCESS_WAS_PAID_PAGE_TITLE)
     isHeader(HOW_EXCESS_WAS_PAID_PAGE_HEADER)
   }
@@ -31,9 +31,33 @@ object HowExcessWasPaidPage extends BasePage {
     checkYourAnswersLASMap(getHeader(), text)
   }
 
+  def selectLumpSumPayment() = {
+    driver.findElement(By.xpath("//input[@id='value_1']")).click()
+    val text = driver.findElement(By.xpath("//input[@id='value_1']/following-sibling::label")).getText.trim
+    checkYourAnswersLASMap(getHeader(), text)
+  }
+
+  def selectBothPayment() = {
+    driver.findElement(By.xpath("//input[@id='value_2']")).click()
+    val text = driver.findElement(By.xpath("//input[@id='value_2']/following-sibling::label")).getText.trim
+    checkYourAnswersLASMap(getHeader(), text)
+  }
+
   def selectRadioButtonAnnualPaymentAndContinue() = {
     onHowExcessWasPaidPage()
     selectAnnualPayment()
+    submitPage()
+  }
+
+  def selectRadioButtonLumpSumAndContinue() = {
+    onHowExcessWasPaidPage()
+    selectLumpSumPayment()
+    submitPage()
+  }
+
+  def selectRadioButtonBothAndContinue() = {
+    onHowExcessWasPaidPage()
+    selectBothPayment()
     submitPage()
   }
 }

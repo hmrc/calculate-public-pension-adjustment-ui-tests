@@ -23,7 +23,7 @@ object TaxReliefAmountPage extends BasePage {
 
   val taxReliefAmount = "230000000"
   def verifyTaxReliefAmountPage() = {
-    verifyPageUrl("tax-relief-amount")
+    verifyPageUrl("submission-service/how-much-tax-relief-claiming-for")
     onPage(TAX_RELIEF_AMOUNT_PAGE_TITLE)
     isHeader(TAX_RELIEF_AMOUNT_PAGE_HEADER)
   }

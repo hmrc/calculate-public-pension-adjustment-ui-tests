@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{CALCULATE_PENSION_SCHEME_D
 
 object SubmitPensionSchemeDetailsPage extends BasePage {
   def verifyPensionSchemeDetailsPage(year: Int) = {
-    verifyPageUrl("pension-scheme-details/" + year)
+    verifyPageUrl("submission-service/" + year + "/private-scheme-name-reference")
     onPage(CALCULATE_PENSION_SCHEME_DETAILS_PAGE_TITLE)
     isHeader(CALCULATE_PENSION_SCHEME_DETAILS_PAGE_HEADER)
   }

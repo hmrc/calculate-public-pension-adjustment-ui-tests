@@ -20,14 +20,14 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{TOLD_CHANGE_IN_LTA_PERCENT
 
 object ToldChangeInLtaPercentagePage extends BasePage {
   def onToldChangeInLtaPercentagePageAndSelectYesAndContinue() = {
-    verifyPageUrl("told-change-in-lta-percentage")
+    verifyPageUrl("lifetime-allowance/lifetime-allowance-percentage-change")
     onPage(TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_TITLE)
     isHeader(TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_HEADER)
     selectYesAndContinueForLTAPage()
   }
 
   def onToldChangeInLtaPercentagePageAndSelectNoAndContinue() = {
-    verifyPageUrl("told-change-in-lta-percentage")
+    verifyPageUrl("lifetime-allowance/lifetime-allowance-percentage-change")
     onPage(TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_TITLE)
     isHeader(TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_HEADER)
     selectNoAndContinueForLTAPage()
