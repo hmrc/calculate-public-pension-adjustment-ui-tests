@@ -29,13 +29,6 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 class CommonCalculation extends BaseSpec {
   def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
-    /*"Scenario_MultipleSchemeDebit",
-        "Scenario_SingleSchemeDebit",
-        "Scenario_MultipleSchemeCredit",
-        "Scenario_SingleSchemeCredit",
-        "Scenario_MultipleSchemeDebit2",
-        "Scenario_MultipleSchemeCredit2"
-     */
 
     /** Retrieve request information */
     val requestStream                           =
