@@ -383,23 +383,20 @@ class CalculationUserJourney extends BaseSpec {
       When("I select No and continue to next page")
       PayTaxChargeFrom20152016Page.selectNoAndContinueForAASPage()
 
-      Then("I Should see the pia-pre-remedy/2012 page")
-      PiaPreRemedyPage2013.onPiaPreRemedyPage2012Page()
+      Then("I Should see the pia-pre-remedy/2011 page")
+      PiaPreRemedyPage2011.onPiaPreRemedyPage2011PageEnterValueAndContinue()
 
-      When("I enter amount for 2012-2013 and click continue")
-      PiaPreRemedyPage2013.enterAmountAndClickContinue()
+      Then("I Should see the pia-pre-remedy/2012 page")
+      PiaPreRemedyPage2012.onPiaPreRemedyPage2012PageEnterValueAndContinue()
 
       Then("I Should see the pia-pre-remedy/2013 page")
-      PiaPreRemedyPage2014.onPiaPreRemedyPage2013Page()
-
-      When("I enter amount for 2013-2014 and click continue")
-      PiaPreRemedyPage2014.enterAmountAndClickContinue()
+      PiaPreRemedyPage2013.onPiaPreRemedyPage2013PageEnterValueAndContinue()
 
       Then("I Should see the pia-pre-remedy/2014 page")
-      PiaPreRemedyPage2015.onPiaPreRemedyPage2014Page()
+      PiaPreRemedyPage2014.onPiaPreRemedyPage2014PageEnterValueAndContinue()
 
-      When("I enter amount for 2014-2015 and click continue")
-      PiaPreRemedyPage2015.enterAmountAndClickContinue()
+      Then("I Should see the pia-pre-remedy/2015 page")
+      PiaPreRemedyPage2015.onPiaPreRemedyPage2015PageEnterValueAndContinue()
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()

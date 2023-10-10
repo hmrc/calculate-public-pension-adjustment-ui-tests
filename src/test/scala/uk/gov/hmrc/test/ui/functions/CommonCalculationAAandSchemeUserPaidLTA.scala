@@ -189,6 +189,10 @@ class CommonCalculationAAandSchemeUserPaidLTA extends BaseSpec {
           val pensionAmount =
             myObject.getTaxYearInformation(year, _.pensionInputAmount, requestDTOResult).toString
           year match {
+            case "2011" =>
+              PiaPreRemedyPage2011.enterAmountAndClickContinue(pensionAmount)
+            case "2012" =>
+              PiaPreRemedyPage2012.enterAmountAndClickContinue(pensionAmount)
             case "2013" =>
               PiaPreRemedyPage2013.enterAmountAndClickContinue(pensionAmount)
             case "2014" =>
