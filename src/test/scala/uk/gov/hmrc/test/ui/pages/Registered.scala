@@ -21,15 +21,20 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2011_PAGE_H
 object Registered extends BasePage {
 
   val REGISTERED_PAGE_TITLE  =
-    "Were you a member of a registered pension scheme scheme between 6 April fromYear and 5 April toYear? - Calculate your public service pension adjustment - GOV.UK"
+    "Were you a member of a registered pension scheme between 6 April fromYear and 5 April toYear? - Calculate your public service pension adjustment - GOV.UK"
   val REGISTERED_PAGE_HEADER =
-    "Were you a member of a registered pension scheme scheme between 6 April fromYear and 5 April toYear?"
+    "Were you a member of a registered pension scheme between 6 April fromYear and 5 April toYear?"
   def onRegisteredPageSelectNoAndContinue(fromYear: String, toYear: String) = {
     verifyPageUrl("annual-allowance/registered/" + toYear)
     onPage(REGISTERED_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     isHeader(REGISTERED_PAGE_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     selectNoOption()
-    checkYourAnswersAASMap(getHeader(), selectedOption())
+    checkYourAnswersAASMap(
+      "Member of a registered pension scheme between 6 April fromYear and 5 April toYear"
+        .replaceAll("fromYear", fromYear)
+        .replaceAll("toYear", toYear),
+      selectedOption()
+    )
     submitPage()
   }
 
