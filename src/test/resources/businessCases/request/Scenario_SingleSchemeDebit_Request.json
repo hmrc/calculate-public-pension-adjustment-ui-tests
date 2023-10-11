@@ -8,7 +8,15 @@
     ],
     "taxYears": [
       {
-        "pensionInputAmount": 50000,
+        "pensionInputAmount": 20000,
+        "period": "2011"
+      },
+      {
+        "pensionInputAmount": 30000,
+        "period": "2012"
+      },
+      {
+        "pensionInputAmount": 40000,
         "period": "2013"
       },
       {
@@ -16,7 +24,7 @@
         "period": "2014"
       },
       {
-        "pensionInputAmount": 40000,
+        "pensionInputAmount": 60000,
         "period": "2015"
       },
       {

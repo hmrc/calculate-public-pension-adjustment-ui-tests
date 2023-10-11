@@ -69,20 +69,28 @@ object PageInformation {
   val WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER            =
     "When did you first flexibly access your defined contribution pension?"
   val PAY_TAX_CHARGE_FROM2015_2016_PAGE_TITLE             =
-    "Did you pay a tax charge between 6 April 2015 to 5 April 2016? - Calculate your public service pension adjustment - GOV.UK"
+    "Did you pay a tax charge between 6 April 2014 to 5 April 2015? - Calculate your public service pension adjustment - GOV.UK"
   val PAY_TAX_CHARGE_FROM2015_2016_PAGE_HEADER            =
-    "Did you pay a tax charge between 6 April 2015 to 5 April 2016?"
+    "Did you pay a tax charge between 6 April 2014 to 5 April 2015?"
   val PIA_PRE_REMEDY_2012_PAGE_TITLE                      =
-    "What was your pension input amount from 6 April 2012 and 5 April 2013? - Calculate your public service pension adjustment - GOV.UK"
+    "What was your pension input amount from 6 April 2011 and 5 April 2012? - Calculate your public service pension adjustment - GOV.UK"
   val PIA_PRE_REMEDY_2012_PAGE_HEADER                     =
-    "What was your pension input amount from 6 April 2012 and 5 April 2013?"
+    "What was your pension input amount from 6 April 2011 and 5 April 2012?"
   val PIA_PRE_REMEDY_2013_PAGE_TITLE                      =
-    "What was your pension input amount from 6 April 2013 and 5 April 2014? - Calculate your public service pension adjustment - GOV.UK"
+    "What was your pension input amount from 6 April 2012 and 5 April 2013? - Calculate your public service pension adjustment - GOV.UK"
   val PIA_PRE_REMEDY_2013_PAGE_HEADER                     =
-    "What was your pension input amount from 6 April 2013 and 5 April 2014?"
+    "What was your pension input amount from 6 April 2012 and 5 April 2013?"
+  val PIA_PRE_REMEDY_2011_PAGE_TITLE                      =
+    "What was your pension input amount from 6 April 2010 and 5 April 2011? - Calculate your public service pension adjustment - GOV.UK"
+  val PIA_PRE_REMEDY_2011_PAGE_HEADER                     =
+    "What was your pension input amount from 6 April 2010 and 5 April 2011?"
   val PIA_PRE_REMEDY_2014_PAGE_TITLE                      =
-    "What was your pension input amount from 6 April 2014 and 5 April 2015? - Calculate your public service pension adjustment - GOV.UK"
+    "What was your pension input amount from 6 April 2013 and 5 April 2014? - Calculate your public service pension adjustment - GOV.UK"
   val PIA_PRE_REMEDY_2014_PAGE_HEADER                     =
+    "What was your pension input amount from 6 April 2013 and 5 April 2014?"
+  val PIA_PRE_REMEDY_2015_PAGE_TITLE                      =
+    "What was your pension input amount from 6 April 2014 and 5 April 2015? - Calculate your public service pension adjustment - GOV.UK"
+  val PIA_PRE_REMEDY_2015_PAGE_HEADER                     =
     "What was your pension input amount from 6 April 2014 and 5 April 2015?"
   val WHAT_YOU_WILL_NEED_LTA_PAGE_TITLE                   =
     "Lifetime allowance - Calculate your public service pension adjustment - GOV.UK"
