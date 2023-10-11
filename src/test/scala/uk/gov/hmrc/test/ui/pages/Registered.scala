@@ -28,13 +28,22 @@ object Registered extends BasePage {
     verifyPageUrl("annual-allowance/registered/" + toYear)
     onPage(REGISTERED_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     isHeader(REGISTERED_PAGE_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
-    selectNoAndContinueForAASPage()
+    selectNoOption()
+    checkYourAnswersAASMap(getHeader(), selectedOption())
+    submitPage()
   }
 
   def onRegisteredPageSelectYesAndContinue(fromYear: String, toYear: String) = {
     verifyPageUrl("annual-allowance/registered/" + toYear)
     onPage(REGISTERED_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     isHeader(REGISTERED_PAGE_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
-    selectYesAndContinueForAASPage()
+    selectYesOption()
+    checkYourAnswersAASMap(
+      "Member of a registered pension scheme between 6 April fromYear and 5 April toYear"
+        .replaceAll("fromYear", fromYear)
+        .replaceAll("toYear", toYear),
+      selectedOption()
+    )
+    submitPage()
   }
 }
