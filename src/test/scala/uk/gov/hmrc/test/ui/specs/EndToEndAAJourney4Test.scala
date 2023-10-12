@@ -86,6 +86,9 @@ class EndToEndAAJourney4Test extends BaseSpec with BeforeAndAfter {
       When("I verify WhichPensionSchemeWillPayTaxReliefPage Page, select pension scheme and click continue")
       WhichPensionSchemeWillPayTaxReliefPage.verifyPageSelectPensionSchemeAndContinue("Scheme 1")
 
+      When("I verify Bank Details Page, enter bank details and click continue")
+      BankDetailsPage.verifyPageEnterBankDetailsClickContinue()
+
       When("I verify DeclarationsPage Page and click confirm")
       DeclarationsPage.verifyPageAndConfirm()
 
