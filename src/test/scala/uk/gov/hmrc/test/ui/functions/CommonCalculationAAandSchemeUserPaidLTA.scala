@@ -122,15 +122,12 @@ class CommonCalculationAAandSchemeUserPaidLTA extends BaseSpec {
         .getTaxYearInformation("2016-post", _.postAccessDefinedContributionInputAmount, requestDTOResult)
         .toString
 
-    val totalIncome2016post =
-      myObject.getTaxYearInformation("2016-post", _.totalIncome, requestDTOResult).toString
+    val totalIncome2016pre =
+      myObject.getTaxYearInformation("2016-pre", _.totalIncome, requestDTOResult).toString
 
-    val postYear                     = "2016-post"
-    val post2016FlexiAccessDate      =
+    val postYear                = "2016-post"
+    val post2016FlexiAccessDate =
       myObject.getTaxYearInformation(postYear, _.flexiAccessDate, requestDTOResult).toString
-    val incomeAboveThresholdpost2016 =
-      myObject.getIncomeDetails(postYear, _.incomeAboveThreshold, requestDTOResult).toString
-    val adjustedIncome2016post       = myObject.getIncomeDetails(postYear, _.adjustedIncome, requestDTOResult).toString
 
     /** Retrieve response information */
 
@@ -208,8 +205,6 @@ class CommonCalculationAAandSchemeUserPaidLTA extends BaseSpec {
         }
       }
     }
-
-    // CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
     /** --- 2016 Pre --- */
@@ -435,9 +430,7 @@ class CommonCalculationAAandSchemeUserPaidLTA extends BaseSpec {
       }
     }
 
-    /**
-      * Check your answers page is failing to verify as its failing to save add another scheme page information
-      */
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", totalIncome2016pre)
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
     /** --- 2016 Post --- */
@@ -603,29 +596,6 @@ class CommonCalculationAAandSchemeUserPaidLTA extends BaseSpec {
     ) {
       ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2016-post")
     }
-    if (incomeAboveThresholdpost2016 == "0") {
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", totalIncome2016post)
-    } else {
-      if (incomeAboveThresholdpost2016 == "false") {
-        ThresholdIncomePage.verify2017TO2020PageSelectNoAndContinue("2015", "2016", "2016")
-      }
-      if (!(incomeAboveThresholdpost2016 == "false")) {
-        ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue("2015", "2016", "2016")
-
-        AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue(
-          "2015",
-          "2016",
-          "2016",
-          adjustedIncome2016post.toString
-        )
-      }
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(
-        "2015",
-        "2016",
-        "2016",
-        totalIncome2016post
-      )
-    } //      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
     /** --- 2017 and above years --- */
