@@ -545,6 +545,7 @@ class CalculationUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
 
       /** verify check your answers page */
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2016 Post --- */
@@ -594,10 +595,6 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "1")
-
-      /** verify url once fixed */
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -902,6 +899,8 @@ class CalculationUserJourney extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
 
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -942,10 +941,6 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "0")
-
-      /** verify url once fixed */
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -1099,6 +1094,7 @@ class CalculationUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
 
       /** verify check your answers page */
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2016 Post --- */
@@ -1164,10 +1160,6 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-post", "1")
-
-      /** verify url once fixed */
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -1387,7 +1379,7 @@ class CalculationUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue("2016-pre", "1")
 
       /** --- verify check your answers page --- */
-      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2016 Post --- */
@@ -1579,7 +1571,7 @@ class CalculationUserJourney extends BaseSpec {
       ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2016-pre")
 
       /** Verify check your answers page */
-      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2016 Post --- */
@@ -1613,12 +1605,6 @@ class CalculationUserJourney extends BaseSpec {
       When("I verify ContributedOtherDbDcSchemePage page, select no and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2016-post")
 
-      /** verify url once fixed */
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
-
-      /** verify check your answers page */
-      //CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
@@ -1813,6 +1799,7 @@ class CalculationUserJourney extends BaseSpec {
       HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("2016-pre", "0", "200000000")
 
       /** verify check your answers page */
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
@@ -1840,9 +1827,6 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I verify DidYouPayAChargePage page, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
-
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
@@ -2033,6 +2017,8 @@ class CalculationUserJourney extends BaseSpec {
         "8 July 2015"
       )
 
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
@@ -2074,9 +2060,6 @@ class CalculationUserJourney extends BaseSpec {
         "9 July 2015",
         "5 April 2016"
       )
-
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
@@ -2282,6 +2265,8 @@ class CalculationUserJourney extends BaseSpec {
         "8 July 2015"
       )
 
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
@@ -2323,9 +2308,6 @@ class CalculationUserJourney extends BaseSpec {
         "9 July 2015",
         "5 April 2016"
       )
-
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
@@ -2539,6 +2521,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       /** verify check your answers page */
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
@@ -2586,9 +2569,6 @@ class CalculationUserJourney extends BaseSpec {
         "9 July 2015",
         "5 April 2016"
       )
-
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
@@ -2814,6 +2794,7 @@ class CalculationUserJourney extends BaseSpec {
       )
 
       /** verify check your answers page */
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
       /** --- 2016 Post --- */
@@ -2862,9 +2843,6 @@ class CalculationUserJourney extends BaseSpec {
         "9 July 2015",
         "5 April 2016"
       )
-
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
@@ -3103,6 +3081,8 @@ class CalculationUserJourney extends BaseSpec {
         "8 July 2015"
       )
 
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
@@ -3152,9 +3132,6 @@ class CalculationUserJourney extends BaseSpec {
         "9 July 2015",
         "5 April 2016"
       )
-
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
@@ -3373,6 +3350,8 @@ class CalculationUserJourney extends BaseSpec {
         "8 July 2015"
       )
 
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
 
@@ -3430,9 +3409,6 @@ class CalculationUserJourney extends BaseSpec {
         "9 July 2015",
         "5 April 2016"
       )
-
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-post", "400000000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
