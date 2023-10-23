@@ -196,11 +196,14 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ProtectionEnhancementChangedPage.selectNoAndClickOnContinue()
       LtaCharge20152023Page.selectNoAndContinueForLTAPage()
       NewExcessPaidPage.selectLumpSumRadioButtonAndContinue()
-
       NewValueOfLumpSumPage.enterLumpSumAndContinue("1000")
 
       Then("I Should see the onWhoPayingExtraLtaChargePage, select pension scheme and continue")
       WhoPayingExtraLtaChargePage.verifyPageSelectYouAndContinue()
+
+      val pension_scheme_name = "Scheme 4"
+      val taxRef              = "00348916RC"
+      SchemeNameReferencePage.enterSchemeNameReferenceAndContinue(pension_scheme_name, taxRef)
 
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()

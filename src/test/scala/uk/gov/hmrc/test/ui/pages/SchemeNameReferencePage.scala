@@ -38,4 +38,17 @@ object SchemeNameReferencePage extends BasePage {
     enterSchemeReference()
     submitPage()
   }
+
+  def enterSchemeNameReferenceAndContinue(schemeName: String, taxRef: String) = {
+    onSchemeNameReferencePage()
+    enterSchemeName(schemeName)
+    enterSchemeReference(taxRef)
+    submitPage()
+  }
+
+  def enterSchemeName(schemeName: String) =
+    driver.findElement(By.id("name")).sendKeys(schemeName)
+
+  def enterSchemeReference(taxRef: String) =
+    driver.findElement(By.id("taxRef")).sendKeys(taxRef)
 }
