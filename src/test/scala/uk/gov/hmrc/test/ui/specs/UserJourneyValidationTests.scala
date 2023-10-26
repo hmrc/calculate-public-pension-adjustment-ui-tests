@@ -270,10 +270,10 @@ class UserJourneyValidationTests extends BaseSpec {
       TaskListPage.isAnnualAllowanceTitleNotDisplayed()
 
       Then("I verify the status of LA - details of your event is NOT STARTED")
-      assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.IN_PROGRESS)
+      assert(TaskListPage.getLADetailsOfYourEventStatus() == TaskListPage.NOT_STARTED)
 
       When("I click change details of your events link")
-      TaskListPage.clickChangeDetailsForLifetimeAllowance()
+      TaskListPage.clickAddDetailsForLifetimeAllowance()
 
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
