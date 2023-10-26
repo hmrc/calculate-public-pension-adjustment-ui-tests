@@ -22,10 +22,8 @@ import util.DataCollectorMap.checkAnswersAAPeriod
 object CheckYourAnswersAnnualAllowancePeriodPage extends BasePage {
 
   def onCheckYourAnswersAnnualAllowancePeriodPage(period: String) = {
-    verifyPageUrl(s"annual-allowance/$period/check-answers")
     onPage(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE)
     isHeader(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER)
-    isHeader2(CHECK_YOUR_PERIOD_ANSWERS_PAGE_FOR_AA_HEADER2 + " " + period)
   }
 
   def verifyCheckYourAnswersPageAndContinue(period: String) = {

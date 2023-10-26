@@ -1800,7 +1800,7 @@ class CalculationUserJourney extends BaseSpec {
 
       /** verify check your answers page */
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", "2000")
-      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-pre")
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("6 April 2015 and 8 July 2015")
 
       /** --- 2016 Post --- */
       When("I click Add details for 9 July to 5 April 2016")
@@ -1829,7 +1829,7 @@ class CalculationUserJourney extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", "0", "PensionScheme1")
 
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2016-post")
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("9 July 2015 and 5 April 2016")
 
       /** --- 2017 --- */
       When("I click Add details for 2017 to 2017")

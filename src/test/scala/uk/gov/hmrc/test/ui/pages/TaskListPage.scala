@@ -88,9 +88,9 @@ object TaskListPage extends BasePage {
     val year2018 = driver.findElements(By.xpath("//a[contains(text(),'details for 2017 to 2018')]")).size() > 0
     val year2017 = driver.findElements(By.xpath("//a[contains(text(),'details for 2016 to 2017')]")).size() > 0
     val year2016 =
-      driver.findElements(By.xpath("//a[contains(text(),'details for 9 July to 5 April 2016')]")).size() > 0
+      driver.findElements(By.xpath("//a[contains(text(),'details for 9 July 2015 to 5 April 2016')]")).size() > 0
     val year2015 =
-      driver.findElements(By.xpath("//a[contains(text(),'details for 6 April to 8 July 2015')]")).size() > 0
+      driver.findElements(By.xpath("//a[contains(text(),'details for 6 April 2015 to 8 July 2015')]")).size() > 0
     year match {
       case "2022" =>
         try assert(year2022 && year2021 && year2020 && year2019 && year2018 && year2017 && year2016 && year2015)
@@ -117,16 +117,16 @@ object TaskListPage extends BasePage {
   }
 
   def clickAddDetailsFor6AprilTo8July2015() =
-    driver.findElement(By.xpath("//a[contains(text(),'Add details for 6 April to 8 July 2015')]")).click()
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 6 April 2015 to 8 July 2015')]")).click()
 
   def clickChangeDetailsFor6AprilTo8July2015() =
-    driver.findElement(By.xpath("//a[contains(text(),'Change details for 6 April to 8 July 2015')]")).click()
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 6 April 2015 to 8 July 2015')]")).click()
 
   def clickAddDetailsFor9JulyTo8July2016() =
-    driver.findElement(By.xpath("//a[contains(text(),'Add details for 9 July to 5 April 2016')]")).click()
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 9 July 2015 to 5 April 2016')]")).click()
 
   def clickChangeDetailsFor9JulyTo8July2016() =
-    driver.findElement(By.xpath("//a[contains(text(),'Change details for 9 July to 5 April 2016')]")).click()
+    driver.findElement(By.xpath("//a[contains(text(),'Change details for 9 July 2015 to 5 April 2016')]")).click()
 
   def clickAddDetailsFor2016To2017() =
     driver.findElement(By.xpath("//a[contains(text(),'Add details for 2016 to 2017')]")).click()

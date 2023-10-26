@@ -49,13 +49,13 @@ object PageInformation {
   val WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER           =
     "Which tax years were you a Scottish taxpayer?"
   val PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_TITLE        =
-    "Are you still paying into or increasing a public service pension scheme? - Calculate your public service pension adjustment - GOV.UK"
+    "Did you continue paying into or increasing your public service pension scheme after 5 April 2022? - Calculate your public service pension adjustment - GOV.UK"
   val PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_HEADER       =
-    "Are you still paying into or increasing a public service pension scheme?"
+    "Did you continue paying into or increasing your public service pension scheme after 5 April 2022?"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE          =
-    "When did you stop paying into a public service pension scheme? - Calculate your public service pension adjustment - GOV.UK"
+    "At what date during the remedy period did you stop paying into a public service pension scheme? - Calculate your public service pension adjustment - GOV.UK"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER         =
-    "When did you stop paying into a public service pension scheme?"
+    "At what date during the remedy period did you stop paying into a public service pension scheme?"
   val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_TITLE        =
     "Do you have any other pension schemes apart from your public service ones? - Calculate your public service pension adjustment - GOV.UK"
   val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_HEADER       =
@@ -194,7 +194,7 @@ object PageInformation {
   val CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER2              =
     "Annual allowance setup questions"
   val CHECK_YOUR_PERIOD_ANSWERS_PAGE_FOR_AA_HEADER2       =
-    "Annual allowance questions"
+    "Annual allowance questions between"
   val TASK_LISTS_PAGE_TITLE                               =
     "Calculate Public Service Pension Adjustment - Calculate your public service pension adjustment - GOV.UK"
   val TASK_LISTS_PAGE_HEADER                              =

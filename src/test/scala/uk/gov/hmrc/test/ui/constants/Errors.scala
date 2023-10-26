@@ -29,15 +29,15 @@ object Errors {
   val WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_ERROR_SUMMARY                   =
     "Select which tax years you were a Scottish taxpayer"
   val PAYING_INTO_PUBLIC_PENSION_SCHEME_PAGE_ERROR_SUMMARY               =
-    "Select yes if you are still paying into a public service pension scheme"
+    "Select yes if you continued paying into or increasing your public service pension scheme after 5 April 2022"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_NO_INPUT_ERROR_SUMMARY        =
-    "Enter the date when you stopped paying into a public service pension scheme"
+    "Enter at what date during the remedy period did you stop paying into a public service pension scheme"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_FUTURE_DATE_ERROR_SUMMARY     =
-    "The date when you stopped paying into a public service pension scheme must be today or in the past"
+    "The date when you stopped paying into a public service pension scheme must be before 6 April 2022"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_REAL_DATE_ERROR_SUMMARY       =
-    "The date when you stopped paying into a public service pension scheme must only include numbers 0 to 9"
+    "Enter a real date during the remedy period when you stopped paying into a public service pension scheme"
   val WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY =
-    "The date when you stopped paying into a public service pension scheme must be after 6 April 2015"
+    "The date when you stopped paying into a public service pension scheme must be after 5 April 2015"
   val HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_ERROR_SUMMARY               =
     "Select yes if you have a defined contribution pension scheme"
   val HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_ERROR_SUMMARY                  =

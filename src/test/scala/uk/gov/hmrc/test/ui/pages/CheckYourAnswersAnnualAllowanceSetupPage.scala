@@ -79,7 +79,7 @@ object CheckYourAnswersAnnualAllowanceSetupPage extends BasePage {
   }
 
   def clickChangeOnWhenDidYouStopPaying() = clickOnChangeLink(
-    "Date you stopped paying into a public service pension scheme"
+    "At what date during the remedy period did you stop paying into a public service pension scheme?"
   )
 
 }
