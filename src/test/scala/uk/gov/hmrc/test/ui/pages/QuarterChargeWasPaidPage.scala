@@ -27,7 +27,7 @@ object QuarterChargeWasPaidPage extends BasePage {
   }
 
   def selectQuarterAndContinue(): Unit = {
-    val text = "6 April to 5 July"
+    val text = "1 January to 31 March"
     onQuarterChargeWasPaidPage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
