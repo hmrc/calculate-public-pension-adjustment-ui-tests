@@ -25,7 +25,6 @@ object QuarterChargeWasPaidPage extends BasePage {
     onPage(QUARTER_CHARGE_WAS_PAID_PAGE_TITLE)
     isHeader(QUARTER_CHARGE_WAS_PAID_PAGE_HEADER)
   }
-
   def selectQuarterAndContinue(): Unit = {
     val text = "1 January to 31 March"
     onQuarterChargeWasPaidPage()
