@@ -82,7 +82,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
   def clickContinueButton(): Unit =
-    driver.findElement(By.xpath("//a[contains(text(),'Continue')]")).click()
+    driver.findElement(By.xpath("//a[button(text(),'Continue')]")).click()
 
   def onPage(pageTitle: String): Boolean =
     if (driver.getTitle != pageTitle)
