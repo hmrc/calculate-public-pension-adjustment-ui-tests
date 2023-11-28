@@ -97,7 +97,7 @@ class EndToEndAAJourney8Test extends BaseSpec with BeforeAndAfter {
       DeclarationsPage.verifyPageAndConfirm()
 
       Then("I verify check your answers page and click continue")
-      CheckYourAnswersCalculationJourneyPage.verifyCheckYourAnswersPageAndContinue()
+      CheckYourAnswersCalculationJourneyPage.clickSubmissionContinueButton()
 
       Then("I verify SubmissionPage Page")
       SubmissionPage.verifySubmissionPage()
