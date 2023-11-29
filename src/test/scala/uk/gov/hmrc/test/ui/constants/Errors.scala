@@ -56,11 +56,11 @@ object Errors {
   val SAVINGS_STATEMENT_RADIO_BUTTON_ERROR_SUMMARY =
     "Select yes if you have been told about the calculate your public service pension adjustment"
 
-  val RESUBMITTING_ADJUSTMENT_RADIO_BUTTON_ERROR_SUMMARY = "Select yes if you want to resubmit an adjustment"
+  val RESUBMITTING_ADJUSTMENT_RADIO_BUTTON_ERROR_SUMMARY = "Select yes if you want to overwrite a previous submission"
 
   val REPORTING_CHANGE_CHECK_BOX_ERROR_SUMMARY = "Select which charges you would like adjusted"
 
   val RESUBMISSION_ERROR_SUMMARY_TITLE = "Enter the reason you want to resubmit an adjustment"
 
-  val RESUBMISSION_TEXT_AREA_ERROR_SUMMARY = "Enter the reason you want to resubmit an adjustment"
+  val RESUBMISSION_TEXT_AREA_ERROR_SUMMARY = "Enter the reason you want to overwrite a previous submission"
 }
