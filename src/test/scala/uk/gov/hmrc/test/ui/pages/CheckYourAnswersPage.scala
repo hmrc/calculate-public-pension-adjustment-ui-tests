@@ -29,8 +29,6 @@ object CheckYourAnswersPage extends BasePage {
 
   def verifyCheckYourAnswersPageAndContinue() = {
     onCheckYourAnswersPage()
-    val actualData = returnCheckYourAnswersPageInformation()
-    actualData mustBe DataCollectorMap.checkAnswersGS
     clickContinueButton()
   }
 

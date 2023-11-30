@@ -26,11 +26,11 @@ object PageInformation {
   val SAVINGS_STATEMENT_PAGE_HEADER       =
     "Have you been informed about using the calculate your public service pension adjustment?"
   val RESUBMITTING_ADJUSTMENT_PAGE_TITLE  =
-    "Do you want to resubmit an adjustment? - Calculate your public service pension adjustment - GOV.UK"
-  val RESUBMITTING_ADJUSTMENT_PAGE_HEADER = "Do you want to resubmit an adjustment?"
+    "Do you want to overwrite a previous submission? - Calculate your public service pension adjustment - GOV.UK"
+  val RESUBMITTING_ADJUSTMENT_PAGE_HEADER = "Do you want to overwrite a previous submission?"
   val REASON_FOR_RESUBMISSION_PAGE_TITLE  =
-    "Why do you want to resubmit an adjustment? - Calculate your public service pension adjustment - GOV.UK"
-  val REASON_FOR_RESUBMISSION_PAGE_HEADER = "Why do you want to resubmit an adjustment?"
+    "Why do you want to overwrite a previous submission? - Calculate your public service pension adjustment - GOV.UK"
+  val REASON_FOR_RESUBMISSION_PAGE_HEADER = "Why do you want to overwrite a previous submission?"
   val REASON_FOR_RESUBMISSION_PAGE_LABEL  = "Reason for resubmitting an adjustment"
 
   val CHECK_YOUR_ELIGIBILITY_PAGE_TITLE                   =
