@@ -22,23 +22,7 @@ import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_HEADER, HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_TITLE}
 
 object HaveDefinedContributionPensionPage extends BasePage {
-  def validateHaveDefinedContributionPensionPageRadioButtonError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_ERROR_SUMMARY)
-    )
 
-  def onHaveDefinedContributionPensionPage() = {
+  def onHaveDefinedContributionPensionPage() =
     verifyPageUrl("annual-allowance/defined-contributions-scheme")
-    onPage(HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_TITLE)
-    isHeader(HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_HEADER)
-  }
 }

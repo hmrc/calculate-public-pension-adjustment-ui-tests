@@ -20,11 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_CHANGED_NEW_REFERENCE_PAGE_HEADER, PROTECTION_CHANGED_NEW_REFERENCE_PAGE_TITLE}
 
 object ProtectionChangedNewReferencePage extends BasePage {
-  def onProtectionChangedNewReferencePage() = {
-    verifyPageUrl("lifetime-allowance/new-protection-reference")
-    onPage(PROTECTION_CHANGED_NEW_REFERENCE_PAGE_TITLE)
-    isHeader(PROTECTION_CHANGED_NEW_REFERENCE_PAGE_HEADER)
-  }
+
   def enterReference() = {
     val text = "R41AB5678TR2335"
     driver.findElement(By.xpath("//input[@id='value']")).sendKeys(text)
@@ -32,7 +28,6 @@ object ProtectionChangedNewReferencePage extends BasePage {
   }
 
   def enterReferenceAndContinue(): Unit = {
-    onProtectionChangedNewReferencePage()
     enterReference()
     submitPage()
   }

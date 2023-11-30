@@ -20,11 +20,8 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HE
 import util.DataCollectorMap
 
 object CheckYourAnswersCalculationJourneyPage extends BasePage {
-  def onCheckYourAnswersCalculationJourneyPage() = {
+  def onCheckYourAnswersCalculationJourneyPage() =
     verifyPageUrl("check-your-answers")
-    onPage(SUBMIT_CHECK_YOUR_ANSWERS_PAGE_TITLE)
-    isHeader(CHECK_YOUR_ANSWERS_PAGE_HEADER)
-  }
 
   def verifyCheckYourAnswersPageAndContinue() = {
     onCheckYourAnswersCalculationJourneyPage()

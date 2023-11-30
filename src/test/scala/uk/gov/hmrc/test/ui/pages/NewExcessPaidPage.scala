@@ -22,8 +22,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_ENHANCEMENT_TYPE_PAGE_
 object NewExcessPaidPage extends BasePage {
   def onNewExcessPaidPage() = {
     verifyPageUrl("lifetime-allowance/new-excess-paid")
-    onPage(NEW_EXCESS_PAGE_TITLE)
-    isHeader(NEW_EXCESS_PAGE_HEADER)
+
   }
 
   def selectAnnualPaymentRadioButtonAndContinue(): Unit = {

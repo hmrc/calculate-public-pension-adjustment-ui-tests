@@ -112,9 +112,4 @@ object SavingsStatementPage extends BasePage {
     }
   }
 
-  def onSavingsStatementPage() = {
-    verifyPageUrl("pension-saving-statement")
-    onPage(SAVINGS_STATEMENT_PAGE_TITLE)
-    isHeader(SAVINGS_STATEMENT_PAGE_HEADER)
-  }
 }

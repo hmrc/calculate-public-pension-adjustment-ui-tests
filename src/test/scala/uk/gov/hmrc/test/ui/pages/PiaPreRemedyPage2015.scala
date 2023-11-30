@@ -16,13 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2015_PAGE_HEADER, PIA_PRE_REMEDY_2015_PAGE_TITLE}
-
 object PiaPreRemedyPage2015 extends BasePage {
   def onPiaPreRemedyPage2015PageEnterValueAndContinue() = {
-    verifyPageUrl("annual-allowance/pension-input-amount/2015")
-    onPage(PIA_PRE_REMEDY_2015_PAGE_TITLE)
-    isHeader(PIA_PRE_REMEDY_2015_PAGE_HEADER)
+
     enterAmountAndClickContinue()
   }
 

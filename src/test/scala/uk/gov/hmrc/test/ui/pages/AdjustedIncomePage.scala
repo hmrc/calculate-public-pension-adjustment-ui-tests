@@ -33,11 +33,11 @@ object AdjustedIncomePage extends BasePage {
   def enterAdjustedIncome(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
   def verifyPageEnterAdjustedIncomeAndContinue(
-    fromYear: String,
-    toYear: String,
-    year: String,
-    adjustedIncome: String
-  ) = {
+                                                fromYear: String,
+                                                toYear: String,
+                                                year: String,
+                                                adjustedIncome: String
+                                              ) = {
     val newTitle = ADJUSTED_INCOME_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear)
     onAdjustedIncomePage(fromYear, toYear, year, adjustedIncome)
     enterAdjustedIncome(adjustedIncome)

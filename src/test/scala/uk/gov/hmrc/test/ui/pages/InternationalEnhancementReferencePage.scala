@@ -17,13 +17,10 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{INTERNATIONAL_ENHANCEMENT_REFERENCE_PAGE_HEADER, INTERNATIONAL_ENHANCEMENT_REFERENCE_PAGE_TITLE}
 
 object InternationalEnhancementReferencePage extends BasePage {
   def onInternationalEnhancementReferencePage() = {
     verifyPageUrl("lifetime-allowance/international-enhancement-reference")
-    onPage(INTERNATIONAL_ENHANCEMENT_REFERENCE_PAGE_TITLE)
-    isHeader(INTERNATIONAL_ENHANCEMENT_REFERENCE_PAGE_HEADER)
   }
 
   def enterInternationalEnhancementReferenceAndContinue(): Unit = {

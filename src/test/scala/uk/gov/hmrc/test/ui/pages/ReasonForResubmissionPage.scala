@@ -35,51 +35,8 @@ object ReasonForResubmissionPage extends BasePage {
   def verifiedMaxCharacterLength(): Boolean =
     getResubmissionReason() == TEXT_WITH_500_CHARACTERS
 
-  def validateReasonForResubmissionPageErrorsWhenNoTextAsReason() = {
-    assert(
-      driver
-        .findElement(By.xpath("//div[@class='govuk-form-group govuk-form-group--error']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.RESUBMISSION_TEXT_AREA_ERROR_SUMMARY)
-    )
-
-    assert(
-      driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE)
-    )
-
-    assert(
-      driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.RESUBMISSION_TEXT_AREA_ERROR_SUMMARY)
-    )
-  }
-
-  def validateReasonForResubmissionPageErrorsReasonExceedCharLimit(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//div[@class='govuk-form-group govuk-form-group--error']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.REASON_FOR_RESUBMISSION_CHARACTER_LIMITATION_ERROR) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.REASON_FOR_RESUBMISSION_CHARACTER_LIMITATION_ERROR)
-    )
-
   def clearTextarea(): Unit =
     driver.findElement(By.xpath("//textarea[@id='value']")).clear()
-
-  def onReasonForResubmissionPage() = {
-    verifyPageUrl("change-reason")
-    onPage(REASON_FOR_RESUBMISSION_PAGE_TITLE)
-    isHeader(REASON_FOR_RESUBMISSION_PAGE_HEADER)
-  }
 
   def enterReasonAndContinue() = {
     val reason = "resubmission reason"

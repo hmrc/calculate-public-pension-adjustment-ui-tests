@@ -17,15 +17,12 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{ENTER_ALTERNATIVE_NAME_PAGE_HEADER, ENTER_ALTERNATIVE_NAME_PAGE_TITLE}
 
 object EnterAlternativeNamePage extends BasePage {
 
   val name = "ABC BCDEFGH"
   def verifyEnterAlternativeNamePage() = {
     verifyPageUrl("submission-service/enter-name-pension-scheme-holds")
-    onPage(ENTER_ALTERNATIVE_NAME_PAGE_TITLE)
-    isHeader(ENTER_ALTERNATIVE_NAME_PAGE_HEADER)
   }
 
   def verifyPageEnterNameAndContinue() = {

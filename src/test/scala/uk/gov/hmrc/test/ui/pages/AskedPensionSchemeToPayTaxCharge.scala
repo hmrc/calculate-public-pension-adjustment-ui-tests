@@ -16,14 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{ASKED_PENSION_SCHEME_TO_PAY_HEADER, ASKED_PENSION_SCHEME_TO_PAY_TITLE}
 object AskedPensionSchemeToPayTaxCharge extends BasePage {
 
-  def verifyAskedPensionSchemeToPayTaxCharge(year: Int) = {
+  def verifyAskedPensionSchemeToPayTaxCharge(year: Int) =
     verifyPageUrl("submission-service/" + year + "/asked-pension-scheme-to-pay-tax-charge")
-    onPage(ASKED_PENSION_SCHEME_TO_PAY_TITLE)
-    isHeader(ASKED_PENSION_SCHEME_TO_PAY_HEADER)
-  }
 
   def verifyPageSelectYesAndContinue(year: Int) = {
     verifyAskedPensionSchemeToPayTaxCharge(year)

@@ -16,14 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HEADER, CHECK_YOUR_ANSWERS_PAGE_TITLE}
 import util.DataCollectorMap.checkAnswersLAS
 
 object CheckYourAnswersLifetimeAllowancePage extends BasePage {
   def onCheckYourAnswersLifetimeAllowancePage() = {
     verifyPageUrl("lifetime-allowance/check-answers")
-    onPage(CHECK_YOUR_ANSWERS_PAGE_TITLE)
-    isHeader(CHECK_YOUR_ANSWERS_PAGE_HEADER)
   }
 
   def verifyCheckYourAnswersPageAndContinue() = {

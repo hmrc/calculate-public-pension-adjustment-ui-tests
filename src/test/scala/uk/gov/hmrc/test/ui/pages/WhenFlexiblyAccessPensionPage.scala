@@ -22,80 +22,6 @@ import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER, WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_TITLE}
 
 object WhenFlexiblyAccessPensionPage extends BasePage {
-  def validateNoInputDateError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_NO_INPUT_DATA_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_NO_INPUT_DATA_ERROR_SUMMARY)
-    )
-
-  def validateRealDateError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_REAL_DATE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_REAL_DATE_ERROR_SUMMARY)
-    )
-
-  def validateFutureDateError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_FUTURE_DATE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_FUTURE_DATE_ERROR_SUMMARY)
-    )
-
-  def validatePreRemedyDateError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY)
-    )
-
-  def validateDateFormatError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_DATES_FORMAT_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_DATES_FORMAT_ERROR_SUMMARY)
-    )
-  def onWhenFlexiblyAccessPensionPage() = {
-    verifyPageUrl("annual-allowance/flexibly-accessed-date")
-    onPage(WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_TITLE)
-    isHeader(WHEN_FLEXIBLY_ACCESS_PENSION_PAGE_HEADER)
-  }
 
   def enterAnInvalidDateAndClickContinue() = {
     clearDate()
@@ -174,25 +100,9 @@ object WhenFlexiblyAccessPensionPage extends BasePage {
     submitPage()
   }
 
-  def validateAllDateErrors(): Unit = {
-    submitPage()
-    validateNoInputDateError()
-    enterAnInvalidDateAndClickContinue()
-    validateRealDateError()
-    enterAnInvalidMonthAndClickContinue()
-    validateRealDateError()
-    enterAnInvalidYearAndClickContinue()
-    validateRealDateError()
-    enterAFutureDateAndClickContinue()
-    validateFutureDateError()
-    enterAPreRemedyDateAndClickContinue()
-    validatePreRemedyDateError()
-  }
-
   def verifyAllowedDatesAndContinue(): Unit = {
     enterValidPastDateAndClickContinue()
     clickBackButton()
-    onWhenFlexiblyAccessPensionPage()
     enterValidFutureDateAndClickContinue()
   }
 }

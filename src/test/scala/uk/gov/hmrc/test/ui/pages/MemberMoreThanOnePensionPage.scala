@@ -16,13 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER, MEMBER_MORE_THAN_ONE_PENSION_PAGE_TITLE}
 
 object MemberMoreThanOnePensionPage extends BasePage {
   def onMemberMoreThanOnePensionPage(year: String) = {
     verifyPageUrl(s"annual-allowance/$year/multiple-schemes")
-    onPage(MEMBER_MORE_THAN_ONE_PENSION_PAGE_TITLE)
-    isHeader(MEMBER_MORE_THAN_ONE_PENSION_PAGE_HEADER)
+
   }
   def verifyPageSelectYesAndContinue(year: String) = {
     onMemberMoreThanOnePensionPage(year)

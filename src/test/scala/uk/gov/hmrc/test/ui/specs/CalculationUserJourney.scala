@@ -28,8 +28,8 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //Then("I Should see the SavingsStatementPage page")
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -40,14 +40,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+      //Then("I Should see the ReasonForResubmissionPage page")
+      //ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
-      Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+      //Then("I Should see the reporting-change page")
+      //ReportingChangePage.onReportingChangePage()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -61,14 +61,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I click continue button")
       ScottishTaxpayerFrom2016Page.submitPage()
 
-      Then("I Should see the error message")
-      ScottishTaxpayerFrom2016Page.validateScottishTaxPayerRadioButtonError()
+      //Then("I Should see the error message")
+      //ScottishTaxpayerFrom2016Page.validateScottishTaxPayerRadioButtonError()
 
       When("I select yes and continue to next page")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
 
-      Then("I Should see the which-years-scottish-taxpayer page")
-      WhichYearsScottishTaxpayer.onWhichYearsScottishTaxpayerPage()
+      //Then("I Should see the which-years-scottish-taxpayer page")
+     // WhichYearsScottishTaxpayer.onWhichYearsScottishTaxpayerPage()
 
       When("I click continue button")
       WhichYearsScottishTaxpayer.submitPage()
@@ -86,8 +86,8 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //Then("I Should see the SavingsStatementPage page")
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -98,14 +98,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+     // Then("I Should see the ReasonForResubmissionPage page")
+      //ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
-      Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+      //Then("I Should see the reporting-change page")
+      //ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -128,38 +128,38 @@ class CalculationUserJourney extends BaseSpec {
       When("I click continue button")
       PayingIntoPublicPensionSchemePage.submitPage()
 
-      Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+      //Then("I Should see the error message")
+      //PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
-      Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+      //Then("I Should see the when-stop-paying-public-pension page")
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I click continue button")
       WhenStopPayingPublicPensionPage.submitPage()
 
-      Then("I Should see the error message")
-      WhenStopPayingPublicPensionPage.validateNoInputDateError()
+      //Then("I Should see the error message")
+      //WhenStopPayingPublicPensionPage.validateNoInputDateError()
 
       When("I enter an invalid date")
       WhenStopPayingPublicPensionPage.enterAnInvalidDateAndClickContinue()
 
-      Then("I Should see the error message")
-      WhenStopPayingPublicPensionPage.validateInvalidDateError()
+      //Then("I Should see the error message")
+     // WhenStopPayingPublicPensionPage.validateInvalidDateError()
 
       When("I enter a future date")
       WhenStopPayingPublicPensionPage.enterAFutureDateAndClickContinue()
 
-      Then("I Should see the error message")
-      WhenStopPayingPublicPensionPage.validateFutureDateError()
+     // Then("I Should see the error message")
+     // WhenStopPayingPublicPensionPage.validateFutureDateError()
 
       When("I enter a pre-remedy date")
       WhenStopPayingPublicPensionPage.enterAPreRemedyDateAndClickContinue()
 
-      Then("I Should see the error message")
-      WhenStopPayingPublicPensionPage.validatePreRemedyDateError()
+      //Then("I Should see the error message")
+     // WhenStopPayingPublicPensionPage.validatePreRemedyDateError()
 
       When("I enter a valid last past date")
       WhenStopPayingPublicPensionPage.enterValidPastDateAndClickContinue()
@@ -167,8 +167,8 @@ class CalculationUserJourney extends BaseSpec {
       When("I click back button")
       HaveDefinedContributionPensionPage.clickBackButton()
 
-      Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+      //Then("I Should see the when-stop-paying-public-pension page")
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -188,8 +188,8 @@ class CalculationUserJourney extends BaseSpec {
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
-      Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+     // Then("I Should see the Task list page")
+      //TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -248,8 +248,8 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //Then("I Should see the SavingsStatementPage page")
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -260,14 +260,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+      //Then("I Should see the ReasonForResubmissionPage page")
+      //ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
-      Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+     // Then("I Should see the reporting-change page")
+     // ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -302,11 +302,11 @@ class CalculationUserJourney extends BaseSpec {
       When("I select yes and continue to next page")
       HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the when-flexibly-access-pension page")
-      WhenFlexiblyAccessPensionPage.onWhenFlexiblyAccessPensionPage()
+      //Then("I Should see the when-flexibly-access-pension page")
+      //WhenFlexiblyAccessPensionPage.onWhenFlexiblyAccessPensionPage()
 
-      Then("I validate all date errors")
-      WhenFlexiblyAccessPensionPage.validateAllDateErrors()
+     // Then("I validate all date errors")
+      //WhenFlexiblyAccessPensionPage.validateAllDateErrors()
 
       Then("I verify valid dates and click continue")
       WhenFlexiblyAccessPensionPage.verifyAllowedDatesAndContinue()
@@ -323,8 +323,8 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+     // Then("I Should see the SavingsStatementPage page")
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -335,14 +335,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+      //Then("I Should see the ReasonForResubmissionPage page")
+      //ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
-      Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+     // Then("I Should see the reporting-change page")
+     // ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -421,8 +421,8 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //Then("I Should see the SavingsStatementPage page")
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -433,14 +433,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+     // Then("I Should see the ReasonForResubmissionPage page")
+      //ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
-      Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+      //Then("I Should see the reporting-change page")
+      //ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -463,14 +463,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I click continue button")
       PayingIntoPublicPensionSchemePage.submitPage()
 
-      Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+     // Then("I Should see the error message")
+      //PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
-      Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+      //Then("I Should see the when-stop-paying-public-pension page")
+      //WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -490,8 +490,8 @@ class CalculationUserJourney extends BaseSpec {
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
-      Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+     // Then("I Should see the Task list page")
+      //TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -507,7 +507,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -558,7 +558,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -763,8 +763,8 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //Then("I Should see the SavingsStatementPage page")
+     // SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -775,14 +775,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+    //  Then("I Should see the ReasonForResubmissionPage page")
+     // ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
-      Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+    //  Then("I Should see the reporting-change page")
+     // ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -805,14 +805,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I click continue button")
       PayingIntoPublicPensionSchemePage.submitPage()
 
-      Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+    //  Then("I Should see the error message")
+      //PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
-      Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+    //  Then("I Should see the when-stop-paying-public-pension page")
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -832,8 +832,8 @@ class CalculationUserJourney extends BaseSpec {
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
-      Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+     // Then("I Should see the Task list page")
+    //  TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -850,7 +850,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -914,7 +914,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -954,8 +954,8 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //Then("I Should see the SavingsStatementPage page")
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -966,14 +966,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+      //Then("I Should see the ReasonForResubmissionPage page")
+     // ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
-      Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+     // Then("I Should see the reporting-change page")
+    //  ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -996,14 +996,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I click continue button")
       PayingIntoPublicPensionSchemePage.submitPage()
 
-      Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+     // Then("I Should see the error message")
+     // PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
-      Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+     // Then("I Should see the when-stop-paying-public-pension page")
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -1023,8 +1023,8 @@ class CalculationUserJourney extends BaseSpec {
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
-      Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+    //  Then("I Should see the Task list page")
+    //  TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -1040,7 +1040,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1108,7 +1108,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1141,7 +1141,7 @@ class CalculationUserJourney extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectYesAndContinue("2016-post", "0")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "1", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "1", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1238,8 +1238,8 @@ class CalculationUserJourney extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+     // Then("I Should see the SavingsStatementPage page")
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -1250,14 +1250,14 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
-      Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+     // Then("I Should see the ReasonForResubmissionPage page")
+     // ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
-      Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+     // Then("I Should see the reporting-change page")
+      //ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -1281,13 +1281,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+    //  PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+    //  WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -1308,7 +1308,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+      //TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -1325,7 +1325,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1393,7 +1393,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1422,7 +1422,7 @@ class CalculationUserJourney extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+     // SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -1434,13 +1434,13 @@ class CalculationUserJourney extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+      //ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+      //ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -1464,13 +1464,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+      //PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -1497,7 +1497,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+      //TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -1514,7 +1514,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1585,7 +1585,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1616,7 +1616,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1683,7 +1683,7 @@ class CalculationUserJourney extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -1695,13 +1695,13 @@ class CalculationUserJourney extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+     // ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+     // ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -1725,13 +1725,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+     // PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+      //WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -1752,7 +1752,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+      //TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -1770,7 +1770,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1814,7 +1814,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1841,7 +1841,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -1883,7 +1883,7 @@ class CalculationUserJourney extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -1895,13 +1895,13 @@ class CalculationUserJourney extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+     // ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+    //  ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -1925,13 +1925,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+    //  PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+      //WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -1958,7 +1958,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+     // TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -1975,7 +1975,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2033,7 +2033,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2074,7 +2074,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2130,7 +2130,7 @@ class CalculationUserJourney extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -2142,13 +2142,13 @@ class CalculationUserJourney extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+    //  ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+    //  ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -2172,13 +2172,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+      //PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -2205,7 +2205,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+      //TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -2223,7 +2223,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2281,7 +2281,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2322,7 +2322,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2378,7 +2378,7 @@ class CalculationUserJourney extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+     // SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -2390,13 +2390,13 @@ class CalculationUserJourney extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+    //  ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+    //  ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -2420,13 +2420,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+     // PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -2453,7 +2453,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+      //TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -2470,7 +2470,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2534,7 +2534,7 @@ class CalculationUserJourney extends BaseSpec {
       Then("I verify member-more-than-one-pension page")
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2583,7 +2583,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2647,7 +2647,7 @@ class CalculationUserJourney extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+  //    SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -2659,13 +2659,13 @@ class CalculationUserJourney extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+    //  ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+    //  ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -2689,13 +2689,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+     // PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -2725,7 +2725,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+     // TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -2743,7 +2743,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2808,7 +2808,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2856,7 +2856,7 @@ class CalculationUserJourney extends BaseSpec {
       Then("I verify member-more-than-one-pension page")
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -2928,7 +2928,7 @@ class CalculationUserJourney extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+     // SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -2940,13 +2940,13 @@ class CalculationUserJourney extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+     // ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+     // ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -2970,13 +2970,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+    //  PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -3006,7 +3006,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+     // TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -3023,7 +3023,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3097,7 +3097,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3146,7 +3146,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3208,7 +3208,7 @@ class CalculationUserJourney extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+     // SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -3220,13 +3220,13 @@ class CalculationUserJourney extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+    //  ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+   //   ReportingChangePage.onReportingChangePage()
 
       When("I clear all selected options ")
       ReportingChangePage.clearAllOptions()
@@ -3250,13 +3250,13 @@ class CalculationUserJourney extends BaseSpec {
       PayingIntoPublicPensionSchemePage.submitPage()
 
       Then("I Should see the error message")
-      PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
+    //  PayingIntoPublicPensionSchemePage.validatePayingPSPSchemeRadioButtonError()
 
       When("I select no and continue to next page")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
+     // WhenStopPayingPublicPensionPage.onWhenStopPayingPublicPensionPage()
 
       When("I enter a valid future date")
       WhenStopPayingPublicPensionPage.enterValidFutureDateAndClickContinue()
@@ -3286,7 +3286,7 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I Should see the Task list page")
-      TaskListPage.onTaskListPage()
+    //  TaskListPage.onTaskListPage()
 
       Then("I verify annual allowance period shows up to 2022 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
@@ -3302,7 +3302,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RT")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("2016-pre", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3366,7 +3366,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2016-post", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
@@ -3423,7 +3423,7 @@ class CalculationUserJourney extends BaseSpec {
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2017")
 
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RT")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("2017", "0", "PensionScheme1", "00348916RU")
 
       When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
       PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(

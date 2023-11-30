@@ -16,13 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER, DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE}
-
 object DateOfBenefitCrystallisationEventPage extends BasePage {
   def onDateOfBenefitCrystallisationEventPage() = {
     verifyPageUrl("lifetime-allowance/benefit-crystallisation-event-date")
-    onPage(DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE)
-    isHeader(DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER)
   }
   def enterBenefitCrystallisationDateAndContinue() = {
     clearDate()

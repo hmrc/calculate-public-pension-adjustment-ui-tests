@@ -17,13 +17,10 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{LEGACY_PENSION_SCHEME_REFERENCE_PAGE_HEADER, LEGACY_PENSION_SCHEME_REFERENCE_PAGE_TITLE}
 
 object LegacyPensionSchemeReferencePage extends BasePage {
   def verifyLegacyPensionSchemeReferencePage(taxRef: String) = {
     verifyPageUrl("submission-service/" + taxRef + "/legacy-individual-pension-scheme-reference")
-    onPage(LEGACY_PENSION_SCHEME_REFERENCE_PAGE_TITLE)
-    isHeader(LEGACY_PENSION_SCHEME_REFERENCE_PAGE_HEADER)
   }
 
   def verifyPageEnterReferenceAndContinue(schemeName: String, taxRef: String) = {

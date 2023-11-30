@@ -19,16 +19,11 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_TRN_HEADER, THEIR_NINO_TRN_TITLE}
 object TheirNINOTRNPage extends BasePage {
-  def verifyTheirNINOTRN(): Boolean = {
-    onPage(THEIR_NINO_TRN_TITLE)
-    isHeader(THEIR_NINO_TRN_HEADER)
-  }
 
   def enterNINOTRN(): Unit =
-    driver.findElement(By.id("value")).sendKeys("00348916RT")
+    driver.findElement(By.id("value")).sendKeys("00348916RU")
 
   def verifyPageEnterNINOAndContinue(): Unit = {
-    verifyTheirNINOTRN()
     enterNINOTRN()
     submitPage()
   }

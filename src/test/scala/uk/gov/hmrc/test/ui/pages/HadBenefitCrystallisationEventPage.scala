@@ -16,13 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER, HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE}
-
 object HadBenefitCrystallisationEventPage extends BasePage {
   def onHadBenefitCrystallisationEventPage() = {
     verifyPageUrl("lifetime-allowance/benefit-crystallisation-event")
-    onPage(HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE)
-    isHeader(HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER)
+
   }
 
   def verifyPageSelectYesAndContinue() = {

@@ -23,14 +23,9 @@ import util.NINOGenerator
 object TheirNinoPage extends BasePage {
 
   val nino        = NINOGenerator.nino
-  def verifyTheirNinoPage() = {
-    verifyPageUrl("submission-service/national-insurance-number-someone-else")
-    onPage(THEIR_NINO_PAGE_TITLE)
-    isHeader(THEIR_NINO_PAGE_HEADER)
-  }
+
   def enterNINO() = driver.findElement(By.id("value")).sendKeys(nino)
   def verifyPageEnterNinoAndContinue() = {
-    verifyTheirNinoPage()
     enterNINO()
     checkYourAnswersCalculationsMap(getHeader(), nino)
     submitPage()

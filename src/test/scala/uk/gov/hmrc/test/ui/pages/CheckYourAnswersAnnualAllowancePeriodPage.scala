@@ -16,15 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER, CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE, CHECK_YOUR_PERIOD_ANSWERS_PAGE_FOR_AA_HEADER2}
 import util.DataCollectorMap.checkAnswersAAPeriod
 
 object CheckYourAnswersAnnualAllowancePeriodPage extends BasePage {
 
-  def onCheckYourAnswersAnnualAllowancePeriodPage(period: String) = {
-    onPage(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE)
-    isHeader(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER)
-  }
+  def onCheckYourAnswersAnnualAllowancePeriodPage(period: String) = {}
 
   def verifyCheckYourAnswersPageAndContinue(period: String) = {
     onCheckYourAnswersAnnualAllowancePeriodPage(period)

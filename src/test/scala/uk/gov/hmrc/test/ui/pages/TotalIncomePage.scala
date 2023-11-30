@@ -32,11 +32,11 @@ object TotalIncomePage extends BasePage {
   def enterTotalIncome(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
   def verifyPageEnterTotalIncomeAndContinue(
-    fromYear: String,
-    toYear: String,
-    year: String,
-    adjustedIncome: String
-  ) = {
+                                             fromYear: String,
+                                             toYear: String,
+                                             year: String,
+                                             adjustedIncome: String
+                                           ) = {
     onTotalIncomePage(fromYear, toYear, year)
     enterTotalIncome(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))

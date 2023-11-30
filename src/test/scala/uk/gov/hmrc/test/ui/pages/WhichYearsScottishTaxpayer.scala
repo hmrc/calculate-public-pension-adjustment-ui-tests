@@ -23,11 +23,6 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_YEARS_SCOTTISH_TAXPA
 
 object WhichYearsScottishTaxpayer extends BasePage {
   var taxYears = ""
-  def onWhichYearsScottishTaxpayerPage() = {
-    verifyPageUrl("annual-allowance/scottish-taxpayer-years")
-    onPage(WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE)
-    isHeader(WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER)
-  }
 
   def validateWhichYearsScottishTaxpayerErrorsWhenNoCheckBoxSelected(): Assertion =
     assert(

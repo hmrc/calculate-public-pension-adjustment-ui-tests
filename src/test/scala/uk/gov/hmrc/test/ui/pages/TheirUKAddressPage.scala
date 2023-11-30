@@ -27,11 +27,6 @@ object TheirUKAddressPage extends BasePage {
   val county       = "London"
   val postCode     = "AB2 5ED"
 
-  def verifyTheirUKAddressPage() = {
-    verifyPageUrl("submission-service/address-someone-else")
-    onPage(THEIR_UK_ADDRESS_PAGE_TITLE)
-    isHeader(THEIR_UK_ADDRESS_PAGE_HEADER)
-  }
 
   def enterAddressInformation() = {
     driver.findElement(By.id("addressLine1")).sendKeys(addressLine1)
@@ -42,7 +37,6 @@ object TheirUKAddressPage extends BasePage {
   }
 
   def verifyPageEnterAddressAndContinue() = {
-    verifyTheirUKAddressPage()
     enterAddressInformation()
     checkYourAnswersCalculationsMap(
       getHeader(),

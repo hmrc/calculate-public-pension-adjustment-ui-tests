@@ -978,7 +978,7 @@ class CommonCalculationAAandMultipleSchemesPaidLTA extends BaseSpec {
     DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
     DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
     ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-    PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+    /* PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage() */
     PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
     MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
     MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()

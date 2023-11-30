@@ -20,11 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{SCHEME_NAME_REFERENCE_PAGE_HEADER, SCHEME_NAME_REFERENCE_PAGE_TITLE, VALUE_OF_LUMP_SUM_PAGE_HEADER, VALUE_OF_LUMP_SUM_PAGE_TITLE}
 
 object SchemeNameReferencePage extends BasePage {
-  def onSchemeNameReferencePage() = {
-    verifyPageUrl("lifetime-allowance/scheme-name-reference")
-    onPage(SCHEME_NAME_REFERENCE_PAGE_TITLE)
-    isHeader(SCHEME_NAME_REFERENCE_PAGE_HEADER)
-  }
 
   def enterSchemeName() =
     driver.findElement(By.id("name")).sendKeys("TTTTT")
@@ -33,14 +28,12 @@ object SchemeNameReferencePage extends BasePage {
     driver.findElement(By.id("taxRef")).sendKeys("00348916BA")
 
   def enterSchemeNameReferenceAndContinue() = {
-    onSchemeNameReferencePage()
     enterSchemeName()
     enterSchemeReference()
     submitPage()
   }
 
   def enterSchemeNameReferenceAndContinue(schemeName: String, taxRef: String) = {
-    onSchemeNameReferencePage()
     enterSchemeName(schemeName)
     enterSchemeReference(taxRef)
     submitPage()

@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.functions
 
-import org.openqa.selenium.By
+import org.scalatest.BeforeAndAfter
+import uk.gov.hmrc.test.ui.specs.BaseSpec
 
-object PensionCreditReferencePage extends BasePage {
-  def onPensionCreditReferencePage() = {
-    verifyPageUrl("lifetime-allowance/pension-credit-reference")
-  }
+import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
 
-  def enterPensionCreditReferenceAndContinue(): Unit = {
-    val reference = "1234567890ZXCVB"
-    onPensionCreditReferencePage()
-    driver.findElement(By.id("value")).sendKeys(reference)
-    checkYourAnswersLASMap(getHeader(), reference)
-    submitPage()
-  }
+abstract class LTACalculation extends BaseSpec with BeforeAndAfter {
+
+  def createLTACalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int])
 
 }

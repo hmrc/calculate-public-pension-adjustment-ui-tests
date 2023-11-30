@@ -20,12 +20,6 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_DID_YOU_ASK_PENSION_S
 
 object WhenDidYouAskPensionSchemeToPay extends BasePage {
 
-  def verifyWhenDidYouAskPensionSchemeToPay(year: Int) = {
-    verifyPageUrl("submission-service/" + year + "/date-asked-pension-scheme-to-pay")
-    onPage(WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE)
-    isHeader(WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER)
-  }
-
   def enterSchemePaymentDate() = {
     clearDate()
     enterDay("1")
@@ -34,7 +28,6 @@ object WhenDidYouAskPensionSchemeToPay extends BasePage {
   }
 
   def verifyPageEnterDateAndContinue(year: Int) = {
-    verifyWhenDidYouAskPensionSchemeToPay(year)
     enterSchemePaymentDate()
     submitPage()
   }

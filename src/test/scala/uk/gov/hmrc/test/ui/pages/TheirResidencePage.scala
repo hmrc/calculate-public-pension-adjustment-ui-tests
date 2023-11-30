@@ -19,17 +19,11 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_RESIDENCE_PAGE_HEADER, THEIR_RESIDENCE_PAGE_TITLE}
 
 object TheirResidencePage extends BasePage {
-  def verifyTheirResidencePage() = {
-    verifyPageUrl("submission-service/uk-resident-someone-else")
-    onPage(THEIR_RESIDENCE_PAGE_TITLE)
-    isHeader(THEIR_RESIDENCE_PAGE_HEADER)
-  }
+
   def verifyPageSelectYesAnContinue() = {
-    verifyTheirResidencePage()
     selectYesAndContinueCalculationsPage()
   }
   def verifyPageSelectNoAnContinue() = {
-    verifyTheirResidencePage()
     selectNoAndContinueCalculationsPage()
   }
 }

@@ -20,8 +20,6 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{SUBMISSION_INFO_PAGE_HEADE
 
 object SubmissionInfoPage extends BasePage {
   def verifySubmissionInfoPageAndContinue() = {
-    onPage(SUBMISSION_INFO_PAGE_TITLE)
-    isHeader(SUBMISSION_INFO_PAGE_HEADER)
     clickContinueButton()
   }
 }

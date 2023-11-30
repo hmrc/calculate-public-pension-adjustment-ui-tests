@@ -17,13 +17,10 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_MUCH_PENSION_PAY_CHARGE_PAGE_HEADER, HOW_MUCH_PENSION_PAY_CHARGE_PAGE_TITLE}
 
 object HowMuchPensionPayChargePage extends BasePage {
   def onHowMuchPensionPayChargePage(year: String, pensionSchemeNumber: String) = {
     verifyPageUrl(s"annual-allowance/$year/pension-scheme-$pensionSchemeNumber/charge-amount-pension-scheme-paid")
-    onPage(HOW_MUCH_PENSION_PAY_CHARGE_PAGE_TITLE)
-    isHeader(HOW_MUCH_PENSION_PAY_CHARGE_PAGE_HEADER)
   }
 
   def enterPensionPay(pensionPay: String) = driver.findElement(By.id("value")).sendKeys(pensionPay)

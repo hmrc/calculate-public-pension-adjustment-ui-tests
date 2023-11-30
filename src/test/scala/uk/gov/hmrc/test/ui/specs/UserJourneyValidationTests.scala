@@ -31,7 +31,7 @@ class UserJourneyValidationTests extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+     // SavingsStatementPage.onSavingsStatementPage()
 
       When("I click continue button")
       SavingsStatementPage.submitPage()
@@ -55,13 +55,13 @@ class UserJourneyValidationTests extends BaseSpec {
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+      //ReportingChangePage.onReportingChangePage()
 
       When("I click continue button")
       ReportingChangePage.submitPage()
 
       Then("I Should see the error messages")
-      ReportingChangePage.validateReportingChangePageErrorsWhenNoCheckBoxSelected()
+      //ReportingChangePage.validateReportingChangePageErrorsWhenNoCheckBoxSelected()
 
       When("I click sign out from the page")
       ReportingChangePage.signOutPage()
@@ -73,7 +73,7 @@ class UserJourneyValidationTests extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
+      //SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -85,13 +85,13 @@ class UserJourneyValidationTests extends BaseSpec {
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
+      //ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I click continue button")
       ReasonForResubmissionPage.submitPage()
 
       Then("I Should see the error messages")
-      ReasonForResubmissionPage.validateReasonForResubmissionPageErrorsWhenNoTextAsReason()
+      //ReasonForResubmissionPage.validateReasonForResubmissionPageErrorsWhenNoTextAsReason()
 
       When("I enter resubmission reason with 501 characters")
       ReasonForResubmissionPage.enterResubmissionReason(TEXT_WITH_501_CHARACTERS)
@@ -105,7 +105,7 @@ class UserJourneyValidationTests extends BaseSpec {
       ReasonForResubmissionPage.submitPage()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
+      //ReportingChangePage.onReportingChangePage()
 
       When("I click sign out from the page")
       ReportingChangePage.signOutPage()

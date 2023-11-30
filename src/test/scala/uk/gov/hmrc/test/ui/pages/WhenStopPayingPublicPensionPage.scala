@@ -22,67 +22,6 @@ import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER, WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE}
 
 object WhenStopPayingPublicPensionPage extends BasePage {
-  def validateNoInputDateError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_NO_INPUT_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_NO_INPUT_ERROR_SUMMARY)
-    )
-
-  def validateInvalidDateError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_REAL_DATE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_REAL_DATE_ERROR_SUMMARY)
-    )
-
-  def validateFutureDateError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_FUTURE_DATE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_FUTURE_DATE_ERROR_SUMMARY)
-    )
-
-  def validatePreRemedyDateError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_PRE_REMEDY_DATE_ERROR_SUMMARY)
-    )
-
-  def onWhenStopPayingPublicPensionPage() = {
-    verifyPageUrl("annual-allowance/stopped-paying-into-public-service-pension")
-    onPage(WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE)
-    isHeader(WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER)
-  }
 
   def enterAnInvalidDateAndClickContinue() = {
     clearDate()

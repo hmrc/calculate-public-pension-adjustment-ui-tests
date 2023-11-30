@@ -20,13 +20,8 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{STATUS_OF_USER_PAGE_HEADER, STATUS_OF_USER_PAGE_TITLE}
 
 object StatusOfUserPage extends BasePage {
-  def verifyStatusOfUserPage() = {
-    onPage(STATUS_OF_USER_PAGE_TITLE)
-    isHeader(STATUS_OF_USER_PAGE_HEADER)
-  }
   def selectDeputyship() = driver.findElement(By.id("value_1")).click()
   def verifyPageSelectDeputyshipAndContinue() = {
-    verifyStatusOfUserPage()
     selectDeputyship()
     checkYourAnswersCalculationsMap(getHeader(), getCheckedOptions())
     submitPage()

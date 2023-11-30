@@ -21,32 +21,23 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_CHANGED_PAGE_HE
 import uk.gov.hmrc.test.ui.pages.LtaProtectionOrEnhancementsPage.{checkYourAnswersLASMap, driver, getHeader, submitPage}
 
 object ProtectionEnhancementChangedPage extends BasePage {
-  def onProtectionEnhancementChangedPage() = {
-    verifyPageUrl("lifetime-allowance/protection-enhancement-changed")
-    onPage(PROTECTION_CHANGED_PAGE_TITLE)
-    isHeader(PROTECTION_CHANGED_PAGE_HEADER)
-  }
 
   def selectProtectionAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
     selectProtectionRadioButtonAndContinue()
     // selectYesAndContinueForLTAPage()
   }
 
   def selectEnhancementAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
     selectEnhancementsRadioButtonAndContinue()
     // selectNoAndContinueForLTAPage()
   }
 
   def selectBothAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
     selectBothRadioButtonAndContinue()
     // selectNoAndContinueForLTAPage()
   }
 
   def selectNoAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
     selectNoRadioButtonAndContinue()
     // selectNoAndContinueForLTAPage()
   }

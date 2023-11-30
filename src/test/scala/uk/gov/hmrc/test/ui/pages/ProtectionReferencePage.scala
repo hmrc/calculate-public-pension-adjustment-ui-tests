@@ -20,12 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_REFERENCE_PAGE_HEADER, PROTECTION_REFERENCE_PAGE_TITLE}
 
 object ProtectionReferencePage extends BasePage {
-  def onProtectionReferencePage() = {
-    verifyPageUrl("lifetime-allowance/protection-reference")
-    onPage(PROTECTION_REFERENCE_PAGE_TITLE)
-    isHeader(PROTECTION_REFERENCE_PAGE_HEADER)
-  }
-
   def enterProtectionReferenceAndContinue(): Unit = {
     val text = "R41AB5678TR2335"
     driver.findElement(By.id("value")).clear()

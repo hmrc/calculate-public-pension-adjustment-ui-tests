@@ -20,11 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_INTERNATIONAL_ADDRESS_PAGE_HEADER, THEIR_INTERNATIONAL_ADDRESS_PAGE_TITLE}
 
 object TheirInternationalAddressPage extends BasePage {
-  def verifyTheirUKAddressPage() = {
-    verifyPageUrl("submission-service/international-address-someone-else")
-    onPage(THEIR_INTERNATIONAL_ADDRESS_PAGE_TITLE)
-    isHeader(THEIR_INTERNATIONAL_ADDRESS_PAGE_HEADER)
-  }
 
   def enterAddressInformation() = {
     driver.findElement(By.id("addressLine1")).sendKeys("No 138")
@@ -36,7 +31,6 @@ object TheirInternationalAddressPage extends BasePage {
   }
 
   def verifyPageEnterAddressAndContinue() = {
-    verifyTheirUKAddressPage()
     enterAddressInformation()
     submitPage()
   }

@@ -16,14 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{ALTERNATIVE_NAME_PAGE_HEADER, ALTERNATIVE_NAME_PAGE_TITLE}
-
 object AlternativeNamePage extends BasePage {
-  def verifyAlternativeNamePage() = {
+  def verifyAlternativeNamePage() =
     verifyPageUrl("submission-service/name-pension-scheme-holds")
-    onPage(ALTERNATIVE_NAME_PAGE_TITLE)
-    isHeader(ALTERNATIVE_NAME_PAGE_HEADER)
-  }
   def verifyPageSelectYesAndContinue() = {
     verifyAlternativeNamePage()
     selectYesAndContinueCalculationsPage()

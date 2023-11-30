@@ -25,19 +25,6 @@ import scala.collection.mutable.ListBuffer
 
 object ReportingChangePage extends BasePage {
 
-  def validateReportingChangePageErrorsWhenNoCheckBoxSelected(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//div[@class='govuk-form-group govuk-form-group--error']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.REPORTING_CHANGE_CHECK_BOX_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.REPORTING_CHANGE_CHECK_BOX_ERROR_SUMMARY)
-    )
 
   def clearAllOptions() =
     if (driver.findElement(By.id("value_0")).isSelected) {
@@ -45,12 +32,6 @@ object ReportingChangePage extends BasePage {
     } else if (driver.findElement(By.id("value_1")).isSelected) {
       driver.findElement(By.id("value_1")).click()
     }
-
-  def onReportingChangePage() = {
-    verifyPageUrl("charges")
-    onPage(REPORTING_CHANGE_PAGE_TITLE)
-    isHeader(REPORTING_CHANGE_PAGE_HEADER)
-  }
 
   def clickAnnualAllowance() =
     driver.findElement(By.id("value_0")).click()

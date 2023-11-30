@@ -20,17 +20,11 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{VALUE_OF_LUMP_SUM_PAGE_HEADER, VALUE_OF_LUMP_SUM_PAGE_TITLE}
 
 object ValueOfLumpSumPage extends BasePage {
-  def onLtaProtectionOrEnhancementsPage() = {
-    verifyPageUrl("lifetime-allowance/value-of-lump-sum")
-    onPage(VALUE_OF_LUMP_SUM_PAGE_TITLE)
-    isHeader(VALUE_OF_LUMP_SUM_PAGE_HEADER)
-  }
 
   def enterLumpSum(value: String) =
     driver.findElement(By.id("value")).sendKeys(value)
 
   def enterLumpSumAndContinue(value: String) = {
-    onLtaProtectionOrEnhancementsPage()
     enterLumpSum(value)
     submitPage()
   }

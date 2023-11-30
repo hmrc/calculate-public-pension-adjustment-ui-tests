@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HOME_PAGE_HEADER, HOME_PAGE_TITLE}
 import util.DataCollectorMap
 
 object HomePage extends BasePage {

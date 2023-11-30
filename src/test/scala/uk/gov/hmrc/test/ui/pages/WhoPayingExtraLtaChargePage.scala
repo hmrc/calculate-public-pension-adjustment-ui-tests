@@ -20,11 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_HEADER, WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_TITLE}
 
 object WhoPayingExtraLtaChargePage extends BasePage {
-  def onWhoPayingExtraLtaChargePage() = {
-    verifyPageUrl("lifetime-allowance/who-paid-extra-charge")
-    onPage(WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_TITLE)
-    isHeader(WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_HEADER)
-  }
+
   def selectPaidByYou() = {
     driver.findElement(By.id("value_0")).click()
     val text = driver.findElement(By.xpath("//input[@id='value_0']/following-sibling::label")).getText.trim
@@ -36,12 +32,10 @@ object WhoPayingExtraLtaChargePage extends BasePage {
     checkYourAnswersLASMap(getHeader(), text)
   }
   def verifyPageSelectYouAndContinue() = {
-    onWhoPayingExtraLtaChargePage()
     selectPaidByYou()
     submitPage()
   }
   def verifyPageSelectPensionSchemeAndContinue() = {
-    onWhoPayingExtraLtaChargePage()
     selectPaidByPensionScheme()
     submitPage()
   }

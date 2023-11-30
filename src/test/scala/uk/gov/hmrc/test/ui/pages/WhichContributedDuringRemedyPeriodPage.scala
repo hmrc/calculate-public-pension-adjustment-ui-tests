@@ -20,11 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER, WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_TITLE}
 
 object WhichContributedDuringRemedyPeriodPage extends BasePage {
-  def onThresholdIncomePage(year: String) = {
-    verifyPageUrl(s"annual-allowance/$year/contributed-to-dc-or-db-scheme")
-    onPage(WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_TITLE)
-    isHeader(WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER)
-  }
+
   def selectDefinedContribution() = driver.findElement(By.id("value_0")).click()
   def selectDefinedBenefit()      = driver.findElement(By.id("value_1")).click()
 
@@ -38,21 +34,18 @@ object WhichContributedDuringRemedyPeriodPage extends BasePage {
   }
 
   def verifyPageSelectDCAndContinue(year: String): Unit = {
-    onThresholdIncomePage(year)
     selectDefinedContribution()
     checkYourAnswersAAPeriodMap(getHeader(), "Defined contribution")
     submitPage()
   }
 
   def verifyPageSelectDBAndContinue(year: String): Unit = {
-    onThresholdIncomePage(year)
     selectDefinedBenefit()
     checkYourAnswersAAPeriodMap(getHeader(), "Defined benefit")
     submitPage()
   }
 
   def verifyPageSelectDBAndDCANDContinue(year: String): Unit = {
-    onThresholdIncomePage(year)
     defSelectBothDCAndDB()
     submitPage()
   }

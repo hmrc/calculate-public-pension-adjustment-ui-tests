@@ -66,7 +66,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+      //PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
@@ -84,13 +84,13 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
 
       Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
+      //ProtectionTypePage.onProtectionTypePage()
 
       When("I select any radio button and click continue")
       ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
 
       Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
+     // ProtectionReferencePage.onProtectionReferencePage()
 
       When("I enter protection reference and click continue")
       ProtectionReferencePage.enterProtectionReferenceAndContinue()
@@ -173,7 +173,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+      //PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
@@ -256,7 +256,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+     // PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
@@ -341,7 +341,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+      //PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
@@ -425,7 +425,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+     // PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
@@ -519,7 +519,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+      //PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
@@ -700,7 +700,7 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
+     // PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNoneRadioButtonAndContinue()

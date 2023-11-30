@@ -20,11 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_PAID_LTA_CHARGE_PAGE_HEADER, WHO_PAID_LTA_CHARGE_PAGE_TITLE}
 
 object WhoPaidLtaChargePage extends BasePage {
-  def onWhoPaidLtaChargePage() = {
-    verifyPageUrl("lifetime-allowance/who-paid-charge")
-    onPage(WHO_PAID_LTA_CHARGE_PAGE_TITLE)
-    isHeader(WHO_PAID_LTA_CHARGE_PAGE_HEADER)
-  }
 
   def selectYou() = {
     driver.findElement(By.xpath("//input[@id='value_0']")).click()
@@ -38,13 +33,11 @@ object WhoPaidLtaChargePage extends BasePage {
   }
 
   def selectYouAndClickOnContinue() = {
-    onWhoPaidLtaChargePage()
     selectYou()
     submitPage()
   }
 
   def selectPensionSchemeAndClickOnContinue() = {
-    onWhoPaidLtaChargePage()
     selectPensionScheme()
     submitPage()
   }
