@@ -28,7 +28,6 @@ object CheckYourAnswersCalculationJourneyPage extends BasePage {
 
   def verifyCheckYourAnswersPageAndContinue() = {
     onCheckYourAnswersCalculationJourneyPage()
-    // require(DataCollectorMap.checkAnswersCalculationsPage == returnCheckYourAnswersPageInformationAsAList(),"Data not matching")
     clickContinueButton()
   }
 
