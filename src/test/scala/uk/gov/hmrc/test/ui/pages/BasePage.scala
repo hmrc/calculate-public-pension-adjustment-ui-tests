@@ -78,6 +78,12 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   def checkYourAnswersAAPeriodMap(key: String, value: Any): Unit =
     DataCollectorMap.addToAAPeriodMap(key, value)
 
+  def signInGovernmentGateway(): Unit =
+    driver.findElement(By.xpath("//a[contains(text(), 'Continue without signing in')]")).click()
+
+  def clickSignIn(): Unit =
+    driver.findElement(By.xpath("//a[contains(text(),'Sign in')]")).click()
+
   def submitPage(): Unit =
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
