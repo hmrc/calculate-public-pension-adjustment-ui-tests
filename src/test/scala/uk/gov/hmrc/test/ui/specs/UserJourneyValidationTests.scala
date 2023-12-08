@@ -42,6 +42,9 @@ class UserJourneyValidationTests extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -77,6 +80,9 @@ class UserJourneyValidationTests extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -117,6 +123,9 @@ class UserJourneyValidationTests extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -185,6 +194,9 @@ class UserJourneyValidationTests extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
