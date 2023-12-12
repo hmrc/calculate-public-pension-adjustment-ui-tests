@@ -144,6 +144,7 @@ class CommonCalculationAAandSchemeUserPaidLTA extends BaseSpec {
     Given("I am on the Public Service Pensions Remediation home page")
     HomePage.goToHomepage()
     SavingsStatementPage.selectYesAndContinueForGSPage()
+    SignInGovernmentGateway.ContinueWithoutSignIn()
     if (isResubmission.mkString == "true") {
       ResubmittingAdjustmentPage.selectOptionAndContinueForGSPage(isResubmission.mkString)
       ReasonForResubmissionPage.enterReasonAndContinue(reason.toString)
