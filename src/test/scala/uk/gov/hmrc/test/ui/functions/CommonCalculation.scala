@@ -18,16 +18,17 @@ package uk.gov.hmrc.test.ui.functions
 
 import org.openqa.selenium.WebElement
 import play.api.libs.json.{JsError, JsSuccess, JsValue, Json}
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.dto.bussinessRequest.{RequestDTO, RequestDTOUtil, TaxYear, TaxYearSchemes}
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.BaseSpec
 import util.DateUtil
-
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 class CommonCalculation extends BaseSpec {
+  val signInPage: String = TestConfiguration.optionalAuthFlag()
   def createCalculationJourney(fileName: String): (mutable.Map[String, String], ArrayBuffer[Int], ArrayBuffer[Int]) = {
 
     /** Retrieve request information */
@@ -140,6 +141,10 @@ class CommonCalculation extends BaseSpec {
     Given("I am on the Public Service Pensions Remediation home page")
     HomePage.goToHomepage()
     SavingsStatementPage.selectYesAndContinueForGSPage()
+    signInPage match {
+      case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+      case _      =>
+    }
     if (isResubmission.mkString == "true") {
       ResubmittingAdjustmentPage.selectOptionAndContinueForGSPage(isResubmission.mkString)
       ReasonForResubmissionPage.enterReasonAndContinue(reason.toString)

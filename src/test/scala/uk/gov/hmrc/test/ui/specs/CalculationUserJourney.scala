@@ -34,6 +34,9 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -91,6 +94,9 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -254,6 +260,9 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -328,6 +337,9 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -426,6 +438,9 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -769,6 +784,9 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -959,6 +977,9 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -1244,6 +1265,9 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -1426,6 +1450,9 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -1688,6 +1715,9 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -1887,6 +1917,9 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -2135,6 +2168,9 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -2382,6 +2418,9 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -2651,6 +2690,9 @@ class CalculationUserJourney extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -2933,6 +2975,9 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -3213,6 +3258,9 @@ class CalculationUserJourney extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click continue without sign in link")
+      SignInGovernmentGateway.ContinueWithoutSignIn()
+
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
@@ -3472,5 +3520,15 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
+//    Scenario("test ", ZapTests) {
+//      Given("I am on the Public Service Pensions Remediation home page")
+//      HomePage.goToHomepage()
+//
+//      When("I select I received remedial service statement and continue to next page")
+//      SavingsStatementPage.selectYesAndContinueForGSPage()
+//
+//      SignInGovernmentGateway.ContinueWithoutSignIn()
+//    }
+
   }
 }

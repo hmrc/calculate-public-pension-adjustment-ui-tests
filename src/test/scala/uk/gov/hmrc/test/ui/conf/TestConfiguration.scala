@@ -22,6 +22,7 @@ object TestConfiguration {
   val config: Config        = ConfigFactory.load()
   val env: String           = config.getString("environment")
   val defaultConfig: Config = config.getConfig("local")
+  val optionalAuth: Config  = config.getConfig("feature-flag")
   val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
 
   def url(service: String): String = {
@@ -32,7 +33,8 @@ object TestConfiguration {
     s"$host${serviceRoute(service)}"
   }
 
-  def environmentHost: String = envConfig.getString("services.host")
+  def environmentHost: String    = envConfig.getString("services.host")
+  def optionalAuthFlag(): String = optionalAuth.getString("optionalAuth")
 
   def servicePort(serviceName: String): String = envConfig.getString(s"services.$serviceName.port")
 

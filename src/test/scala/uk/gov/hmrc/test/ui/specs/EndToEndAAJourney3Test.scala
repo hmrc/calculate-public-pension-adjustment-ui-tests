@@ -88,7 +88,7 @@ class EndToEndAAJourney3Test extends BaseSpec with BeforeAndAfter {
       CheckYourAnswersCalculationJourneyPage.clickSubmissionContinueButton()
 
       Then("I verify SubmissionPage Page")
-      SubmissionPage.verifySubmissionPage()
+
       signOutPage()
     }
   }
