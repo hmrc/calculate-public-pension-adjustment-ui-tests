@@ -16,13 +16,14 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.Errors.{TEXT_WITH_500_CHARACTERS, TEXT_WITH_501_CHARACTERS}
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
 class UserJourneyValidationTests extends BaseSpec {
-
+  val signInPage: String = TestConfiguration.optionalAuthFlag()
   Feature("Calculate public pension adjustment user journey with validation tests") {
 
     /** Below journey covers 0,1.1,1.3(N),1.5 pages in the mural board* */
@@ -43,7 +44,10 @@ class UserJourneyValidationTests extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -82,7 +86,10 @@ class UserJourneyValidationTests extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -125,7 +132,10 @@ class UserJourneyValidationTests extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -196,7 +206,10 @@ class UserJourneyValidationTests extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()

@@ -16,10 +16,11 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.{BSTests, ZapTests}
 class LifetimeAllowanceUserJourney extends BaseSpec {
-
+  val signInPage: String = TestConfiguration.optionalAuthFlag()
   Feature("Calculate public pension adjustment Lifetime Allowance user journey") {
 
     /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(LTA),1.6,TaskList,4.1(Y),4.3,4.4(Y),4.5,4.6,4.7,4.8,4.9(Y),4.10,4.11,4.12(Y),4.13,4.14,4.15(User),4.17(Decrease),4.20  pages in the mural board* */
@@ -31,7 +32,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -141,7 +145,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -227,7 +234,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -315,7 +325,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -402,7 +415,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -499,7 +515,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -591,7 +610,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -645,7 +667,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -689,7 +714,10 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()

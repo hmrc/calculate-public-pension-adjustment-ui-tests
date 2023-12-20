@@ -16,11 +16,12 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 class CalculationUserJourney extends BaseSpec {
-
+  val signInPage: String = TestConfiguration.optionalAuthFlag()
   Feature("Calculate public pension adjustment Annual Allowance user journey") {
 
     /** Below journey covers 0,1.1,1.3(Y),1.4,1.5(AA),1.6,2.1(Y),2.2,2.3 pages in the mural board* */
@@ -35,7 +36,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -96,7 +100,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -261,7 +268,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -339,7 +349,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -440,7 +453,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -785,7 +801,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -979,7 +998,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -1266,7 +1288,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -1452,7 +1477,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -1716,7 +1744,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -1919,7 +1950,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -2169,7 +2203,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -2420,7 +2457,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -2692,7 +2732,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -2976,7 +3019,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -3259,7 +3305,10 @@ class CalculationUserJourney extends BaseSpec {
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click continue without sign in link")
-      SignInGovernmentGateway.ContinueWithoutSignIn()
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
       ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
@@ -3520,15 +3569,6 @@ class CalculationUserJourney extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue("2017")
       signOutPage()
     }
-//    Scenario("test ", ZapTests) {
-//      Given("I am on the Public Service Pensions Remediation home page")
-//      HomePage.goToHomepage()
-//
-//      When("I select I received remedial service statement and continue to next page")
-//      SavingsStatementPage.selectYesAndContinueForGSPage()
-//
-//      SignInGovernmentGateway.ContinueWithoutSignIn()
-//    }
 
   }
 }
