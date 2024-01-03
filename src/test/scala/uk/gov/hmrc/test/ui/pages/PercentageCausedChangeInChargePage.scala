@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER, PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE}
 
 object PercentageCausedChangeInChargePage extends BasePage {
-  def onPercentageCausedChangeInChargePage() = {
-    verifyPageUrl("lifetime-allowance/lifetime-allowance-charge-change")
-    onPage(PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE)
-    isHeader(PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER)
-  }
 
   def selectNewChargeRadioButtonAndContinue(): Unit = {
     val text = "New charge"

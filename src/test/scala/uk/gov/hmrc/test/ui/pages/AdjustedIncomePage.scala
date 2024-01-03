@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,11 +24,6 @@ object AdjustedIncomePage extends BasePage {
   val ADJUSTED_INCOME_TITLE       =
     "What was your adjusted income from 6 April fromYear to 5 April toYear?"
   val ADJUSTED_INCOME_PAGE_HEADER = "Adjusted income"
-  def onAdjustedIncomePage(fromYear: String, toYear: String, year: String, pensionSchemeNumber: String) = {
-    verifyPageUrl(s"annual-allowance/$year/adjusted-income")
-    onPage(ADJUSTED_INCOME_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
-    isHeader(ADJUSTED_INCOME_PAGE_HEADER)
-  }
 
   def enterAdjustedIncome(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
@@ -39,7 +34,6 @@ object AdjustedIncomePage extends BasePage {
     adjustedIncome: String
   ) = {
     val newTitle = ADJUSTED_INCOME_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear)
-    onAdjustedIncomePage(fromYear, toYear, year, adjustedIncome)
     enterAdjustedIncome(adjustedIncome)
     checkYourAnswersAAPeriodMap(newTitle, "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

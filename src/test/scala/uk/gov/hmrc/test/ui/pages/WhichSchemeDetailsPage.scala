@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,21 +20,14 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_SCHEME_DETAILS_PAGE_HEADER, WHICH_SCHEME_DETAILS_PAGE_TITLE}
 
 object WhichSchemeDetailsPage extends BasePage {
-  def onWhichSchemeDetailsPage(period: String, pensionSchemeNumber: String) = {
-    verifyPageUrl(s"annual-allowance/$period/select-scheme-$pensionSchemeNumber")
-    onPage(WHICH_SCHEME_DETAILS_PAGE_TITLE)
-    isHeader(WHICH_SCHEME_DETAILS_PAGE_HEADER)
-  }
+
   def selectPensionScheme(pensionScheme: String) =
     driver.findElement(By.xpath("//label[contains(text(),'" + pensionScheme + "')]/preceding::input[1]")).click()
   def selectNewScheme()                          = driver.findElement(By.xpath("//label[contains(text(),'New')]/preceding::input[1]")).click()
   def verifyPageSelectSchemeAndContinue(
-    period: String,
-    pensionSchemeNumber: String,
     pensionSchemeName: String,
     pensionScheme: String
   ) = {
-    onWhichSchemeDetailsPage(period, pensionSchemeNumber)
     selectPensionScheme(pensionScheme)
     checkYourAnswersAAPeriodMap(
       "What is the name and tax reference of the pension scheme?",
@@ -42,8 +35,7 @@ object WhichSchemeDetailsPage extends BasePage {
     )
     submitPage()
   }
-  def verifyPageSelectNewSchemeAndContinue(period: String, pensionSchemeNumber: String) = {
-    onWhichSchemeDetailsPage(period, pensionSchemeNumber)
+  def verifyPageSelectNewSchemeAndContinue() = {
     selectNewScheme()
     checkYourAnswersAAPeriodMap("What is the name and tax reference of the pension scheme?", "New")
     submitPage()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_REFERENCE_PAGE_HEADER, PROTECTION_REFERENCE_PAGE_TITLE}
 
 object ProtectionReferencePage extends BasePage {
-  def onProtectionReferencePage() = {
-    verifyPageUrl("lifetime-allowance/protection-reference")
-    onPage(PROTECTION_REFERENCE_PAGE_TITLE)
-    isHeader(PROTECTION_REFERENCE_PAGE_HEADER)
-  }
 
   def enterProtectionReferenceAndContinue(): Unit = {
     val text = "R41AB5678TR2335"

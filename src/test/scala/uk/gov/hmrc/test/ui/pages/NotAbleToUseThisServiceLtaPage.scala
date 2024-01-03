@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,4 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.constants.PageInformation.{NOT_ABLE_TO_USE_THIS_SERVICE_LTA_HEADER, NOT_ABLE_TO_USE_THIS_SERVICE_LTA_PAGE_TITLE}
 
-object NotAbleToUseThisServiceLtaPage extends BasePage {
-  def onNotAbleToUseThisServiceLtaPage() = {
-    verifyPageUrl("cannot-use-lta-service")
-    onPage(NOT_ABLE_TO_USE_THIS_SERVICE_LTA_PAGE_TITLE)
-    isHeader(NOT_ABLE_TO_USE_THIS_SERVICE_LTA_HEADER)
-  }
-}
+object NotAbleToUseThisServiceLtaPage extends BasePage {}

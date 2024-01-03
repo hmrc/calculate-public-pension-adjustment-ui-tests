@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_ENHANCEMENT_TYPE_PAGE_HEADER, NEW_ENHANCEMENT_TYPE_PAGE_TITLE, YEAR_CHARGE_WAS_PAID_PAGE_HEADER, YEAR_CHARGE_WAS_PAID_PAGE_TITLE}
 
 object YearChargeWasPaidPage extends BasePage {
-  def onYearChargeWasPaidPage() = {
-    verifyPageUrl("lifetime-allowance/year-charge-was-paid")
-    onPage(YEAR_CHARGE_WAS_PAID_PAGE_TITLE)
-    isHeader(YEAR_CHARGE_WAS_PAID_PAGE_HEADER)
-  }
 
   def selectYearAndContinue(): Unit = {
     val text = "6 April 2021 to 5 April 2022"
-    onYearChargeWasPaidPage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()

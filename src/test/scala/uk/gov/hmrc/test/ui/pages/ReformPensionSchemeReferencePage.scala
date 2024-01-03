@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,14 +21,8 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{REFORM_PENSION_SCHEME_REFE
 
 object ReformPensionSchemeReferencePage extends BasePage {
   val pensionRef = "TAX00000629RTED"
-  def verifyReformPensionSchemeReferencePage(taxRef: String) = {
-    verifyPageUrl("submission-service/" + taxRef + "/reform-individual-pension-scheme-reference")
-    onPage(REFORM_PENSION_SCHEME_REFERENCE_PAGE_TITLE)
-    isHeader(REFORM_PENSION_SCHEME_REFERENCE_PAGE_HEADER)
-  }
 
   def verifyPageEnterReferenceAndContinue(taxRef: String) = {
-    verifyReformPensionSchemeReferencePage(taxRef)
     driver.findElement(By.id("value")).sendKeys(pensionRef)
     checkYourAnswersCalculationsMap(getHeader(), pensionRef)
     submitPage()

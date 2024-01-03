@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,23 +23,6 @@ object PiaForDcPensionFlexiblePage extends BasePage {
     "What was your pension input amount for defined contribution pension schemes from fromDayMonthYear to toDayMonthYear? - Calculate your public service pension adjustment - GOV.UK"
   val PIA_FOR_DC_PENSION_PAGE_HEADER =
     "What was your pension input amount for defined contribution pension schemes from fromDayMonthYear to toDayMonthYear?"
-  def onPiaForDcPensionFlexiblePage(
-    year: String,
-    fromDayMonthYear: String,
-    toDayMonthYear: String
-  ) = {
-    verifyPageUrl(s"annual-allowance/$year/flexible-pension-input-amount-defined-contribution")
-    onPage(
-      PIA_FOR_DC_PENSION_PAGE_TITLE
-        .replaceAll("fromDayMonthYear", fromDayMonthYear)
-        .replaceAll("toDayMonthYear", toDayMonthYear)
-    )
-    isHeader(
-      PIA_FOR_DC_PENSION_PAGE_HEADER
-        .replaceAll("fromDayMonthYear", fromDayMonthYear)
-        .replaceAll("toDayMonthYear", toDayMonthYear)
-    )
-  }
 
   def enterPensionInputAmountForDC(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
@@ -49,7 +32,6 @@ object PiaForDcPensionFlexiblePage extends BasePage {
     fromDayMonthYear: String,
     toDayMonthYear: String
   ) = {
-    onPiaForDcPensionFlexiblePage(year, fromDayMonthYear, toDayMonthYear)
     enterPensionInputAmountForDC(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

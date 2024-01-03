@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,14 +22,8 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{ENTER_ALTERNATIVE_NAME_PAG
 object EnterAlternativeNamePage extends BasePage {
 
   val name = "ABC BCDEFGH"
-  def verifyEnterAlternativeNamePage() = {
-    verifyPageUrl("submission-service/enter-name-pension-scheme-holds")
-    onPage(ENTER_ALTERNATIVE_NAME_PAGE_TITLE)
-    isHeader(ENTER_ALTERNATIVE_NAME_PAGE_HEADER)
-  }
 
   def verifyPageEnterNameAndContinue() = {
-    verifyEnterAlternativeNamePage()
     driver.findElement(By.id("value")).sendKeys(name)
     checkYourAnswersCalculationsMap(getHeader(), name)
     submitPage()

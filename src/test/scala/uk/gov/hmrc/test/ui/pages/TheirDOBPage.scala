@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_DOB_PAGE_HEADER, THEIR_DOB_PAGE_TITLE}
 
 object TheirDOBPage extends BasePage {
-  def verifyTheirDOBPage() = {
-    onPage(THEIR_DOB_PAGE_TITLE)
-    isHeader(THEIR_DOB_PAGE_HEADER)
-  }
+
   def enterBirthday() = {
     clearDate()
     enterDay("28")
@@ -30,7 +27,6 @@ object TheirDOBPage extends BasePage {
     enterYear("1964")
   }
   def verifyPageEnterBirthdayAndContinue() = {
-    verifyTheirDOBPage()
     enterBirthday()
     checkYourAnswersCalculationsMap(getHeader(), getDate())
     submitPage()

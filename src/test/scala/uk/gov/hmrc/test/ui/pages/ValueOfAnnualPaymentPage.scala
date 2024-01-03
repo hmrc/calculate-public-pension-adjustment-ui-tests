@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,17 +20,11 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{VALUE_OF_ANNUAL_PAYMENT_PAGE_HEADER, VALUE_OF_ANNUAL_PAYMENT_PAGE_TITLE}
 
 object ValueOfAnnualPaymentPage extends BasePage {
-  def onAnnualPaymentPage() = {
-    verifyPageUrl("lifetime-allowance/value-of-annual-payment")
-    onPage(VALUE_OF_ANNUAL_PAYMENT_PAGE_TITLE)
-    isHeader(VALUE_OF_ANNUAL_PAYMENT_PAGE_HEADER)
-  }
 
   def enterAnnualPayment(value: String) =
     driver.findElement(By.id("value")).sendKeys(value)
 
   def enterAnnualPaymentAndContinue(value: String) = {
-    onAnnualPaymentPage()
     enterAnnualPayment(value)
     submitPage()
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,10 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.constants.PageInformation.{LTA_CHARGE_2015_2023_PAGE_HEADER, LTA_CHARGE_2015_2023_PAGE_TITLE}
 
 object LtaCharge20152023Page extends BasePage {
-  def onLtaCharge20152023Page() = {
-    verifyPageUrl("lifetime-allowance/charge-2015-2023")
-    onPage(LTA_CHARGE_2015_2023_PAGE_TITLE)
-    isHeader(LTA_CHARGE_2015_2023_PAGE_HEADER)
-  }
 
-  def selectYesAndClickOnContinue() = {
-    onLtaCharge20152023Page()
+  def selectYesAndClickOnContinue() =
     selectYesAndContinueForLTAPage()
-  }
 
-  def selectNoAndClickOnContinue() = {
-    onLtaCharge20152023Page()
+  def selectNoAndClickOnContinue() =
     selectNoAndContinueForLTAPage()
-  }
 }

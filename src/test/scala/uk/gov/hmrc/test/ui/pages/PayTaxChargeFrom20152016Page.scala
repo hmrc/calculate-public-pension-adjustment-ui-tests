@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,4 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PAY_TAX_CHARGE_FROM2015_2016_PAGE_HEADER, PAY_TAX_CHARGE_FROM2015_2016_PAGE_TITLE}
 
-object PayTaxChargeFrom20152016Page extends BasePage {
-  def onPayTaxChargeFrom20152016Page() = {
-    verifyPageUrl("annual-allowance/tax-charge-between-2014-2015")
-    onPage(PAY_TAX_CHARGE_FROM2015_2016_PAGE_TITLE)
-    isHeader(PAY_TAX_CHARGE_FROM2015_2016_PAGE_HEADER)
-  }
-}
+object PayTaxChargeFrom20152016Page extends BasePage {}

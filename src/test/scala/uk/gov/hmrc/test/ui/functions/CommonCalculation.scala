@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -214,30 +214,30 @@ class CommonCalculation extends BaseSpec {
     TaskListPage.clickAddDetailsFor6AprilTo8July2015()
     WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
     if (taxYearScheme2016pre.map(_.size).getOrElse(0) > 1) {
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-pre")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
     } else {
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-pre")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
     }
     taxYearScheme2016pre.foreach { taxYearSchemesList =>
       for ((taxYearScheme, index) <- taxYearSchemesList.zipWithIndex) {
         var paidByScheme: Int = taxYearScheme.chargePaidByScheme
         PensionSchemeDetailsPage.enterTaxInformationAndContinue(
-          "2016-pre",
-          index.toString,
+//          "2016-pre",
+//          index.toString,
           taxYearScheme.name,
           taxYearScheme.pensionSchemeTaxReference
         )
         PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
-          "2016-pre",
-          index.toString,
+//          "2016-pre",
+//          index.toString,
           taxYearScheme.originalPensionInputAmount.toString,
-          taxYearScheme.revisedPensionInputAmount.toString,
-          taxYearScheme.name.toString
+          taxYearScheme.revisedPensionInputAmount.toString
+//          taxYearScheme.name.toString
         )
         if (paidByScheme == 0 && chargePaidByMember2016pre.toInt == 0) {
-          DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-pre", index.toString, taxYearScheme.name)
+          DidYouPayAChargePage.verifyPageSelectNoAndContinue()
         } else {
-          DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", index.toString, taxYearScheme.name)
+          DidYouPayAChargePage.verifyPageSelectYesAndContinue()
           if (paidByScheme > 0 && chargePaidByMember2016pre.toInt > 0) {
             WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
               "2016-post",
@@ -249,8 +249,8 @@ class CommonCalculation extends BaseSpec {
             chargePaidByMember2016pre = "0"
 
             HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-              "2016-pre",
-              index.toString,
+//              "2016-pre",
+//              index.toString,
               paidByScheme.toString
             )
             paidByScheme = 0
@@ -263,16 +263,16 @@ class CommonCalculation extends BaseSpec {
               taxYearScheme.name
             )
             HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-              "2016-pre",
-              index.toString,
+//              "2016-pre",
+//              index.toString,
               paidByScheme.toString
             )
             paidByScheme = 0
           }
           if (paidByScheme > 0 && chargePaidByMember2016post.toInt == 0 && index >= 1) {
             HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-              "2016-pre",
-              index.toString,
+//              "2016-pre",
+//              index.toString,
               paidByScheme.toString
             )
             paidByScheme = 0
@@ -293,14 +293,11 @@ class CommonCalculation extends BaseSpec {
           if (
             (pre2016FlexiAccessDate == "0") && !(definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre == "0")
           ) {
-            ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue(preYear)
+            ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
             if (definedBenefitInputAmount2016pre.toInt > 0 && definedContributionInputAmount2016pre.toInt == 0) {
               WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue(preYear)
               PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-                preYear,
-                definedBenefitInputAmount2016pre,
-                preFromDate,
-                preToDate
+                definedBenefitInputAmount2016pre
               )
             }
             if (definedBenefitInputAmount2016pre.toInt == 0 && definedContributionInputAmount2016pre.toInt > 0) {
@@ -321,17 +318,14 @@ class CommonCalculation extends BaseSpec {
                 preToDate
               )
               PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-                preYear,
-                definedBenefitInputAmount2016pre,
-                preFromDate,
-                preToDate
+                definedBenefitInputAmount2016pre
               )
             }
           }
           if (
             !(pre2016FlexiAccessDate == "0") && !(definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre == "0")
           ) {
-            ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue(preYear)
+            ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
             WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue(preYear)
             PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
               preYear,
@@ -346,16 +340,13 @@ class CommonCalculation extends BaseSpec {
               preToDate
             )
             PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-              preYear,
-              definedBenefitInputAmount2016pre,
-              preFromDate,
-              preToDate
+              definedBenefitInputAmount2016pre
             )
           }
           if (
             (pre2016FlexiAccessDate == "0") && (definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre == "0")
           ) {
-            ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue(preYear)
+            ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
           }
         } else {
           if (!(taxYearSchemesList.size == 1)) {
@@ -364,14 +355,11 @@ class CommonCalculation extends BaseSpec {
             if (
               (pre2016FlexiAccessDate == "0") && !(definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre == "0")
             ) {
-              ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue(preYear)
+              ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
               if (definedBenefitInputAmount2016pre.toInt > 0 && definedContributionInputAmount2016pre.toInt == 0) {
                 WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue(preYear)
                 PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-                  preYear,
-                  definedBenefitInputAmount2016pre,
-                  preFromDate,
-                  preToDate
+                  definedBenefitInputAmount2016pre
                 )
               }
               if (definedBenefitInputAmount2016pre.toInt == 0 && definedContributionInputAmount2016pre.toInt > 0) {
@@ -392,17 +380,14 @@ class CommonCalculation extends BaseSpec {
                   preToDate
                 )
                 PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-                  preYear,
-                  definedBenefitInputAmount2016pre,
-                  preFromDate,
-                  preToDate
+                  definedBenefitInputAmount2016pre
                 )
               }
             }
             if (
               !(pre2016FlexiAccessDate == "0") && !(definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre == "0")
             ) {
-              ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue(preYear)
+              ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
               WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue(preYear)
               PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
                 preYear,
@@ -417,16 +402,13 @@ class CommonCalculation extends BaseSpec {
                 preToDate
               )
               PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-                preYear,
-                definedBenefitInputAmount2016pre,
-                preFromDate,
-                preToDate
+                definedBenefitInputAmount2016pre
               )
             }
             if (
               (pre2016FlexiAccessDate == "0") && (definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre == "0")
             ) {
-              ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue(preYear)
+              ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
             }
           }
         }
@@ -436,37 +418,32 @@ class CommonCalculation extends BaseSpec {
     /**
       * Check your answers page is failing to verify as its failing to save add another scheme page information
       */
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("2015", "2016", "2016-pre", totalIncome2016pre)
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016pre)
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
     /** --- 2016 Post --- */
     TaskListPage.clickAddDetailsFor9JulyTo8July2016()
     WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
     if (taxYearScheme2016post.map(_.size).getOrElse(0) > 1) {
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue("2016-post")
+      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
     } else {
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue("2016-post")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
     }
     taxYearScheme2016post.foreach { taxYearSchemesList =>
       for ((taxYearScheme, index) <- taxYearSchemesList.zipWithIndex) {
         var paidByScheme: Int = taxYearScheme.chargePaidByScheme
         WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue(
-          "2016-post",
-          index.toString,
           taxYearScheme.name,
           taxYearScheme.pensionSchemeTaxReference
         )
         PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
-          "2016-post",
-          index.toString,
           taxYearScheme.originalPensionInputAmount.toString,
-          taxYearScheme.revisedPensionInputAmount.toString,
-          taxYearScheme.name
+          taxYearScheme.revisedPensionInputAmount.toString
         )
         if (paidByScheme == 0 && chargePaidByMember2016post.toInt == 0) {
-          DidYouPayAChargePage.verifyPageSelectNoAndContinue("2016-post", index.toString, taxYearScheme.name)
+          DidYouPayAChargePage.verifyPageSelectNoAndContinue()
         } else {
-          DidYouPayAChargePage.verifyPageSelectYesAndContinue("2016-post", index.toString, taxYearScheme.name)
+          DidYouPayAChargePage.verifyPageSelectYesAndContinue()
           if (paidByScheme.toString.toInt > 0 && chargePaidByMember2016post.toInt > 0) {
             WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
               "2016-post",
@@ -481,8 +458,6 @@ class CommonCalculation extends BaseSpec {
             )
             chargePaidByMember2016post = "0"
             HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-              "2016-post",
-              index.toString,
               paidByScheme.toString
             )
             paidByScheme = 0
@@ -495,16 +470,12 @@ class CommonCalculation extends BaseSpec {
               taxYearScheme.name
             )
             HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-              "2016-post",
-              index.toString,
               paidByScheme.toString
             )
             paidByScheme = 0
           }
           if (paidByScheme > 0 && chargePaidByMember2016post.toInt == 0 && index >= 1) {
             HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-              "2016-post",
-              index.toString,
               paidByScheme.toString
             )
             paidByScheme = 0
@@ -537,14 +508,11 @@ class CommonCalculation extends BaseSpec {
       (getFlexiAccessDate2016post == "0") && !(definedBenefitInputAmount2016post == "0" && definedContributionInputAmount2016post == "0")
     ) {
       // if (!(definedBenefitInputAmount2016post == "0" && definedContributionInputAmount2016post == "0")) {
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
       if (definedBenefitInputAmount2016post.toInt > 0 && definedContributionInputAmount2016post.toInt == 0) {
         WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue("2016-post")
         PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-          "2016-post",
-          definedBenefitInputAmount2016post,
-          "9 July 2015",
-          "5 April 2016"
+          definedBenefitInputAmount2016post
         )
       }
       if (definedBenefitInputAmount2016post.toInt == 0 && definedContributionInputAmount2016pre.toInt > 0) {
@@ -565,10 +533,7 @@ class CommonCalculation extends BaseSpec {
           "5 April 2016"
         )
         PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-          "2016-post",
-          definedBenefitInputAmount2016post,
-          "9 July 2015",
-          "5 April 2016"
+          definedBenefitInputAmount2016post
         )
       }
       // }
@@ -576,7 +541,7 @@ class CommonCalculation extends BaseSpec {
     if (
       !(getFlexiAccessDate2016post == "0") && !(definedBenefitInputAmount2016post == "0" && definedContributionInputAmount2016post == "0")
     ) {
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue("2016-post")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
       WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue("2016-post")
       PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
         "2016-post",
@@ -591,16 +556,13 @@ class CommonCalculation extends BaseSpec {
         "5 April 2016"
       )
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-        "2016-post",
-        definedBenefitInputAmount2016post,
-        "9 July 2015",
-        "5 April 2016"
+        definedBenefitInputAmount2016post
       )
     }
     if (
       (getFlexiAccessDate2016post == "0") && (definedBenefitInputAmount2016post == "0" && definedContributionInputAmount2016post == "0")
     ) {
-      ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue("2016-post")
+      ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
     }
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -693,32 +655,27 @@ class CommonCalculation extends BaseSpec {
           }
 
           if (noOfPensionSchemes > 1) {
-            MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue(year.toString)
+            MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
           } else {
-            MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue(year.toString)
+            MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
           }
           taxYear.taxYearSchemes.foreach { taxYearSchemesList =>
             for ((taxYearScheme, index) <- taxYearSchemesList.zipWithIndex)
               if (!(WhichSchemeDetailsPage.isSchemeAvailable(taxYearScheme.pensionSchemeTaxReference))) {
                 var chargePaidByScheme = taxYearScheme.chargePaidByScheme
-                WhichSchemeDetailsPage.verifyPageSelectNewSchemeAndContinue(year.toString, index.toString)
+                WhichSchemeDetailsPage.verifyPageSelectNewSchemeAndContinue()
                 PensionSchemeDetailsPage.enterTaxInformationAndContinue(
-                  year.toString,
-                  index.toString,
                   taxYearScheme.name,
                   taxYearScheme.pensionSchemeTaxReference
                 )
                 PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
-                  year.toString,
-                  index.toString,
                   taxYearScheme.originalPensionInputAmount.toString,
-                  taxYearScheme.revisedPensionInputAmount.toString,
-                  taxYearScheme.name.toString
+                  taxYearScheme.revisedPensionInputAmount.toString
                 )
                 if (chargePaidByScheme == 0 && chargePaidByMember2016pre.toInt == 0) {
-                  DidYouPayAChargePage.verifyPageSelectNoAndContinue(year.toString, index.toString, taxYearScheme.name)
+                  DidYouPayAChargePage.verifyPageSelectNoAndContinue()
                 } else {
-                  DidYouPayAChargePage.verifyPageSelectYesAndContinue(year.toString, index.toString, taxYearScheme.name)
+                  DidYouPayAChargePage.verifyPageSelectYesAndContinue()
                   if (chargePaidByScheme > 0 && chargePaidByMember2016pre.toInt > 0) {
                     WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
                       year.toString,
@@ -734,8 +691,6 @@ class CommonCalculation extends BaseSpec {
                     chargePaidByMember2016pre = "0"
 
                     HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                      year.toString,
-                      index.toString,
                       taxYearScheme.chargePaidByScheme.toString
                     )
                     chargePaidByScheme = 0
@@ -748,16 +703,12 @@ class CommonCalculation extends BaseSpec {
                       taxYearScheme.name
                     )
                     HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                      year.toString,
-                      index.toString,
                       chargePaidByScheme.toString
                     )
                     chargePaidByScheme = 0
                   }
                   if (chargePaidByScheme > 0 && chargePaidByMember2016post.toInt == 0 && index >= 1) {
                     HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                      year.toString,
-                      index.toString,
                       chargePaidByScheme.toString
                     )
                     chargePaidByScheme = 0
@@ -788,22 +739,17 @@ class CommonCalculation extends BaseSpec {
 
                 var paidByScheme: Int = taxYearScheme.chargePaidByScheme
                 WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue(
-                  year.toString,
-                  index.toString,
                   taxYearScheme.name,
                   taxYearScheme.pensionSchemeTaxReference
                 )
                 PensionSchemeInputAmountsPage.verifypageEnterPensionAmountsAndContinue(
-                  year.toString,
-                  index.toString,
                   taxYearScheme.originalPensionInputAmount.toString,
-                  taxYearScheme.revisedPensionInputAmount.toString,
-                  taxYearScheme.name
+                  taxYearScheme.revisedPensionInputAmount.toString
                 )
                 if (paidByScheme == 0 && chargePaidByMember == 0) {
-                  DidYouPayAChargePage.verifyPageSelectNoAndContinue(year.toString, index.toString, taxYearScheme.name)
+                  DidYouPayAChargePage.verifyPageSelectNoAndContinue()
                 } else {
-                  DidYouPayAChargePage.verifyPageSelectYesAndContinue(year.toString, index.toString, taxYearScheme.name)
+                  DidYouPayAChargePage.verifyPageSelectYesAndContinue()
                   if (paidByScheme > 0 && chargePaidByMember.toString.toInt > 0) {
                     WhoPaidAnnualAllowanceChargePage.verifyPageSelectBothAndContinue(
                       year.toString,
@@ -818,8 +764,6 @@ class CommonCalculation extends BaseSpec {
                     )
                     chargePaidByMember = 0
                     HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                      year.toString,
-                      index.toString,
                       paidByScheme.toString
                     )
                     paidByScheme = 0
@@ -832,16 +776,12 @@ class CommonCalculation extends BaseSpec {
                       taxYearScheme.name
                     )
                     HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                      year.toString,
-                      index.toString,
                       paidByScheme.toString
                     )
                     paidByScheme = 0
                   }
                   if (paidByScheme > 0 && chargePaidByMember == 0 && index >= 1) {
                     HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue(
-                      year.toString,
-                      index.toString,
                       paidByScheme.toString
                     )
                     paidByScheme = 0
@@ -871,14 +811,11 @@ class CommonCalculation extends BaseSpec {
               }
           }
           if ((flexiAccessDate == "0") && !(definedBenefitInputAmount == 0 && definedContributionInputAmount == 0)) {
-            ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue(year.toString)
+            ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
             if (definedBenefitInputAmount.toString.toInt > 0 && definedContributionInputAmount.toString.toInt == 0) {
               WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue(year.toString)
               PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-                year.toString,
-                definedBenefitInputAmount.toString,
-                taxFromDate,
-                taxToDate
+                definedBenefitInputAmount.toString
               )
             }
             if (definedBenefitInputAmount.toString.toInt == 0 && definedContributionInputAmount.toString.toInt > 0) {
@@ -899,17 +836,14 @@ class CommonCalculation extends BaseSpec {
                 taxToDate
               )
               PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-                year.toString,
-                definedBenefitInputAmount.toString,
-                taxFromDate,
-                taxToDate
+                definedBenefitInputAmount.toString
               )
             }
           }
           if (
             !(flexiAccessDate == "0") && !(preAccessDefinedContributionInputAmount == 0 && postAccessDefinedContributionInputAmount == 0)
           ) {
-            ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue(year.toString)
+            ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
             WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue(year.toString)
             PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
               year.toString,
@@ -924,32 +858,29 @@ class CommonCalculation extends BaseSpec {
               taxToDate
             )
             PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-              year.toString,
-              definedBenefitInputAmount.toString,
-              taxFromDate,
-              taxToDate
+              definedBenefitInputAmount.toString
             )
           }
           if ((flexiAccessDate == "0") && (definedBenefitInputAmount == 0 && definedContributionInputAmount == 0)) {
-            ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue(year.toString)
+            ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
           }
           if (
             !(flexiAccessDate == "0") && (definedBenefitInputAmount == 0 && definedContributionInputAmount == 0) && (preAccessDefinedContributionInputAmount == 0 && postAccessDefinedContributionInputAmount == 0)
           ) {
-            ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue(year.toString)
+            ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
           }
           if (incomeAboveThreshold.toString == "false") {
             if (taxToYear.toInt > 2020) {
-              ThresholdIncomePage.verify2021TO2023PageSelectNoAndContinue(taxFromYear, taxToYear, taxToYear)
+              ThresholdIncomePage.verify2021TO2023PageSelectNoAndContinue()
             } else {
-              ThresholdIncomePage.verify2017TO2020PageSelectNoAndContinue(taxFromYear, taxToYear, taxToYear)
+              ThresholdIncomePage.verify2017TO2020PageSelectNoAndContinue()
             }
           }
           if (!(incomeAboveThreshold.toString == "false")) {
             if (taxToYear.toInt > 2020) {
-              ThresholdIncomePage.verify2021TO2023PageSelectYesAndContinue(taxFromYear, taxToYear, taxToYear)
+              ThresholdIncomePage.verify2021TO2023PageSelectYesAndContinue()
             } else {
-              ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue(taxFromYear, taxToYear, taxToYear)
+              ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue()
             }
             AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue(
               taxFromYear,
@@ -959,10 +890,7 @@ class CommonCalculation extends BaseSpec {
             )
           }
           TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(
-            taxFromYear,
-            taxToYear,
-            taxToYear,
-            totalIncome.toString
+            taxToYear
           )
 
           /**

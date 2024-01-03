@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PENSION_CREDIT_REFERENCE_PAGE_HEADER, PENSION_CREDIT_REFERENCE_PAGE_TITLE}
 
 object PensionCreditReferencePage extends BasePage {
-  def onPensionCreditReferencePage() = {
-    verifyPageUrl("lifetime-allowance/pension-credit-reference")
-    onPage(PENSION_CREDIT_REFERENCE_PAGE_TITLE)
-    isHeader(PENSION_CREDIT_REFERENCE_PAGE_HEADER)
-  }
 
   def enterPensionCreditReferenceAndContinue(): Unit = {
     val reference = "1234567890ZXCVB"
-    onPensionCreditReferencePage()
     driver.findElement(By.id("value")).sendKeys(reference)
     checkYourAnswersLASMap(getHeader(), reference)
     submitPage()

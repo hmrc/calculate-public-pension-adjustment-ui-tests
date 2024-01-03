@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,6 @@ object SchemePaidExtraLtaChargePage extends BasePage {
 
   val pension_scheme_name =
     "pensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepensionschemepe nsions"
-  def onSchemePaidLtaChargePage() = {
-    verifyPageUrl("lifetime-allowance/scheme-paying-extra-charge")
-    onPage(SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_TITLE)
-    isHeader(SCHEME_PAID_EXTRA_LTA_CHARGE_PAGE_HEADER)
-  }
 
   def enterPensionScheme(schemeName: String) = {
     driver.findElement(By.id("name")).clear()
@@ -44,7 +39,6 @@ object SchemePaidExtraLtaChargePage extends BasePage {
   def getTaxReference() = driver.findElement(By.id("taxRef")).getAttribute("value")
 
   def enterPensionSchemeInformationAndContinue(schemeName: String, taxRef: String) = {
-    onSchemePaidLtaChargePage()
     enterPensionScheme(schemeName)
     enterPensionSchemeTaxReference(taxRef)
     checkYourAnswersLASMap(getHeader(), getTaxReference())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,6 @@ object Registered extends BasePage {
     "Were you a member of a registered pension scheme between 6 April fromYear and 5 April toYear?"
   def onRegisteredPageSelectNoAndContinue(fromYear: String, toYear: String) = {
     verifyPageUrl("annual-allowance/registered/" + toYear)
-    onPage(REGISTERED_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
-    isHeader(REGISTERED_PAGE_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     selectNoOption()
     checkYourAnswersAASMap(
       "Member of a registered pension scheme between 6 April fromYear and 5 April toYear"
@@ -40,8 +38,6 @@ object Registered extends BasePage {
 
   def onRegisteredPageSelectYesAndContinue(fromYear: String, toYear: String) = {
     verifyPageUrl("annual-allowance/registered/" + toYear)
-    onPage(REGISTERED_PAGE_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
-    isHeader(REGISTERED_PAGE_HEADER.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear))
     selectYesOption()
     checkYourAnswersAASMap(
       "Member of a registered pension scheme between 6 April fromYear and 5 April toYear"

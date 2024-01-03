@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,23 +20,16 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_UTR_HEADER, THEIR_UTR_TITLE}
 object TheirUTRPage extends BasePage {
   val utr = "1234567891"
-  def verifyTheirUTRPage() = {
-    verifyPageUrl("submission-service/unique-taxpayer-reference-someone-else")
-    onPage(THEIR_UTR_TITLE)
-    isHeader(THEIR_UTR_HEADER)
-  }
 
   def enterUTR(): Unit =
     driver.findElement(By.id("value")).sendKeys(utr)
 
   def verifyPageEnterUTRAndContinue(): Unit = {
-    verifyTheirUTRPage()
     enterUTR()
     checkYourAnswersCalculationsMap(getHeader(), utr)
     submitPage()
   }
   def verifyPageContinueWithoutTaxReference(): Unit = {
-    verifyTheirUTRPage()
     checkYourAnswersCalculationsMap(getHeader(), "")
     submitPage()
   }

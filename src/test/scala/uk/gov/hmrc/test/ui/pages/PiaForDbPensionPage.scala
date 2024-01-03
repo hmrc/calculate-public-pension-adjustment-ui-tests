@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,38 +19,12 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 
 object PiaForDbPensionPage extends BasePage {
-  val PIA_FOR_DB_PENSION_PAGE_TITLE  =
-    "What was your pension input amount for defined benefit pension schemes for fromDayMonthYear to toDayMonthYear? - Calculate your public service pension adjustment - GOV.UK"
-  val PIA_FOR_DB_PENSION_PAGE_HEADER =
-    "What was your pension input amount for defined benefit pension schemes for fromDayMonthYear to toDayMonthYear?"
-
-  def onPiaForDbPensionPage(
-    year: String,
-    fromDayMonthYear: String,
-    toDayMonthYear: String
-  ) = {
-    verifyPageUrl(s"annual-allowance/$year/pension-input-amount-defined-benefit")
-    onPage(
-      PIA_FOR_DB_PENSION_PAGE_TITLE
-        .replaceAll("fromDayMonthYear", fromDayMonthYear)
-        .replaceAll("toDayMonthYear", toDayMonthYear)
-    )
-    isHeader(
-      PIA_FOR_DB_PENSION_PAGE_HEADER
-        .replaceAll("fromDayMonthYear", fromDayMonthYear)
-        .replaceAll("toDayMonthYear", toDayMonthYear)
-    )
-  }
 
   def enterPensionInputAmountForDB(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
   def verifyPageEnterPensionInputAmountForDBAndContinue(
-    year: String,
-    adjustedIncome: String,
-    fromDayMonthYear: String,
-    toDayMonthYear: String
+    adjustedIncome: String
   ) = {
-    onPiaForDbPensionPage(year, fromDayMonthYear, toDayMonthYear)
     enterPensionInputAmountForDB(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,4 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.constants.PageInformation.{RESUBMITTING_ADJUSTMENT_PAGE_HEADER, RESUBMITTING_ADJUSTMENT_PAGE_TITLE}
 
-object ResubmittingAdjustmentPage extends BasePage {
-  def onResubmittingAdjustmentPage() = {
-    verifyPageUrl("change-previous-adjustment")
-    onPage(RESUBMITTING_ADJUSTMENT_PAGE_TITLE)
-    isHeader(RESUBMITTING_ADJUSTMENT_PAGE_HEADER)
-  }
-}
+object ResubmittingAdjustmentPage extends BasePage {}

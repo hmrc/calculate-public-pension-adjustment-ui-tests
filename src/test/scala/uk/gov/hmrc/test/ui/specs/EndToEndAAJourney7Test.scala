@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,7 @@ class EndToEndAAJourney7Test extends BaseSpec with BeforeAndAfter {
         WhichPensionSchemeWillPayPage.verifyPageSelectPrivatePSAndContinue(element)
 
         When("I verify PensionSchemeDetailsPage, enter pension scheme information and click continue button")
-        SubmitPensionSchemeDetailsPage.verifyPageEnterPensionSchemeInformationAndContinue(element)
+        SubmitPensionSchemeDetailsPage.verifyPageEnterPensionSchemeInformationAndContinue()
 
         Then("I verify Valid Election for Scheme to pay Page and select yes and click continue")
         AskedPensionSchemeToPayTaxCharge.verifyPageSelectYesAndContinue(element)

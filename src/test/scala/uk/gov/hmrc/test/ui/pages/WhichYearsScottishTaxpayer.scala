@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,25 +23,7 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_YEARS_SCOTTISH_TAXPA
 
 object WhichYearsScottishTaxpayer extends BasePage {
   var taxYears = ""
-  def onWhichYearsScottishTaxpayerPage() = {
-    verifyPageUrl("annual-allowance/scottish-taxpayer-years")
-    onPage(WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_TITLE)
-    isHeader(WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_HEADER)
-  }
 
-  def validateWhichYearsScottishTaxpayerErrorsWhenNoCheckBoxSelected(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//div[@class='govuk-form-group govuk-form-group--error']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.WHICH_YEARS_SCOTTISH_TAXPAYER_PAGE_ERROR_SUMMARY)
-    )
   def selectScottishTaxPayerYear(year: String) = {
     driver
       .findElement(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_EXCESS_WAS_PAID_PAGE_HEADER, HOW_EXCESS_WAS_PAID_PAGE_TITLE}
 
 object HowExcessWasPaidPage extends BasePage {
-  def onHowExcessWasPaidPage() = {
-    verifyPageUrl("lifetime-allowance/excess-paid")
-    onPage(HOW_EXCESS_WAS_PAID_PAGE_TITLE)
-    isHeader(HOW_EXCESS_WAS_PAID_PAGE_HEADER)
-  }
+
   def selectAnnualPayment() = {
     driver.findElement(By.xpath("//input[@id='value_0']")).click()
     val text = driver.findElement(By.xpath("//input[@id='value_0']/following-sibling::label")).getText.trim
@@ -44,19 +40,16 @@ object HowExcessWasPaidPage extends BasePage {
   }
 
   def selectRadioButtonAnnualPaymentAndContinue() = {
-    onHowExcessWasPaidPage()
     selectAnnualPayment()
     submitPage()
   }
 
   def selectRadioButtonLumpSumAndContinue() = {
-    onHowExcessWasPaidPage()
     selectLumpSumPayment()
     submitPage()
   }
 
   def selectRadioButtonBothAndContinue() = {
-    onHowExcessWasPaidPage()
     selectBothPayment()
     submitPage()
   }

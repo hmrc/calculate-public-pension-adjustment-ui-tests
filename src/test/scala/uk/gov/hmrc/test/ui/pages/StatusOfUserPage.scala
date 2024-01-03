@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{STATUS_OF_USER_PAGE_HEADER, STATUS_OF_USER_PAGE_TITLE}
 
 object StatusOfUserPage extends BasePage {
-  def verifyStatusOfUserPage() = {
-    onPage(STATUS_OF_USER_PAGE_TITLE)
-    isHeader(STATUS_OF_USER_PAGE_HEADER)
-  }
+
   def selectDeputyship() = driver.findElement(By.id("value_1")).click()
   def verifyPageSelectDeputyshipAndContinue() = {
-    verifyStatusOfUserPage()
     selectDeputyship()
     checkYourAnswersCalculationsMap(getHeader(), getCheckedOptions())
     submitPage()

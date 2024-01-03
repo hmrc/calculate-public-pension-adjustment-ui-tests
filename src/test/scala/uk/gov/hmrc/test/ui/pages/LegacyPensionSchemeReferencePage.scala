@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,8 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{LEGACY_PENSION_SCHEME_REFERENCE_PAGE_HEADER, LEGACY_PENSION_SCHEME_REFERENCE_PAGE_TITLE}
 
 object LegacyPensionSchemeReferencePage extends BasePage {
-  def verifyLegacyPensionSchemeReferencePage(taxRef: String) = {
-    verifyPageUrl("submission-service/" + taxRef + "/legacy-individual-pension-scheme-reference")
-    onPage(LEGACY_PENSION_SCHEME_REFERENCE_PAGE_TITLE)
-    isHeader(LEGACY_PENSION_SCHEME_REFERENCE_PAGE_HEADER)
-  }
 
   def verifyPageEnterReferenceAndContinue(schemeName: String, taxRef: String) = {
-    verifyLegacyPensionSchemeReferencePage(taxRef)
     driver.findElement(By.id("value")).sendKeys(taxRef)
     checkYourAnswersCalculationsMap("Individual reference details for scheme " + schemeName + " / " + taxRef, "")
     checkYourAnswersCalculationsMap(getHeader(), taxRef)
