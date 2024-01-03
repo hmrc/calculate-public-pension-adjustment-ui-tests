@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,20 +21,14 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{CONTACT_NUMBER_PAGE_HEADER
 
 object ContactNumberPage extends BasePage {
   val contactNumber = "+44 808 157 0192"
-  def verifyContactNumberPage() = {
-    verifyPageUrl("submission-service/contact-number")
-    onPage(CONTACT_NUMBER_PAGE_TITLE)
-    isHeader(CONTACT_NUMBER_PAGE_HEADER)
-  }
+
   def verifyPageEnterContactNumberAndContinue() = {
-    verifyContactNumberPage()
     driver.findElement(By.id("value")).sendKeys(contactNumber)
     checkYourAnswersCalculationsMap(getHeader(), contactNumber)
     submitPage()
   }
 
   def verifyPageAndContinueWithoutContactNumber() = {
-    verifyContactNumberPage()
     checkYourAnswersCalculationsMap(getHeader(), "")
     submitPage()
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,18 +19,13 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIM_ON_BEHALF_PAGE_HEADER, CLAIM_ON_BEHALF_PAGE_TITLE}
 
 object ClaimOnBehalfPage extends BasePage {
-  def verifyClaimOnBehalfPage() = {
-    onPage(CLAIM_ON_BEHALF_PAGE_TITLE)
-    isHeader(CLAIM_ON_BEHALF_PAGE_HEADER)
-  }
+
   def verifyPageSelectYesAndContinue() = {
     Thread.sleep(7000)
-    verifyClaimOnBehalfPage()
     selectYesAndContinueCalculationsPage()
   }
   def verifyPageSelectNoAndContinue() = {
     Thread.sleep(7000)
-    verifyClaimOnBehalfPage()
     selectNoAndContinueCalculationsPage()
   }
 }

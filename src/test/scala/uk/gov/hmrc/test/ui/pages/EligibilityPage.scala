@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,4 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ELIGIBILITY_PAGE_HEADER, CHECK_YOUR_ELIGIBILITY_PAGE_TITLE}
 
-object EligibilityPage extends BasePage {
-  def onEligibilityPage() = {
-    verifyPageUrl("cannot-use-service")
-    onPage(CHECK_YOUR_ELIGIBILITY_PAGE_TITLE)
-    isHeader(CHECK_YOUR_ELIGIBILITY_PAGE_HEADER)
-  }
-}
+object EligibilityPage extends BasePage {}

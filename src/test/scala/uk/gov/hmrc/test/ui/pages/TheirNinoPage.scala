@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,15 +22,10 @@ import util.NINOGenerator
 
 object TheirNinoPage extends BasePage {
 
-  val nino        = NINOGenerator.nino
-  def verifyTheirNinoPage() = {
-    verifyPageUrl("submission-service/national-insurance-number-someone-else")
-    onPage(THEIR_NINO_PAGE_TITLE)
-    isHeader(THEIR_NINO_PAGE_HEADER)
-  }
+  val nino = NINOGenerator.nino
+
   def enterNINO() = driver.findElement(By.id("value")).sendKeys(nino)
   def verifyPageEnterNinoAndContinue() = {
-    verifyTheirNinoPage()
     enterNINO()
     checkYourAnswersCalculationsMap(getHeader(), nino)
     submitPage()

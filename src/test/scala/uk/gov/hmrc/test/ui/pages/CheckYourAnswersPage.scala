@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,16 +21,9 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HE
 import util.DataCollectorMap
 
 object CheckYourAnswersPage extends BasePage {
-  def onCheckYourAnswersPage() = {
-    verifyPageUrl("check-your-answers-setup")
-    onPage(CHECK_YOUR_ANSWERS_PAGE_TITLE)
-    isHeader(CHECK_YOUR_ANSWERS_PAGE_HEADER)
-  }
 
-  def verifyCheckYourAnswersPageAndContinue() = {
-    onCheckYourAnswersPage()
+  def verifyCheckYourAnswersPageAndContinue() =
     clickContinueButton()
-  }
 
   def clickChangeOnWhatAreYouReportingQuestion() = clickOnChangeLink(
     "Charges to be adjusted"

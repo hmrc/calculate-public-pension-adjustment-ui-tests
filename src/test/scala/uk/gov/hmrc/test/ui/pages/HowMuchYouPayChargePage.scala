@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,16 +20,10 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_MUCH_YOU_PAY_CHARGE_PAGE_HEADER, HOW_MUCH_YOU_PAY_CHARGE_PAGE_TITLE}
 
 object HowMuchYouPayChargePage extends BasePage {
-  def onHowMuchYouPayChargePage(year: String, pensionSchemeNumber: String) = {
-    verifyPageUrl(s"annual-allowance/$year/pension-scheme-$pensionSchemeNumber/charge-amount-you-paid")
-    onPage(HOW_MUCH_YOU_PAY_CHARGE_PAGE_TITLE)
-    isHeader(HOW_MUCH_YOU_PAY_CHARGE_PAGE_HEADER)
-  }
 
   def enterYouPay(pensionPay: String) = driver.findElement(By.id("value")).sendKeys(pensionPay)
 
   def verifyPageEnterYouPayAndContinue(year: String, pensionSchemeNumber: String, pensionPay: String) = {
-    onHowMuchYouPayChargePage(year, pensionSchemeNumber)
     enterYouPay(pensionPay)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()

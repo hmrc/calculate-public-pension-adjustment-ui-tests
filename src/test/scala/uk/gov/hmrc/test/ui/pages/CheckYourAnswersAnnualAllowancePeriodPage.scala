@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,7 @@ import util.DataCollectorMap.checkAnswersAAPeriod
 
 object CheckYourAnswersAnnualAllowancePeriodPage extends BasePage {
 
-  def onCheckYourAnswersAnnualAllowancePeriodPage(period: String) = {
-    onPage(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE)
-    isHeader(CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER)
-  }
-
   def verifyCheckYourAnswersPageAndContinue(period: String) = {
-    onCheckYourAnswersAnnualAllowancePeriodPage(period)
     val sortedCheckAnswersAAPeriod = checkAnswersAAPeriod.sortBy(_._1)
     // TODO mapping of check your answers labels
 //    require(

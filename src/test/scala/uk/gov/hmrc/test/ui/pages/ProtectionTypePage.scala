@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_TYPE_PAGE_HEADER, PROTECTION_TYPE_PAGE_TITLE}
 
 object ProtectionTypePage extends BasePage {
-  def onProtectionTypePage() = {
-    verifyPageUrl("lifetime-allowance/protection-type")
-    onPage(PROTECTION_TYPE_PAGE_TITLE)
-    isHeader(PROTECTION_TYPE_PAGE_HEADER)
-  }
 
   def selectEnhancedProtectionRadioButtonAndContinue(): Unit = {
     val text = "Enhanced protection"

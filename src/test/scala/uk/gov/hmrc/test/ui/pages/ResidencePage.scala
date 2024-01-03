@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,17 +19,9 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.constants.PageInformation.{RESIDENCE_PAGE_HEADER, RESIDENCE_PAGE_TITLE}
 
 object ResidencePage extends BasePage {
-  def verifyResidencePage() = {
-    verifyPageUrl("submission-service/uk-resident")
-    onPage(RESIDENCE_PAGE_TITLE)
-    isHeader(RESIDENCE_PAGE_HEADER)
-  }
-  def verifyPageSelectYesAndContinue() = {
-    verifyResidencePage()
+
+  def verifyPageSelectYesAndContinue() =
     selectYesAndContinueCalculationsPage()
-  }
-  def verifyPageSelectNoAndContinue() = {
-    verifyResidencePage()
+  def verifyPageSelectNoAndContinue()  =
     selectNoAndContinueCalculationsPage()
-  }
 }

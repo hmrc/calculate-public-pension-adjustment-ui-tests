@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,10 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.constants.PageInformation.{CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER, CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE}
 
 object ClaimingAdditionalTaxRateReliefPage extends BasePage {
-  def verifyClaimingAdditionalTaxRateReliefPage() = {
-    verifyPageUrl("submission-service/claiming-higher-additional-tax-rate-relief")
-    onPage(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_TITLE)
-    isHeader(CLAIMING_ADDITIONAL_TAX_RELIEF_PAGE_HEADER)
-  }
 
-  def verifyPageClickYesAndContinue() = {
-    verifyClaimingAdditionalTaxRateReliefPage()
+  def verifyPageClickYesAndContinue() =
     selectYesAndContinueCalculationsPage()
-  }
 
-  def verifyPageClickNoAndContinue() = {
-    verifyClaimingAdditionalTaxRateReliefPage()
+  def verifyPageClickNoAndContinue() =
     selectNoAndContinueCalculationsPage()
-  }
 }

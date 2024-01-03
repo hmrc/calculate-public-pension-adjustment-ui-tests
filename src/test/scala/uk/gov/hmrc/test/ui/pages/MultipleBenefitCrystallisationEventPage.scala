@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,6 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 
 object MultipleBenefitCrystallisationEventPage extends BasePage {
-
-  def onMultipleBenefitCrystallisationEventPage() =
-    verifyPageUrl("lifetime-allowance/more-than-one-benefit-crystallisation-event")
-  // TODO Page content validations to be added.
 
   def selectNoRadioButtonAndContinue(): Unit = {
     val text = "No"

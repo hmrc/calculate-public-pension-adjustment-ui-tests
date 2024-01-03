@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_ENHANCEMENT_TYPE_PAGE_HEADER, NEW_ENHANCEMENT_TYPE_PAGE_TITLE, NEW_EXCESS_PAGE_HEADER, NEW_EXCESS_PAGE_TITLE}
 
 object NewExcessPaidPage extends BasePage {
-  def onNewExcessPaidPage() = {
-    verifyPageUrl("lifetime-allowance/new-excess-paid")
-    onPage(NEW_EXCESS_PAGE_TITLE)
-    isHeader(NEW_EXCESS_PAGE_HEADER)
-  }
 
   def selectAnnualPaymentRadioButtonAndContinue(): Unit = {
     val text = "Annual Payment"
-    onNewExcessPaidPage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
@@ -36,7 +30,6 @@ object NewExcessPaidPage extends BasePage {
 
   def selectLumpSumRadioButtonAndContinue(): Unit = {
     val text = "Lump Sum"
-    onNewExcessPaidPage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
@@ -44,7 +37,6 @@ object NewExcessPaidPage extends BasePage {
 
   def selectBothRadioButtonAndContinue(): Unit = {
     val text = "Both"
-    onNewExcessPaidPage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()

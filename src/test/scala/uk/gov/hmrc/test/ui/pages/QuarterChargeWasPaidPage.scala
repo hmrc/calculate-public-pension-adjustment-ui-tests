@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{QUARTER_CHARGE_WAS_PAID_PAGE_HEADER, QUARTER_CHARGE_WAS_PAID_PAGE_TITLE, YEAR_CHARGE_WAS_PAID_PAGE_HEADER, YEAR_CHARGE_WAS_PAID_PAGE_TITLE}
 
 object QuarterChargeWasPaidPage extends BasePage {
-  def onQuarterChargeWasPaidPage() = {
-    verifyPageUrl("lifetime-allowance/quarter-charge-was-paid")
-    onPage(QUARTER_CHARGE_WAS_PAID_PAGE_TITLE)
-    isHeader(QUARTER_CHARGE_WAS_PAID_PAGE_HEADER)
-  }
+
   def selectQuarterAndContinue(): Unit = {
     val text = "1 January to 31 March"
-    onQuarterChargeWasPaidPage()
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()

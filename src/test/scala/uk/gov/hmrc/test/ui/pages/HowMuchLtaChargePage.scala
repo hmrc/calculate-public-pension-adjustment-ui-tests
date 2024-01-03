@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_MUCH_LTA_CHARGE_PAGE_HEADER, HOW_MUCH_LTA_CHARGE_PAGE_TITLE}
 
 object HowMuchLtaChargePage extends BasePage {
-  def onHowMuchLtaChargePage() = {
-    verifyPageUrl("how-much-lta-charge")
-    onPage(HOW_MUCH_LTA_CHARGE_PAGE_TITLE)
-    isHeader(HOW_MUCH_LTA_CHARGE_PAGE_HEADER)
-  }
 
   def enterCharge() = {
     val text = "200000000"
@@ -32,7 +27,6 @@ object HowMuchLtaChargePage extends BasePage {
     checkYourAnswersLASMap(getHeader(), "£" + text)
   }
   def verifyPageEnterChargeAmountAndContinue() = {
-    onHowMuchLtaChargePage()
     enterCharge()
     submitPage()
   }

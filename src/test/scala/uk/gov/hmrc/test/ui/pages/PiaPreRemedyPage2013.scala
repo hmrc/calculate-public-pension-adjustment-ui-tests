@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,8 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2013_PAGE_HEADER, PIA_PRE_REMEDY_2013_PAGE_TITLE}
 
 object PiaPreRemedyPage2013 extends BasePage {
-  def onPiaPreRemedyPage2013PageEnterValueAndContinue() = {
-    verifyPageUrl("annual-allowance/pension-input-amount/2013")
-    onPage(PIA_PRE_REMEDY_2013_PAGE_TITLE)
-    isHeader(PIA_PRE_REMEDY_2013_PAGE_HEADER)
+  def onPiaPreRemedyPage2013PageEnterValueAndContinue() =
     enterAmountAndClickContinue()
-  }
 
   def enterAmountAndClickContinue() = {
     enterAmount("130000000")

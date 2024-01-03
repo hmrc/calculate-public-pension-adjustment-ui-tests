@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,24 +21,4 @@ import org.scalatest.Assertion
 import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.constants.PageInformation.{HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_HEADER, HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_TITLE}
 
-object HaveFlexiblyAccessedPensionPage extends BasePage {
-  def validateHaveFlexiblyAccessedPensionPageRadioButtonError(): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(Errors.HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_ERROR_SUMMARY) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(Errors.HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_ERROR_SUMMARY)
-    )
-
-  def onHaveFlexiblyAccessedPensionPage() = {
-    verifyPageUrl("annual-allowance/flexibly-accessed")
-    onPage(HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_TITLE)
-    isHeader(HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_HEADER)
-  }
-}
+object HaveFlexiblyAccessedPensionPage extends BasePage {}

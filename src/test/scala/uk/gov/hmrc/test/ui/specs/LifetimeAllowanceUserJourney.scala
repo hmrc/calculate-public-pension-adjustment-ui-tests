@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,13 +58,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
@@ -73,31 +71,26 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
 
       When("I should see the multiple benefit crystallisation event page")
-      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
 
       When("I select any radio button and click continue")
       MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
 
       Then("I Should see the protection-type page")
-      ProtectionTypePage.onProtectionTypePage()
 
       When("I select any radio button and click continue")
       ProtectionTypePage.selectEnhancedProtectionRadioButtonAndContinue()
 
       Then("I Should see the protection-reference page")
-      ProtectionReferencePage.onProtectionReferencePage()
 
       When("I enter protection reference and click continue")
       ProtectionReferencePage.enterProtectionReferenceAndContinue()
@@ -171,13 +164,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
@@ -186,19 +177,16 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
 
       When("I should see the multiple benefit crystallisation event page")
-      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
 
       When("I select any radio button and click continue")
       MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
@@ -260,13 +248,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
@@ -275,19 +261,16 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
 
       When("I should see the multiple benefit crystallisation event page")
-      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
 
       When("I select any radio button and click continue")
       MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
@@ -351,13 +334,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
@@ -366,13 +347,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
 
       When("I should see the multiple benefit crystallisation event page")
-      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
 
       When("I select any radio button and click continue")
       MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
@@ -441,13 +420,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
@@ -456,19 +433,16 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
 
       When("I should see the multiple benefit crystallisation event page")
-      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
 
       When("I select any radio button and click continue")
       MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
@@ -541,13 +515,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
@@ -556,19 +528,16 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNewChargeRadioButtonAndContinue()
 
       When("I should see the multiple benefit crystallisation event page")
-      MultipleBenefitCrystallisationEventPage.onMultipleBenefitCrystallisationEventPage()
 
       When("I select any radio button and click continue")
       MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       Then("I Should see the lta-protection-or-enhancements page")
-      LtaProtectionOrEnhancementsPage.onLtaProtectionOrEnhancementsPage()
 
       When("I select any radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
@@ -636,13 +605,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
@@ -651,7 +618,6 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectNoAndContinue()
 
       Then("I Should see the not-able-to-use-this-service-lta page")
-      NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()
 
       When("I click sign out from the page")
       NotAbleToUseThisServiceLtaPage.signOutPage()
@@ -693,13 +659,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select No and continue to next page")
       HadBenefitCrystallisationEventPage.selectNoAndContinueForLTAPage()
 
       Then("I Should see the not-able-to-use-this-service-lta page")
-      NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()
 
       When("I click sign out from the page")
       NotAbleToUseThisServiceLtaPage.signOutPage()
@@ -740,13 +704,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I Should see the had-benefit-crystallisation-event page")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I Should see the date-of-benefit-crystallisation-event page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
@@ -755,13 +717,11 @@ class LifetimeAllowanceUserJourney extends BaseSpec {
       ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
 
       Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.onPercentageCausedChangeInChargePage()
 
       When("I select any radio button and click continue")
       PercentageCausedChangeInChargePage.selectNoneRadioButtonAndContinue()
 
       Then("I Should see the not-able-to-use-this-service-lta page")
-      NotAbleToUseThisServiceLtaPage.onNotAbleToUseThisServiceLtaPage()
 
       When("I click sign out from the page")
       NotAbleToUseThisServiceLtaPage.signOutPage()

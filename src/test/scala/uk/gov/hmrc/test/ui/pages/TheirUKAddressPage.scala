@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,12 +27,6 @@ object TheirUKAddressPage extends BasePage {
   val county       = "London"
   val postCode     = "AB2 5ED"
 
-  def verifyTheirUKAddressPage() = {
-    verifyPageUrl("submission-service/address-someone-else")
-    onPage(THEIR_UK_ADDRESS_PAGE_TITLE)
-    isHeader(THEIR_UK_ADDRESS_PAGE_HEADER)
-  }
-
   def enterAddressInformation() = {
     driver.findElement(By.id("addressLine1")).sendKeys(addressLine1)
     driver.findElement(By.id("addressLine2")).sendKeys(addressLine2)
@@ -42,7 +36,6 @@ object TheirUKAddressPage extends BasePage {
   }
 
   def verifyPageEnterAddressAndContinue() = {
-    verifyTheirUKAddressPage()
     enterAddressInformation()
     checkYourAnswersCalculationsMap(
       getHeader(),

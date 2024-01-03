@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_INTERNATIONAL_ENHANCEMENT_REFERENCE_PAGE_HEADER, NEW_INTERNATIONAL_ENHANCEMENT_REFERENCE_PAGE_TITLE}
 
 object NewInternationalEnhancementReferencePage extends BasePage {
-  def onInternationalEnhancementReferencePage() = {
-    verifyPageUrl("lifetime-allowance/new-international-enhancement-reference")
-    onPage(NEW_INTERNATIONAL_ENHANCEMENT_REFERENCE_PAGE_TITLE)
-    isHeader(NEW_INTERNATIONAL_ENHANCEMENT_REFERENCE_PAGE_HEADER)
-  }
 
   def enterInternationalEnhancementReferenceAndContinue(): Unit = {
     val reference = "1234567891QWERT"
-    onInternationalEnhancementReferencePage()
     driver.findElement(By.id("value")).sendKeys(reference)
     checkYourAnswersLASMap(getHeader(), reference)
     submitPage()

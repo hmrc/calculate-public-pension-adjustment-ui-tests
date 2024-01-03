@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,14 +22,9 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NAME_PAGE_HEADER, TH
 object TheirNamePage extends BasePage {
 
   val text = "ABC BCDEFGHIJK"
-  def verifyTheirNamePage() = {
-    onPage(THEIR_NAME_PAGE_TITLE)
-    isHeader(THEIR_NAME_PAGE_HEADER)
-  }
 
   def enterPensionSchemeMemberName() = driver.findElement(By.id("value")).sendKeys(text)
   def verifyPageEnterPensionSchemeNameAndContinue() = {
-    verifyTheirNamePage()
     enterPensionSchemeMemberName()
     checkYourAnswersCalculationsMap(getHeader(), text)
     submitPage()

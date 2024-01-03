@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,27 +19,12 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 
 object WhoPaidAnnualAllowanceChargePage extends BasePage {
-  val WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_TITLE  =
-    "Who paid the annual allowance tax charge for pensionSchemeNumber? - Calculate your public service pension adjustment - GOV.UK"
-  val WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_HEADER =
-    "Who paid the annual allowance tax charge for schemeName?"
 
-  def onWhoPaidAnnualAllowanceChargePage(
-    year: String,
-    pensionSchemeNumber: String,
-    period: String,
-    schemeName: String
-  ) = {
-    verifyPageUrl(s"annual-allowance/$year/pension-scheme-$pensionSchemeNumber/who-paid-charge")
-    onPage(WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_TITLE.replaceAll("pensionSchemeNumber", pensionSchemeNumber))
-    isHeader(WHO_PAID_ANNUAL_ALLOWANCE_CHARGE_PAGE_HEADER.replaceAll("schemeName", schemeName))
-  }
-  def selectYou()                                  = driver.findElement(By.id("value_0")).click()
-  def selectPensionScheme()                        = driver.findElement(By.id("value_1")).click()
-  def selectBoth()                                 = driver.findElement(By.id("value_2")).click()
+  def selectYou()           = driver.findElement(By.id("value_0")).click()
+  def selectPensionScheme() = driver.findElement(By.id("value_1")).click()
+  def selectBoth()          = driver.findElement(By.id("value_2")).click()
 
   def verifyPageSelectYouAndContinue(year: String, pensionSchemeNumber: String, period: String, schemeName: String) = {
-    onWhoPaidAnnualAllowanceChargePage(year, pensionSchemeNumber, period, schemeName)
     selectYou()
     checkYourAnswersAAPeriodMap(getHeader(), "You")
     submitPage()
@@ -50,13 +35,11 @@ object WhoPaidAnnualAllowanceChargePage extends BasePage {
     period: String,
     schemeName: String
   ) = {
-    onWhoPaidAnnualAllowanceChargePage(year, pensionSchemeNumber, period, schemeName)
     selectPensionScheme()
     checkYourAnswersAAPeriodMap(getHeader(), "Pension Scheme")
     submitPage()
   }
   def verifyPageSelectBothAndContinue(year: String, pensionSchemeNumber: String, period: String, schemeName: String) = {
-    onWhoPaidAnnualAllowanceChargePage(year, pensionSchemeNumber, period, schemeName)
     selectBoth()
     checkYourAnswersAAPeriodMap(getHeader(), "Both")
     submitPage()

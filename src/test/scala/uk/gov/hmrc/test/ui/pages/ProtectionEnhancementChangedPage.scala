@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,35 +21,22 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_CHANGED_PAGE_HE
 import uk.gov.hmrc.test.ui.pages.LtaProtectionOrEnhancementsPage.{checkYourAnswersLASMap, driver, getHeader, submitPage}
 
 object ProtectionEnhancementChangedPage extends BasePage {
-  def onProtectionEnhancementChangedPage() = {
-    verifyPageUrl("lifetime-allowance/protection-enhancement-changed")
-    onPage(PROTECTION_CHANGED_PAGE_TITLE)
-    isHeader(PROTECTION_CHANGED_PAGE_HEADER)
-  }
 
-  def selectProtectionAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
+  def selectProtectionAndClickOnContinue() =
     selectProtectionRadioButtonAndContinue()
-    // selectYesAndContinueForLTAPage()
-  }
+  // selectYesAndContinueForLTAPage()
 
-  def selectEnhancementAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
+  def selectEnhancementAndClickOnContinue() =
     selectEnhancementsRadioButtonAndContinue()
-    // selectNoAndContinueForLTAPage()
-  }
+  // selectNoAndContinueForLTAPage()
 
-  def selectBothAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
+  def selectBothAndClickOnContinue() =
     selectBothRadioButtonAndContinue()
-    // selectNoAndContinueForLTAPage()
-  }
+  // selectNoAndContinueForLTAPage()
 
-  def selectNoAndClickOnContinue() = {
-    onProtectionEnhancementChangedPage()
+  def selectNoAndClickOnContinue() =
     selectNoRadioButtonAndContinue()
-    // selectNoAndContinueForLTAPage()
-  }
+  // selectNoAndContinueForLTAPage()
 
   def selectProtectionRadioButtonAndContinue(): Unit = {
     val text = "Protection"

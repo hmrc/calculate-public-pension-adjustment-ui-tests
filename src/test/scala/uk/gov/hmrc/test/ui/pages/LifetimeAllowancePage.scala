@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,6 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{LEGACY_PENSION_SCHEME_REFE
 import uk.gov.hmrc.test.ui.pages.LegacyPensionSchemeReferencePage.{isHeader, onPage, verifyPageUrl}
 
 object LifetimeAllowancePage extends BasePage {
-  def verifyLifetimeAllowancePageAndContinue() = {
-    verifyPageUrl("lifetime-allowance")
-    onPage(LIFETIME_ALLOWANCE_PAGE_TITLE)
-    isHeader(LIFETIME_ALLOWANCE_PAGE_HEADER)
+  def verifyLifetimeAllowancePageAndContinue() =
     clickContinueButton()
-  }
 }

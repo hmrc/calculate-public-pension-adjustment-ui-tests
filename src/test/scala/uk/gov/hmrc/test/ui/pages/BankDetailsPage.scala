@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,6 @@ object BankDetailsPage extends BasePage {
   val accountName   = "Teddy Dickson"
   val sortCode      = "207102"
   val accountNumber = "44311655"
-  def verifyBankDetailsPage() = {
-    verifyPageUrl("bank-details")
-    onPage(BANK_DETAILS_PAGE_TITLE)
-    isHeader(BANK_DETAILS_PAGE_HEADER)
-  }
 
   def enterBankDetails() = {
     driver.findElement(By.id("accountName")).sendKeys(accountName)
@@ -36,7 +31,6 @@ object BankDetailsPage extends BasePage {
   }
 
   def verifyPageEnterBankDetailsClickContinue() = {
-    verifyBankDetailsPage()
     enterBankDetails()
     checkYourAnswersCalculationsMap(getHeader(), accountName + " " + sortCode + " " + accountNumber)
     submitPage()

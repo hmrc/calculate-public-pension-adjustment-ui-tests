@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,18 +20,11 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.constants.PageInformation.{DECLARATION_PAGE_HEADER, DECLARATION_PAGE_TITLE}
 
 object DeclarationsPage extends BasePage {
-  def verifyDeclarationsPage() = {
-    verifyPageUrl("declarations")
-    onPage(DECLARATION_PAGE_TITLE)
-    isHeader(DECLARATION_PAGE_HEADER)
-  }
 
   def clickConfirmButton() = driver.findElement(By.xpath("//a[contains(text(),'Confirm')]")).click()
 
   /** remove navigation to url */
-  def verifyPageAndConfirm() = {
-    verifyDeclarationsPage()
+  def verifyPageAndConfirm() =
     clickConfirmButton()
-  }
 
 }

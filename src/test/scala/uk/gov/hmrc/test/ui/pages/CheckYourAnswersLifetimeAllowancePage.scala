@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,8 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HE
 import util.DataCollectorMap.checkAnswersLAS
 
 object CheckYourAnswersLifetimeAllowancePage extends BasePage {
-  def onCheckYourAnswersLifetimeAllowancePage() = {
-    verifyPageUrl("lifetime-allowance/check-answers")
-    onPage(CHECK_YOUR_ANSWERS_PAGE_TITLE)
-    isHeader(CHECK_YOUR_ANSWERS_PAGE_HEADER)
-  }
 
   def verifyCheckYourAnswersPageAndContinue() = {
-    onCheckYourAnswersLifetimeAllowancePage()
     val sortedCheckAnswersAAPeriod = checkAnswersLAS.sortBy(_._1)
     // require(sortedCheckAnswersAAPeriod == returnCheckYourAnswersPageInformationAsAList(), "Data not matching")
     clickContinueButton()

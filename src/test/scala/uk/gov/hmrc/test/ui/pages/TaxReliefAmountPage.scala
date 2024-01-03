@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,16 +22,10 @@ import uk.gov.hmrc.test.ui.constants.PageInformation.{TAX_RELIEF_AMOUNT_PAGE_HEA
 object TaxReliefAmountPage extends BasePage {
 
   val taxReliefAmount = "230000000"
-  def verifyTaxReliefAmountPage() = {
-    verifyPageUrl("submission-service/how-much-tax-relief-claiming-for")
-    onPage(TAX_RELIEF_AMOUNT_PAGE_TITLE)
-    isHeader(TAX_RELIEF_AMOUNT_PAGE_HEADER)
-  }
 
   def enterTaxReliefAmount() = driver.findElement(By.id("value")).sendKeys(taxReliefAmount)
 
   def verifyPageEnterTaxReliefAndContinue() = {
-    verifyTaxReliefAmountPage()
     enterTaxReliefAmount()
     checkYourAnswersCalculationsMap(getHeader(), taxReliefAmount)
     submitPage()

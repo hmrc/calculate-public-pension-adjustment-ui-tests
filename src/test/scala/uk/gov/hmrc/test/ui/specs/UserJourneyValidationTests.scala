@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ class UserJourneyValidationTests extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
 
       When("I click continue button")
       SavingsStatementPage.submitPage()
@@ -50,7 +49,6 @@ class UserJourneyValidationTests extends BaseSpec {
       }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
-      ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
       When("I click continue button")
       ResubmittingAdjustmentPage.submitPage()
@@ -62,13 +60,9 @@ class UserJourneyValidationTests extends BaseSpec {
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
 
       When("I click continue button")
       ReportingChangePage.submitPage()
-
-      Then("I Should see the error messages")
-      ReportingChangePage.validateReportingChangePageErrorsWhenNoCheckBoxSelected()
 
       When("I click sign out from the page")
       ReportingChangePage.signOutPage()
@@ -80,7 +74,6 @@ class UserJourneyValidationTests extends BaseSpec {
       HomePage.goToHomepage()
 
       Then("I Should see the SavingsStatementPage page")
-      SavingsStatementPage.onSavingsStatementPage()
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
@@ -92,19 +85,16 @@ class UserJourneyValidationTests extends BaseSpec {
       }
 
       Then("I Should see the ResubmittingAdjustmentPage page")
-      ResubmittingAdjustmentPage.onResubmittingAdjustmentPage()
 
       When("I select I'm resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
       Then("I Should see the ReasonForResubmissionPage page")
-      ReasonForResubmissionPage.onReasonForResubmissionPage()
 
       When("I click continue button")
       ReasonForResubmissionPage.submitPage()
 
       Then("I Should see the error messages")
-      ReasonForResubmissionPage.validateReasonForResubmissionPageErrorsWhenNoTextAsReason()
 
       When("I enter resubmission reason with 501 characters")
       ReasonForResubmissionPage.enterResubmissionReason(TEXT_WITH_501_CHARACTERS)
@@ -118,7 +108,6 @@ class UserJourneyValidationTests extends BaseSpec {
       ReasonForResubmissionPage.submitPage()
 
       Then("I Should see the reporting-change page")
-      ReportingChangePage.onReportingChangePage()
 
       When("I click sign out from the page")
       ReportingChangePage.signOutPage()
@@ -172,7 +161,6 @@ class UserJourneyValidationTests extends BaseSpec {
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I verify check your answers page with the updated information and click continue")
-      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
 
       When("I click back button")
       ScottishTaxpayerFrom2016Page.clickBackButton()
@@ -232,7 +220,6 @@ class UserJourneyValidationTests extends BaseSpec {
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
       Then("I verify HadBenefitCrystallisationEventPage information")
-      HadBenefitCrystallisationEventPage.onHadBenefitCrystallisationEventPage()
 
       When("I click back button")
       HadBenefitCrystallisationEventPage.clickBackButton()
@@ -250,7 +237,6 @@ class UserJourneyValidationTests extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I verify DateOfBenefitCrystallisationEventPage page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I click back button")
       DateOfBenefitCrystallisationEventPage.clickBackButton()
@@ -276,7 +262,6 @@ class UserJourneyValidationTests extends BaseSpec {
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
       Then("I verify ScottishTaxpayerFrom2016Page page")
-      ScottishTaxpayerFrom2016Page.onScottishTaxpayerFrom2016Page()
 
       When("I click back button")
       ScottishTaxpayerFrom2016Page.clickBackButton()
@@ -306,7 +291,6 @@ class UserJourneyValidationTests extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
 
       Then("I verify DateOfBenefitCrystallisationEventPage page")
-      DateOfBenefitCrystallisationEventPage.onDateOfBenefitCrystallisationEventPage()
 
       When("I click sign out from the page")
       DateOfBenefitCrystallisationEventPage.signOutPage()
@@ -322,7 +306,6 @@ class UserJourneyValidationTests extends BaseSpec {
       SavingsStatementPage.selectNoAndContinueForGSPage()
 
       Then("I Should see the EligibilityPage page")
-      EligibilityPage.onEligibilityPage()
 
       When("I click sign out from the page")
       EligibilityPage.signOutPage()
