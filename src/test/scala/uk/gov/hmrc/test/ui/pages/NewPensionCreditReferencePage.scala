@@ -28,4 +28,10 @@ object NewPensionCreditReferencePage extends BasePage {
     submitPage()
   }
 
+  def enterNewPensionCreditReferenceAndContinue(reference: String): Unit = {
+    driver.findElement(By.id("value")).sendKeys(reference)
+    checkYourAnswersLASMap(getHeader(), reference)
+    submitPage()
+  }
+
 }

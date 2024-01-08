@@ -28,4 +28,12 @@ object ProtectionReferencePage extends BasePage {
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
+
+  def enterNewProtectionReferenceAndContinue(reference: String): Unit = {
+    driver.findElement(By.id("value")).clear()
+    driver.findElement(By.id("value")).sendKeys(reference)
+    checkYourAnswersLASMap(getHeader(), reference)
+    submitPage()
+  }
+
 }

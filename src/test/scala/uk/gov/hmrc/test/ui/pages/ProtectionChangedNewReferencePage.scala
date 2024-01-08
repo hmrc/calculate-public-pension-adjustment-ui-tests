@@ -27,8 +27,18 @@ object ProtectionChangedNewReferencePage extends BasePage {
     checkYourAnswersLASMap(getHeader(), text)
   }
 
+  def enterNewReference(reference: String) = {
+    driver.findElement(By.xpath("//input[@id='value']")).sendKeys(reference)
+    checkYourAnswersLASMap(getHeader(), reference)
+  }
+
   def enterReferenceAndContinue(): Unit = {
     enterReference()
+    submitPage()
+  }
+
+  def enterNewReferenceAndContinue(reference: String): Unit = {
+    enterNewReference(reference)
     submitPage()
   }
 }

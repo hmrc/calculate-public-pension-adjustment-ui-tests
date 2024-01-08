@@ -27,8 +27,18 @@ object ProtectionChangedNewTypePage extends BasePage {
     checkYourAnswersLASMap(getHeader(), text)
   }
 
+  def selectFixedProtection2016() = {
+    val text = "Fixed protection 2016"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+  }
   def selectEnhancedProtectionAndContinue() = {
     selectEnhancedProtection()
+    submitPage()
+  }
+
+  def selectFixedProtection2016AndContinue() = {
+    selectFixedProtection2016()
     submitPage()
   }
 

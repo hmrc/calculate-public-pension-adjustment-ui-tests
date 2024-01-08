@@ -26,4 +26,11 @@ object MultipleBenefitCrystallisationEventPage extends BasePage {
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
+
+  def selectYesRadioButtonAndContinue(): Unit = {
+    val text = "Yes"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+    submitPage()
+  }
 }

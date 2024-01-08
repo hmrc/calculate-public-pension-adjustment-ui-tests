@@ -44,5 +44,6 @@ object WhichYearsScottishTaxpayer extends BasePage {
       taxYears = fullText
     }
     checkYourAnswersAAPeriodMap(getHeader(), taxYears)
+    submitPage()
   }
 }

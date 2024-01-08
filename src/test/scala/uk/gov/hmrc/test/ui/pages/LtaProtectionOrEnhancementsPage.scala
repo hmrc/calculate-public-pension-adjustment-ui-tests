@@ -41,4 +41,11 @@ object LtaProtectionOrEnhancementsPage extends BasePage {
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
+
+  def selectNoRadioButtonAndContinue(): Unit = {
+    val text = "No"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+    submitPage()
+  }
 }
