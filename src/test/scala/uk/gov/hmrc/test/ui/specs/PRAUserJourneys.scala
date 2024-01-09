@@ -296,7 +296,7 @@ class PRAUserJourneys extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
 
       When("I land on Which Years Scottish Taxpayer page, select 16/17 and continue")
-      WhichYearsScottishTaxpayer.selectScottishTaxPayerYear("2017")
+      WhichYearsScottishTaxpayer.selectScottishTaxpayerYearAndContinue("2017")
 
       When("I land on paying-into-public-scheme-page, select no and click continue")
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()

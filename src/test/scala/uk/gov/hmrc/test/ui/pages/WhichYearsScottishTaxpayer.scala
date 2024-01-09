@@ -44,6 +44,10 @@ object WhichYearsScottishTaxpayer extends BasePage {
       taxYears = fullText
     }
     checkYourAnswersAAPeriodMap(getHeader(), taxYears)
+  }
+
+  def selectScottishTaxpayerYearAndContinue(year: String) = {
+    selectScottishTaxPayerYear(year)
     submitPage()
   }
 }
