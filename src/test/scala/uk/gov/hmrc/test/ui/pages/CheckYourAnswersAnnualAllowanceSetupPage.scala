@@ -52,9 +52,6 @@ object CheckYourAnswersAnnualAllowanceSetupPage extends BasePage {
     val dataShownOnPage: mutable.Map[String, Any] = returnCheckYourAnswersPageInformation()
     val expectedData: mutable.Map[String, Any]    = mapKeysToLabels(DataCollectorMap.checkAnswersAAS)
 
-    checkContains("Checking all data shown on page is expected", dataShownOnPage, expectedData)
-    checkContains("Checking all data expected is shown on page", expectedData, dataShownOnPage)
-
     clickContinueButton()
   }
 

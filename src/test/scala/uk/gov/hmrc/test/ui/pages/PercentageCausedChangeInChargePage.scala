@@ -28,6 +28,13 @@ object PercentageCausedChangeInChargePage extends BasePage {
     submitPage()
   }
 
+  def selectIncreasedChargeRadioButtonAndContinue(): Unit = {
+    val text = "Increased charge"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+    submitPage()
+  }
+
   def selectNoneRadioButtonAndContinue(): Unit = {
     val text = "No charge"
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()

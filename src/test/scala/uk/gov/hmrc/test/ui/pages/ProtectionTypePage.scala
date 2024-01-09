@@ -28,4 +28,11 @@ object ProtectionTypePage extends BasePage {
     submitPage()
   }
 
+  def selectFixedProtection2016RadioButtonAndContinue(): Unit = {
+    val text = "Fixed protection 2016"
+    driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
+    checkYourAnswersLASMap(getHeader(), text)
+    submitPage()
+  }
+
 }

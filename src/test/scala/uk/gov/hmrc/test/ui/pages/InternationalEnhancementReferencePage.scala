@@ -28,4 +28,9 @@ object InternationalEnhancementReferencePage extends BasePage {
     submitPage()
   }
 
+  def enterNewInternationalEnhancementReferenceAndContinue(reference: String): Unit = {
+    driver.findElement(By.id("value")).sendKeys(reference)
+    checkYourAnswersLASMap(getHeader(), reference)
+    submitPage()
+  }
 }
