@@ -17,26 +17,20 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_CHANGED_PAGE_HEADER, PROTECTION_CHANGED_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.LtaProtectionOrEnhancementsPage.{checkYourAnswersLASMap, driver, getHeader, submitPage}
 
 object ProtectionEnhancementChangedPage extends BasePage {
 
   def selectProtectionAndClickOnContinue() =
     selectProtectionRadioButtonAndContinue()
-  // selectYesAndContinueForLTAPage()
 
   def selectEnhancementAndClickOnContinue() =
     selectEnhancementsRadioButtonAndContinue()
-  // selectNoAndContinueForLTAPage()
 
   def selectBothAndClickOnContinue() =
     selectBothRadioButtonAndContinue()
-  // selectNoAndContinueForLTAPage()
 
   def selectNoAndClickOnContinue() =
     selectNoRadioButtonAndContinue()
-  // selectNoAndContinueForLTAPage()
 
   def selectProtectionRadioButtonAndContinue(): Unit = {
     val text = "Protection"

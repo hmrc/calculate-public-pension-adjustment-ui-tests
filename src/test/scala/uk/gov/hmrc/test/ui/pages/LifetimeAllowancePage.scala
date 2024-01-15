@@ -16,9 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{LEGACY_PENSION_SCHEME_REFERENCE_PAGE_HEADER, LEGACY_PENSION_SCHEME_REFERENCE_PAGE_TITLE, LIFETIME_ALLOWANCE_PAGE_HEADER, LIFETIME_ALLOWANCE_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.LegacyPensionSchemeReferencePage.{isHeader, onPage, verifyPageUrl}
-
 object LifetimeAllowancePage extends BasePage {
   def verifyLifetimeAllowancePageAndContinue() =
     clickContinueButton()

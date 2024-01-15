@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_HEADER, WHO_PAYING_EXTRA_LTA_CHARGE_PAGE_TITLE}
 
 object WhoPayingExtraLtaChargePage extends BasePage {
 

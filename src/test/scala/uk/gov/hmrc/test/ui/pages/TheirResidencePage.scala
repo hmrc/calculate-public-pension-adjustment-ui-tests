@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_RESIDENCE_PAGE_HEADER, THEIR_RESIDENCE_PAGE_TITLE}
-
 object TheirResidencePage extends BasePage {
 
   def verifyPageSelectYesAnContinue() =

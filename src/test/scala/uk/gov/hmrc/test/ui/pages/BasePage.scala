@@ -21,7 +21,6 @@ import org.openqa.selenium.{By, WebElement}
 import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.constants.Errors
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import util.DataCollectorMap
 
@@ -197,20 +196,6 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     val lastPart           = currentUrl.replaceAll(domain, "")
     lastPart shouldEqual name
   }
-
-  def validateRadioButtonError(expectedErrorMessage: String): Assertion =
-    assert(
-      driver
-        .findElement(By.xpath("//fieldset[@class='govuk-fieldset']//p[@id='value-error']"))
-        .getText
-        .contains(expectedErrorMessage) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//h2"))
-        .getText
-        .contains(Errors.ERROR_SUMMARY_TITLE) && driver
-        .findElement(By.xpath("//div[@class='govuk-error-summary']//li"))
-        .getText
-        .contains(expectedErrorMessage)
-    )
 
   def getHeader(): String = {
     var headerText = driver.findElement(By.xpath("//h1")).getText

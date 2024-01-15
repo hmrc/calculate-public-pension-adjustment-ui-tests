@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{LTA_CHARGE_2015_2023_PAGE_HEADER, LTA_CHARGE_2015_2023_PAGE_TITLE}
-
 object LtaCharge20152023Page extends BasePage {
 
   def selectYesAndClickOnContinue() =

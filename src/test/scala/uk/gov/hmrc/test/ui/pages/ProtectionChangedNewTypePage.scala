@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PROTECTION_CHANGED_NEW_TYPE_PAGE_HEADER, PROTECTION_CHANGED_NEW_TYPE_PAGE_TITLE}
 
 object ProtectionChangedNewTypePage extends BasePage {
 

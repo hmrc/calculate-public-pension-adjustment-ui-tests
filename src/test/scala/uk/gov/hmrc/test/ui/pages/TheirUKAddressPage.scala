@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_UK_ADDRESS_PAGE_HEADER, THEIR_UK_ADDRESS_PAGE_TITLE}
 
 object TheirUKAddressPage extends BasePage {
 

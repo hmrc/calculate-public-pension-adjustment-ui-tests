@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_HEADER, WHICH_CONTRIBUTED_DURING_REMEDY_PERIOD_PAGE_TITLE}
 
 object WhichContributedDuringRemedyPeriodPage extends BasePage {
 
@@ -33,19 +32,19 @@ object WhichContributedDuringRemedyPeriodPage extends BasePage {
     )
   }
 
-  def verifyPageSelectDCAndContinue(year: String): Unit = {
+  def verifyPageSelectDCAndContinue(): Unit = {
     selectDefinedContribution()
     checkYourAnswersAAPeriodMap(getHeader(), "Defined contribution")
     submitPage()
   }
 
-  def verifyPageSelectDBAndContinue(year: String): Unit = {
+  def verifyPageSelectDBAndContinue(): Unit = {
     selectDefinedBenefit()
     checkYourAnswersAAPeriodMap(getHeader(), "Defined benefit")
     submitPage()
   }
 
-  def verifyPageSelectDBAndDCANDContinue(year: String): Unit = {
+  def verifyPageSelectDBAndDCANDContinue(): Unit = {
     defSelectBothDCAndDB()
     submitPage()
   }

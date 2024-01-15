@@ -16,9 +16,4 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_HEADER, HAVE_FLEXIBLY_ACCESSED_PENSION_PAGE_TITLE}
-
 object HaveFlexiblyAccessedPensionPage extends BasePage {}

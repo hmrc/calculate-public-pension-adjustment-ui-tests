@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHO_WILL_PAY_PAGE_HEADER, WHO_WILL_PAY_PAGE_TITLE}
 
 object WhoWillPayPage extends BasePage {
 

@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{REFORM_PENSION_SCHEME_REFERENCE_PAGE_HEADER, REFORM_PENSION_SCHEME_REFERENCE_PAGE_TITLE}
 
 object ReformPensionSchemeReferencePage extends BasePage {
   val pensionRef = "TAX00000629RTED"

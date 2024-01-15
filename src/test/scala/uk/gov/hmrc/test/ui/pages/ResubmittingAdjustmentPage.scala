@@ -16,6 +16,4 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{RESUBMITTING_ADJUSTMENT_PAGE_HEADER, RESUBMITTING_ADJUSTMENT_PAGE_TITLE}
-
 object ResubmittingAdjustmentPage extends BasePage {}

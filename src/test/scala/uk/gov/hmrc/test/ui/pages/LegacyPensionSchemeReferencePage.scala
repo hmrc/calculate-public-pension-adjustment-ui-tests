@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{LEGACY_PENSION_SCHEME_REFERENCE_PAGE_HEADER, LEGACY_PENSION_SCHEME_REFERENCE_PAGE_TITLE}
 
 object LegacyPensionSchemeReferencePage extends BasePage {
 

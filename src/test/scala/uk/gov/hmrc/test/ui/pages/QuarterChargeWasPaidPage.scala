@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{QUARTER_CHARGE_WAS_PAID_PAGE_HEADER, QUARTER_CHARGE_WAS_PAID_PAGE_TITLE, YEAR_CHARGE_WAS_PAID_PAGE_HEADER, YEAR_CHARGE_WAS_PAID_PAGE_TITLE}
 
 object QuarterChargeWasPaidPage extends BasePage {
 

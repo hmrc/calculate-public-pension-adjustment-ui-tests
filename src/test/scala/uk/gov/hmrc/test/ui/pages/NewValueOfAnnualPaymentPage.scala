@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_VALUE_OF_ANNUAL_PAYMENT_PAGE_HEADER, NEW_VALUE_OF_ANNUAL_PAYMENT_PAGE_TITLE}
 
 object NewValueOfAnnualPaymentPage extends BasePage {
 

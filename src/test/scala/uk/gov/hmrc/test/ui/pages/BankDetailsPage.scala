@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{BANK_DETAILS_PAGE_HEADER, BANK_DETAILS_PAGE_TITLE}
 
 object BankDetailsPage extends BasePage {
   val accountName   = "Teddy Dickson"
@@ -32,7 +31,6 @@ object BankDetailsPage extends BasePage {
 
   def verifyPageEnterBankDetailsClickContinue() = {
     enterBankDetails()
-    checkYourAnswersCalculationsMap(getHeader(), accountName + " " + sortCode + " " + accountNumber)
     submitPage()
   }
 

@@ -30,7 +30,7 @@ object PensionSchemeInputAmountsPage extends BasePage {
     driver.findElement(By.id("revisedPIA")).sendKeys(revisedPensionInputAmount)
   }
 
-  def verifypageEnterPensionAmountsAndContinue(
+  def verifyPageEnterPensionAmountsAndContinue(
     pensionInputAmount: String,
     revisedPensionInputAmount: String
   ) = {

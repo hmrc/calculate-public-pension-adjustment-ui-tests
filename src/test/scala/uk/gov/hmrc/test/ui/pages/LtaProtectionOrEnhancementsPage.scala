@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_HEADER, LTA_PROTECTION_OR_ENHANCEMENTS_PAGE_TITLE}
 
 object LtaProtectionOrEnhancementsPage extends BasePage {
 

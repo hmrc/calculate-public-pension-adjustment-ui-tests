@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_DATE_OF_DEATH_PAGE_HEADER, THEIR_DATE_OF_DEATH_PAGE_TITLE}
-
 object TheirDateOfDeathPage extends BasePage {
   def enterDeathday() = {
     val (month, date, year) = getCurrentDateTime()
