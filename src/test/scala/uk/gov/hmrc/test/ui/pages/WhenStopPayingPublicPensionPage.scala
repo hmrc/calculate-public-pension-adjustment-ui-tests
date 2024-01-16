@@ -16,11 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_HEADER, WHEN_STOP_PAYING_PUBLIC_PENSION_PAGE_TITLE}
-
 object WhenStopPayingPublicPensionPage extends BasePage {
 
   def enterAnInvalidDateAndClickContinue() = {

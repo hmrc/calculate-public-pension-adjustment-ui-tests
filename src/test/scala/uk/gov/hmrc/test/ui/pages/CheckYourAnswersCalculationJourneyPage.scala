@@ -16,9 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_HEADER, SUBMIT_CHECK_YOUR_ANSWERS_PAGE_TITLE}
-import util.DataCollectorMap
-
 object CheckYourAnswersCalculationJourneyPage extends BasePage {
 
   def verifyCheckYourAnswersPageAndContinue() =

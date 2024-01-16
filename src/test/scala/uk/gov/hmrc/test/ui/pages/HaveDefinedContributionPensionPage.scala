@@ -16,9 +16,4 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_HEADER, HAVE_DEFINED_CONTRIBUTION_PENSION_PAGE_TITLE}
-
 object HaveDefinedContributionPensionPage extends BasePage {}

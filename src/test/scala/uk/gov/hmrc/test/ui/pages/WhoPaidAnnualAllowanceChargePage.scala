@@ -24,22 +24,17 @@ object WhoPaidAnnualAllowanceChargePage extends BasePage {
   def selectPensionScheme() = driver.findElement(By.id("value_1")).click()
   def selectBoth()          = driver.findElement(By.id("value_2")).click()
 
-  def verifyPageSelectYouAndContinue(year: String, pensionSchemeNumber: String, period: String, schemeName: String) = {
+  def verifyPageSelectYouAndContinue() = {
     selectYou()
     checkYourAnswersAAPeriodMap(getHeader(), "You")
     submitPage()
   }
-  def verifyPageSelectPensionSchemeAndContinue(
-    year: String,
-    pensionSchemeNumber: String,
-    period: String,
-    schemeName: String
-  ) = {
+  def verifyPageSelectPensionSchemeAndContinue() = {
     selectPensionScheme()
     checkYourAnswersAAPeriodMap(getHeader(), "Pension Scheme")
     submitPage()
   }
-  def verifyPageSelectBothAndContinue(year: String, pensionSchemeNumber: String, period: String, schemeName: String) = {
+  def verifyPageSelectBothAndContinue() = {
     selectBoth()
     checkYourAnswersAAPeriodMap(getHeader(), "Both")
     submitPage()

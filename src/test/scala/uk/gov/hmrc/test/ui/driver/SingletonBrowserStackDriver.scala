@@ -64,24 +64,12 @@ class BrowserStackDriver extends LazyLogging {
     val testSet1Environments = testData.environments.filter(_.keys.head == sys.props.get("testDataSet").getOrElse())
 
     // Accessing the filtered environments
-    val testSetData      = testSet1Environments.map(_.values.head.as[Environment])
-    val firstEnvironment = testSetData.head
-    val os               = firstEnvironment.os
-    val osVersion        = firstEnvironment.os_version
-    val browserName      = firstEnvironment.browserName
-    val browserVersion   = firstEnvironment.browserVersion
-
-    /* val desiredCaps = new MutableCapabilities()
-    desiredCaps.setCapability("project", buildName)
-    desiredCaps.setCapability("build", sessionName)
-    desiredCaps.setCapability("browserstack.idleTimeout", "2")
-    desiredCaps.setCapability("browserstack.networkLogs", true);
-    desiredCaps.setCapability("browserstack.local", browserstack_local)
-    desiredCaps.setCapability("browserstack.localIdentifier", browserstack_localIdentifier)
-    desiredCaps.setCapability("os", os)
-    desiredCaps.setCapability("os_version", osVersion)
-    desiredCaps.setCapability("browser", browserName)
-    desiredCaps.setCapability("browser_version ", browserVersion)*/
+    val testSetData                   = testSet1Environments.map(_.values.head.as[Environment])
+    val firstEnvironment              = testSetData.head
+    val os                            = firstEnvironment.os
+    val osVersion                     = firstEnvironment.os_version
+    val browserName                   = firstEnvironment.browserName
+    val browserVersion                = firstEnvironment.browserVersion
     var remoteDriver: RemoteWebDriver = null
     val capabilities                  = new MutableCapabilities()
     capabilities.setCapability("browserName", browserName)

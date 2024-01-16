@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_PAGE_HEADER, THEIR_NINO_PAGE_TITLE}
 import util.NINOGenerator
 
 object TheirNinoPage extends BasePage {

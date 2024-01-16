@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_HEADER, CONTRIBUTED_OTHER_DB_DC_SCHEME_PAGE_TITLE}
-
 object ContributedOtherDbDcSchemePage extends BasePage {
   def verifyPageSelectYesAndContinue() =
     selectYesAndContinueForAAPeriodPage()

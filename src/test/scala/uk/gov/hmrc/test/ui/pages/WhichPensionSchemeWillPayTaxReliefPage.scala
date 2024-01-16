@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_PENSION_SCHEME_WILL_PAY_TAX_RELIEF_PAGE_HEADER, WHICH_PENSION_SCHEME_WILL_PAY_TAX_RELIEF_PAGE_TITLE}
 
 object WhichPensionSchemeWillPayTaxReliefPage extends BasePage {
 

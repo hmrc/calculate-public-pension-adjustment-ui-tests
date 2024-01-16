@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CALCULATE_PENSION_SCHEME_DETAILS_PAGE_HEADER, CALCULATE_PENSION_SCHEME_DETAILS_PAGE_TITLE}
 
 object SubmitPensionSchemeDetailsPage extends BasePage {
 

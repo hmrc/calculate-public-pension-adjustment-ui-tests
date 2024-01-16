@@ -15,8 +15,6 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
-
-import uk.gov.hmrc.test.ui.constants.PageInformation.{ASKED_PENSION_SCHEME_TO_PAY_HEADER, ASKED_PENSION_SCHEME_TO_PAY_TITLE}
 object AskedPensionSchemeToPayTaxCharge extends BasePage {
 
   def verifyPageSelectYesAndContinue(year: Int) = {

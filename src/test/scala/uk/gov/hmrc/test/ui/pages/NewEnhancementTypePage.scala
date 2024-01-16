@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{NEW_ENHANCEMENT_TYPE_PAGE_HEADER, NEW_ENHANCEMENT_TYPE_PAGE_TITLE}
 
 object NewEnhancementTypePage extends BasePage {
 

@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{DID_YOU_PAY_A_CHARGE_PAGE_HEADER, DID_YOU_PAY_A_CHARGE_PAGE_TITLE}
-
 object DidYouPayAChargePage extends BasePage {
 
   def verifyPageSelectNoAndContinue() =

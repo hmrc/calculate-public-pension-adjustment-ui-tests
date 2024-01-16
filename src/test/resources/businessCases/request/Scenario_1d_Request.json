@@ -6,6 +6,14 @@
     "scottishTaxYears": [],
     "taxYears": [
       {
+        "pensionInputAmount": 20000,
+        "period": "2011"
+      },
+      {
+        "pensionInputAmount": 30000,
+        "period": "2012"
+      },
+      {
         "pensionInputAmount": 50000,
         "period": "2013"
       },

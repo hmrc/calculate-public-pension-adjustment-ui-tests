@@ -17,8 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHICH_PENSION_SCHEME_WILL_PAY_PAGE_HEADER, WHICH_PENSION_SCHEME_WILL_PAY_PAGE_TITLE}
-import uk.gov.hmrc.test.ui.pages.WhoWillPayPage.verifyPageUrl
 
 object WhichPensionSchemeWillPayPage extends BasePage {
 

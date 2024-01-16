@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HOW_MUCH_LTA_CHARGE_PAGE_HEADER, HOW_MUCH_LTA_CHARGE_PAGE_TITLE}
 
 object HowMuchLtaChargePage extends BasePage {
 

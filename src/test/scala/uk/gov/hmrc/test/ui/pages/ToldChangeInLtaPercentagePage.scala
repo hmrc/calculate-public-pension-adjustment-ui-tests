@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_HEADER, TOLD_CHANGE_IN_LTA_PERCENTAGE_PAGE_TITLE}
-
 object ToldChangeInLtaPercentagePage extends BasePage {
   def onToldChangeInLtaPercentagePageAndSelectYesAndContinue() =
     selectYesAndContinueForLTAPage()

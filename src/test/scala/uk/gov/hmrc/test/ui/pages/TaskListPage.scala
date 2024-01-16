@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{TASK_LISTS_PAGE_HEADER, TASK_LISTS_PAGE_HEADER2, TASK_LISTS_PAGE_TITLE}
 
 object TaskListPage extends BasePage {
 
@@ -44,12 +43,8 @@ object TaskListPage extends BasePage {
 
   def isAnnualAllowanceTitleNotDisplayed(): Unit = driver.findElements(annualAllowanceTitle).size() should be <= 0
 
-  def onTaskListPage() = {
+  def onTaskListPage() =
     verifyPageUrl("task-list")
-    onPage(TASK_LISTS_PAGE_TITLE)
-    isHeader(TASK_LISTS_PAGE_HEADER)
-    isHeader2(TASK_LISTS_PAGE_HEADER2)
-  }
 
   def clickAddDetailsForLifetimeAllowance() =
     driver.findElement(AddDetailsOfYourLAEvents).click()

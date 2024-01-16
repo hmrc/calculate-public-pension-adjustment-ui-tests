@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PIA_PRE_REMEDY_2014_PAGE_HEADER, PIA_PRE_REMEDY_2014_PAGE_TITLE}
-
 object PiaPreRemedyPage2014 extends BasePage {
   def onPiaPreRemedyPage2014PageEnterValueAndContinue() =
     enterAmountAndClickContinue()

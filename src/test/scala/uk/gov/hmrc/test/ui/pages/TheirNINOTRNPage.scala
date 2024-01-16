@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{THEIR_NINO_TRN_HEADER, THEIR_NINO_TRN_TITLE}
 object TheirNINOTRNPage extends BasePage {
 
   def enterNINOTRN(): Unit =

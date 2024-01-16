@@ -17,8 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER, CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER2, CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE}
-import util.DataCollectorMap
 
 import scala.collection.mutable
 
@@ -47,19 +45,10 @@ object CheckYourAnswersAnnualAllowanceSetupPage extends BasePage {
     mappedLabels
   }
 
-  def verifyCheckYourAnswersPageAndContinue() = {
-
-    val dataShownOnPage: mutable.Map[String, Any] = returnCheckYourAnswersPageInformation()
-    val expectedData: mutable.Map[String, Any]    = mapKeysToLabels(DataCollectorMap.checkAnswersAAS)
-
+  def verifyCheckYourAnswersPageAndContinue() =
     clickContinueButton()
-  }
 
   def checkContains(description: String, map1: mutable.Map[String, Any], map2: mutable.Map[String, Any]) {
-    println(description)
-    println(map1)
-    println(map2)
-
     map1.foreach { (kv: (String, Any)) =>
       val expected = map2(kv._1)
       val actual   = kv._2

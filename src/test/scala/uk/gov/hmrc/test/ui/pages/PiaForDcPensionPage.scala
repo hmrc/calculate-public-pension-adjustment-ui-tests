@@ -27,10 +27,7 @@ object PiaForDcPensionPage extends BasePage {
   def enterPensionInputAmountForDC(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
   def verifyPageEnterPensionInputAmountForDCAndContinue(
-    year: String,
-    adjustedIncome: String,
-    fromDayMonthYear: String,
-    toDayMonthYear: String
+    adjustedIncome: String
   ) = {
     enterPensionInputAmountForDC(adjustedIncome)
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))

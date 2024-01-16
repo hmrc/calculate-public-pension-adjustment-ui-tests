@@ -16,19 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{CHECK_YOUR_ANSWERS_PAGE_FOR_AA_HEADER, CHECK_YOUR_ANSWERS_PAGE_FOR_AA_TITLE, CHECK_YOUR_PERIOD_ANSWERS_PAGE_FOR_AA_HEADER2}
-import util.DataCollectorMap.checkAnswersAAPeriod
-
 object CheckYourAnswersAnnualAllowancePeriodPage extends BasePage {
 
-  def verifyCheckYourAnswersPageAndContinue(period: String) = {
-    val sortedCheckAnswersAAPeriod = checkAnswersAAPeriod.sortBy(_._1)
-    // TODO mapping of check your answers labels
-//    require(
-//      sortedCheckAnswersAAPeriod == returnCheckYourAnswersPageInformationAsAList(),
-//      "Data not matching"
-//    )
+  def verifyCheckYourAnswersPageAndContinue() =
     clickContinueButton()
-  }
 
 }

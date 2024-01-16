@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER, HAD_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE}
-
 object HadBenefitCrystallisationEventPage extends BasePage {
 
   def verifyPageSelectYesAndContinue() =

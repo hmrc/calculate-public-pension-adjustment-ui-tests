@@ -17,9 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.PageInformation.{REPORTING_CHANGE_PAGE_HEADER, REPORTING_CHANGE_PAGE_LABEL, REPORTING_CHANGE_PAGE_TITLE}
 
 import scala.collection.mutable.ListBuffer
 
@@ -74,10 +71,6 @@ object ReportingChangePage extends BasePage {
     if (driver.findElement(By.id("value_1")).isSelected) {
       selectedOptions += "Lifetime allowance"
     }
-
-    val resultString: String = selectedOptions.mkString(", ")
-
-    checkYourAnswersGSMap(REPORTING_CHANGE_PAGE_LABEL, resultString)
     submitPage()
   }
 

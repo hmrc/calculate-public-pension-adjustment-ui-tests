@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_HEADER, WHEN_DID_YOU_ASK_PENSION_SCHEME_TO_PAY_TITLE}
-
 object WhenDidYouAskPensionSchemeToPay extends BasePage {
 
   def enterSchemePaymentDate() = {

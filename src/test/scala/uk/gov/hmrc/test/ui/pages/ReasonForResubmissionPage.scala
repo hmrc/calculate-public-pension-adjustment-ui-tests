@@ -17,10 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.constants.Errors
-import uk.gov.hmrc.test.ui.constants.Errors.TEXT_WITH_500_CHARACTERS
-import uk.gov.hmrc.test.ui.constants.PageInformation.{REASON_FOR_RESUBMISSION_PAGE_HEADER, REASON_FOR_RESUBMISSION_PAGE_LABEL, REASON_FOR_RESUBMISSION_PAGE_TITLE}
 
 object ReasonForResubmissionPage extends BasePage {
 
@@ -32,28 +28,22 @@ object ReasonForResubmissionPage extends BasePage {
   def getResubmissionReason(): String =
     driver.findElement(By.xpath("//textarea[@id='value']")).getAttribute("value")
 
-  def verifiedMaxCharacterLength(): Boolean =
-    getResubmissionReason() == TEXT_WITH_500_CHARACTERS
-
   def clearTextarea(): Unit =
     driver.findElement(By.xpath("//textarea[@id='value']")).clear()
 
   def enterReasonAndContinue() = {
     val reason = "resubmission reason"
     enterResubmissionReason(reason)
-    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_LABEL, reason)
     submitPage()
   }
 
   def enterReasonAndContinue(reason: String) = {
     enterResubmissionReason(reason)
-    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_LABEL, reason)
     submitPage()
   }
 
   def enterLengthierReasonAndContinue(reason: String) = {
     enterResubmissionReason(reason)
-    checkYourAnswersGSMap(REASON_FOR_RESUBMISSION_PAGE_LABEL, reason)
     submitPage()
   }
 }

@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.constants.PageInformation.{DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_HEADER, DATE_OF_BENEFIT_CRYSTALLISATION_EVENT_PAGE_TITLE}
-
 object DateOfBenefitCrystallisationEventPage extends BasePage {
 
   def enterBenefitCrystallisationDateAndContinue() = {

@@ -28,14 +28,9 @@ object AdjustedIncomePage extends BasePage {
   def enterAdjustedIncome(adjustedIncome: String) = driver.findElement(By.id("value")).sendKeys(adjustedIncome)
 
   def verifyPageEnterAdjustedIncomeAndContinue(
-    fromYear: String,
-    toYear: String,
-    year: String,
     adjustedIncome: String
   ) = {
-    val newTitle = ADJUSTED_INCOME_TITLE.replaceAll("fromYear", fromYear).replaceAll("toYear", toYear)
     enterAdjustedIncome(adjustedIncome)
-    checkYourAnswersAAPeriodMap(newTitle, "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()
   }
 }

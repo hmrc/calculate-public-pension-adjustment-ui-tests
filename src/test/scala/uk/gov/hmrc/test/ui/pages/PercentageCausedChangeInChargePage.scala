@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.constants.PageInformation.{PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_HEADER, PERCENTAGE_CAUSED_CHANGE_IN_CHARG_PAGE_TITLE}
 
 object PercentageCausedChangeInChargePage extends BasePage {
 
