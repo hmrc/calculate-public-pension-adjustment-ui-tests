@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
+
 class CalculationUserJourneys extends BaseSpec {
 
   Feature("Calculate...") {
@@ -112,11 +113,12 @@ class CalculationUserJourneys extends BaseSpec {
       /** AA Journey 1 - Setup journey 1 - No DC AA Journey */
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
-      /** --- 2016 Pre --- */
-      When("I click AddDetailsFor6AprilTo8July2015")
-      TaskListPage.clickAddDetailsFor6AprilTo8July2015()
-      When("I verify 2016 pre page and click continue")
-      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
+      /** --- 2016 --- */
+      When("I click Add details for 2015 to 2016")
+      TaskListPage.clickAddDetailsFor2015To2016()
+
+      When("I verify what-you-will-need-aa/2016 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016Page()
 
       Then("I verify member-more-than-one-pension page,select No and continue")
       MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
@@ -124,50 +126,27 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "11123456BC")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+      )
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
         "41250",
         "40000"
       )
 
-      When("I verify DidYouPayAChargePage page, select Yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue()
-
-      When("I verify WhoPaidAnnualAllowanceChargePage, select you and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue()
-
-      When("I verify HowMuchYouPayChargePage, enter amount and continue")
-      HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("500")
-
-      When("I verify TotalIncomePage, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
-
-      Then("I verify CYA Page and click continue")
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
-
-      /** --- 2016 Post --- */
-      When("I click Add details for 9 July to 5 April 2016")
-      TaskListPage.clickAddDetailsFor9JulyTo8July2016()
-      Then("I verify WhatYouWillNeedAaPage with the remedy period")
-      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
-
-      Then("I verify member-more-than-one-pension page")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
-
-      When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "11123456BC")
-
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+      )
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "20000",
-        "20000"
+        "2000",
+        "2000"
       )
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
-      When("I verify AddAnotherSchemePage page, select no and continue")
-      AddAnotherSchemePage.verifyPageSelectNoAndContinue()
+      When("I verify TotalIncomePage, enter net income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -340,112 +319,37 @@ class CalculationUserJourneys extends BaseSpec {
       /** DC AA journey 2 */
       /** Below journey covers 3.1, 3.2 ... */
 
-      /** --- 2016 Pre --- */
-      When("I click AddDetailsFor6AprilTo8July2015")
-      TaskListPage.clickAddDetailsFor6AprilTo8July2015()
-      When("I verify 2016 pre page and click continue")
-      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PrePage()
+      /** --- 2016 --- */
+      When("I click Add details for 2015 to 2016")
+      TaskListPage.clickAddDetailsFor2015To2016()
 
-      Then("I verify member-more-than-one-pension page,select yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
+      When("I verify what-you-will-need-aa/2016 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016Page()
+
+      Then("I verify member-more-than-one-pension page,select No and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
 
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+      )
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "22500",
-        "20000"
+        "41250",
+        "40000"
       )
 
-      When("I verify DidYouPayAChargePage page, select Yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue()
-
-      When("I verify WhoPaidAnnualAllowanceChargePage, select pension scheme and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectPensionSchemeAndContinue()
-
-      When("I verify HowMuchPensionPayChargePage, enter amount and continue")
-      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("500")
-
-      When("I verify AddAnotherSchemePage page, select yes and continue")
-      AddAnotherSchemePage.verifyPageSelectYesAndContinue()
-
-      When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("MyCSP", "00123456BB")
-
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+      )
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "15000",
-        "15000"
+        "2000",
+        "2000"
       )
 
-      When("I verify DidYouPayAChargePage page, select Yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue()
-
-      When("I verify HowMuchPensionPayChargePage, enter amount and continue")
-      HowMuchPensionPayChargePage.verifyPageEnterPensionPayAndContinue("500")
-
-      When("I verify AddAnotherSchemePage page, select NO and continue")
-      AddAnotherSchemePage.verifyPageSelectNoAndContinue()
-
-      When("I verify ContributedOtherDbDcSchemePage page, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
-
-      When("I verify WhichContributedDuringRemedyPeriodPage, select DC and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue()
-
-      When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
-      PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
-
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("120000")
-
-      /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
-
-      /** --- 2016 Post --- */
-      When("I click Add details for 9 July to 5 April 2016")
-      TaskListPage.clickAddDetailsFor9JulyTo8July2016()
-      Then("I verify WhatYouWillNeedAaPage with the remedy period")
-      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016PostPage()
-
-      Then("I verify member-more-than-one-pension page,select yes and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectYesAndContinue()
-
-      When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00123456AA")
-
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "17500",
-        "15000"
-      )
-
-      When("I verify DidYouPayAChargePage, select yes and continue")
-      DidYouPayAChargePage.verifyPageSelectYesAndContinue()
-
-      When("I verify WhoPaidAnnualAllowanceChargePage, select you and continue")
-      WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouAndContinue()
-
-      When("I verify HowMuchYouPayChargePage, select you pay and continue")
-      HowMuchYouPayChargePage.verifyPageEnterYouPayAndContinue("500")
-
-      When("I verify AddAnotherSchemePage page, select Yes and continue")
-      AddAnotherSchemePage.verifyPageSelectYesAndContinue()
-
-      When("I verify WhichSchemeDetailsPage and select an existing scheme")
-      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("MyCSP", "00123456BB")
-
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "10000",
-        "100000"
-      )
-
-      When("I verify DidYouPayAChargePage page, select no and continue")
+      When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
-
-      When("I verify AddAnotherSchemePage page, select No and continue")
-      AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
       When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
       ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
@@ -459,13 +363,23 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
       PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
 
+      When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
+      PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
+
       When("I verify PiaForDBPensionPage, enter pension amount for DB and continue")
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-        "5000"
+        "6000"
+      )
+      When("I verify PiaForDBPensionPage, enter pension amount for DB and continue")
+      PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
+        "6000"
       )
 
+      When("I verify TotalIncomePage, enter net income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
       /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
       When("I click Add details for 2016 to 2017")
