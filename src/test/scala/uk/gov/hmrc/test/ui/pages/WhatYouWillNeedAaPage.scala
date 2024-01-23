@@ -56,6 +56,10 @@ object WhatYouWillNeedAaPage extends BasePage {
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     clickContinueButton()
   }
+  def onWhatYouWillNeedAa2016Page() = {
+    DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
+    clickContinueButton()
+  }
   def onWhatYouWillNeedAa2017Page() = {
     DataCollectorMap.checkAnswersAAPeriod = List.empty[(String, Any)]
     clickContinueButton()
