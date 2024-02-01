@@ -726,7 +726,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       /** User not resubmitting, AA adjustment, non-Scottish taxpayer, left scheme 8/7/2015, no other schemes, charge paid 14/15. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (8/7/2015), 2.5 (N), 2.8 (Y) */
-      /** Coverage on MCSC-748 */
+      /** This scenario covers user journey where user has left their public pension scheme prior to 9/7/15 should not be asked 15/16 post questions in the 15/16 year.--- MCSC-748 */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 

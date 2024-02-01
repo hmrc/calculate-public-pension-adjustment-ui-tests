@@ -109,8 +109,7 @@ object TaskListPage extends BasePage {
         try assert(year2016)
         catch {
           case assertionError: AssertionError =>
-            println("Not all periods are displayed as expected.")
-          // Handle the error or perform any necessary cleanup
+            logger.info("Not all periods are displayed as expected.")
         }
     }
   }
