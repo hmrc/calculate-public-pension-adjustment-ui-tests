@@ -66,7 +66,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
 
       Then("I land on the when-flexibly-access-pension page, enter flexi access date 6/4/15 and continue")
-      WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("07", "7", "2015")
+      WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("06", "4", "2015")
 
       When("I land on pay-tax-charge 14/15 page, select No and continue to next page")
       PayTaxChargeFrom20152016Page.selectNoAndContinueForAASPage()
@@ -714,6 +714,83 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
         "6000"
       )
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+    }
+
+    Scenario("Setup Journey 6, AA Journey 6", ZapTests) {
+
+      /** User not resubmitting, AA adjustment, non-Scottish taxpayer, left scheme 8/7/2015, no other schemes, charge paid 14/15. */
+      /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (8/7/2015), 2.5 (N), 2.8 (Y) */
+      /** This scenario covers user journey where user has left their public pension scheme prior to 9/7/15 should not be asked 15/16 post questions in the 15/16 year.--- MCSC-748 */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I land on Scottish taxpayer page, select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+
+      When("I land on paying-into-public-pension-scheme, select no and continue to next page")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      When(
+        "I land on stopped-paying-into-public-service-pension page, enter a valid date of 8/7/2015, and click continue"
+      )
+      WhenStopPayingPublicPensionPage.enterValidPre2015DateAndClickContinue()
+
+      When("I land on defined-contribution-pension page, select no and continue to next page")
+      HaveDefinedContributionPensionPage.selectNoAndContinueForAASPage()
+
+      When("I land on pay-tax-charge-from2015-2016 page, select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify annual allowance period shows up to 2016 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2016")
+
+      /** AA Journey 1 - Setup journey 1 - No DC AA Journey */
+      /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
+
+      /** --- 2016 --- */
+      When("I click Add details for 2015 to 2016")
+      TaskListPage.clickAddDetailsFor2015To2016()
+
+      When("I verify what-you-will-need-aa/2016 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016Page()
+
+      Then("I verify member-more-than-one-pension page,select No and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+
+      When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "11123456BC")
+
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
+        "41250",
+        "40000"
+      )
+
+      When("I verify DidYouPayAChargePage, select no and continue")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
