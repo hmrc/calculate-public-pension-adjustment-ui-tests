@@ -52,6 +52,23 @@ object WhenStopPayingPublicPensionPage extends BasePage {
     submitPage()
   }
 
+  def enterValid07_06_2015DateAndClickContinue() = {
+    clearDate()
+    enterDay("07")
+    enterMonth("06")
+    enterYear("2015")
+    checkYourAnswersAASMap(getHeader(), getDate())
+    submitPage()
+  }
+  def enterValid05_06_2015DateAndClickContinue() = {
+    clearDate()
+    enterDay("05")
+    enterMonth("06")
+    enterYear("2015")
+    checkYourAnswersAASMap(getHeader(), getDate())
+    submitPage()
+  }
+
   def enterValid2017_2018_DateAndContinue() = {
     clearDate()
     enterDay("06")
