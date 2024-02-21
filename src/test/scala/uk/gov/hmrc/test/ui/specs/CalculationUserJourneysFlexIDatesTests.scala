@@ -801,7 +801,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
     Scenario("Journey for User Left in pre remedy date 1", ZapTests) {
 
-      /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 7/6/2015, has DC scheme flexibly accessed 7/6/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
+      /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 6/6/2015, has DC scheme flexibly accessed 7/6/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** This scenario covers user journey where user has left their public pension scheme on 7/6/15 should not be asked PIA for 15/16 post questions in the 15/16 year.--- MCSC-760 */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
@@ -831,7 +831,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.enterValid07_06_2015DateAndClickContinue()
+      WhenStopPayingPublicPensionPage.enterValidFlexIAccessDateAndClickContinue("6", "6", "2015")
 
       When("I land on defined-contributions-scheme page, select yes and continue")
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
@@ -954,7 +954,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.enterValid05_06_2015DateAndClickContinue()
+      WhenStopPayingPublicPensionPage.enterValidFlexIAccessDateAndClickContinue("5", "6", "2015")
 
       When("I land on defined-contributions-scheme page, select yes and continue")
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
