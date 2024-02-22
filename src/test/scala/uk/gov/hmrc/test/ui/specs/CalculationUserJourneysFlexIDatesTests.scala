@@ -799,6 +799,252 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
 
+    Scenario("Journey for User Left in pre remedy date 1", ZapTests) {
+
+      /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 6/6/2015, has DC scheme flexibly accessed 7/6/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
+      /** This scenario covers user journey where user has left their public pension scheme on 7/6/15 should not be asked PIA for 15/16 post questions in the 15/16 year.--- MCSC-760 */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I select I am resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      When("I land on resubmission reason page, enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I land on Scottish Taxpayer page, select yes and continue")
+      ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
+
+      When("I land on Which Years Scottish Taxpayer page, select 16/17 and continue")
+      WhichYearsScottishTaxpayer.selectScottishTaxpayerYearAndContinue("2017")
+
+      When("I land on paying-into-public-scheme-page, select no and click continue")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the when-stop-paying-public-pension page")
+      WhenStopPayingPublicPensionPage.enterStopPayingDateAndClickContinue("6", "6", "2015")
+
+      When("I land on defined-contributions-scheme page, select yes and continue")
+      HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
+
+      When("I select yes and continue to next page")
+      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+
+      Then("I land on the when-flexibly-access-pension page, enter flexi access date 7/6/2015 and continue")
+      WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("07", "6", "2015")
+
+      When("I land on pay-tax-charge 14/15 page, select No and continue to next page")
+      PayTaxChargeFrom20152016Page.selectNoAndContinueForAASPage()
+
+      Then("I Should see the pia-pre-remedy/2011 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2010", "2011")
+      PiaPreRemedyPage2011.onPiaPreRemedyPage2011PageEnterValueAndContinue()
+
+      Then("I Should see the pia-pre-remedy/2012 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2011", "2012")
+      PiaPreRemedyPage2012.onPiaPreRemedyPage2012PageEnterValueAndContinue()
+
+      Then("I Should see the pia-pre-remedy/2013 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2012", "2013")
+      PiaPreRemedyPage2013.onPiaPreRemedyPage2013PageEnterValueAndContinue()
+
+      Then("I Should see the pia-pre-remedy/2014 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2013", "2014")
+      PiaPreRemedyPage2014.onPiaPreRemedyPage2014PageEnterValueAndContinue()
+
+      Then("I Should see the pia-pre-remedy/2015 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2014", "2015")
+      PiaPreRemedyPage2015.onPiaPreRemedyPage2015PageEnterValueAndContinue()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify annual allowance period shows up to 2016 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2016")
+
+      // end of setup journey
+      /** DC AA journey 2 */
+
+      /** --- 2016 --- */
+      When("I click Add details for 2015 to 2016")
+      TaskListPage.clickAddDetailsFor2015To2016()
+
+      When("I verify what-you-will-need-aa/2016 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016Page()
+
+      Then("I verify member-more-than-one-pension page,select No and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+
+      When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
+
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
+        "41250",
+        "40000"
+      )
+
+      When("I verify DidYouPayAChargePage, select no and continue")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue()
+
+      When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+
+      When("I verify WhichContributedDuringRemedyPeriodPage, select DC and DB and continue")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
+
+      When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
+      PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
+
+      When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
+      PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
+
+      When("I verify PiaForDBPensionPage, enter pension amount for DB and continue")
+      PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
+        "6000"
+      )
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+    }
+
+    Scenario("Journey for User Left in pre remedy date 2", ZapTests) {
+
+      /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 5/6/2015, has DC scheme flexibly accessed 5/6/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
+      /** This scenario covers user journey where user has left their public pension scheme on 5/6/15 should not be asked PIA for 15/16 post questions in the 15/16 year.--- MCSC-760 */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I select I received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I select I am resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+
+      When("I land on resubmission reason page, enter reason and click continue")
+      ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I land on Scottish Taxpayer page, select yes and continue")
+      ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
+
+      When("I land on Which Years Scottish Taxpayer page, select 16/17 and continue")
+      WhichYearsScottishTaxpayer.selectScottishTaxpayerYearAndContinue("2017")
+
+      When("I land on paying-into-public-scheme-page, select no and click continue")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the when-stop-paying-public-pension page")
+      WhenStopPayingPublicPensionPage.enterStopPayingDateAndClickContinue("5", "6", "2015")
+
+      When("I land on defined-contributions-scheme page, select yes and continue")
+      HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
+
+      When("I select yes and continue to next page")
+      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+
+      Then("I land on the when-flexibly-access-pension page, enter flexi access date 5/6/2015 and continue")
+      WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("05", "6", "2015")
+
+      When("I land on pay-tax-charge 14/15 page, select No and continue to next page")
+      PayTaxChargeFrom20152016Page.selectNoAndContinueForAASPage()
+
+      Then("I Should see the pia-pre-remedy/2011 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2010", "2011")
+      PiaPreRemedyPage2011.onPiaPreRemedyPage2011PageEnterValueAndContinue()
+
+      Then("I Should see the pia-pre-remedy/2012 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2011", "2012")
+      PiaPreRemedyPage2012.onPiaPreRemedyPage2012PageEnterValueAndContinue()
+
+      Then("I Should see the pia-pre-remedy/2013 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2012", "2013")
+      PiaPreRemedyPage2013.onPiaPreRemedyPage2013PageEnterValueAndContinue()
+
+      Then("I Should see the pia-pre-remedy/2014 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2013", "2014")
+      PiaPreRemedyPage2014.onPiaPreRemedyPage2014PageEnterValueAndContinue()
+
+      Then("I Should see the pia-pre-remedy/2015 page")
+      Registered.onRegisteredPageSelectYesAndContinue("2014", "2015")
+      PiaPreRemedyPage2015.onPiaPreRemedyPage2015PageEnterValueAndContinue()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify annual allowance period shows up to 2016 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2016")
+
+      // end of setup journey
+      /** DC AA journey 2 */
+
+      /** --- 2016 --- */
+      When("I click Add details for 2015 to 2016")
+      TaskListPage.clickAddDetailsFor2015To2016()
+
+      When("I verify what-you-will-need-aa/2016 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016Page()
+
+      Then("I verify member-more-than-one-pension page,select No and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+
+      When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
+
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
+        "41250",
+        "40000"
+      )
+
+      When("I verify DidYouPayAChargePage, select no and continue")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue()
+
+      When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
+      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+
+      When("I verify WhichContributedDuringRemedyPeriodPage, select DC and DB and continue")
+      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
+
+      When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
+      PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
+
+      When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
+      PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
+
+      When("I verify PiaForDBPensionPage, enter pension amount for DB and continue")
+      PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
+        "6000"
+      )
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+    }
+
   }
 
 }
