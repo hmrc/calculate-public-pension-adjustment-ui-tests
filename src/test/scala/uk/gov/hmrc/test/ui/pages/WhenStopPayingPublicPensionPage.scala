@@ -52,7 +52,7 @@ object WhenStopPayingPublicPensionPage extends BasePage {
     submitPage()
   }
 
-  def enterValidFlexIAccessDateAndClickContinue(date: String, month: String, year: String) = {
+  def enterStopPayingDateAndClickContinue(date: String, month: String, year: String) = {
     clearDate()
     enterDay(date)
     enterMonth(month)

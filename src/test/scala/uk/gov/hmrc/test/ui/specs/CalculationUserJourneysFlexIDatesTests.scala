@@ -831,7 +831,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.enterValidFlexIAccessDateAndClickContinue("6", "6", "2015")
+      WhenStopPayingPublicPensionPage.enterStopPayingDateAndClickContinue("6", "6", "2015")
 
       When("I land on defined-contributions-scheme page, select yes and continue")
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
@@ -954,7 +954,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
 
       Then("I Should see the when-stop-paying-public-pension page")
-      WhenStopPayingPublicPensionPage.enterValidFlexIAccessDateAndClickContinue("5", "6", "2015")
+      WhenStopPayingPublicPensionPage.enterStopPayingDateAndClickContinue("5", "6", "2015")
 
       When("I land on defined-contributions-scheme page, select yes and continue")
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
