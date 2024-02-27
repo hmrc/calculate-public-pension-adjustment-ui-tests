@@ -82,31 +82,34 @@ object TaskListPage extends BasePage {
     val year2019 = driver.findElements(By.xpath("//a[contains(text(),'details for 2018 to 2019')]")).size() > 0
     val year2018 = driver.findElements(By.xpath("//a[contains(text(),'details for 2017 to 2018')]")).size() > 0
     val year2017 = driver.findElements(By.xpath("//a[contains(text(),'details for 2016 to 2017')]")).size() > 0
-    val year2016 =
-      driver.findElements(By.xpath("//a[contains(text(),'details for 9 July 2015 to 5 April 2016')]")).size() > 0
-    val year2015 =
-      driver.findElements(By.xpath("//a[contains(text(),'details for 6 April 2015 to 8 July 2015')]")).size() > 0
+    val year2016 = driver.findElements(By.xpath("//a[contains(text(),'details for 2015 to 2016')]")).size() > 0
     year match {
       case "2022" =>
-        try assert(year2022 && year2021 && year2020 && year2019 && year2018 && year2017 && year2016 && year2015)
+        try assert(year2022 && year2021 && year2020 && year2019 && year2018 && year2017 && year2016)
         catch {
           case assertionError: AssertionError =>
             println("Not all periods are displayed as expected.")
           // Handle the error or perform any necessary cleanup
         }
       case "2018" =>
-        try assert(year2018 && year2017 && year2016 && year2015)
+        try assert(year2018 && year2017 && year2016)
         catch {
           case assertionError: AssertionError =>
             println("Not all periods are displayed as expected.")
           // Handle the error or perform any necessary cleanup
         }
       case "2017" =>
-        try assert(year2017 && year2016 && year2015)
+        try assert(year2017 && year2016)
         catch {
           case assertionError: AssertionError =>
             println("Not all periods are displayed as expected.")
           // Handle the error or perform any necessary cleanup
+        }
+      case "2016" =>
+        try assert(year2016)
+        catch {
+          case assertionError: AssertionError =>
+            logger.info("Not all periods are displayed as expected.")
         }
     }
   }
@@ -122,6 +125,9 @@ object TaskListPage extends BasePage {
 
   def clickChangeDetailsFor9JulyTo8July2016() =
     driver.findElement(By.xpath("//a[contains(text(),'Change details for 9 July 2015 to 5 April 2016')]")).click()
+
+  def clickAddDetailsFor2015To2016() =
+    driver.findElement(By.xpath("//a[contains(text(),'Add details for 2015 to 2016')]")).click()
 
   def clickAddDetailsFor2016To2017() =
     driver.findElement(By.xpath("//a[contains(text(),'Add details for 2016 to 2017')]")).click()
