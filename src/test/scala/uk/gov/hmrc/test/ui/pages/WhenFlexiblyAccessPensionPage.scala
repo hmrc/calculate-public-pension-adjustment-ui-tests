@@ -100,4 +100,9 @@ object WhenFlexiblyAccessPensionPage extends BasePage {
     clickBackButton()
     enterValidFutureDateAndClickContinue()
   }
+
+  def verifyInvalidFlexiblyEnteredDate(errorMessage: String): Unit = {
+    val actualErrorMessage = getInvalidFlexiblyAccessDateErrorMessage()
+    assert(actualErrorMessage.contains(errorMessage))
+  }
 }
