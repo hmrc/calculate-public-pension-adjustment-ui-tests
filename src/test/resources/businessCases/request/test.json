@@ -1,0 +1,135 @@
+{
+  "resubmission" : {
+    "isResubmission" : false
+  },
+  "annualAllowance" : {
+    "scottishTaxYears" : [ "2023" ],
+    "taxYears" : [ {
+      "definedBenefitInputAmount" : 100000,
+      "flexiAccessDate" : "2015-09-06",
+      "preAccessDefinedContributionInputAmount" : 7777, // 1st pre flexi
+      "postAccessDefinedContributionInputAmount" : 0,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RA",
+        "originalPensionInputAmount" : 111111,
+        "revisedPensionInputAmount" : 22222,
+        "chargePaidByScheme" : 6666,
+        "originalPensionInput2016PostAmount" : 3333,
+        "revisedPensionInput2016PostAmount" : 44444
+      } ],
+      "totalIncome" : 12000,
+      "chargePaidByMember" : 5555,
+      "period" : "2016",
+      "definedBenefitInput2016PostAmount" : 11000,
+      "definedContributionInput2016PostAmount" : 88888, // 1st post flexi
+      "postAccessDefinedContributionInput2016PostAmount" : 99999 //2nd post flexi
+    } ]
+  }
+},
+
+
+
+{
+  "resubmission" : {
+    "isResubmission" : false
+  },
+  "annualAllowance" : {
+    "scottishTaxYears" : [ "2023" ],
+    "taxYears" : [ {
+      "definedBenefitInputAmount" : 100000, --benefit pre 2016
+      "flexiAccessDate" : "2015-06-06",
+      "preAccessDefinedContributionInputAmount" : 7777, --1st Pre flexi
+      "postAccessDefinedContributionInputAmount" : 8888,--2nd pre flexi
+      "taxYearSchemes" : [ {
+        "name" : "PS2",
+        "pensionSchemeTaxReference" : "00348916RX",
+        "originalPensionInputAmount" : 1111,
+        "revisedPensionInputAmount" : 2222,
+        "chargePaidByScheme" : 6666,
+        "originalPensionInput2016PostAmount" : 3333,
+        "revisedPensionInput2016PostAmount" : 4444
+      } ],
+      "totalIncome" : 120000,
+      "chargePaidByMember" : 5555,
+      "period" : "2016",
+      "definedBenefitInput2016PostAmount" : 110000, --benefit post 2016
+      "definedContributionInput2016PostAmount" : 99999 ---1 post flexi
+    } ]
+  }
+},
+
+
+
+  {
+  "resubmission" : {
+  "isResubmission" : false
+},
+"annualAllowance" : {
+"scottishTaxYears" : [ "2023" ],
+"taxYears" : [ {
+"pensionInputAmount" : 222,
+"taxYearSchemes" : [ {
+"name" : "PS1",
+"pensionSchemeTaxReference" : "00348916RA",
+"originalPensionInputAmount" : 111,
+"revisedPensionInputAmount" : 222,
+"chargePaidByScheme" : 6666,
+"originalPensionInput2016PostAmount" : 333,
+"revisedPensionInput2016PostAmount" : 444
+} ],
+"totalIncome" : 7777,
+"chargePaidByMember" : 555,
+"period" : "2016",
+"pensionInput2016PostAmount" : 444
+}, {
+"definedBenefitInputAmount" : 33000,
+"flexiAccessDate" : "2016-08-07",
+"preAccessDefinedContributionInputAmount" : 30000, --contribution 1
+"postAccessDefinedContributionInputAmount" : 31000, --contribution 2
+"taxYearSchemes" : [ {
+"name" : "PS1",
+"pensionSchemeTaxReference" : "00348916RA",
+"originalPensionInputAmount" : 110000,
+"revisedPensionInputAmount" : 120000,
+"chargePaidByScheme" : 22000
+} ],
+"totalIncome" : 35000,
+"chargePaidByMember" : 21000,
+"period" : "2017",
+"income" : {
+"incomeAboveThreshold" : true,
+"adjustedIncome" : 34000
+}
+} ]
+}
+},
+
+
+
+{
+"resubmission" : {
+"isResubmission" : false
+},
+"annualAllowance" : {
+"scottishTaxYears" : [ "2023" ],
+"taxYears" : [ {
+definedBenefitInputAmount /
+preAccessDefinedContributionInputAmount/ "pensionInputAmount" : 59000, -- revisedPensionInputAmount+pre flexi defined contribution+pre flexi defined benefit
+"taxYearSchemes" : [ {
+"name" : "PS1",
+"pensionSchemeTaxReference" : "00348916RA",
+"originalPensionInputAmount" : 30000,
+"revisedPensionInputAmount" : 20000,
+"chargePaidByScheme" : 3600,
+"originalPensionInput2016PostAmount" : 30000,
+"revisedPensionInput2016PostAmount" : 22000
+} ],
+"totalIncome" : 60000,
+"chargePaidByMember" : 3600,
+"period" : "2016",
+definedBenefitInput2016PostAmount,
+definedContributionInput2016PostAmount/"pensionInput2016PostAmount" : 69000 -- revisedPensionInput2016PostAmount + post flexi defined contribution+post flexi defined benefit
+} ]
+}
+}

@@ -27,7 +27,9 @@ case class TaxYearSchemes(
   pensionSchemeTaxReference: String,
   originalPensionInputAmount: Int,
   revisedPensionInputAmount: Int,
-  chargePaidByScheme: Int
+  chargePaidByScheme: Int,
+  originalPensionInput2016PostAmount: Option[Int],
+  revisedPensionInput2016PostAmount: Option[Int]
 )
 
 case class TaxYear(
@@ -37,6 +39,9 @@ case class TaxYear(
   flexiAccessDate: Option[String],
   preAccessDefinedContributionInputAmount: Option[Int],
   postAccessDefinedContributionInputAmount: Option[Int],
+  definedBenefitInput2016PostAmount: Option[Int],
+  definedContributionInput2016PostAmount: Option[Int],
+  postAccessDefinedContributionInput2016PostAmount: Option[Int],
   totalIncome: Option[Int],
   chargePaidByMember: Option[Int],
   period: String,

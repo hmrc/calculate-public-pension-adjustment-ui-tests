@@ -98,47 +98,47 @@ object CalculationResultPage extends BasePage {
   }
 
   def getTaskListtaxYearInformation(taxYear: String, fieldName: String) = taxYear match {
-    case "2016-pre"  =>
-      val period = "6 April 2015 to 8 July 2015"
+    case "2016" =>
+      val period = "6 April 2015 and 5 April 2016"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
       }
-    case "2016-post" =>
+    /* case "2016-post" =>
       val period = "9 July 2015 to 5 April 2016"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2017"      =>
+      }*/
+    case "2017" =>
       val period = "6 April 2016 to 5 April 2017"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
       }
-    case "2018"      =>
+    case "2018" =>
       val period = "6 April 2017 to 5 April 2018"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
       }
-    case "2019"      =>
+    case "2019" =>
       val period = "6 April 2018 to 5 April 2019"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
       }
-    case "2020"      =>
+    case "2020" =>
       val period = "6 April 2019 to 5 April 2020"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
       }
-    case "2021"      =>
+    case "2021" =>
       val period = "6 April 2020 to 5 April 2021"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
       }
-    case "2022"      =>
+    case "2022" =>
       val period = "6 April 2021 to 5 April 2022"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
       }
-    case "2023"      =>
+    case "2023" =>
       val period = "6 April 2022 to 5 April 2023"
       returnTaxYearInformation().get(period).flatMap { tableDataList =>
         tableDataList.find(_.yourResult == fieldName).map(_.amount)
