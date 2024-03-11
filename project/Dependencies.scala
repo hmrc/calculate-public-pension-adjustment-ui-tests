@@ -11,4 +11,5 @@ object Dependencies {
     "uk.gov.hmrc"         %% "ui-test-runner"  % "0.23.0"   % Test,
     "com.typesafe.play"   %% "play-json"       % "2.10.0-RC8"
   )
+
 }
