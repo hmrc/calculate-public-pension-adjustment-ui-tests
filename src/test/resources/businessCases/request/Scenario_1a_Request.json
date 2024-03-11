@@ -5,7 +5,9 @@
   "annualAllowance" : {
     "scottishTaxYears" : [ "2019" ],
     "taxYears" : [ {
-      "pensionInputAmount" : 40000,
+      "definedBenefitInputAmount" : 0,
+      "preAccessDefinedContributionInputAmount" : 20000,
+      "postAccessDefinedContributionInputAmount" : 0,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
         "pensionSchemeTaxReference" : "23456789RN",
@@ -18,7 +20,9 @@
       "totalIncome" : 60000,
       "chargePaidByMember" : 3600,
       "period" : "2016",
-      "pensionInput2016PostAmount" : 40000
+      "definedBenefitInput2016PostAmount" : 0,
+      "definedContributionInput2016PostAmount" : 18000,
+      "postAccessDefinedContributionInput2016PostAmount" : 0
     }, {
       "pensionInputAmount" : 45000,
       "taxYearSchemes" : [ {
