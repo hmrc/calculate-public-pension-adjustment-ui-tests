@@ -1,0 +1,58 @@
+{
+  "resubmission" : {
+    "isResubmission" : false
+  },
+  "annualAllowance" : {
+    "scottishTaxYears" : [ "2023" ],
+    "taxYears" : [ {
+      "definedBenefitInputAmount" : 10000,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RA",
+        "originalPensionInputAmount" : 35000,
+        "revisedPensionInputAmount" : 35000,
+        "chargePaidByScheme" : 0,
+        "originalPensionInput2016PostAmount" : 5000,
+        "revisedPensionInput2016PostAmount" : 5000
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2016",
+      "definedBenefitInput2016PostAmount" : 0
+    }, {
+      "definedBenefitInputAmount" : 5000,
+      "flexiAccessDate" : "2017-01-01",
+      "preAccessDefinedContributionInputAmount" : 0,
+      "postAccessDefinedContributionInputAmount" : 0,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RA",
+        "originalPensionInputAmount" : 38000,
+        "revisedPensionInputAmount" : 38000,
+        "chargePaidByScheme" : 0
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2017",
+      "income" : {
+        "incomeAboveThreshold" : false
+      }
+    }, {
+      "definedBenefitInputAmount" : 10000,
+      "definedContributionInputAmount" : 0,
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RA",
+        "originalPensionInputAmount" : 35000,
+        "revisedPensionInputAmount" : 35000,
+        "chargePaidByScheme" : 0
+      } ],
+      "period" : "2018",
+      "income" : {
+        "incomeAboveThreshold" : false
+      }
+    } ]
+  }
+}
