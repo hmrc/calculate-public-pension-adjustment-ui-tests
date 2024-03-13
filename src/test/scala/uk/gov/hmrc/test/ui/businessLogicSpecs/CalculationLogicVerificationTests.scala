@@ -29,21 +29,22 @@ class CalculationLogicVerificationTests extends BaseSpec {
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
       Array(
+        "Scenario_28",
         "Scenario_1a",
-        "Scenario_1b" /*,
-        "Scenario_1c",
-        "Scenario_1d",
-        "Scenario_2a",
-        "Scenario_2b",
-        "Scenario_2c",
-        "Scenario_2d",
-        "Scenario_10",
-        "Scenario_11",
-        "Scenario_12",
-        "Scenario_14",
-        "Scenario_16",
-        "Scenario_17",
-        "Scenario_18"*/
+        "Scenario_1b"
+        /*"Scenario_1c",
+    "Scenario_1d",
+    "Scenario_2a",
+    "Scenario_2b",
+    "Scenario_2c",
+    "Scenario_2d",
+    "Scenario_10",
+    "Scenario_11",
+    "Scenario_12",
+    "Scenario_14",
+    "Scenario_16",
+    "Scenario_17",
+    "Scenario_18"*/
       )
     requestArray.indices.foreach { index =>
       Scenario(s"Calculate Business Journey $index", ZapTests) {
@@ -325,6 +326,11 @@ class CalculationLogicVerificationTests extends BaseSpec {
                       definedBenefitInputAmount2016post
                     )
                   }
+                  if (definedContributionInputAmount2016post2.toInt == 0) {
+                    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      "0"
+                    )
+                  }
                 }
                 if (
                   (FlexiAccessDate2016 == "0") && (definedBenefitInputAmount2016pre.toInt == 0) && !(definedContributionInputAmount2016pre1.toInt == 0)
@@ -371,11 +377,23 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 ) {
                   ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
                 }
+                if (
+                  (FlexiAccessDate2016 == "0") && !(definedBenefitInputAmount2016pre == "0") && (definedContributionInputAmount2016pre1 == "0")
+                ) {
+                  ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+                  WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue()
+                  PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
+                    definedBenefitInputAmount2016pre
+                  )
+                  PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
+                    definedBenefitInputAmount2016post
+                  )
+                }
+                TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
               }
             }
           }
         }
-        TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
         CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
         /** --- 2017 and above years --- */
@@ -518,7 +536,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 }
               }
               if (
-                (flexiAccessDate == "0") && !(definedBenefitInputAmount == 0 && definedContributionInputAmount == 0)
+                (flexiAccessDate == "0") && !(definedBenefitInputAmount == 0) && (definedContributionInputAmount == 0)
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                 if (
@@ -548,7 +566,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 }
               }
               if (
-                !(flexiAccessDate == "0") && !(preAccessDefinedContributionInputAmount == 0 && postAccessDefinedContributionInputAmount == 0)
+                !(flexiAccessDate == "0") && !(preAccessDefinedContributionInputAmount == 0) && (postAccessDefinedContributionInputAmount == 0)
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                 WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
@@ -558,6 +576,15 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue(
                   postAccessDefinedContributionInputAmount.toString
                 )
+                PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
+                  definedBenefitInputAmount.toString
+                )
+              }
+              if (
+                !(flexiAccessDate == "0") && !(definedBenefitInputAmount == 0) && (preAccessDefinedContributionInputAmount == 0)
+              ) {
+                ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+                WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue()
                 PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
                   definedBenefitInputAmount.toString
                 )

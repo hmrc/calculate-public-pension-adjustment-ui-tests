@@ -42,8 +42,6 @@ object CalculationResultPage extends BasePage {
         th -> td
       }
       .toMap
-
-    // Print the map
     map
   }
 
