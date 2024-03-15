@@ -29,22 +29,10 @@ class CalculationLogicVerificationTests extends BaseSpec {
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
       Array(
+        "Scenario_29",
         "Scenario_28",
         "Scenario_1a",
         "Scenario_1b"
-        /*"Scenario_1c",
-    "Scenario_1d",
-    "Scenario_2a",
-    "Scenario_2b",
-    "Scenario_2c",
-    "Scenario_2d",
-    "Scenario_10",
-    "Scenario_11",
-    "Scenario_12",
-    "Scenario_14",
-    "Scenario_16",
-    "Scenario_17",
-    "Scenario_18"*/
       )
     requestArray.indices.foreach { index =>
       Scenario(s"Calculate Business Journey $index", ZapTests) {
@@ -273,7 +261,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 }
               }
               if (
-                !(FlexiAccessDate2016 == "0") && !(definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
+                !(FlexiAccessDate2016 == "-1") && !(definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                 WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
@@ -286,7 +274,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(definedBenefitInputAmount2016pre)
               }
               if (
-                (FlexiAccessDate2016 == "0") && (definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
+                (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
               }
@@ -295,7 +283,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 AddAnotherSchemePage.verifyPageSelectYesAndContinue()
               } else {
                 if (
-                  (FlexiAccessDate2016 == "0") && !(definedBenefitInputAmount2016pre.toInt == 0) && !(definedContributionInputAmount2016pre1.toInt == 0)
+                  (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre.toInt > 0) && (definedContributionInputAmount2016pre1.toInt > 0)
                 ) {
 
                   ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
@@ -333,7 +321,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   }
                 }
                 if (
-                  (FlexiAccessDate2016 == "0") && (definedBenefitInputAmount2016pre.toInt == 0) && !(definedContributionInputAmount2016pre1.toInt == 0)
+                  (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre.toInt == -1) && (definedContributionInputAmount2016pre1.toInt > 0)
                 ) {
 
                   ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
@@ -351,14 +339,24 @@ class CalculationLogicVerificationTests extends BaseSpec {
                       definedContributionInputAmount2016post1
                     )
                   }
+                  if (definedContributionInputAmount2016post1.toInt == 0) {
+                    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      definedContributionInputAmount2016post1
+                    )
+                  }
                   if (definedContributionInputAmount2016post2.toInt > 0) {
+                    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      definedContributionInputAmount2016post2
+                    )
+                  }
+                  if (definedContributionInputAmount2016post2.toInt == 0) {
                     PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
                       definedContributionInputAmount2016post2
                     )
                   }
                 }
                 if (
-                  !(FlexiAccessDate2016 == "0") && !(definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
+                  !(FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre > "0") && (definedContributionInputAmount2016pre1 > "0")
                 ) {
                   ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                   WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
@@ -373,12 +371,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   )
                 }
                 if (
-                  (FlexiAccessDate2016 == "0") && (definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
-                ) {
-                  ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
-                }
-                if (
-                  (FlexiAccessDate2016 == "0") && !(definedBenefitInputAmount2016pre == "0") && (definedContributionInputAmount2016pre1 == "0")
+                  (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre > "0") && (definedContributionInputAmount2016pre1 == "-1")
                 ) {
                   ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                   WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue()
@@ -388,6 +381,11 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
                     definedBenefitInputAmount2016post
                   )
+                }
+                if (
+                  (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre == "-1") && (definedContributionInputAmount2016pre1 == "-1")
+                ) {
+                  ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
                 }
                 TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
               }
@@ -468,15 +466,15 @@ class CalculationLogicVerificationTests extends BaseSpec {
               }
               val noOfPensionSchemes             = taxYear.taxYearSchemes.get.size
               var chargePaidByMember             = taxYear.chargePaidByMember.getOrElse(0)
-              val flexiAccessDate                = taxYear.flexiAccessDate.getOrElse("0")
-              val definedBenefitInputAmount      = taxYear.definedBenefitInputAmount.getOrElse(0)
-              val definedContributionInputAmount = taxYear.definedContributionInputAmount.getOrElse(0)
+              val flexiAccessDate                = taxYear.flexiAccessDate.getOrElse("-1")
+              val definedBenefitInputAmount      = taxYear.definedBenefitInputAmount.getOrElse(-1)
+              val definedContributionInputAmount = taxYear.definedContributionInputAmount.getOrElse(-1)
               val totalIncome                    = taxYear.totalIncome.getOrElse("0")
 
               val preAccessDefinedContributionInputAmount  =
-                taxYear.preAccessDefinedContributionInputAmount.getOrElse("0")
+                taxYear.preAccessDefinedContributionInputAmount.getOrElse(-1)
               val postAccessDefinedContributionInputAmount =
-                taxYear.postAccessDefinedContributionInputAmount.getOrElse("0")
+                taxYear.postAccessDefinedContributionInputAmount.getOrElse(-1)
               var incomeAboveThreshold                     = false
               var adjustedIncome                           = 0
               taxYear.income.foreach { taxYearSchemesList =>
@@ -536,7 +534,16 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 }
               }
               if (
-                (flexiAccessDate == "0") && !(definedBenefitInputAmount == 0) && (definedContributionInputAmount == 0)
+                (flexiAccessDate == "-1") && (definedBenefitInputAmount > 0) && (definedContributionInputAmount == -1)
+              ) {
+                ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+                WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue()
+                PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
+                  definedBenefitInputAmount.toString
+                )
+              }
+              if (
+                (flexiAccessDate == "-1") && (definedBenefitInputAmount > 0) && (definedContributionInputAmount == 0)
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                 if (
@@ -566,7 +573,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 }
               }
               if (
-                !(flexiAccessDate == "0") && !(preAccessDefinedContributionInputAmount == 0) && (postAccessDefinedContributionInputAmount == 0)
+                !(flexiAccessDate == "-1") && (preAccessDefinedContributionInputAmount > 0) && (postAccessDefinedContributionInputAmount == 0)
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                 WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
@@ -581,7 +588,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 )
               }
               if (
-                !(flexiAccessDate == "0") && !(definedBenefitInputAmount == 0) && (preAccessDefinedContributionInputAmount == 0)
+                !(flexiAccessDate == "-1") && (definedBenefitInputAmount > 0) && (preAccessDefinedContributionInputAmount == -1)
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                 WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndContinue()
@@ -589,11 +596,34 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   definedBenefitInputAmount.toString
                 )
               }
-              if ((flexiAccessDate == "0") && (definedBenefitInputAmount == 0 && definedContributionInputAmount == 0)) {
+              if (
+                !(flexiAccessDate == "-1") && (definedBenefitInputAmount == -1) && (preAccessDefinedContributionInputAmount > 0)
+              ) {
+                ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+                WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue()
+                PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                  preAccessDefinedContributionInputAmount.toString
+                )
+                PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                  postAccessDefinedContributionInputAmount.toString
+                )
+              }
+              if (
+                (flexiAccessDate == "-1") && (definedBenefitInputAmount == -1) && (definedContributionInputAmount == -1)
+              ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
               }
               if (
-                !(flexiAccessDate == "0") && (definedBenefitInputAmount == 0 && definedContributionInputAmount == 0) && (preAccessDefinedContributionInputAmount == 0 && postAccessDefinedContributionInputAmount == 0)
+                (flexiAccessDate == "-1") && (definedBenefitInputAmount == -1) && (definedContributionInputAmount > 0)
+              ) {
+                ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+                WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue()
+                PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                  definedContributionInputAmount.toString
+                )
+              }
+              if (
+                !(flexiAccessDate == "-1") && (definedBenefitInputAmount == -1) && (definedContributionInputAmount == -1) && (preAccessDefinedContributionInputAmount == -1) && (postAccessDefinedContributionInputAmount == -1)
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
               }

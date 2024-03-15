@@ -22,8 +22,8 @@
     }, {
       "definedBenefitInputAmount" : 5000,
       "flexiAccessDate" : "2017-01-01",
-      "preAccessDefinedContributionInputAmount" : 0,
-      "postAccessDefinedContributionInputAmount" : 0,
+      "preAccessDefinedContributionInputAmount" : -1,
+      "postAccessDefinedContributionInputAmount" : -1,
       "taxYearSchemes" : [ {
         "name" : "PS1",
         "pensionSchemeTaxReference" : "00348916RA",
@@ -39,7 +39,7 @@
       }
     }, {
       "definedBenefitInputAmount" : 10000,
-      "definedContributionInputAmount" : 0,
+      "definedContributionInputAmount" : -1,
       "totalIncome" : 60000,
       "chargePaidByMember" : 0,
       "taxYearSchemes" : [ {

@@ -23,7 +23,7 @@ class RequestDTOUtil {
     myObject.asOpt
       .flatMap(_.annualAllowance.taxYears.find(_.period == year))
       .flatMap(field)
-      .getOrElse("0")
+      .getOrElse("-1")
 
   def getFlexiAccessDate(myObject: Option[List[TaxYear]]): Any =
     myObject.flatMap(_.flatMap(_.flexiAccessDate).headOption).getOrElse("0")
