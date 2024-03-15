@@ -1,0 +1,62 @@
+{
+  "resubmission" : {
+    "isResubmission" : false
+  },
+  "annualAllowance" : {
+    "scottishTaxYears" : [ ],
+    "taxYears" : [ {
+      "definedBenefitInputAmount" : -1,
+      "preAccessDefinedContributionInputAmount" : 15000,
+      "postAccessDefinedContributionInputAmount" : -1,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RQ",
+        "originalPensionInputAmount" : 30000,
+        "revisedPensionInputAmount" : 30000,
+        "chargePaidByScheme" : 0,
+        "originalPensionInput2016PostAmount" : 15000,
+        "revisedPensionInput2016PostAmount" : 15000
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2016",
+      "definedBenefitInput2016PostAmount" : -1,
+      "definedContributionInput2016PostAmount" : 0,
+      "postAccessDefinedContributionInput2016PostAmount" : -1
+    }, {
+      "definedBenefitInputAmount" : -1,
+      "flexiAccessDate" : "2017-01-01",
+      "preAccessDefinedContributionInputAmount" : 5000,
+      "postAccessDefinedContributionInputAmount" : 5000,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RQ",
+        "originalPensionInputAmount" : 35000,
+        "revisedPensionInputAmount" : 35000,
+        "chargePaidByScheme" : 0
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2017",
+      "income" : {
+        "incomeAboveThreshold" : false
+      }
+    }, {
+      "definedBenefitInputAmount" : -1,
+      "definedContributionInputAmount" : 5000,
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RQ",
+        "originalPensionInputAmount" : 40000,
+        "revisedPensionInputAmount" : 40000,
+        "chargePaidByScheme" : 0
+      } ],
+      "period" : "2018",
+      "income" : {
+        "incomeAboveThreshold" : false
+      }
+    } ]
+  }
+}
