@@ -29,6 +29,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
       Array(
+        "Scenario_30",
         "Scenario_29",
         "Scenario_28",
         "Scenario_1a",
@@ -296,6 +297,11 @@ class CalculationLogicVerificationTests extends BaseSpec {
                       definedContributionInputAmount2016pre2
                     )
                   }
+                  if (definedContributionInputAmount2016pre2.toInt == 0) {
+                    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      definedContributionInputAmount2016pre2
+                    )
+                  }
                   if (definedContributionInputAmount2016post1.toInt > 0) {
                     PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
                       definedContributionInputAmount2016post1
@@ -311,6 +317,11 @@ class CalculationLogicVerificationTests extends BaseSpec {
                   )
                   if (definedBenefitInputAmount2016post.toInt > 0) {
                     PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      definedBenefitInputAmount2016post
+                    )
+                  }
+                  if (definedBenefitInputAmount2016post.toInt == 0) {
+                    PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
                       definedBenefitInputAmount2016post
                     )
                   }
@@ -573,7 +584,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 }
               }
               if (
-                !(flexiAccessDate == "-1") && (preAccessDefinedContributionInputAmount > 0) && (postAccessDefinedContributionInputAmount == 0)
+                !(flexiAccessDate == "-1") && (preAccessDefinedContributionInputAmount > 0) && ((postAccessDefinedContributionInputAmount == 0) || (postAccessDefinedContributionInputAmount > 0)) && (definedBenefitInputAmount > 0)
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
                 WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
@@ -620,6 +631,18 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue()
                 PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
                   definedContributionInputAmount.toString
+                )
+              }
+              if (
+                (flexiAccessDate == "-1") && (definedBenefitInputAmount > 0) && (definedContributionInputAmount > 0)
+              ) {
+                ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+                WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
+                PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                  definedContributionInputAmount.toString
+                )
+                PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
+                  definedBenefitInputAmount.toString
                 )
               }
               if (
