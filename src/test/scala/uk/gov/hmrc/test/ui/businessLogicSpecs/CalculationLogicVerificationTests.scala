@@ -32,6 +32,9 @@ class CalculationLogicVerificationTests extends BaseSpec {
         "Scenario_30",
         "Scenario_29",
         "Scenario_28",
+        "Scenario_27",
+        "Scenario_26",
+        "Scenario_25",
         "Scenario_1a",
         "Scenario_1b"
       )
