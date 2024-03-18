@@ -29,6 +29,9 @@ class CalculationLogicVerificationTests extends BaseSpec {
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
       Array(
+        "Scenario_36",
+        "Scenario_35",
+        "Scenario_34",
         "Scenario_33",
         "Scenario_32",
         "Scenario_31",
