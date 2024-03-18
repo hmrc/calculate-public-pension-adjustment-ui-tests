@@ -29,6 +29,9 @@ class CalculationLogicVerificationTests extends BaseSpec {
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
       Array(
+        "Scenario_33",
+        "Scenario_32",
+        "Scenario_31",
         "Scenario_30",
         "Scenario_29",
         "Scenario_28",
@@ -306,6 +309,11 @@ class CalculationLogicVerificationTests extends BaseSpec {
                     )
                   }
                   if (definedContributionInputAmount2016post1.toInt > 0) {
+                    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      definedContributionInputAmount2016post1
+                    )
+                  }
+                  if (definedContributionInputAmount2016post1.toInt == 0) {
                     PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
                       definedContributionInputAmount2016post1
                     )

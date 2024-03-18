@@ -1,0 +1,54 @@
+{
+  "resubmission" : {
+    "isResubmission" : false
+  },
+  "totalAmounts" : {
+    "outDatesCompensation" : 0,
+    "inDatesDebit" : 0,
+    "inDatesCredit" : 0
+  },
+  "outDates" : [ {
+    "period" : "2016",
+    "directCompensation" : 0,
+    "indirectCompensation" : 0,
+    "chargePaidByMember" : 0,
+    "chargePaidBySchemes" : 0,
+    "revisedChargableAmountBeforeTaxRate" : 0,
+    "revisedChargableAmountAfterTaxRate" : 0,
+    "unusedAnnualAllowance" : 30000,
+    "taxYearSchemes" : [ {
+      "name" : "PS4",
+      "pensionSchemeTaxReference" : "00348916RS",
+      "compensation" : 0
+    } ]
+  }, {
+    "period" : "2017",
+    "directCompensation" : 0,
+    "indirectCompensation" : 0,
+    "chargePaidByMember" : 0,
+    "chargePaidBySchemes" : 0,
+    "revisedChargableAmountBeforeTaxRate" : 0,
+    "revisedChargableAmountAfterTaxRate" : 0,
+    "unusedAnnualAllowance" : 25000,
+    "taxYearSchemes" : [ {
+      "name" : "PS4",
+      "pensionSchemeTaxReference" : "00348916RS",
+      "compensation" : 0
+    } ]
+  }, {
+    "period" : "2018",
+    "directCompensation" : 0,
+    "indirectCompensation" : 0,
+    "chargePaidByMember" : 0,
+    "chargePaidBySchemes" : 0,
+    "revisedChargableAmountBeforeTaxRate" : 0,
+    "revisedChargableAmountAfterTaxRate" : 0,
+    "unusedAnnualAllowance" : 20000,
+    "taxYearSchemes" : [ {
+      "name" : "PS4",
+      "pensionSchemeTaxReference" : "00348916RS",
+      "compensation" : 0
+    } ]
+  } ],
+  "inDates" : [ ]
+}

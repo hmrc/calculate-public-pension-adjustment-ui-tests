@@ -28,7 +28,6 @@
       {
         "definedBenefitInputAmount": 7500,
         "preAccessDefinedContributionInputAmount": 7500,
-        "postAccessDefinedContributionInputAmount": 0,
         "taxYearSchemes": [
           {
             "name": "PS1",
@@ -44,8 +43,7 @@
         "chargePaidByMember": 0,
         "period": "2016",
         "definedBenefitInput2016PostAmount": 0,
-        "definedContributionInput2016PostAmount": 0,
-        "postAccessDefinedContributionInput2016PostAmount": -1
+        "definedContributionInput2016PostAmount": 0
       },
       {
         "definedBenefitInputAmount": 4000,
