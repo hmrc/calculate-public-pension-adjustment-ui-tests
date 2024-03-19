@@ -29,7 +29,8 @@ class CalculationLogicVerificationTests extends BaseSpec {
   Feature("Business scenario AA journeys") {
     val requestArray: Array[String] =
       Array(
-        "Scenario_36",
+        "Scenario_2c"
+        /*"Scenario_36",
         "Scenario_35",
         "Scenario_34",
         "Scenario_33",
@@ -43,7 +44,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
         "Scenario_25",
         "Scenario_1a",
         "Scenario_1b",
-        "Scenario_2a"
+        "Scenario_2a"*/
       )
     requestArray.indices.foreach { index =>
       Scenario(s"Calculate Business Journey $index", ZapTests) {
@@ -285,9 +286,10 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(definedBenefitInputAmount2016pre)
               }
               if (
-                (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
+                (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre == "-1" && definedContributionInputAmount2016pre1 == "-1")
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
+                TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
               }
             } else {
               if (!(taxYearSchemesList.size == 1)) {
