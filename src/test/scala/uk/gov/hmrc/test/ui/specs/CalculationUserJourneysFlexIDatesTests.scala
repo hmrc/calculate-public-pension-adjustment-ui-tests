@@ -802,7 +802,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
     Scenario("Journey for User Left in pre remedy date 1", ZapTests) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 6/6/2015, has DC scheme flexibly accessed 7/6/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
-      /** This scenario covers user journey where user has left their public pension scheme on 7/6/15 should not be asked PIA for 15/16 post questions in the 15/16 year.--- MCSC-760 */
+      /** This scenario covers user journey where user has left their public pension scheme on 7/6/15 should not be asked PIA for 15/16 post questions in the 15/16 year.--- MCSC-770 ---validation of error message */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
@@ -839,87 +839,11 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I select yes and continue to next page")
       HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
 
-      Then("I land on the when-flexibly-access-pension page, enter flexi access date 7/6/2015 and continue")
+      Then("I land on the when-flexibly-access-pension page, enter invalid flexibly access date and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("07", "6", "2015")
 
-      When("I land on pay-tax-charge 14/15 page, select No and continue to next page")
-      PayTaxChargeFrom20152016Page.selectNoAndContinueForAASPage()
-
-      Then("I Should see the pia-pre-remedy/2011 page")
-      Registered.onRegisteredPageSelectYesAndContinue("2010", "2011")
-      PiaPreRemedyPage2011.onPiaPreRemedyPage2011PageEnterValueAndContinue()
-
-      Then("I Should see the pia-pre-remedy/2012 page")
-      Registered.onRegisteredPageSelectYesAndContinue("2011", "2012")
-      PiaPreRemedyPage2012.onPiaPreRemedyPage2012PageEnterValueAndContinue()
-
-      Then("I Should see the pia-pre-remedy/2013 page")
-      Registered.onRegisteredPageSelectYesAndContinue("2012", "2013")
-      PiaPreRemedyPage2013.onPiaPreRemedyPage2013PageEnterValueAndContinue()
-
-      Then("I Should see the pia-pre-remedy/2014 page")
-      Registered.onRegisteredPageSelectYesAndContinue("2013", "2014")
-      PiaPreRemedyPage2014.onPiaPreRemedyPage2014PageEnterValueAndContinue()
-
-      Then("I Should see the pia-pre-remedy/2015 page")
-      Registered.onRegisteredPageSelectYesAndContinue("2014", "2015")
-      PiaPreRemedyPage2015.onPiaPreRemedyPage2015PageEnterValueAndContinue()
-
-      When("I verify check your answers page for annual allowance and click continue")
-      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
-
-      Then("I verify annual allowance period shows up to 2016 in the task list")
-      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2016")
-
-      // end of setup journey
-      /** DC AA journey 2 */
-
-      /** --- 2016 --- */
-      When("I click Add details for 2015 to 2016")
-      TaskListPage.clickAddDetailsFor2015To2016()
-
-      When("I verify what-you-will-need-aa/2016 page and click continue")
-      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016Page()
-
-      Then("I verify member-more-than-one-pension page,select No and continue")
-      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
-
-      When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
-      PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
-
-      When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
-      )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
-
-      When("I verify DidYouPayAChargePage, select no and continue")
-      DidYouPayAChargePage.verifyPageSelectNoAndContinue()
-
-      When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-      ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
-
-      When("I verify WhichContributedDuringRemedyPeriodPage, select DC and DB and continue")
-      WhichContributedDuringRemedyPeriodPage.verifyPageSelectDBAndDCANDContinue()
-
-      When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
-      PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
-
-      When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
-      PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
-
-      When("I verify PiaForDBPensionPage, enter pension amount for DB and continue")
-      PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(
-        "6000"
-      )
-
-      When("I verify TotalIncomePage, enter net income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
-
-      /** verify check your answers page */
-      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      Then("I should see An Error Message for Invalid flexibly accessed date Entered")
+      WhenFlexiblyAccessPensionPage.verifyInvalidFlexiblyEnteredDate("There is a problem")
     }
 
     Scenario("Journey for User Left in pre remedy date 2", ZapTests) {
@@ -962,7 +886,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I select yes and continue to next page")
       HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
 
-      Then("I land on the when-flexibly-access-pension page, enter flexi access date 5/6/2015 and continue")
+      Then("I land on the when-flexibly-access-pension page, enter flexibly access date 5/6/2015 and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("05", "6", "2015")
 
       When("I land on pay-tax-charge 14/15 page, select No and continue to next page")

@@ -304,6 +304,9 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     submitPage()
   }
 
+  def getInvalidFlexiblyAccessDateErrorMessage(): String =
+    driver.findElement(By.className("govuk-error-summary__title")).getText
+
   def enterDay(day: String) =
     driver.findElement(By.id("value.day")).sendKeys(day)
 
