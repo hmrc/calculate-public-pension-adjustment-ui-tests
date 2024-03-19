@@ -43,7 +43,8 @@ class CalculationLogicVerificationTests extends BaseSpec {
         "Scenario_25",
         "Scenario_1a",
         "Scenario_1b",
-        "Scenario_2a"
+        "Scenario_2a",
+        "Scenario_2b"
       )
     requestArray.indices.foreach { index =>
       Scenario(s"Calculate Business Journey $index", ZapTests) {
