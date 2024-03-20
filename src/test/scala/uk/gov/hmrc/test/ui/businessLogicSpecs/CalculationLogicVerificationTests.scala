@@ -290,9 +290,10 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(definedBenefitInputAmount2016pre)
               }
               if (
-                (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
+                (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre == "-1" && definedContributionInputAmount2016pre1 == "-1")
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
+                TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
               }
             } else {
               if (!(taxYearSchemesList.size == 1)) {
