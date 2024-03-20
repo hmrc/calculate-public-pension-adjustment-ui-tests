@@ -1,0 +1,69 @@
+{
+  "resubmission" : {
+    "isResubmission" : true,
+    "reason" : "Typo in form\r\n"
+  },
+  "totalAmounts" : {
+    "outDatesCompensation" : 1700,
+    "inDatesDebit" : 0,
+    "inDatesCredit" : 0
+  },
+  "outDates" : [ {
+    "period" : "2016",
+    "directCompensation" : 800,
+    "indirectCompensation" : 0,
+    "chargePaidByMember" : 800,
+    "chargePaidBySchemes" : 0,
+    "revisedChargableAmountBeforeTaxRate" : 0,
+    "revisedChargableAmountAfterTaxRate" : 0,
+    "unusedAnnualAllowance" : 2000,
+    "taxYearSchemes" : [ {
+      "name" : "Scheme 1",
+      "pensionSchemeTaxReference" : "23456789RN",
+      "compensation" : 0
+    } ]
+  }, {
+    "period" : "2017",
+    "directCompensation" : 0,
+    "indirectCompensation" : 0,
+    "chargePaidByMember" : 1125,
+    "chargePaidBySchemes" : 0,
+    "revisedChargableAmountBeforeTaxRate" : 10000,
+    "revisedChargableAmountAfterTaxRate" : 4500,
+    "unusedAnnualAllowance" : 0,
+    "taxYearSchemes" : [ {
+      "name" : "Scheme 1",
+      "pensionSchemeTaxReference" : "23456789RN",
+      "compensation" : 0
+    } ]
+  }, {
+    "period" : "2018",
+    "directCompensation" : 0,
+    "indirectCompensation" : 0,
+    "chargePaidByMember" : 0,
+    "chargePaidBySchemes" : 0,
+    "revisedChargableAmountBeforeTaxRate" : 0,
+    "revisedChargableAmountAfterTaxRate" : 0,
+    "unusedAnnualAllowance" : 6750,
+    "taxYearSchemes" : [ {
+      "name" : "Scheme 1",
+      "pensionSchemeTaxReference" : "23456789RN",
+      "compensation" : 0
+    } ]
+  }, {
+    "period" : "2019",
+    "directCompensation" : 900,
+    "indirectCompensation" : 0,
+    "chargePaidByMember" : 900,
+    "chargePaidBySchemes" : 0,
+    "revisedChargableAmountBeforeTaxRate" : 0,
+    "revisedChargableAmountAfterTaxRate" : 0,
+    "unusedAnnualAllowance" : 2750,
+    "taxYearSchemes" : [ {
+      "name" : "Scheme 1",
+      "pensionSchemeTaxReference" : "23456789RN",
+      "compensation" : 0
+    } ]
+  } ],
+  "inDates" : [ ]
+}

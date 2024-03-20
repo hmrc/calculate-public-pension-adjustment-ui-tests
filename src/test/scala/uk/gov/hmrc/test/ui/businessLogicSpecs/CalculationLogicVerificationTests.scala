@@ -47,7 +47,8 @@ class CalculationLogicVerificationTests extends BaseSpec {
         "Scenario_25",
         "Scenario_1a",
         "Scenario_1b",
-        "Scenario_2a"
+        "Scenario_1c",
+        "Scenario_1d"
       )
     requestArray.indices.foreach { index =>
       Scenario(s"Calculate Business Journey $index", ZapTests) {
@@ -289,10 +290,9 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 PiaForDbPensionPage.verifyPageEnterPensionInputAmountForDBAndContinue(definedBenefitInputAmount2016pre)
               }
               if (
-                (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre == "-1" && definedContributionInputAmount2016pre1 == "-1")
+                (FlexiAccessDate2016 == "-1") && (definedBenefitInputAmount2016pre == "0" && definedContributionInputAmount2016pre1 == "0")
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
-                TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
               }
             } else {
               if (!(taxYearSchemesList.size == 1)) {
@@ -418,6 +418,37 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 ) {
                   ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
                 }
+                if (
+                  !(FlexiAccessDate2016 == "-1") && ((definedContributionInputAmount2016pre1 > "0") || (definedContributionInputAmount2016pre1 == "0") && (definedBenefitInputAmount2016pre == "-1"))
+                ) {
+                  ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
+                  WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue()
+                  PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                    definedContributionInputAmount2016pre1
+                  )
+                  if (
+                    (definedContributionInputAmount2016pre2 > "0") || (definedContributionInputAmount2016pre2 == "0")
+                  ) {
+                    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      definedContributionInputAmount2016pre1
+                    )
+                  }
+                  if (
+                    (definedContributionInputAmount2016post1 > "0") || (definedContributionInputAmount2016post1 == "0")
+                  ) {
+                    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      definedContributionInputAmount2016post1
+                    )
+                  }
+                  if (
+                    (definedContributionInputAmount2016post2 > "0") || (definedContributionInputAmount2016post2 == "0")
+                  ) {
+                    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue(
+                      definedContributionInputAmount2016post2
+                    )
+                  }
+                }
+
                 TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
               }
             }
