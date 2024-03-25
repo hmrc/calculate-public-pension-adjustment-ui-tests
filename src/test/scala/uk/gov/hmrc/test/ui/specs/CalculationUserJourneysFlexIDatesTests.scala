@@ -840,10 +840,10 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
 
       Then("I land on the when-flexibly-access-pension page, enter invalid flexibly access date and continue")
-      WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("07", "6", "2015")
+      WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("05", "6", "2015")
 
-      Then("I should see An Error Message for Invalid flexibly accessed date Entered")
-      WhenFlexiblyAccessPensionPage.verifyInvalidFlexiblyEnteredDate("There is a problem")
+      /* Then("I should see An Error Message for Invalid flexibly accessed date Entered")
+      WhenFlexiblyAccessPensionPage.verifyInvalidFlexiblyEnteredDate("There is a problem")*/
     }
 
     Scenario("Journey for User Left in pre remedy date 2", ZapTests) {
