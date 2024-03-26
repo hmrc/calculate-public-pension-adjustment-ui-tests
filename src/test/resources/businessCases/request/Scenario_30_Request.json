@@ -1,0 +1,75 @@
+{
+  "resubmission" : {
+    "isResubmission" : false
+  },
+  "annualAllowance" : {
+    "scottishTaxYears" : [ ],
+    "taxYears" : [ {
+      "pensionInputAmount" : 50000,
+      "period" : "2011"
+    }, {
+      "pensionInputAmount" : 50000,
+      "period" : "2012"
+    }, {
+      "pensionInputAmount" : 50000,
+      "period" : "2013"
+    }, {
+      "pensionInputAmount" : 50000,
+      "period" : "2014"
+    }, {
+      "pensionInputAmount" : 50000,
+      "period" : "2015"
+    }, {
+      "definedBenefitInputAmount" : 7500,
+      "preAccessDefinedContributionInputAmount" : 7500,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RA",
+        "originalPensionInputAmount" : 25000,
+        "revisedPensionInputAmount" : 25000,
+        "chargePaidByScheme" : 0,
+        "originalPensionInput2016PostAmount" : 10000,
+        "revisedPensionInput2016PostAmount" : 10000
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2016",
+      "definedBenefitInput2016PostAmount" : 0,
+      "definedContributionInput2016PostAmount" : 0
+    }, {
+      "definedBenefitInputAmount" : 4000,
+      "flexiAccessDate" : "2017-01-01",
+      "preAccessDefinedContributionInputAmount" : 3000,
+      "postAccessDefinedContributionInputAmount" : 3000,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RA",
+        "originalPensionInputAmount" : 35000,
+        "revisedPensionInputAmount" : 35000,
+        "chargePaidByScheme" : 0
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2017",
+      "income" : {
+        "incomeAboveThreshold" : false
+      }
+    }, {
+      "definedBenefitInputAmount" : 7500,
+      "definedContributionInputAmount" : 7500,
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "taxYearSchemes" : [ {
+        "name" : "PS1",
+        "pensionSchemeTaxReference" : "00348916RA",
+        "originalPensionInputAmount" : 30000,
+        "revisedPensionInputAmount" : 30000,
+        "chargePaidByScheme" : 0
+      } ],
+      "period" : "2018",
+      "income" : {
+        "incomeAboveThreshold" : false
+      }
+    } ]
+  }
+}

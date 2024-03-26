@@ -1,0 +1,64 @@
+{
+  "resubmission": {
+    "isResubmission": false
+  },
+  "totalAmounts": {
+    "outDatesCompensation": 0,
+    "inDatesDebit": 0,
+    "inDatesCredit": 0
+  },
+  "outDates": [
+    {
+      "period": "2016",
+      "directCompensation": 0,
+      "indirectCompensation": 0,
+      "chargePaidByMember": 0,
+      "chargePaidBySchemes": 0,
+      "revisedChargableAmountBeforeTaxRate": 0,
+      "revisedChargableAmountAfterTaxRate": 0,
+      "unusedAnnualAllowance": 22000,
+      "taxYearSchemes": [
+        {
+          "name": "PS1",
+          "pensionSchemeTaxReference": "00348916RA",
+          "compensation": 0
+        }
+      ]
+    },
+    {
+      "period": "2017",
+      "directCompensation": 0,
+      "indirectCompensation": 0,
+      "chargePaidByMember": 0,
+      "chargePaidBySchemes": 0,
+      "revisedChargableAmountBeforeTaxRate": 0,
+      "revisedChargableAmountAfterTaxRate": 0,
+      "unusedAnnualAllowance": 17000,
+      "taxYearSchemes": [
+        {
+          "name": "PS1",
+          "pensionSchemeTaxReference": "00348916RA",
+          "compensation": 0
+        }
+      ]
+    },
+    {
+      "period": "2018",
+      "directCompensation": 0,
+      "indirectCompensation": 0,
+      "chargePaidByMember": 0,
+      "chargePaidBySchemes": 0,
+      "revisedChargableAmountBeforeTaxRate": 1000,
+      "revisedChargableAmountAfterTaxRate": 400,
+      "unusedAnnualAllowance": 13000,
+      "taxYearSchemes": [
+        {
+          "name": "PS1",
+          "pensionSchemeTaxReference": "00348916RA",
+          "compensation": 0
+        }
+      ]
+    }
+  ],
+  "inDates": []
+}

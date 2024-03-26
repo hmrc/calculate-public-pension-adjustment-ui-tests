@@ -20,40 +20,29 @@ import org.jsoup.Jsoup
 import org.openqa.selenium.By
 
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
-import scala.collection.mutable
+import scala.jdk.CollectionConverters.ListHasAsScala
 
 object CalculationResultPage extends BasePage {
-
-  def returnTaxYearInformation(): Map[String, List[TableData]] = {
-    val dlElement = driver.findElement(By.xpath("//div[@class='govuk-grid-column-two-thirds']"))
+  def returnTaxYearInformation(taxYear: String): Map[String, String] = {
+    val dlElement        = driver.findElement(
+      By.xpath("//div[@class='govuk-grid-column-two-thirds']//h2[contains(text(),'" + taxYear + "')]")
+    )
+    val nextTableElement = dlElement.findElement(By.xpath("following-sibling::table"))
     // Get the HTML content of the <dl> element
-    val html      = dlElement.getAttribute("innerHTML")
+    val html             = nextTableElement.getAttribute("outerHTML")
 
     val doc = Jsoup.parse(html)
 
-    // Find all tables in the HTML
-    val tables = doc.select("table")
-
-    // Create an empty mutable map to store the table data
-    val tableDataMap = mutable.Map[String, List[TableData]]()
-
-    // Process each table
-    tables.forEach { table =>
-      // Find the table header (the h2 tag) to use as the key for the map
-      val tableName = table.previousElementSibling().text()
-
-      // Find all rows in the table body
-      val rows = table.select("tbody tr")
-
-      // Process each row and extract the data
-      val tableDataList = rows.map { row =>
-        val yourResult = row.select("th").text()
-        val amount     = row.select("td").text().toInt
-        TableData(yourResult, amount)
-      }.toList
-      tableDataMap(tableName) = tableDataList
-    }
-    tableDataMap.toMap
+    val map = doc
+      .select("tbody.govuk-table__body tr")
+      .asScala
+      .map { row =>
+        val th = row.select("th").text()
+        val td = row.select("td").text()
+        th -> td
+      }
+      .toMap
+    map
   }
 
   def getTotCompensation(): Int =
@@ -97,52 +86,36 @@ object CalculationResultPage extends BasePage {
     valueOption
   }
 
-  def getTaskListtaxYearInformation(taxYear: String, fieldName: String) = taxYear match {
-    case "2016-pre"  =>
-      val period = "6 April 2015 to 8 July 2015"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2016-post" =>
-      val period = "9 July 2015 to 5 April 2016"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2017"      =>
+  def getTaskListTaxYearInformation(taxYear: String, fieldName: String) = taxYear match {
+    case "2016" =>
+      val period = "6 April 2015 and 5 April 2016"
+      getTaxYearInformation(period, fieldName)
+    case "2017" =>
       val period = "6 April 2016 to 5 April 2017"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2018"      =>
+      getTaxYearInformation(period, fieldName)
+    case "2018" =>
       val period = "6 April 2017 to 5 April 2018"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2019"      =>
+      getTaxYearInformation(period, fieldName)
+    case "2019" =>
       val period = "6 April 2018 to 5 April 2019"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2020"      =>
+      getTaxYearInformation(period, fieldName)
+    case "2020" =>
       val period = "6 April 2019 to 5 April 2020"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2021"      =>
+      getTaxYearInformation(period, fieldName)
+    case "2021" =>
       val period = "6 April 2020 to 5 April 2021"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2022"      =>
+      getTaxYearInformation(period, fieldName)
+    case "2022" =>
       val period = "6 April 2021 to 5 April 2022"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
-    case "2023"      =>
+      getTaxYearInformation(period, fieldName)
+    case "2023" =>
       val period = "6 April 2022 to 5 April 2023"
-      returnTaxYearInformation().get(period).flatMap { tableDataList =>
-        tableDataList.find(_.yourResult == fieldName).map(_.amount)
-      }
+      getTaxYearInformation(period, fieldName)
+  }
+
+  def getTaxYearInformation(taxYear: String, fieldName: String) = {
+    val returnResult = returnTaxYearInformation(taxYear).getOrElse(fieldName, "0")
+    returnResult.toInt
   }
   def clickContinueSignIn() = {
     Thread.sleep(2000)

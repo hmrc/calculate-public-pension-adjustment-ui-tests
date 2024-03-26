@@ -1,0 +1,58 @@
+{
+  "resubmission" : {
+    "isResubmission" : false
+  },
+  "annualAllowance" : {
+    "scottishTaxYears" : [ ],
+    "taxYears" : [ {
+      "definedBenefitInputAmount" : 7500,
+      "preAccessDefinedContributionInputAmount" : 7500,
+      "taxYearSchemes" : [ {
+        "name" : "PS4",
+        "pensionSchemeTaxReference" : "00348916RS",
+        "originalPensionInputAmount" : 25000,
+        "revisedPensionInputAmount" : 25000,
+        "chargePaidByScheme" : 0,
+        "originalPensionInput2016PostAmount" : 10000,
+        "revisedPensionInput2016PostAmount" : 10000
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2016",
+      "definedBenefitInput2016PostAmount" : 0,
+      "definedContributionInput2016PostAmount" : 0
+    }, {
+      "definedContributionInputAmount" : 6000,
+      "definedBenefitInputAmount" : 4000,
+      "taxYearSchemes" : [ {
+        "name" : "PS4",
+        "pensionSchemeTaxReference" : "00348916RS",
+        "originalPensionInputAmount" : 35000,
+        "revisedPensionInputAmount" : 35000,
+        "chargePaidByScheme" : 0
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2017",
+      "income" : {
+        "incomeAboveThreshold" : false
+      }
+    }, {
+      "definedContributionInputAmount" : 7500,
+      "definedBenefitInputAmount" : 7500,
+      "taxYearSchemes" : [ {
+        "name" : "PS4",
+        "pensionSchemeTaxReference" : "00348916RS",
+        "originalPensionInputAmount" : 30000,
+        "revisedPensionInputAmount" : 30000,
+        "chargePaidByScheme" : 0
+      } ],
+      "totalIncome" : 60000,
+      "chargePaidByMember" : 0,
+      "period" : "2018",
+      "income" : {
+        "incomeAboveThreshold" : false
+      }
+    } ]
+  }
+}
