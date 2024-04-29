@@ -160,6 +160,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("I verify PersonalAllowancePage, enter net income and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -301,6 +307,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("I verify PersonalAllowancePage, enter net income and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -438,6 +450,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("I verify PersonalAllowancePage, enter net income and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -580,6 +598,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("I verify PersonalAllowancePage, enter net income and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -718,6 +742,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("I verify PersonalAllowancePage, enter net income and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -794,6 +824,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("I verify PersonalAllowancePage, enter net income and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -964,6 +1000,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("I verify PersonalAllowancePage, enter net income and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
