@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.businessLogicSpecs
 
 import play.api.libs.json.{JsValue, Json}
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.dto.bussinessRequest.{RequestDTO, RequestDTOUtil, TaxYear, TaxYearSchemes}
 import uk.gov.hmrc.test.ui.dto.bussinessResponse.{OutDate, ResponseDTO, ResponseDTOUtil}
 import uk.gov.hmrc.test.ui.pages.HomePage.signOutPage
@@ -114,6 +115,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
           myObject.getTaxYearInformation(preYear, _.flexiAccessDate, requestDTOResult).toString
         val totalIncome2016                                 =
           myObject.getTaxYearInformation("2016", _.totalIncome, requestDTOResult).toString
+        val signInPage: String                              = TestConfiguration.optionalAuthFlag()
 
         /** Retrieve response information */
 
@@ -130,6 +132,10 @@ class CalculationLogicVerificationTests extends BaseSpec {
         Given("I am on the Public Service Pensions Remediation home page")
         HomePage.goToHomepage()
         SavingsStatementPage.selectYesAndContinueForGSPage()
+        signInPage match {
+          case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+          case _      =>
+        }
         if (isResubmission.mkString == "true") {
           ResubmittingAdjustmentPage.selectOptionAndContinueForGSPage(isResubmission.mkString)
           ReasonForResubmissionPage.enterReasonAndContinue(reason.toString)
@@ -295,6 +301,8 @@ class CalculationLogicVerificationTests extends BaseSpec {
               ) {
                 ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
                 TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
+                PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+                TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
               }
             } else {
               if (!(taxYearSchemesList.size == 1)) {
@@ -452,6 +460,8 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 }
 
                 TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome2016)
+                PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+                TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
               }
             }
           }
@@ -719,6 +729,8 @@ class CalculationLogicVerificationTests extends BaseSpec {
                 AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue(adjustedIncome.toString)
               }
               TotalIncomePage.verifyPageEnterTotalIncomeAndContinue(totalIncome.toString)
+              PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
+              TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
               CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
             }
         }
