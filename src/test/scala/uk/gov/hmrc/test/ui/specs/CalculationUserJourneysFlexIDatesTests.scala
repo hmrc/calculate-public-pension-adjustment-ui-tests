@@ -16,12 +16,14 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
 class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
   Feature("Calculate...") {
+    val signInPage: String = TestConfiguration.optionalAuthFlag()
 
     Scenario("Journey for flexi date 1", ZapTests) {
 
@@ -34,6 +36,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I am resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -182,6 +190,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
       When("I select I am resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
@@ -329,6 +343,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
       When("I select I am resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
@@ -472,6 +492,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I am resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
@@ -620,6 +646,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
       When("I select I am resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
@@ -763,6 +795,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
       When("I select I'm not resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
@@ -845,6 +883,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
 
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
       When("I select I am resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
 
@@ -891,6 +935,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I select I received remedial service statement and continue to next page")
       SavingsStatementPage.selectYesAndContinueForGSPage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
 
       When("I select I am resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
