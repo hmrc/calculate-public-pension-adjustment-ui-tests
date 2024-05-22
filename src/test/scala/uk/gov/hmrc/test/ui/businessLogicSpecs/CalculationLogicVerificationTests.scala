@@ -215,11 +215,9 @@ class CalculationLogicVerificationTests extends BaseSpec {
               taxYearScheme.pensionSchemeTaxReference
             )
             PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-              taxYearScheme.originalPensionInputAmount.toString,
               taxYearScheme.revisedPensionInputAmount.toString
             )
             PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-              taxYearScheme.originalPensionInput2016PostAmount.get.toString,
               taxYearScheme.revisedPensionInput2016PostAmount.get.toString
             )
             if (paidByScheme == 0 && chargePaidByMember2016.toInt == 0) {
@@ -569,7 +567,6 @@ class CalculationLogicVerificationTests extends BaseSpec {
                     taxYearScheme.pensionSchemeTaxReference
                   )
                   PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-                    taxYearScheme.originalPensionInputAmount.toString,
                     taxYearScheme.revisedPensionInputAmount.toString
                   )
                   if (paidByScheme == 0 && chargePaidByMember == 0) {
