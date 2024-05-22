@@ -123,20 +123,14 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "2000",
-        "2000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("2000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -276,20 +270,14 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "2000",
-        "2000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("2000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -429,20 +417,14 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "2000",
-        "2000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("2000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -579,20 +561,14 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "2000",
-        "2000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("2000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -732,20 +708,14 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "2000",
-        "2000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("2000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -850,12 +820,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "11123456BC")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -1021,12 +988,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()

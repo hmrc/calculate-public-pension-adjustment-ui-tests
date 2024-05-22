@@ -141,20 +141,14 @@ class CalculationUserJourneys extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "11123456BC")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "2000",
-        "2000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("2000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -184,11 +178,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "11123456BC")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "8000",
-        "8000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("8000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -202,11 +193,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("MyCSP", "00123456CC")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "8000",
-        "8000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("8000")
 
       When("I verify DidYouPayAChargePage, select NO and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -220,11 +208,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("Army", "00123456DD")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "8000",
-        "8000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("8000")
 
       When("I verify DidYouPayAChargePage, select NO and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -238,11 +223,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("Fire", "00123456EE")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "8000",
-        "8000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("8000")
 
       When("I verify DidYouPayAChargePage, select NO and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -365,20 +347,14 @@ class CalculationUserJourneys extends BaseSpec {
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00123456AA")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "41250",
-        "40000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("40000")
 
       When(
-        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post pension input amount and revised pension input amount"
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
       )
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "2000",
-        "2000"
-      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("2000")
 
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -430,11 +406,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify WhichSchemeDetailsPage and select an existing scheme")
       WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00123456AA")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "12500",
-        "17000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("17000")
 
       When("I verify DidYouPayAChargePage page, select Yes and continue")
       DidYouPayAChargePage.verifyPageSelectYesAndContinue()
@@ -457,11 +430,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeDetailsPage, enter MyCSP pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("MyCSP", "00123456BB")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "6000",
-        "6000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("6000")
 
       When("I verify DidYouPayAChargePage page, select Yes and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -475,11 +445,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeDetailsPage, enter Police pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("Police", "00123456CC")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "6000",
-        "6000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("6000")
 
       When("I verify DidYouPayAChargePage, select NO and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -493,11 +460,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeDetailsPage, enter Army pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("Army", "00123456DD")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "6000",
-        "6000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("6000")
 
       When("I verify DidYouPayAChargePage, select NO and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
@@ -511,11 +475,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeDetailsPage, enter Fire pension scheme and tax reference")
       PensionSchemeDetailsPage.enterTaxInformationAndContinue("fire", "00123456EE")
 
-      When("I verify PensionSchemeInputAmountsPage, enter pension input amount and revised pension input amount")
-      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue(
-        "6000",
-        "6000"
-      )
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("6000")
 
       When("I verify DidYouPayAChargePage, select NO and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
