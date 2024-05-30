@@ -19,15 +19,15 @@ package uk.gov.hmrc.test.ui.pages
 object ThresholdIncomePage extends BasePage {
 
   def verify2017TO2020PageSelectYesAndContinue() =
-    selectYesAndContinueForAAPeriodPage()
+    selectYesOnThresholdIncomePageAndContinueForAAPeriodPage()
 
   def verify2017TO2020PageSelectNoAndContinue() =
-    selectNoAndContinueForAAPeriodPage()
+    selectNoOnThresholdIncomePageAndContinueForAAPeriodPage()
 
   def verify2021TO2023PageSelectYesAndContinue() =
-    selectYesAndContinueForAAPeriodPage()
+    selectYesOnThresholdIncomePageAndContinueForAAPeriodPage()
 
   def verify2021TO2023PageSelectNoAndContinue() =
-    selectNoAndContinueForAAPeriodPage()
+    selectNoOnThresholdIncomePageAndContinueForAAPeriodPage()
 
 }
