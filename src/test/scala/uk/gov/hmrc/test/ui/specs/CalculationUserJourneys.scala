@@ -156,12 +156,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
-      When("I verify PersonalAllowancePage, enter net income and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
-
-      When("I verify TotalIncomePage, enter net income and continue")
-      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
-
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -237,12 +231,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
-
-      When("I verify PersonalAllowancePage, enter net income and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
-
-      When("I verify TotalIncomePage, enter net income and continue")
-      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -386,12 +374,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
-      When("I verify PersonalAllowancePage, enter net income and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
-
-      When("I verify TotalIncomePage, enter net income and continue")
-      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
-
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -494,15 +476,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
       ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue()
-
-      When("I verify AdjustedIncomePage page, enter income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("120000")
-
-      When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("140000")
-
-      When("I verify PersonalAllowancePage, enter net income and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("50000")
 
       When("I verify TotalIncomePage, enter net income and continue")
       TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
