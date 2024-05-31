@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
-class CalculationUserJourneys extends BaseSpec {
+private class CalculationUserJourneys extends BaseSpec {
 
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
@@ -231,6 +231,21 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-salary-sacrifice-arrangements/2017"
+      )
+
+      When("I verify AnySalarySacrificeArrangements page, enter total income and continue")
+      AnySalarySacrificeArrangements.selectYesAndContinue()
+
+      AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("1000")
+
+      FlexibleRemunerationsArrangements.selectYesAndContinue()
+
+      AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
+
+      HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
 
       HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-lump-sum-death-benefits/2017"
@@ -491,6 +506,17 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-salary-sacrifice-arrangements/2017"
+      )
+
+      When("I verify AnySalarySacrificeArrangements page, enter total income and continue")
+      AnySalarySacrificeArrangements.selectNoAndContinue()
+
+      FlexibleRemunerationsArrangements.selectNoAndContinue()
+
+      HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
 
       HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-lump-sum-death-benefits/2017"
