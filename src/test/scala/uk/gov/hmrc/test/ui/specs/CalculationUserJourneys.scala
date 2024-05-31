@@ -242,6 +242,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
+      HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
@@ -499,6 +501,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
+
+      HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
