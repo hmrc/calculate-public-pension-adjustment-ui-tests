@@ -232,6 +232,16 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-lump-sum-death-benefits/2017"
+      )
+
+      When("I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
+      AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
+
+      When("I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
+      LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
@@ -477,8 +487,18 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
       ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue()
 
-      When("I verify TotalIncomePage, enter net income and continue")
-      TaxReliefPage.verifyPageEnterTaxReliefPageAndContinue("30000")
+      When("I verify TotalIncomePage page, enter total income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-lump-sum-death-benefits/2017"
+      )
+
+      When("I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
+      AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
+
+      When("I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
+      LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
