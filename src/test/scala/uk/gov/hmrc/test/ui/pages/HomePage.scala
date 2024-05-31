@@ -28,6 +28,9 @@ object HomePage extends BasePage {
     this
   }
 
+  def tempNavigation(navUrl: String) =
+    driver.navigate().to(navUrl)
+
   def clickStartButton(): HomePage.type = {
     driver.findElement(By.xpath("//a[contains(text(),'Start now')]")).click()
     HomePage
