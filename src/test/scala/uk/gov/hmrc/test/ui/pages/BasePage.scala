@@ -135,12 +135,6 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   def selectNoOption(): Unit =
     driver.findElement(By.id("value-no")).click()
 
-  def selectYesOptionOnThresholdIncomePage(): Unit =
-    driver.findElement(By.id("value_0")).click()
-
-  def selectNoOptionOnThresholdIncomePage(): Unit =
-    driver.findElement(By.id("value_1")).click()
-
   def clickBackButton(): Unit =
     driver.findElement(By.xpath("//a[contains(text(),'Back')]")).click()
 
@@ -237,15 +231,6 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
       "No"
     else ""
 
-  def selectedThresholdIncomeOption(): String =
-    if (driver.findElement(By.id("value_0")).isSelected)
-      "Yes"
-    else if (driver.findElement(By.id("value_1")).isSelected)
-      "No"
-    else if (driver.findElement(By.id("value_2")).isSelected)
-      "I do not know"
-    else ""
-
   def selectYesAndContinueForGSPage() = {
     selectYesOption()
     checkYourAnswersGSMap(getHeader(), selectedOption())
@@ -280,17 +265,6 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   def selectYesAndContinueForAAPeriodPage() = {
     selectYesOption()
     checkYourAnswersAAPeriodMap(getHeader(), selectedOption())
-    submitPage()
-  }
-  def selectYesOnThresholdIncomePageAndContinueForAAPeriodPage() = {
-    selectYesOptionOnThresholdIncomePage()
-    checkYourAnswersAAPeriodMap(getHeader(), selectedThresholdIncomeOption())
-    submitPage()
-  }
-
-  def selectNoOnThresholdIncomePageAndContinueForAAPeriodPage() = {
-    selectNoOptionOnThresholdIncomePage()
-    checkYourAnswersAAPeriodMap(getHeader(), selectedThresholdIncomeOption())
     submitPage()
   }
 
