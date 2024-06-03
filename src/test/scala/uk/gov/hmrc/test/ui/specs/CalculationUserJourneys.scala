@@ -247,10 +247,6 @@ private class CalculationUserJourneys extends BaseSpec {
 
       HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-lump-sum-death-benefits/2017"
-      )
-
       When("I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -517,10 +513,6 @@ private class CalculationUserJourneys extends BaseSpec {
       FlexibleRemunerationsArrangements.selectNoAndContinue()
 
       HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-lump-sum-death-benefits/2017"
-      )
 
       When("I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
