@@ -236,22 +236,36 @@ private class CalculationUserJourneys extends BaseSpec {
         "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-salary-sacrifice-arrangements/2017"
       )
 
-      When("I verify AnySalarySacrificeArrangements page, enter total income and continue")
+      When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
       AnySalarySacrificeArrangements.selectYesAndContinue()
 
+      When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
       AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("1000")
 
+      When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
       FlexibleRemunerationsArrangements.selectYesAndContinue()
 
+      When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
+      When("3.16.5 I verify HowMuchContribution page, enter contribution and continue")
       HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
 
-      When("I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
+      When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
-      When("I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
+      When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/know-adjusted-amount/2017"
+      )
+
+      When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
+      KnowAdjustedAmountPage.verifyPageSelectYesAndContinue()
+
+      When("3.15 I verify AdjustedIncomePage page, enter adjusted income and continue")
+      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2100")
 
       HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
 
@@ -507,18 +521,33 @@ private class CalculationUserJourneys extends BaseSpec {
         "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-salary-sacrifice-arrangements/2017"
       )
 
-      When("I verify AnySalarySacrificeArrangements page, enter total income and continue")
+      When("3.16.1 I verify AnySalarySacrificeArrangements page, select no and continue")
       AnySalarySacrificeArrangements.selectNoAndContinue()
 
+      When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
       FlexibleRemunerationsArrangements.selectNoAndContinue()
 
+      When("3.16.5 I verify HowMuchContribution page, enter contribution and continue")
       HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
 
-      When("I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
+      When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
-      When("I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
+      When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/know-adjusted-amount/2017"
+      )
+
+      When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
+      KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
+
+      When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select yes and continue")
+      ClaimingTaxReliefPensionPage.verifyPageSelectYesAndContinue()
+
+      When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
+      HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("1000")
 
       HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
 
