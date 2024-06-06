@@ -257,7 +257,9 @@ private class CalculationUserJourneys extends BaseSpec {
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
-      HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017")
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017"
+      )
 
       When("3.16.8 I verify ClaimingTaxReliefPension page, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
@@ -547,7 +549,9 @@ private class CalculationUserJourneys extends BaseSpec {
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
-      HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017")
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017"
+      )
 
       When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
