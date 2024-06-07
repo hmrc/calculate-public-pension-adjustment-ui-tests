@@ -16,13 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
+object AnyTaxReliefOverseasPensionPage extends BasePage {
+  def verifyPageSelectNoAndContinue() =
+    selectNoAndContinueForAAPeriodPage()
 
-object PersonalAllowancePage extends BasePage {
-  def verifyPageEnterPersonalAllowanceAndContinue(personalAllowance: String) = {
-    enterPersonalAllowance(personalAllowance)
-    submitPage()
-  }
-  def enterPersonalAllowance(personalAllowance: String) = driver.findElement(By.id("value")).sendKeys(personalAllowance)
+  def verifyPageSelectYesAndContinue() =
+    selectYesAndContinueForAAPeriodPage()
 
 }

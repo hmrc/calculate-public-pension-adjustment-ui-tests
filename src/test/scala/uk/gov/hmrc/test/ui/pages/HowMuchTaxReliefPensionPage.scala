@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.HowMuchPensionPayChargePage.{checkYourAnswersAAPeriodMap, driver, getHeader, submitPage}
 
 object HowMuchTaxReliefPensionPage extends BasePage {
   def enterTaxReliefPensionAmount(pensionPay: String) = driver.findElement(By.id("value")).sendKeys(pensionPay)
