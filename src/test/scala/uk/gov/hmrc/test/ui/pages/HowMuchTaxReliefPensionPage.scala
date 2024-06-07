@@ -16,18 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.MemberMoreThanOnePensionPage.{selectYesAndContinueForAAPeriodPage, verifyPageSelectNoAndContinue, verifyPageSelectYesAndContinue}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.HowMuchPensionPayChargePage.{checkYourAnswersAAPeriodMap, driver, getHeader, submitPage}
 
-object ClaimingTaxReliefPension extends BasePage {
+object HowMuchTaxReliefPensionPage extends BasePage {
+  def enterTaxReliefPensionAmount(pensionPay: String) = driver.findElement(By.id("value")).sendKeys(pensionPay)
 
-  def verifyClaimingTaxReliefPensionSelectYesAndContinue()={
-    selectYesOption()
+  def verifyPageEnterPensionPayAndContinue(pensionPay: String) = {
+    enterTaxReliefPensionAmount(pensionPay)
     submitPage()
   }
-
-  def verifyClaimingTaxReliefPensionSelectNoAndContinue()={
-    selectNoOption()
-    submitPage()
-  }
-
 }

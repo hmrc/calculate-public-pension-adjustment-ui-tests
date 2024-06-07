@@ -16,18 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.MemberMoreThanOnePensionPage.{selectYesAndContinueForAAPeriodPage, verifyPageSelectNoAndContinue, verifyPageSelectYesAndContinue}
+import uk.gov.hmrc.test.ui.pages.DidYouPayAChargePage.{selectNoAndContinueForAAPeriodPage, selectYesAndContinueForAAPeriodPage}
 
-object ClaimingTaxReliefPension extends BasePage {
+object KnowAdjustedAmountPage extends BasePage {
+  def verifyPageSelectNoAndContinue() =
+    selectNoAndContinueForAAPeriodPage()
 
-  def verifyClaimingTaxReliefPensionSelectYesAndContinue()={
-    selectYesOption()
-    submitPage()
-  }
-
-  def verifyClaimingTaxReliefPensionSelectNoAndContinue()={
-    selectNoOption()
-    submitPage()
-  }
-
+  def verifyPageSelectYesAndContinue() =
+    selectYesAndContinueForAAPeriodPage()
 }
