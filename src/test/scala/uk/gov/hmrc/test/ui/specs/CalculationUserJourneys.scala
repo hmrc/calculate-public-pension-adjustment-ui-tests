@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
-private class CalculationUserJourneys extends BaseSpec {
+class CalculationUserJourneys extends BaseSpec {
 
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
@@ -160,6 +160,10 @@ private class CalculationUserJourneys extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 */
+      /**
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,10 / 3.15.0,1,2,3,4,5 / 3.16.11,12
+        */
+
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
 
@@ -248,7 +252,7 @@ private class CalculationUserJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5 I verify HowMuchContribution page, enter contribution and continue")
+      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
       HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
@@ -257,16 +261,51 @@ private class CalculationUserJourneys extends BaseSpec {
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
-      /*HomePage.tempNavigation(
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017"
+      )
+
+      When("3.16.8 I verify ClaimingTaxReliefPension page, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
+
+      When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/know-adjusted-amount/2017"
       )
 
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
-      KnowAdjustedAmountPage.verifyPageSelectYesAndContinue()
+      KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
 
-      When("3.15 I verify AdjustedIncomePage page, enter adjusted income and continue")
-      AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("2100")
-       */
+      When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select yes and continue")
+      ClaimingTaxReliefPensionPage.verifyPageSelectYesAndContinue()
+
+      When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
+      HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("1000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/non-domicile/2017"
+      )
+
+      When("3.15.3 I verify NonDomicilePage page, select yes and continue")
+      NonDomicilePage.verifyPageSelectYesAndContinue()
+
+      When("3.15.4 I verify AnyTaxReliefOverseasPensionPage page, select yes and continue")
+      AnyTaxReliefOverseasPensionPage.verifyPageSelectYesAndContinue()
+
+      When("3.15.5 I verify TaxReliefOverseasPensionValuePage page, enter tax relief pension amount and continue")
+      TaxReliefOverseasPensionValuePage.verifyPageTaxReliefOverseasPensionValueAndContinue("1300")
+
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
+
+      When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
+
       HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
 
       /** verify check your answers page */
@@ -415,6 +454,9 @@ private class CalculationUserJourneys extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
+      /**
+        * Income sub-journey 2.16.1,3,5,6,7,8,10 / 3.15.0,1,2,3,4,5 / 3.16.11,12
+        */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
@@ -536,7 +578,17 @@ private class CalculationUserJourneys extends BaseSpec {
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
-      /*HomePage.tempNavigation(
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017"
+      )
+
+      When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("60000")
+
+      HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/know-adjusted-amount/2017"
       )
 
@@ -548,9 +600,9 @@ private class CalculationUserJourneys extends BaseSpec {
 
       When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
       HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("1000")
-       */
+
       HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/non-domicile/2017"
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/non-domicile/2017"
       )
 
       When("3.15.3 I verify NonDomicilePage page, select yes and continue")
@@ -763,6 +815,9 @@ private class CalculationUserJourneys extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
+      /**
+        * Income sub-journey 3.16.1,3,5,6,7 / 3.15.0,1,2,3,4 / 3.16.11,12
+        */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
@@ -884,7 +939,7 @@ private class CalculationUserJourneys extends BaseSpec {
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
-      /* HomePage.tempNavigation(
+      HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/know-adjusted-amount/2017"
       )
 
@@ -896,9 +951,9 @@ private class CalculationUserJourneys extends BaseSpec {
 
       When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
       HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("1000")
-       */
+
       HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/non-domicile/2017"
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/non-domicile/2017"
       )
 
       When("3.15.3 I verify NonDomicilePage page, select yes and continue")
@@ -1108,6 +1163,9 @@ private class CalculationUserJourneys extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
+      /**
+        * Income sub-journey 3.16.1,3,5,6,7,8,10 / 3.15.0,1,2,3 / 3.16.11,12
+        */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
@@ -1229,7 +1287,17 @@ private class CalculationUserJourneys extends BaseSpec {
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
-      /* HomePage.tempNavigation(
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017"
+      )
+
+      When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("60000")
+
+      HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/know-adjusted-amount/2017"
       )
 
@@ -1241,9 +1309,9 @@ private class CalculationUserJourneys extends BaseSpec {
 
       When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
       HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("1000")
-       */
+
       HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/non-domicile/2017"
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/non-domicile/2017"
       )
 
       When("3.15.3 I verify NonDomicilePage page, select yes and continue")
