@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.DidYouPayAChargePage.{selectNoAndContinueForAAPeriodPage, selectYesAndContinueForAAPeriodPage}
-
 object ClaimingTaxReliefPensionPage extends BasePage {
   def verifyPageSelectNoAndContinue() =
     selectNoAndContinueForAAPeriodPage()
