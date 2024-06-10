@@ -306,7 +306,18 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
 
-      HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
+      )
+
+      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
+      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
+
+      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -620,7 +631,18 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
 
-      HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
+      )
+
+      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
+      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
+
+      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -968,7 +990,18 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
 
-      HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
+      )
+
+      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
+      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
+
+      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -1323,7 +1356,18 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
 
-      HomePage.tempNavigation("http://localhost:12804/public-pension-adjustment/annual-allowance/2017/check-answers")
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
+      )
+
+      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
+      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
+
+      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
