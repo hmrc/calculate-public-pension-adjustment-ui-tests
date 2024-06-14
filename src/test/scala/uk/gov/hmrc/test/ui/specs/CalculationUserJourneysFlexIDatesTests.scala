@@ -162,6 +162,19 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -303,6 +316,19 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -440,6 +466,19 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -582,6 +621,19 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -720,6 +772,19 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -799,6 +864,19 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -978,6 +1056,19 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()

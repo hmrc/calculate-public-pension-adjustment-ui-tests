@@ -153,8 +153,30 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify DidYouPayAChargePage, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
+
+
+
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("I verify ClaimingTaxRelief Pension, select No and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
+      )
+
+      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
+      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
+
+      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -231,14 +253,10 @@ class CalculationUserJourneys extends BaseSpec {
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
       When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectNoAndContinue()
+      ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-salary-sacrifice-arrangements/2017"
-      )
 
       When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
       AnySalarySacrificeArrangements.selectYesAndContinue()
@@ -260,10 +278,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017"
-      )
 
       When("3.16.8 I verify ClaimingTaxReliefPension page, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
@@ -461,6 +475,28 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
+
+      When("I verify HowMuchTaxRelief page, enter amount and continue")
+      HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("100")
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
+      )
+
+      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
+      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
+
+      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -564,11 +600,21 @@ class CalculationUserJourneys extends BaseSpec {
         "6000"
       )
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
+      When("3.14 I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
       ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("3.16.8 I verify Claiming Tax Relief Benefits page, select yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
+
+      When("I verify HowMuchTaxRelief page, enter amount and continue")
+      HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("100")
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
 
       HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-salary-sacrifice-arrangements/2017"
@@ -589,28 +635,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("60000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/claiming-tax-relief-pension/2017"
-      )
-
       When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
-
-      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
-      InterestFromSavings.enterInterestFromSavingsAndContinue("60000")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/adjusted-income/know-adjusted-amount/2017"
-      )
-
-      When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
-      KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
-
-      When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select yes and continue")
-      ClaimingTaxReliefPensionPage.verifyPageSelectYesAndContinue()
-
-      When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
-      HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("1000")
 
       HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/non-domicile/2017"
@@ -831,7 +857,20 @@ class CalculationUserJourneys extends BaseSpec {
       )
 
       When("I verify TotalIncomePage, enter net income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("110000")
+
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -937,10 +976,17 @@ class CalculationUserJourneys extends BaseSpec {
       )
 
       When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
-      ThresholdIncomePage.verify2017TO2020PageSelectYesAndContinue()
+      ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
 
       HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-salary-sacrifice-arrangements/2017"
@@ -1192,6 +1238,19 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
+      )
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -1300,6 +1359,12 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify InterestFromSavings page, enter Interest amount and continue")
+      InterestFromSavings.enterInterestFromSavingsAndContinue("2000")
 
       HomePage.tempNavigation(
         "http://localhost:12804/public-pension-adjustment/annual-allowance/threshold-income/any-salary-sacrifice-arrangements/2017"
