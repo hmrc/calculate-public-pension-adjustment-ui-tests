@@ -20,12 +20,10 @@ import org.openqa.selenium.By
 
 object TaxReliefAmountPage extends BasePage {
 
-  val taxReliefAmount = "230000000"
+  def enterTaxReliefAmount(taxReliefAmount: String) = driver.findElement(By.id("value")).sendKeys(taxReliefAmount)
 
-  def enterTaxReliefAmount() = driver.findElement(By.id("value")).sendKeys(taxReliefAmount)
-
-  def verifyPageEnterTaxReliefAndContinue() = {
-    enterTaxReliefAmount()
+  def verifyPageEnterTaxReliefAndContinue(taxReliefAmount: String) = {
+    enterTaxReliefAmount(taxReliefAmount)
     checkYourAnswersCalculationsMap(getHeader(), taxReliefAmount)
     submitPage()
   }
