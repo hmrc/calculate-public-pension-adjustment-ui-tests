@@ -299,10 +299,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
       HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("1000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/non-domicile/2017"
-      )
-
       When("3.15.3 I verify NonDomicilePage page, select yes and continue")
       NonDomicilePage.verifyPageSelectYesAndContinue()
 
@@ -311,10 +307,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.15.5 I verify TaxReliefOverseasPensionValuePage page, enter tax relief pension amount and continue")
       TaxReliefOverseasPensionValuePage.verifyPageTaxReliefOverseasPensionValueAndContinue("1300")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/personal-allowance/2017"
-      )
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
@@ -630,10 +622,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.15 I verify AdjustedIncomePage page, enter amount and continue")
       AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("1000")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/personal-allowance/2017"
-      )
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
