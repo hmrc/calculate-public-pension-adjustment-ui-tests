@@ -180,6 +180,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -331,6 +334,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2291")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -501,6 +507,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -644,6 +653,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -849,6 +861,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -989,6 +1004,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -1194,6 +1212,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -1324,6 +1345,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -1529,6 +1553,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -1662,6 +1689,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
@@ -1819,6 +1849,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -1945,6 +1978,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
@@ -2053,6 +2089,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -2177,6 +2216,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
@@ -2285,6 +2327,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -2434,6 +2479,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
