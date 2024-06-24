@@ -128,7 +128,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-        * 3.16.8,11,12 / 3.16.13,14,15
+        * 3.16.8,11,12,13,14,15,16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -156,7 +156,7 @@ class CalculationUserJourneys extends BaseSpec {
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
       When("I verify TotalIncomePage, enter net income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("42385")
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
@@ -166,10 +166,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
-      )
 
       When("3.16.13 I verify MarriageAllowance page, select yes and continue")
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
@@ -188,7 +184,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9 / 3.15.0,1,2,3,4,5 / 3.16.11,12,13,14,15
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9 / 3.15.0,1,2,3,4,5 / 3.16.11,12,15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -314,16 +310,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -420,7 +406,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-        * 3.16.8,9,11,12,13,14,15
+        * 3.16.8,9,11,12,15
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -472,7 +458,7 @@ class CalculationUserJourneys extends BaseSpec {
       )
 
       When("I verify TotalIncomePage, enter net income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("42386")
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
@@ -486,28 +472,15 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
-      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
-
-      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
-      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8,9 / 3.15.0,3.15 / 3.16.11,12,13,14,15
+        * Income sub-journey 3.16.8,9 / 3.15.0,3.15 / 3.16.11,15,16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -624,20 +597,7 @@ class CalculationUserJourneys extends BaseSpec {
       AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("1000")
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
-      DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
-
-      When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+      DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -782,7 +742,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-        * Income sub-journey 3.16.8,11,15
+        * Income sub-journey 3.16.8,11,15,16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -842,10 +802,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -857,7 +813,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8 / 3.15.0,3.15 / 3.16.11,12,13,14,15
+        * Income sub-journey 3.16.8 / 3.15.0,3.15 / 3.16.11,12,15,16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -970,25 +926,11 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15 I verify AdjustedIncomePage page, enter amount and continue")
       AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("1000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/personal-allowance/2017"
-      )
-
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1133,7 +1075,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-        * 3.16.8,11,15
+        * 3.16.8,11,13,14,15,16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -1185,17 +1127,19 @@ class CalculationUserJourneys extends BaseSpec {
       )
 
       When("I verify TotalIncomePage, enter net income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("10000")
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify PersonalAllowancePage page, enter allowance amount and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
+      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
+      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
+
+      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1208,7 +1152,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8,11,12,13,14,15
+        * Income sub-journey 3.16.8,11,13,14,15,16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -1310,20 +1254,13 @@ class CalculationUserJourneys extends BaseSpec {
       ThresholdIncomePage.verify2017TO2020PageSelectNoAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("10000")
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
-      DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
-
-      When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
+      DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
       When("3.16.13 I verify MarriageAllowance page, select yes and continue")
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
@@ -1474,7 +1411,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-        * 3.16.8,11,15
+        * 3.16.8,11,12,15,16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -1526,17 +1463,16 @@ class CalculationUserJourneys extends BaseSpec {
       )
 
       When("I verify TotalIncomePage, enter net income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("160000")
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify PersonalAllowancePage page, enter allowance amount and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
+      When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2030")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1549,7 +1485,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8,9,11,12,13,14,15
+        * Income sub-journey 3.16.8,9,11,12,13,14,15,16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -1664,10 +1600,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2030")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
 
       When("3.16.13 I verify MarriageAllowance page, select yes and continue")
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
@@ -1785,7 +1717,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-        * 3.16.8,11,12,13,14,15
+        * 3.16.8,11,12,13,15,16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -1824,16 +1756,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -1845,7 +1767,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,11,12,13,14,15
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,11,12,13,14,15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -1953,10 +1875,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
-
       When("3.16.13 I verify MarriageAllowance page, select yes and continue")
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
 
@@ -2026,7 +1944,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-        * 3.16.8,11,12,13,14,15
+        * 3.16.8,11,12,15,16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -2065,16 +1983,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -2086,7 +1994,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,11,12,13,14,15
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,11,12,13,14,15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -2191,10 +2099,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
-
       When("3.16.13 I verify MarriageAllowance page, select yes and continue")
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
 
@@ -2264,7 +2168,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-        * 3.16.8,11,12,13,14,15
+        * 3.16.8,11,12,15,16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -2303,16 +2207,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -2324,7 +2218,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8 / 3.15.0,1,2,3,4,5 / 3.16.11,12,13,14,15
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8 / 3.15.0,1,3,4,5 / 3.16.11,12,15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -2438,25 +2332,11 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.5 I verify TaxReliefOverseasPensionValuePage page, enter tax relief pension amount and continue")
       TaxReliefOverseasPensionValuePage.verifyPageTaxReliefOverseasPensionValueAndContinue("1300")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/personal-allowance/2017"
-      )
-
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -2521,8 +2401,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,13,14,15
-       */
+        * 3.16.8,11,12,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -2560,16 +2440,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -2581,8 +2451,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-       * Income sub-journey 3.16.1,2,3,4,5,6,7,8 / 3.15.0,1,2,3,4,5 / 3.16.11,12,13,14,15
-       */
+        * Income sub-journey 3.16.8 / 3.15.0 / 3.16.5,6,7/ 3.15.1,3,4,5 /3/16/11,12,15,16
+        */
 
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -2683,25 +2553,11 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.5 I verify TaxReliefOverseasPensionValuePage page, enter tax relief pension amount and continue")
       TaxReliefOverseasPensionValuePage.verifyPageTaxReliefOverseasPensionValueAndContinue("1300")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/personal-allowance/2017"
-      )
-
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -2766,8 +2622,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,13,14,15
-       */
+        * 3.16.8,11,12,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -2805,16 +2661,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2000")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2016"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -2826,8 +2672,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-       * Income sub-journey 3.16.1,2,3,4,5,6,7,8 / 3.15.0,1,2,3,4,5 / 3.16.11,12,13,14,15
-       */
+        * Income sub-journey 3.16.8 / 3.15.0 / 3.16.5,6 / 3.15.1,3,4,5 / 3.16.11,12,15,16
+        */
 
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -2925,25 +2771,11 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.5 I verify TaxReliefOverseasPensionValuePage page, enter tax relief pension amount and continue")
       TaxReliefOverseasPensionValuePage.verifyPageTaxReliefOverseasPensionValueAndContinue("1300")
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/personal-allowance/2017"
-      )
-
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
       When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
       PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/marriage-allowance/2017"
-      )
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
