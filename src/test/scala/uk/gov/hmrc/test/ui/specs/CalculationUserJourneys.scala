@@ -1840,7 +1840,7 @@ class CalculationUserJourneys extends BaseSpec {
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
-      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("1000")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("43001")
 
       When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
       AnySalarySacrificeArrangements.selectYesAndContinue()
@@ -1870,16 +1870,7 @@ class CalculationUserJourneys extends BaseSpec {
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("200000")
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
-      DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
-
-      When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
-      PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("2130")
-
-      When("3.16.13 I verify MarriageAllowance page, select yes and continue")
-      MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
-
-      When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+      DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
