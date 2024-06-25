@@ -466,7 +466,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.9 I verify HowMuchTaxRelief page, enter amount and continue")
       HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("100")
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
       When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
@@ -1869,7 +1869,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("200000")
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
