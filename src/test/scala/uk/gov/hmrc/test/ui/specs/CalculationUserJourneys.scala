@@ -519,7 +519,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("6000")
 
-      When("I verify DidYouPayAChargePage page, select Yes and continue")
+      When("I verify DidYouPayAChargePage page, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
       When("I verify AddAnotherSchemePage page, select yes and continue")
@@ -596,7 +596,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15 I verify AdjustedIncomePage page, enter amount and continue")
       AdjustedIncomePage.verifyPageEnterAdjustedIncomeAndContinue("1000")
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
@@ -799,7 +799,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
@@ -852,7 +852,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("6000")
 
-      When("I verify DidYouPayAChargePage page, select Yes and continue")
+      When("I verify DidYouPayAChargePage page, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
       When("I verify AddAnotherSchemePage page, select yes and continue")
@@ -920,7 +920,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
+      When("3.15.0 I verify KnowAdjustedAmountPage page, select yes and continue")
       KnowAdjustedAmountPage.verifyPageSelectYesAndContinue()
 
       When("3.15 I verify AdjustedIncomePage page, enter amount and continue")
@@ -1132,7 +1132,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
       When("3.16.13 I verify MarriageAllowance page, select yes and continue")
@@ -1191,7 +1191,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("6000")
 
-      When("I verify DidYouPayAChargePage page, select Yes and continue")
+      When("I verify DidYouPayAChargePage page, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
       When("I verify AddAnotherSchemePage page, select yes and continue")
@@ -1259,7 +1259,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
       When("3.16.13 I verify MarriageAllowance page, select yes and continue")
@@ -1524,7 +1524,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("6000")
 
-      When("I verify DidYouPayAChargePage page, select Yes and continue")
+      When("I verify DidYouPayAChargePage page, select no and continue")
       DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
       When("I verify AddAnotherSchemePage page, select yes and continue")
@@ -1583,13 +1583,13 @@ class CalculationUserJourneys extends BaseSpec {
         "6000"
       )
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select yes and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
       ThresholdIncomePage.verify2017TO2020PageSelectNoAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("1000")
 
-      When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
 
       When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
