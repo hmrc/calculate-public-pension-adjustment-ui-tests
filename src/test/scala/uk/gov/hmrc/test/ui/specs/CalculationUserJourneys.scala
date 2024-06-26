@@ -184,7 +184,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9 / 3.15.0,1,2,3,4,5 / 3.16.11,12,15,16
+        * Income sub-journey 3.16.1,2,3,4,6,7,8,9 / 3.15.0,1,2 / 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -294,6 +294,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
       HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("1000")
+
+      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
+      HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
 
       When("3.15.3 I verify NonDomicilePage page, select yes and continue")
       NonDomicilePage.verifyPageSelectYesAndContinue()
@@ -2209,7 +2212,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8 / 3.15.0,1,3,4,5 / 3.16.11,12,15,16
+        * Income sub-journey 3.16.1,2,3,4,6,7,8 / 3.15.0,1 / 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -2313,6 +2316,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select no and continue")
       ClaimingTaxReliefPensionPage.verifyPageSelectNoAndContinue()
+
+      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
+      HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
 
       When("3.15.3 I verify NonDomicilePage page, select yes and continue")
       NonDomicilePage.verifyPageSelectYesAndContinue()
@@ -2442,7 +2448,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.8 / 3.15.0 / 3.16.5,6,7/ 3.15.1,3,4,5 /3/16/11,12,15,16
+        * Income sub-journey 3.16.8 / 3.15.0 / 3.16,6,7 / 3.15.1 / 3.16.5 / 3.15.3,4,5 /3.16/11,12,15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -2523,9 +2529,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
 
-      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
-      HowMuchContribution.enterPreReliefPensionContributionAndContinue("5000")
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -2534,6 +2537,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select no and continue")
       ClaimingTaxReliefPensionPage.verifyPageSelectNoAndContinue()
+
+      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
+      HowMuchContribution.enterPreReliefPensionContributionAndContinue("5000")
 
       When("3.15.3 I verify NonDomicilePage page, select yes and continue")
       NonDomicilePage.verifyPageSelectYesAndContinue()
@@ -2663,7 +2669,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.8 / 3.15.0 / 3.16.5,6 / 3.15.1,3,4,5 / 3.16.11,12,15,16
+        * Income sub-journey 3.16.8 / 3.15.0 / 3.166 / 3.15.1/ 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -2744,14 +2750,14 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
 
-      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
-      HowMuchContribution.enterPreReliefPensionContributionAndContinue("5000")
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select no and continue")
       AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
 
       When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select no and continue")
       ClaimingTaxReliefPensionPage.verifyPageSelectNoAndContinue()
+
+      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
+      HowMuchContribution.enterPreReliefPensionContributionAndContinue("5000")
 
       When("3.15.3 I verify NonDomicilePage page, select yes and continue")
       NonDomicilePage.verifyPageSelectYesAndContinue()
