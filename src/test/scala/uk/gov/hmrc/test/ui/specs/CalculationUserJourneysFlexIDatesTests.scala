@@ -165,12 +165,8 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -322,12 +318,8 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -476,12 +468,8 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -633,12 +621,8 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -787,12 +771,8 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -883,12 +863,8 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1075,15 +1051,11 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
-      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/total-income/blind-person-allowance/2016"
-      )
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
