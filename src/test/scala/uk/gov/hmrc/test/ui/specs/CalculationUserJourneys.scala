@@ -171,7 +171,7 @@ class CalculationUserJourneys extends BaseSpec {
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
 
       When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("1060")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1132,7 +1132,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify TotalIncomePage, enter net income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("10000")
 
-      When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
@@ -1142,7 +1142,7 @@ class CalculationUserJourneys extends BaseSpec {
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
 
       When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("1060")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1269,7 +1269,7 @@ class CalculationUserJourneys extends BaseSpec {
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
 
       When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("1060")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1608,7 +1608,7 @@ class CalculationUserJourneys extends BaseSpec {
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
 
       When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("1100")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -2097,7 +2097,7 @@ class CalculationUserJourneys extends BaseSpec {
       MarriageAllowance.verifyClaimingMarriageAllowanceSelectYesAndContinue()
 
       When("3.16.14 I verify MarriageAllowanceAmount page, enter MarriageAllowance amount and continue")
-      MarriageAllowanceAmount.enterMarriageAllowanceAmount("2130")
+      MarriageAllowanceAmount.enterMarriageAllowanceAmount("1100")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
