@@ -265,14 +265,11 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
       AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("1000")
 
-      When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
-      FlexibleRemunerationsArrangements.selectYesAndContinue()
+      When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
+      FlexibleRemunerationsArrangements.selectNoAndContinue()
 
-      When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
-      AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
-
-      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
-      HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
+      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
@@ -1857,8 +1854,8 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
-      HowMuchContribution.enterPreReliefPensionContributionAndContinue("3000")
+      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
@@ -2069,14 +2066,14 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
       AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("1000")
 
-      When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
-      FlexibleRemunerationsArrangements.selectYesAndContinue()
+      When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
+      FlexibleRemunerationsArrangements.selectNoAndContinue()
 
-      When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
-      AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
+      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
 
-      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
-      HowMuchContribution.enterPreReliefPensionContributionAndContinue("300000")
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
@@ -2299,8 +2296,11 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
-      HowMuchContribution.enterPreReliefPensionContributionAndContinue("5000")
+      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
