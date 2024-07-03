@@ -165,6 +165,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("3000")
+
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
@@ -320,6 +326,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("3000")
+
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
@@ -471,6 +483,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("3000")
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
@@ -627,6 +645,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("3000")
+
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
@@ -779,6 +803,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("3000")
+
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
@@ -872,6 +902,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("3000")
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
@@ -1065,6 +1101,12 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("3000")
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
