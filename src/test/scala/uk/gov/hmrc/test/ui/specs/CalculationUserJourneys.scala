@@ -3072,7 +3072,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
       HowMuchContribution.enterPreReliefPensionContributionAndContinue("5000")
 
-      When("3.15.5 I verify AnyTaxReliefOverseasPension page, select no and continue")
+      When("3.15.4 I verify AnyTaxReliefOverseasPension page, select no and continue")
       AnyTaxReliefOverseasPensionPage.verifyPageSelectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
