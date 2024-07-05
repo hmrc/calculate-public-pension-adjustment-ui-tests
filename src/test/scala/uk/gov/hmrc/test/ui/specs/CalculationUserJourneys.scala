@@ -253,7 +253,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
@@ -492,7 +492,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8,9 / 3.15.0,3.15 / 3.16.11,15,16
+        * Income sub-journey 3.16.8,9 / 3.15.0,3.15 / 3.16.11(n),11.1(n),15(y),16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -617,14 +617,15 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /* When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
@@ -762,7 +763,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-        * Income sub-journey 3.16.8,11,15,16
+        * Income sub-journey 3.16.8,11(n),11.1(y),11.2,11.3,15(y),16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -825,14 +826,22 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select yes and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectYesAndContinue()
 
-      /* When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      //select "Increase" wordings would be updated according to MCSC-969(not done yet) content changes
+      When("3.16.11.2 I verify PayeCodeAdjustment page, select Increase and continue")
+      PayCodeAdjustment.verifyPageSelectIncreaseAndContinue()
+
+      When("3.16.11.3 I verify CodeAdjustmentAmount page, enter DebitOrRefundCode amount and continue")
+      CodeAdjustmentAmount.enterDebitOrRefundCodeAmount("3000")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -1103,7 +1112,7 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-        * 3.16.8,11,13,14,15,16
+        * 3.16.8,10(y),10.1,11(n),11.1(y),11.2,11.3,15(y),16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -1169,20 +1178,28 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select yes and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectYesAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      //select "Decrease" wordings might be updated according to MCSC-969 changes
+      When("3.16.11.2 I verify PayeCodeAdjustment page, select Decrease and continue")
+      PayCodeAdjustment.verifyPageSelectDecreaseAndContinue()
+
+      When("3.16.11.3 I verify CodeAdjustmentAmount page, enter DebitOrRefundCode amount and continue")
+      CodeAdjustmentAmount.enterDebitOrRefundCodeAmount("3000")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8,11,13,14,15,16
+        * Income sub-journey 3.16.8,10(y),10.11.1(n),11.1(n),15(y),16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -1298,14 +1315,15 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
@@ -1808,7 +1826,7 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,11,12,13,14,15,16
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,10(y),10.1,11(n),11.1(n),15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -1877,7 +1895,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
@@ -1919,14 +1937,15 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
@@ -2109,7 +2128,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
@@ -2339,7 +2358,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select IdoNotKnow and continue")
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
@@ -2919,8 +2938,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,15,16
-       */
+        * 3.16.8,11,12,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -2975,8 +2994,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-       * Income sub-journey 3.16.8 / 3.15.0 / 3.166 / 3.15.1/ 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
-       */
+        * Income sub-journey 3.16.8 / 3.15.0 / 3.166 / 3.15.1/ 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
+        */
 
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -3140,8 +3159,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,15,16
-       */
+        * 3.16.8,11,12,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -3196,8 +3215,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-       * Income sub-journey 3.16.8 / 3.15.0 / 3.166 / 3.15.1/ 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
-       */
+        * Income sub-journey 3.16.8 / 3.15.0 / 3.166 / 3.15.1/ 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
+        */
 
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -3364,8 +3383,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,15,16
-       */
+        * 3.16.8,11,12,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -3420,8 +3439,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-       * Income sub-journey 3.16.1,2,3,4,6,7,8 / 3.15.0,1 / 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
-       */
+        * Income sub-journey 3.16.1,2,3,4,6,7,8 / 3.15.0,1 / 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
+        */
 
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -3489,7 +3508,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
@@ -3609,8 +3628,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,15,16
-       */
+        * 3.16.8,11,12,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -3665,8 +3684,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-       * Income sub-journey 3.16.1,2,3,4,6,7,8 / 3.15.0,1 / 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
-       */
+        * Income sub-journey 3.16.1,2,3,4,6,7,8 / 3.15.0,1 / 3.16.5 / 3.15.3,4,5 / 3.16.11,12,15,16
+        */
 
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -3734,7 +3753,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
@@ -3809,8 +3828,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 1/1/2016, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
-       * 2.7 (1/1/2016), 2.8 (N), 2.8.1 (y), 2.8.2, 2.8.3 (Y), 2.8.4, 2.8.5 (Y), 2.9, 2.9.1 (Y), 2.10, 2.10.1 (Y), 2.11, 2.12
-       */
+        * 2.7 (1/1/2016), 2.8 (N), 2.8.1 (y), 2.8.2, 2.8.3 (Y), 2.8.4, 2.8.5 (Y), 2.9, 2.9.1 (Y), 2.10, 2.10.1 (Y), 2.11, 2.12
+        */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
@@ -3890,8 +3909,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-       * 3.16.8,11,13,14,15,16
-       */
+        * 3.16.8,10(y),10.1,11(n),11.1(n),15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -3956,21 +3975,22 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
       /** --- 2017 --- */
       /**
-       * Income sub-journey 3.16.8,11,13,14,15,16
-       */
+        * Income sub-journey 3.16.8,10(n),11(n),11.1(n),15,16
+        */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
@@ -4082,14 +4102,15 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
@@ -4146,8 +4167,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 1/1/2016, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
-       * 2.7 (1/1/2016), 2.8 (N), 2.8.1 (y), 2.8.2, 2.8.3 (Y), 2.8.4, 2.8.5 (Y), 2.9, 2.9.1 (Y), 2.10, 2.10.1 (Y), 2.11, 2.12
-       */
+        * 2.7 (1/1/2016), 2.8 (N), 2.8.1 (y), 2.8.2, 2.8.3 (Y), 2.8.4, 2.8.5 (Y), 2.9, 2.9.1 (Y), 2.10, 2.10.1 (Y), 2.11, 2.12
+        */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
@@ -4227,8 +4248,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,15,16
-       */
+        * 3.16.8,11,12,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -4304,8 +4325,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 --- */
       /**
-       * Income sub-journey 3.16.8,9,11,12,13,14,15,16
-       */
+        * Income sub-journey 3.16.8,9,11,12,13,14,15,16
+        */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
       WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
@@ -4533,8 +4554,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,15,16
-       */
+        * 3.16.8,11,12,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -4589,8 +4610,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-       * Income sub-journey 3.16.1,2,3,4,5,6,7,8,11,12,13,14,15,16
-       */
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,11,12,13,14,15,16
+        */
 
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -4658,7 +4679,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
@@ -4760,8 +4781,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
 
       /** --- 2016 ---
-       * 3.16.8,11,12,13,15,16
-       */
+        * 3.16.8,11,12,13,15,16
+        */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -4816,8 +4837,8 @@ class CalculationUserJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-       * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,11,12,13,14,15,16
-       */
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,10(n),11(n),11.1(n),15,16
+        */
 
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -4885,7 +4906,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify AddAnotherSchemePage page, select no and continue")
       AddAnotherSchemePage.verifyPageSelectNoAndContinue()
 
-      When("I verify ThresholdIncomePage(2017-2020) page, select no and continue")
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
       ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
       When("I verify TotalIncomePage page, enter total income and continue")
@@ -4924,14 +4945,15 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 

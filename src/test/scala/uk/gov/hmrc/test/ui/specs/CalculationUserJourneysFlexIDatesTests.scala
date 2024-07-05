@@ -107,7 +107,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       // end of setup journey
       /** DC AA journey 2 */
-      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1, 3.16, 3.17 ... */
+      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1, 3.16,3.16.8(y),10(y),10.1,11(n),11.1(n),15,16,3.17 ... */
 
       /** --- 2016 --- */
       When("I click Add details for 2015 to 2016")
@@ -174,14 +174,15 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /* When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -268,7 +269,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       // end of setup journey
       /** DC AA journey 2 */
-      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1, 3.16, 3.17 ... */
+      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1,3.16, 3.16.8(y),10(y),10.1,11(n),11.1(n),15,16, 3.17 ... */
 
       /** --- 2016 --- */
       When("I click Add details for 2015 to 2016")
@@ -335,14 +336,15 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -429,7 +431,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       // end of setup journey
       /** DC AA journey 2 */
-      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1, 3.16, 3.17 ... */
+      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1,3.16(6000), 3.16.8(y),10(y),10.1,11(n),11.1(n),15,16, 3.17 ... */
 
       /** --- 2016 --- */
       When("I click Add details for 2015 to 2016")
@@ -493,14 +495,15 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -587,7 +590,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       // end of setup journey
       /** DC AA journey 2 */
-      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1, 3.16, 3.17 ... */
+      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1, 3.16,3.16.8(y),10(y),10.1,11(n),11.1(n),15,16, 3.17 ... */
 
       /** --- 2016 --- */
       When("I click Add details for 2015 to 2016")
@@ -654,14 +657,15 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /* When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -748,7 +752,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       // end of setup journey
       /** DC AA journey 2 */
-      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1, 3.16, 3.17 ... */
+      /** Below journey covers 3.1, 3.2, 3.3, 3.4, 3.4.1, 3.5(N), 3.6, 3.7, 3.8, 3.9, 3.10(y), 3.11(both), 3.12, 3.12.1(both), 3.13, 3.13.1, 3.16,3.16.8(y),10(y),10.1,11(n),11.1(n),15,16, 3.17 ... */
 
       /** --- 2016 --- */
       When("I click Add details for 2015 to 2016")
@@ -812,14 +816,15 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -874,7 +879,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2016")
 
       /** AA Journey 1 - Setup journey 1 - No DC AA Journey */
-      /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
+      /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000),3.16.8(y),10(y),10.1,11(n),11.1(n),15,16, 3.17, task list */
 
       /** --- 2016 --- */
       When("I click Add details for 2015 to 2016")
@@ -912,14 +917,15 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
@@ -1111,14 +1117,15 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      //Commented scripts/navigation will be implemented in a separate ticket
+      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
+      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
-      /*When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
       When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
-       */
+
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
