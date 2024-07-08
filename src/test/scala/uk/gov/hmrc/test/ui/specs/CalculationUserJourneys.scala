@@ -2612,6 +2612,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter contribution relief and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("550")
+
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -2839,6 +2845,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select no and continue")
       AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
 
@@ -3063,6 +3072,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter contribution relief and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("550")
+
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select no and continue")
       AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
 
@@ -3284,8 +3299,14 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
 
-      When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select no and continue")
-      AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
+      When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select yes and continue")
+      AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
+
+      When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
+      LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("6000")
 
       When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select no and continue")
       ClaimingTaxReliefPensionPage.verifyPageSelectNoAndContinue()
