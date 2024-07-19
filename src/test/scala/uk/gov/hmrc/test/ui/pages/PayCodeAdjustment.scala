@@ -18,11 +18,16 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 
-object PersonalAllowancePage extends BasePage {
-  def verifyPageEnterPersonalAllowanceAndContinue(personalAllowance: String) = {
-    enterPersonalAllowance(personalAllowance)
+object PayCodeAdjustment extends BasePage {
+
+  def verifyPageSelectIncreaseAndContinue() = {
+    driver.findElement(By.id("value_0")).click()
     submitPage()
   }
-  def enterPersonalAllowance(personalAllowance: String) = driver.findElement(By.id("value")).sendKeys(personalAllowance)
+
+  def verifyPageSelectDecreaseAndContinue() = {
+    driver.findElement(By.id("value_1")).click()
+    submitPage()
+  }
 
 }

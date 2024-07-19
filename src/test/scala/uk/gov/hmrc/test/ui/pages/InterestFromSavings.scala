@@ -18,11 +18,17 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 
-object PersonalAllowancePage extends BasePage {
-  def verifyPageEnterPersonalAllowanceAndContinue(personalAllowance: String) = {
-    enterPersonalAllowance(personalAllowance)
-    submitPage()
+object InterestFromSavings extends BasePage {
+
+  def enterInterestFromSavings(interestAmount:String)={
+    driver.findElement(By.xpath("//input[@id='value']")).sendKeys(interestAmount)
   }
-  def enterPersonalAllowance(personalAllowance: String) = driver.findElement(By.id("value")).sendKeys(personalAllowance)
+
+
+  def enterInterestFromSavingsAndContinue(interestAmount:String)={
+    enterInterestFromSavings(interestAmount)
+    submitPage()
+
+  }
 
 }

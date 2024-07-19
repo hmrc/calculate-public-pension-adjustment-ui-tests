@@ -15,14 +15,16 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
-
 import org.openqa.selenium.By
 
-object PersonalAllowancePage extends BasePage {
-  def verifyPageEnterPersonalAllowanceAndContinue(personalAllowance: String) = {
-    enterPersonalAllowance(personalAllowance)
+object HowMuchContribution extends BasePage {
+
+  def enterPreReliefPensionContribution(preReliefPensionContribution:String) = {
+    driver.findElement(By.xpath("//input[@id='value']")).sendKeys(preReliefPensionContribution)
+  }
+  def enterPreReliefPensionContributionAndContinue(preReliefPensionContribution:String) = {
+    enterPreReliefPensionContribution(preReliefPensionContribution)
     submitPage()
   }
-  def enterPersonalAllowance(personalAllowance: String) = driver.findElement(By.id("value")).sendKeys(personalAllowance)
-
 }
+

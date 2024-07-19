@@ -16,13 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
+object MarriageAllowance extends BasePage {
 
-object PersonalAllowancePage extends BasePage {
-  def verifyPageEnterPersonalAllowanceAndContinue(personalAllowance: String) = {
-    enterPersonalAllowance(personalAllowance)
+  def verifyClaimingMarriageAllowanceSelectYesAndContinue() = {
+    selectYesOption()
     submitPage()
   }
-  def enterPersonalAllowance(personalAllowance: String) = driver.findElement(By.id("value")).sendKeys(personalAllowance)
+
+  def verifyClaimingMarriageAllowanceSelectNoAndContinue() = {
+    selectNoOption()
+    submitPage()
+  }
 
 }

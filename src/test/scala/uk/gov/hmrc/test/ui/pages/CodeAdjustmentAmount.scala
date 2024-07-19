@@ -18,11 +18,10 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 
-object PersonalAllowancePage extends BasePage {
-  def verifyPageEnterPersonalAllowanceAndContinue(personalAllowance: String) = {
-    enterPersonalAllowance(personalAllowance)
+object CodeAdjustmentAmount extends BasePage {
+
+  def enterDebitOrRefundCodeAmount(debitOrRefundCodeAmount: String) = {
+    driver.findElement(By.id("value")).sendKeys(debitOrRefundCodeAmount)
     submitPage()
   }
-  def enterPersonalAllowance(personalAllowance: String) = driver.findElement(By.id("value")).sendKeys(personalAllowance)
-
 }
