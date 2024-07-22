@@ -614,9 +614,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
-      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -822,16 +819,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select yes and continue")
-      DoYouHaveCodeAdjustment.verifyPageSelectYesAndContinue()
-
-      //select "Increase" wordings would be updated according to MCSC-969(not done yet) content changes
-      When("3.16.11.2 I verify PayeCodeAdjustment page, select Increase and continue")
-      PayCodeAdjustment.verifyPageSelectIncreaseAndContinue()
-
-      When("3.16.11.3 I verify CodeAdjustmentAmount page, enter DebitOrRefundCode amount and continue")
-      CodeAdjustmentAmount.enterDebitOrRefundCodeAmount("3000")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1175,16 +1162,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select yes and continue")
-      DoYouHaveCodeAdjustment.verifyPageSelectYesAndContinue()
-
-      //select "Decrease" wordings might be updated according to MCSC-969 changes
-      When("3.16.11.2 I verify PayeCodeAdjustment page, select Decrease and continue")
-      PayCodeAdjustment.verifyPageSelectDecreaseAndContinue()
-
-      When("3.16.11.3 I verify CodeAdjustmentAmount page, enter DebitOrRefundCode amount and continue")
-      CodeAdjustmentAmount.enterDebitOrRefundCodeAmount("3000")
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -1311,9 +1288,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
-      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1933,9 +1907,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
-      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -3978,9 +3949,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
-      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
-
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -4104,9 +4072,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
-      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -4947,9 +4912,6 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-      When("3.16.11.1 I verify DoYouHaveCodeAdjustment page, select no and continue")
-      DoYouHaveCodeAdjustment.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
