@@ -19,12 +19,10 @@ import org.openqa.selenium.By
 
 object HowMuchContribution extends BasePage {
 
-  def enterPreReliefPensionContribution(preReliefPensionContribution:String) = {
+  def enterPreReliefPensionContribution(preReliefPensionContribution: String) =
     driver.findElement(By.xpath("//input[@id='value']")).sendKeys(preReliefPensionContribution)
-  }
-  def enterPreReliefPensionContributionAndContinue(preReliefPensionContribution:String) = {
+  def enterPreReliefPensionContributionAndContinue(preReliefPensionContribution: String) = {
     enterPreReliefPensionContribution(preReliefPensionContribution)
     submitPage()
   }
 }
-

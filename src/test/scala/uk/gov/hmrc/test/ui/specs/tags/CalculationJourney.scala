@@ -14,19 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.specs.tags
 
-import org.openqa.selenium.By
+import org.scalatest.Tag
 
-object InterestFromSavings extends BasePage {
-
-  def enterInterestFromSavings(interestAmount: String) =
-    driver.findElement(By.xpath("//input[@id='value']")).sendKeys(interestAmount)
-
-  def enterInterestFromSavingsAndContinue(interestAmount: String) = {
-    enterInterestFromSavings(interestAmount)
-    submitPage()
-
-  }
-
-}
+object CalculationJourney extends Tag("CalculationJourney")
