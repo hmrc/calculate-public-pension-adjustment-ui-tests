@@ -20,12 +20,11 @@ import org.openqa.selenium.By
 
 object AmountFlexibleRemunerationArrangements extends BasePage {
 
-  def enterFlexibleRemunerationAmount(flexibleRemuneration:String) = {
+  def enterFlexibleRemunerationAmount(flexibleRemuneration: String) =
     driver.findElement(By.id("value")).sendKeys(flexibleRemuneration)
-  }
 
-  def enterFlexibleRemunerationAmountAndContinue(flexibleRemuneration:String) = {
-    enterFlexibleRemunerationAmount(flexibleRemuneration:String)
+  def enterFlexibleRemunerationAmountAndContinue(flexibleRemuneration: String) = {
+    enterFlexibleRemunerationAmount(flexibleRemuneration: String)
     submitPage()
   }
 

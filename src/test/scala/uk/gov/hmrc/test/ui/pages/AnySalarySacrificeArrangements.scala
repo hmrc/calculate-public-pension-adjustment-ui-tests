@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 object AnySalarySacrificeArrangements extends BasePage {
 
-  def selectYesAndContinue()= {
+  def selectYesAndContinue() = {
     selectYesOption()
     submitPage()
   }
