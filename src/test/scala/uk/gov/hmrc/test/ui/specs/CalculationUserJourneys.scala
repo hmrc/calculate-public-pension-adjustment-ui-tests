@@ -161,6 +161,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -268,9 +274,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
       FlexibleRemunerationsArrangements.selectNoAndContinue()
 
-      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select no and continue")
-      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -282,6 +285,12 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("2000")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
 
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
@@ -469,6 +478,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.9 I verify HowMuchTaxRelief page, enter amount and continue")
       HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("100")
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -598,6 +613,12 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.9 I verify HowMuchTaxRelief page, enter amount and continue")
       HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("100")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
 
       When("3.15.0 I verify KnowAdjustedAmountPage page, select yes and continue")
       KnowAdjustedAmountPage.verifyPageSelectYesAndContinue()
@@ -814,6 +835,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
       DonatedViaGiftAid.verifyPageSelectNoAndContinue()
 
@@ -937,6 +964,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.15.0 I verify KnowAdjustedAmountPage page, select yes and continue")
       KnowAdjustedAmountPage.verifyPageSelectYesAndContinue()
@@ -1153,6 +1183,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -1279,6 +1312,12 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
 
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
@@ -1489,6 +1528,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
       DonatedViaGiftAid.verifyPageSelectNoAndContinue()
 
@@ -1618,6 +1660,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("200000")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
@@ -1774,6 +1819,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -1884,7 +1932,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select no and continue")
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
       ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
@@ -1899,6 +1947,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("200000")
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -1907,6 +1961,10 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+
+      HomePage.tempNavigation(
+        "http://localhost:12804/public-pension-adjustment/annual-allowance/2017/blind-person-allowance"
+      )
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -2003,6 +2061,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
@@ -2111,12 +2172,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
       FlexibleRemunerationsArrangements.selectNoAndContinue()
 
-      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select yes and continue")
-      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
-
-      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -2125,6 +2180,12 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
 
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
@@ -2233,6 +2294,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
@@ -2344,12 +2408,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select yes and continue")
-      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
-
-      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -2358,6 +2416,12 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
 
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
@@ -2479,6 +2543,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -2580,14 +2647,11 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
-
-      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
-      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
-
-      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter contribution relief and continue")
-      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("550")
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
@@ -2712,6 +2776,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -2813,11 +2880,14 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxReliefPension page, select no and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
-
-      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
-      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select no and continue")
       AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
@@ -2937,7 +3007,13 @@ class CalculationUserJourneys extends BaseSpec {
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("60000")
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
-      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
+
+      When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("200000")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
@@ -3037,17 +3113,20 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify TotalIncomePage page, enter total income and continue")
       TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("300000")
 
-      When("3.16.8 I verify ClaimingTaxReliefPension page, select no and continue")
-      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+      When("3.16.8 I verify ClaimingTaxReliefPension page, select yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
 
-      When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
-      KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
+      When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("200000")
 
       When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
       ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
 
-      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter contribution relief and continue")
-      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("550")
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
+      When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
+      KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select no and continue")
       AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
@@ -3166,6 +3245,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -3267,11 +3352,14 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxReliefPension page, select no and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
-
-      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
-      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
@@ -3396,6 +3484,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -3506,20 +3600,20 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select yes and continue")
-      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
-
-      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
       When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
       LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("6000")
 
-      When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
-      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+      When("3.16.8 I verify ClaimingTaxReliefPension page, select yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
+
+      When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("2000")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
@@ -3638,6 +3732,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -3748,12 +3848,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select yes and continue")
-      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
-
-      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -3762,6 +3856,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
       KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
@@ -3940,6 +4037,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -4066,6 +4166,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
       DonatedViaGiftAid.verifyPageSelectNoAndContinue()
@@ -4273,6 +4376,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select Yes and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+
       When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
       DonatedViaGiftAid.verifyPageSelectNoAndContinue()
 
@@ -4402,6 +4508,12 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("200000")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
 
       When("3.16.10 I verify DonatedViaGiftAid page, select no and continue")
       DonatedViaGiftAid.verifyPageSelectNoAndContinue()
@@ -4555,6 +4667,12 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
+
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
@@ -4662,12 +4780,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
       FlexibleRemunerationsArrangements.selectNoAndContinue()
 
-      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select yes and continue")
-      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
-
-      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("2000")
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -4676,6 +4788,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select no and continue")
       DonatedViaGiftAid.verifyPageSelectNoAndContinue()
@@ -4781,6 +4896,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
       ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
       DonatedViaGiftAid.verifyPageSelectYesAndContinue()
@@ -4892,9 +5010,6 @@ class CalculationUserJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5.1 I verify HowMuchContributionReliefAtSourcePage page, select no and continue")
-      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -4906,6 +5021,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
       TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("200000")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
       When("3.16.10 I verify DonatedViaGiftAid page, select no and continue")
       DonatedViaGiftAid.verifyPageSelectNoAndContinue()
