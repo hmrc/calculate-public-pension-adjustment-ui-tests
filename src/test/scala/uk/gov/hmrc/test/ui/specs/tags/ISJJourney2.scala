@@ -18,4 +18,4 @@ package uk.gov.hmrc.test.ui.specs.tags
 
 import org.scalatest.Tag
 
-object ISJJourney extends Tag("ISJJourney")
+object ISJJourney2 extends Tag("ISJJourney2")

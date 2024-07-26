@@ -18,14 +18,14 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{CalculationJourney, ISJJourney, ZapTests}
+import uk.gov.hmrc.test.ui.specs.tags.CalculationJourney1
 
 class CalculationUserJourneys extends BaseSpec {
 
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
 
-    Scenario("Setup Journey 1", CalculationJourney) {
+    Scenario("Setup Journey 1", CalculationJourney1) {
 
       /** User not eligible */
       /** Below journey covers 0, 1.1 (N), 1.2 */
@@ -37,7 +37,7 @@ class CalculationUserJourneys extends BaseSpec {
 
     }
 
-    Scenario("Setup Journey 2, and LTA journey 1", CalculationJourney) {
+    Scenario("Setup Journey 2, and LTA journey 1", CalculationJourney1) {
 
       /** User not resubmitting, submitting LTA adjustment only, */
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
@@ -76,7 +76,7 @@ class CalculationUserJourneys extends BaseSpec {
 
     }
 
-    Scenario("Setup Journey 2, and LTA journey 2", CalculationJourney) {
+    Scenario("Setup Journey 2, and LTA journey 2", CalculationJourney1) {
 
       /** User has protections and both enhancements (international enhancement and pension credit), all have changed. Previous LTA charge, paid with both lump sum and annual payment, scheme paid, new excess to be taken as both, pension scheme to pay increase */
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
@@ -176,7 +176,7 @@ class CalculationUserJourneys extends BaseSpec {
 
     }
 
-    Scenario("Setup Journey 2, and LTA journey 3", CalculationJourney) {
+    Scenario("Setup Journey 2, and LTA journey 3", CalculationJourney1) {
 
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
       Given("I am on the Public Service Pensions Remediation home page")
@@ -261,7 +261,7 @@ class CalculationUserJourneys extends BaseSpec {
 
     }
 
-    Scenario("Setup Journey 2, and LTA journey 4", CalculationJourney) {
+    Scenario("Setup Journey 2, and LTA journey 4", CalculationJourney1) {
 
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
       Given("I am on the Public Service Pensions Remediation home page")
@@ -339,7 +339,7 @@ class CalculationUserJourneys extends BaseSpec {
 
     }
 
-    Scenario("Setup Journey 2, and LTA journey 5", CalculationJourney) {
+    Scenario("Setup Journey 2, and LTA journey 5", CalculationJourney1) {
 
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
       Given("I am on the Public Service Pensions Remediation home page")
@@ -405,7 +405,7 @@ class CalculationUserJourneys extends BaseSpec {
 
     }
 
-    Scenario("Setup Journey 2, and LTA journey 6", CalculationJourney) {
+    Scenario("Setup Journey 2, and LTA journey 6", CalculationJourney1) {
 
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
       Given("I am on the Public Service Pensions Remediation home page")
