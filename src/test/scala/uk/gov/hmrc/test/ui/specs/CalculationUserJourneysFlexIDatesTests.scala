@@ -18,14 +18,14 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{CalculationJourney, ZapTests}
+import uk.gov.hmrc.test.ui.specs.tags.{CalculationJourney, CalculationJourney2, ZapTests}
 
 class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
 
-    Scenario("Journey for flexi date 1", ZapTests, CalculationJourney) {
+    Scenario("Journey for flexi date 1", ZapTests, CalculationJourney2) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 6/4/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -190,7 +190,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
 
-    Scenario("Journey for flexi date 2", ZapTests, CalculationJourney) {
+    Scenario("Journey for flexi date 2", ZapTests, CalculationJourney2) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 7/7/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -355,7 +355,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
 
-    Scenario("Journey for flexi date 3", CalculationJourney) {
+    Scenario("Journey for flexi date 3", CalculationJourney2) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 8/7/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -517,7 +517,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
 
-    Scenario("Journey for flexi date 4", CalculationJourney) {
+    Scenario("Journey for flexi date 4", CalculationJourney2) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 9/7/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -682,7 +682,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
 
-    Scenario("Journey for flexi date 5", CalculationJourney) {
+    Scenario("Journey for flexi date 5", CalculationJourney2) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 5/4/2016, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -844,7 +844,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
 
-    Scenario("Setup Journey 6, AA Journey 6", CalculationJourney) {
+    Scenario("Setup Journey 6, AA Journey 6", CalculationJourney2) {
 
       /** User not resubmitting, AA adjustment, non-Scottish taxpayer, left scheme 8/7/2015, no other schemes, charge paid 14/15. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (8/7/2015), 2.5 (N), 2.8 (Y) */
@@ -948,7 +948,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
     }
 
-    Scenario("Journey for User Left in pre remedy date 1", CalculationJourney) {
+    Scenario("Journey for User Left in pre remedy date 1", CalculationJourney2) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 6/6/2015, has DC scheme flexibly accessed 7/6/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** This scenario covers user journey where user has left their public pension scheme on 7/6/15 should not be asked PIA for 15/16 post questions in the 15/16 year.--- MCSC-770 ---validation of error message */
@@ -1001,7 +1001,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       WhenFlexiblyAccessPensionPage.verifyInvalidFlexiblyEnteredDate("There is a problem")*/
     }
 
-    Scenario("Journey for User Left in pre remedy date 2", CalculationJourney) {
+    Scenario("Journey for User Left in pre remedy date 2", CalculationJourney2) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 5/6/2015, has DC scheme flexibly accessed 5/6/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** This scenario covers user journey where user has left their public pension scheme on 5/6/15 should not be asked PIA for 15/16 post questions in the 15/16 year.--- MCSC-760 */
