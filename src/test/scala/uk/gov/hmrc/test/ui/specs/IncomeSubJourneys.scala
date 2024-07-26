@@ -453,7 +453,7 @@ class IncomeSubJourneys extends BaseSpec {
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8,9 / 3.15.0,3.15 / 3.16.11(n),11.1(n),15(y),16
+        * Income sub-journey 3.16.8,9 / 3.15.0,3.15 / 3.16.11(n),11.4(y),15(y),16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -583,6 +583,12 @@ class IncomeSubJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+
+      When("3.16.11.4 I verify TradeUnionRelief page, select yes and continue")
+      TradeUnionRelief.verifyPageSelectYesAndContinue()
+
+      When("3.16.11.5 I verify UnionPoliceReliefAmount page, enter UnionPoliceRelief amount and continue")
+      UnionPoliceReliefAmount.enterUnionPoliceReliefAmount("100")
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -727,7 +733,7 @@ class IncomeSubJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-        * Income sub-journey 3.16.8,11(n),11.1(y),11.2,11.3,15(y),16
+        * Income sub-journey 3.16.8,11(n),11.4(n),15(y),16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -795,6 +801,9 @@ class IncomeSubJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+
+      When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+      TradeUnionRelief.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1075,7 +1084,7 @@ class IncomeSubJourneys extends BaseSpec {
       /** Below journey covers 3.1, 3.2 ... */
 
       /** --- 2016 ---
-        * 3.16.8,10(y),10.1,11(n),11.1(y),11.2,11.3,15(y),16
+        * 3.16.8,10(y),10.1,11(n),11.4(n),15(y),16
         */
       When("I click Add details for 2015 to 2016")
       TaskListPage.clickAddDetailsFor2015To2016()
@@ -1144,6 +1153,9 @@ class IncomeSubJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
+      When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+      TradeUnionRelief.verifyPageSelectNoAndContinue()
+
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -1155,7 +1167,7 @@ class IncomeSubJourneys extends BaseSpec {
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8,10(y),10.11.1(n),11.1(n),15(y),16
+        * Income sub-journey 3.16.8,10(y),10.11.1(n),11.4(n),15(y),16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -1276,6 +1288,9 @@ class IncomeSubJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+
+      When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+      TradeUnionRelief.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -1794,7 +1809,7 @@ class IncomeSubJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,10(y),10.1,11(n),11.1(n),15,16
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,10(y),10.1,11(n),11.4(n),15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -1881,9 +1896,6 @@ class IncomeSubJourneys extends BaseSpec {
       When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
       AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
-      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
-      ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
-
       When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
       AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
 
@@ -1911,9 +1923,8 @@ class IncomeSubJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-      HomePage.tempNavigation(
-        "http://localhost:12804/public-pension-adjustment/annual-allowance/2017/blind-person-allowance"
-      )
+      When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+      TradeUnionRelief.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -3998,6 +4009,9 @@ class IncomeSubJourneys extends BaseSpec {
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
+      When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+      TradeUnionRelief.verifyPageSelectNoAndContinue()
+
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
 
@@ -4009,7 +4023,7 @@ class IncomeSubJourneys extends BaseSpec {
 
       /** --- 2017 --- */
       /**
-        * Income sub-journey 3.16.8,10(n),11(n),11.1(n),15,16
+        * Income sub-journey 3.16.8,10(n),11(n),11.4(n),15,16
         */
       When("I click Add details for 2016 to 2017")
       TaskListPage.clickAddDetailsFor2016To2017()
@@ -4124,6 +4138,9 @@ class IncomeSubJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+
+      When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+      TradeUnionRelief.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
@@ -4872,7 +4889,7 @@ class IncomeSubJourneys extends BaseSpec {
 
       /** --- 2017 */
       /**
-        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,10(n),11(n),11.1(n),15,16
+        * Income sub-journey 3.16.1,2,3,4,5,6,7,8,9,10(n),11(n),11.4(n),15,16
         */
 
       When("I click Add details for 2016 to 2017")
@@ -4979,6 +4996,9 @@ class IncomeSubJourneys extends BaseSpec {
 
       When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
       DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+
+      When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+      TradeUnionRelief.verifyPageSelectNoAndContinue()
 
       When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
       BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesAndContinue()
