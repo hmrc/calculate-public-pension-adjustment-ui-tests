@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{CalculationJourney, CalculationJourney2, ZapTests}
+import uk.gov.hmrc.test.ui.specs.tags.{CalculationJourney2, ZapTests}
 
 class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 

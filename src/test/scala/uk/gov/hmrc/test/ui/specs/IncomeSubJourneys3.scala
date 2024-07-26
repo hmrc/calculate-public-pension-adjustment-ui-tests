@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{ISJJourney, ISJJourney3, ZapTests}
+import uk.gov.hmrc.test.ui.specs.tags.ISJJourney3
 
 class IncomeSubJourneys3 extends BaseSpec {
 

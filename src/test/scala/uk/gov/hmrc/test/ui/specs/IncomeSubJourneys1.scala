@@ -18,14 +18,14 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{ISJJourney, ZapTests}
+import uk.gov.hmrc.test.ui.specs.tags.{ISJJourney1, ZapTests}
 
 class IncomeSubJourneys1 extends BaseSpec {
 
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
 
-    Scenario("Income Sub-Journeys 1", ZapTests, ISJJourney) {
+    Scenario("Income Sub-Journeys 1", ZapTests, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment, non-Scottish taxpayer, left scheme 1/1/2017, no other schemes, charge paid 14/15. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (1/1/2017), 2.5 (N), 2.8 (Y) */
@@ -282,7 +282,7 @@ class IncomeSubJourneys1 extends BaseSpec {
 
     }
 
-    Scenario("Income Sub-Journeys 2", ZapTests, ISJJourney) {
+    Scenario("Income Sub-Journeys 2", ZapTests, ISJJourney1) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 1/1/2016, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -648,7 +648,7 @@ class IncomeSubJourneys1 extends BaseSpec {
 
     }
 
-    Scenario("Income Sub-Journeys 3", ZapTests, ISJJourney) {
+    Scenario("Income Sub-Journeys 3", ZapTests, ISJJourney1) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 1/1/2016, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -999,7 +999,7 @@ class IncomeSubJourneys1 extends BaseSpec {
 
     }
 
-    Scenario("Income Sub-Journeys 4", ZapTests, ISJJourney) {
+    Scenario("Income Sub-Journeys 4", ZapTests, ISJJourney1) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 1/1/2016, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -1350,7 +1350,7 @@ class IncomeSubJourneys1 extends BaseSpec {
 
     }
 
-    Scenario("Income Sub-Journeys 5", ZapTests, ISJJourney) {
+    Scenario("Income Sub-Journeys 5", ZapTests, ISJJourney1) {
 
       /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 1/1/2016, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
@@ -1698,7 +1698,7 @@ class IncomeSubJourneys1 extends BaseSpec {
 
     }
 
-    Scenario("Income Sub-Journeys 6", ZapTests, ISJJourney) {
+    Scenario("Income Sub-Journeys 6", ZapTests, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment, non-Scottish taxpayer, left scheme 1/1/2017, no other schemes, charge paid 14/15. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (1/1/2017), 2.5 (N), 2.8 (Y) */
