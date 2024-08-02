@@ -32,9 +32,6 @@ class IncomeSubJourneys2 extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -264,9 +261,6 @@ class IncomeSubJourneys2 extends BaseSpec {
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (1/1/2017), 2.5 (N), 2.8 (Y) */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
@@ -513,9 +507,6 @@ class IncomeSubJourneys2 extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -746,9 +737,6 @@ class IncomeSubJourneys2 extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -978,9 +966,6 @@ class IncomeSubJourneys2 extends BaseSpec {
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (1/1/2017), 2.5 (N), 2.8 (Y) */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
@@ -1214,9 +1199,6 @@ class IncomeSubJourneys2 extends BaseSpec {
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (1/1/2017), 2.5 (N), 2.8 (Y) */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {

@@ -34,9 +34,6 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -198,9 +195,6 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
@@ -364,9 +358,6 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -525,9 +516,6 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
@@ -691,9 +679,6 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -852,9 +837,6 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -955,9 +937,6 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -1007,9 +986,6 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       /** This scenario covers user journey where user has left their public pension scheme on 5/6/15 should not be asked PIA for 15/16 post questions in the 15/16 year.--- MCSC-760 */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {

@@ -25,27 +25,12 @@ class CalculationUserJourneys extends BaseSpec {
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
 
-    Scenario("Setup Journey 1", CalculationJourney1) {
-
-      /** User not eligible */
-      /** Below journey covers 0, 1.1 (N), 1.2 */
-      Given("I am on the Public Service Pensions Remediation home page")
-      HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectNoAndContinueForGSPage()
-
-    }
-
     Scenario("Setup Journey 2, and LTA journey 1", CalculationJourney1) {
 
       /** User not resubmitting, submitting LTA adjustment only, */
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
@@ -82,9 +67,6 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
@@ -182,9 +164,6 @@ class CalculationUserJourneys extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -267,9 +246,6 @@ class CalculationUserJourneys extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -345,9 +321,6 @@ class CalculationUserJourneys extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
-
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
@@ -410,9 +383,6 @@ class CalculationUserJourneys extends BaseSpec {
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
-
-      When("I select I received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
 
       When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
