@@ -815,20 +815,8 @@ class IncomeSubJourneys3 extends BaseSpec {
       /** User has no protections, no previous charge, user paying new charge */
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
-      When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
-
-      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
-      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-
-      Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.selectIncreasedChargeRadioButtonAndContinue()
-
-      When("I select no radio button and click continue")
-      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       When("I select No LTA protection or enhancement radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectNoRadioButtonAndContinue()
@@ -1160,20 +1148,8 @@ class IncomeSubJourneys3 extends BaseSpec {
       /** User has no protections, no previous charge, user paying new charge */
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
-      When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
-
-      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
-      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-
-      Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.selectIncreasedChargeRadioButtonAndContinue()
-
-      When("I select no radio button and click continue")
-      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       When("I select No LTA protection or enhancement radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectNoRadioButtonAndContinue()

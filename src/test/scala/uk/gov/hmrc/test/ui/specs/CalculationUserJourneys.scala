@@ -25,42 +25,6 @@ class CalculationUserJourneys extends BaseSpec {
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
 
-    Scenario("Setup Journey 2, and LTA journey 1", CalculationJourney1) {
-
-      /** User not resubmitting, submitting LTA adjustment only, */
-      /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (LTA) */
-      Given("I am on the Public Service Pensions Remediation home page")
-      HomePage.goToHomepage()
-
-      When("I click on ContinueWithoutSignIn and move to next page")
-      signInPage match {
-        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
-        case _      =>
-      }
-
-      When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
-
-      When("I click Annual allowance and click continue")
-      ReportingChangePage.selectLifetimeAllowanceAndContinue()
-
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
-
-      When("I verify task list page and click add details for lifetime allowance")
-      TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
-
-      /** LTA Journey 1 */
-      LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
-
-      When("I select No and continue to next page")
-      HadBenefitCrystallisationEventPage.selectNoAndContinueForLTAPage()
-
-      When("I click sign out from the page")
-      NotAbleToUseThisServiceLtaPage.signOutPage()
-
-    }
-
     Scenario("Setup Journey 2, and LTA journey 2", CalculationJourney1) {
 
       /** User has protections and both enhancements (international enhancement and pension credit), all have changed. Previous LTA charge, paid with both lump sum and annual payment, scheme paid, new excess to be taken as both, pension scheme to pay increase */
@@ -89,20 +53,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** LTA Journey 2 */
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
-      When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
-
-      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
-      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-
-      Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.selectIncreasedChargeRadioButtonAndContinue()
-
-      When("I select yes radio button and click continue")
-      MultipleBenefitCrystallisationEventPage.selectYesRadioButtonAndContinue()
 
       When("I select both radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectBothRadioButtonAndContinue()
@@ -186,20 +138,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** User has protections only, has changed, user paid initial charge, new charge annual payment only, user paying new charge */
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
-      When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
-
-      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
-      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-
-      Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.selectIncreasedChargeRadioButtonAndContinue()
-
-      When("I select no radio button and click continue")
-      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       When("I select protection radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectProtectionRadioButtonAndContinue()
@@ -268,20 +208,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** User has enhancements, has changed, previous charge, annual payment, positive value, user will pay new charge */
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
-      When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
-
-      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
-      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-
-      Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.selectIncreasedChargeRadioButtonAndContinue()
-
-      When("I select yes radio button and click continue")
-      MultipleBenefitCrystallisationEventPage.selectYesRadioButtonAndContinue()
 
       When("I select enhancement radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectEnhancementsRadioButtonAndContinue()
@@ -343,20 +271,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** User has no protections or enhancements, neither has changed, no previous charge, annual payment = 0, user hits kickout */
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
-      When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
-
-      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
-      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-
-      Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.selectIncreasedChargeRadioButtonAndContinue()
-
-      When("I select no radio button and click continue")
-      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       When("I select No LTA protection or enhancement radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectNoRadioButtonAndContinue()
@@ -406,20 +322,8 @@ class CalculationUserJourneys extends BaseSpec {
       /** User has no protections, no previous charge, user paying new charge */
       LifetimeAllowancePage.verifyLifetimeAllowancePageAndContinue()
 
-      When("I select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
       When("I enter date and click continue")
       DateOfBenefitCrystallisationEventPage.enterBenefitCrystallisationDateAndContinue()
-
-      Then("I Should see the told-change-in-lta-percentage page and then select yes and continue")
-      ToldChangeInLtaPercentagePage.onToldChangeInLtaPercentagePageAndSelectYesAndContinue()
-
-      Then("I Should see the percentage-caused-change-in-charge page")
-      PercentageCausedChangeInChargePage.selectIncreasedChargeRadioButtonAndContinue()
-
-      When("I select no radio button and click continue")
-      MultipleBenefitCrystallisationEventPage.selectNoRadioButtonAndContinue()
 
       When("I select No LTA protection or enhancement radio button and click continue")
       LtaProtectionOrEnhancementsPage.selectNoRadioButtonAndContinue()
