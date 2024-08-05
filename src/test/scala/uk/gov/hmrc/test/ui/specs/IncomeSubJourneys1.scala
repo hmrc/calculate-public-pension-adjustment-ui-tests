@@ -41,6 +41,9 @@ class IncomeSubJourneys1 extends BaseSpec {
       When("I select I'm not resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
@@ -299,6 +302,9 @@ class IncomeSubJourneys1 extends BaseSpec {
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
 
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
@@ -651,6 +657,9 @@ class IncomeSubJourneys1 extends BaseSpec {
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
 
@@ -986,6 +995,9 @@ class IncomeSubJourneys1 extends BaseSpec {
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
 
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
@@ -1323,6 +1335,9 @@ class IncomeSubJourneys1 extends BaseSpec {
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
 
@@ -1650,6 +1665,9 @@ class IncomeSubJourneys1 extends BaseSpec {
 
       When("I select I'm not resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
