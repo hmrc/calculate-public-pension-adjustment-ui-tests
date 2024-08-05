@@ -38,6 +38,9 @@ class CalculationUserJourneys extends BaseSpec {
         case _      =>
       }
 
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+
       When("I verify Affected by remedy page select no and click continue")
       AffectedByRemedyPage.selectNoAndContinueForGSPage()
 
