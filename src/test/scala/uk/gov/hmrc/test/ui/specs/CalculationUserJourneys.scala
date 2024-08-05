@@ -25,6 +25,27 @@ class CalculationUserJourneys extends BaseSpec {
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
 
+    Scenario("Setup Journey 1", CalculationJourney1) {
+
+      /** User not eligible */
+      /** Below journey covers 0, 1.1 (N), 1.2 */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I verify Affected by remedy page select no and click continue")
+      AffectedByRemedyPage.selectNoAndContinueForGSPage()
+
+      When("I click sign out from the page")
+      NotAbleToUseThisServiceLtaPage.signOutPage()
+
+    }
+
     Scenario("Setup Journey 2, and LTA journey 2", CalculationJourney1) {
 
       /** User has protections and both enhancements (international enhancement and pension credit), all have changed. Previous LTA charge, paid with both lump sum and annual payment, scheme paid, new excess to be taken as both, pension scheme to pay increase */
@@ -41,7 +62,10 @@ class CalculationUserJourneys extends BaseSpec {
       When("I select I'm not resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
-      When("I click Annual allowance and click continue")
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+
+      When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
 
       When("I verify check your answers page and click continue")
@@ -125,7 +149,10 @@ class CalculationUserJourneys extends BaseSpec {
       When("I select I'm not resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
-      When("I click Annual allowance and click continue")
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+
+      When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
 
       When("I verify check your answers page and click continue")
@@ -195,7 +222,10 @@ class CalculationUserJourneys extends BaseSpec {
       When("I select I'm not resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
-      When("I click Annual allowance and click continue")
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+
+      When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
 
       When("I verify check your answers page and click continue")
@@ -258,7 +288,10 @@ class CalculationUserJourneys extends BaseSpec {
       When("I select I'm not resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
-      When("I click Annual allowance and click continue")
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+
+      When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
 
       When("I verify check your answers page and click continue")
@@ -309,7 +342,10 @@ class CalculationUserJourneys extends BaseSpec {
       When("I select I'm not resubmitting the adjustment and click continue")
       ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
 
-      When("I click Annual allowance and click continue")
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+
+      When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
 
       When("I verify check your answers page and click continue")
