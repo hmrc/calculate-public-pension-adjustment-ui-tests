@@ -583,55 +583,6 @@ class AALTATriage1 extends BaseSpec {
 
     }
 
-    Scenario("Journey for Triage 14", AALTATriage1, CalculationJourney2) {
-
-      /** User resubmitting, LTA adjustment */
-      /** Below journey covers 0.7,0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.29 */
-      /** This scenario covers Triage LTA user journey where No Multiple BCEs (LTA)--- MCSC-1019(Scenario 3) */
-      Given("I am on the Public Service Pensions Remediation home page")
-      HomePage.goToHomepage()
-
-      When("I click on ContinueWithoutSignIn and move to next page")
-      signInPage match {
-        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
-        case _      =>
-      }
-
-      When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
-
-      When("I land on resubmission reason page, enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
-
-      When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
-
-      When("0.7 I select LTA, and click continue")
-      ReportingChangePage.selectLifetimeAllowanceAndContinue()
-
-      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
-
-      When("0.23 I verify LTA Charge page select No and continue to next page")
-      LTACharge.selectNoAndContinueForLTAPage()
-
-      When("0.24 I verify LTA Percentage change page select Yes and continue to next page")
-      LifetimeAllowancePercentageChangePage.verifyLTAPercentageChangeSelectYesAndContinue()
-
-      When("0.25 I verify LTA Percentage increase page select Yes and continue to next page")
-      LifetimeAllowancePercentageIncreasePage.verifyLTAPercentageIncreaseSelectYesAndContinue()
-
-      When("0.26 I verify LTA New Charge page select No and continue to next page")
-      LifetimeAllowanceNewChargePage.selectNoAndContinueForLTAPage()
-
-      When("0.27 I verify Multiple BCE page select No and continue to next page")
-      MultipleBenefitCrystallisationEventPage.selectNoAndContinueForLTAPage()
-
-      When("0.29 I verify You cannot make a LTA adjustment page and signout")
-      CannotUseTriageLTAService.signOutPage()
-
-    }
-
   }
 
 }
