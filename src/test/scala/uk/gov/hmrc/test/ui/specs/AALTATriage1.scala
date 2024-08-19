@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.tags.{AALTATriage1, CalculationJourney2}
 
-class AALTA extends BaseSpec {
+class AALTATriage1 extends BaseSpec {
 
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
