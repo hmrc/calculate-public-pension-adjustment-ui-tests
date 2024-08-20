@@ -39,10 +39,10 @@ class IncomeSubJourneys2 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -272,10 +272,10 @@ class IncomeSubJourneys2 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -520,10 +520,10 @@ class IncomeSubJourneys2 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -753,10 +753,10 @@ class IncomeSubJourneys2 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -986,10 +986,10 @@ class IncomeSubJourneys2 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -1222,10 +1222,10 @@ class IncomeSubJourneys2 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
