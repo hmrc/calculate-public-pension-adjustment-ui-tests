@@ -41,13 +41,13 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
@@ -71,7 +71,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
 
       When("I select yes and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+      HaveFlexiblyAccessedPensionPage.selectYesThenContinue()
 
       Then("I land on the when-flexibly-access-pension page, enter flexi access date 6/4/15 and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("06", "4", "2015")
@@ -206,13 +206,13 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
@@ -236,7 +236,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
 
       When("I select yes and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+      HaveFlexiblyAccessedPensionPage.selectYesThenContinue()
 
       Then("I land on the when-flexibly-access-pension page, enter flexi access date 7/7/15 and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("07", "7", "2015")
@@ -371,13 +371,13 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
@@ -401,7 +401,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
 
       When("I select yes and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+      HaveFlexiblyAccessedPensionPage.selectYesThenContinue()
 
       Then("I land on the when-flexibly-access-pension page, enter flexi access date 8/7/15 and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("08", "7", "2015")
@@ -533,13 +533,13 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
@@ -563,7 +563,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
 
       When("I select yes and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+      HaveFlexiblyAccessedPensionPage.selectYesThenContinue()
 
       Then("I land on the when-flexibly-access-pension page, enter flexi access date 9/7/15 and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("09", "7", "2015")
@@ -698,13 +698,13 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
@@ -728,7 +728,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
 
       When("I select yes and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+      HaveFlexiblyAccessedPensionPage.selectYesThenContinue()
 
       Then("I land on the when-flexibly-access-pension page, enter flexi access date 5/4/16 and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("05", "4", "2016")
@@ -859,10 +859,10 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -962,13 +962,13 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -992,7 +992,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
 
       When("I select yes and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+      HaveFlexiblyAccessedPensionPage.selectYesThenContinue()
 
       Then("I land on the when-flexibly-access-pension page, enter invalid flexibly access date and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("05", "6", "2015")
@@ -1015,13 +1015,13 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
@@ -1045,7 +1045,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
 
       When("I select yes and continue to next page")
-      HaveFlexiblyAccessedPensionPage.selectYesAndContinueForGSPage()
+      HaveFlexiblyAccessedPensionPage.selectYesThenContinue()
 
       Then("I land on the when-flexibly-access-pension page, enter flexibly access date 5/6/2015 and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("05", "6", "2015")
