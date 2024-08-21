@@ -40,19 +40,19 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
       When("0.8 I select I have not received remedial service statement and continue to next page")
-      SavingsStatementPage.selectNoAndContinueForGSPage()
+      SavingsStatementPage.selectNoThenContinue()
 
       When("0.9 I verify Protected Member page select yes and click continue")
-      ProtectedMember.selectYesAndContinueForGSPage()
+      ProtectedMember.selectYesThenContinue()
 
       Then("0.14 I verify not impacted no Rpss page select signOut")
       NotImpactedNoRpss.signOutPage()
@@ -73,22 +73,22 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
 
       When("0.8 I select I have not received remedial service statement and continue to next page")
-      SavingsStatementPage.selectNoAndContinueForGSPage()
+      SavingsStatementPage.selectNoThenContinue()
 
       When("0.9 I verify Protected Member page select yes and click continue")
-      ProtectedMember.selectYesAndContinueForGSPage()
+      ProtectedMember.selectYesThenContinue()
 
       Then("0.14 I verify not impacted no Rpss page and click continue")
       NotImpactedNoRpss.clickContinueButton()
@@ -112,25 +112,25 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
       When("0.8 I select I have not received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
+      SavingsStatementPage.selectYesThenContinue()
 
       When("0.9 I verify Protected Member page select yes and click continue")
-      ProtectedMember.selectNoAndContinueForGSPage()
+      ProtectedMember.selectNoThenContinue()
 
       When("0.10 I verify Annual allowance charge page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
@@ -154,25 +154,25 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
 
       When("0.8 I select I have not received remedial service statement and continue to next page")
-      SavingsStatementPage.selectYesAndContinueForGSPage()
+      SavingsStatementPage.selectYesThenContinue()
 
       When("0.9 I verify Protected Member page select yes and click continue")
-      ProtectedMember.selectNoAndContinueForGSPage()
+      ProtectedMember.selectNoThenContinue()
 
       When("0.10 I verify Annual allowance charge page select yes and click continue")
-      AnnualAllowanceCharge.selectYesAndContinueForGSPage()
+      AnnualAllowanceCharge.selectYesThenContinue()
 
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
@@ -193,25 +193,25 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
       When("0.8 I select I have not received remedial service statement and continue to next page")
-      SavingsStatementPage.selectNoAndContinueForGSPage()
+      SavingsStatementPage.selectNoThenContinue()
 
       When("0.9 I verify Protected Member page select yes and click continue")
-      ProtectedMember.selectNoAndContinueForGSPage()
+      ProtectedMember.selectNoThenContinue()
 
       When("0.10 I verify Annual allowance charge page select yes and click continue")
-      AnnualAllowanceCharge.selectYesAndContinueForGSPage()
+      AnnualAllowanceCharge.selectYesThenContinue()
 
       When("0.11 I verify ContributionRefunds page select no and click continue")
-      ContributionRefunds.selectNoAndContinueForGSPage()
+      ContributionRefunds.selectNoThenContinue()
 
       Then("0.14 I verify not impacted no Rpss page select signOut")
       NotImpactedNoRpss.signOutPage()
@@ -232,28 +232,28 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select both Annual allowance and LTA, and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
 
       When("0.8 I select I have not received remedial service statement and continue to next page")
-      SavingsStatementPage.selectNoAndContinueForGSPage()
+      SavingsStatementPage.selectNoThenContinue()
 
       When("0.9 I verify Protected Member page select yes and click continue")
-      ProtectedMember.selectNoAndContinueForGSPage()
+      ProtectedMember.selectNoThenContinue()
 
       When("0.10 I verify Annual allowance charge page select yes and click continue")
-      AnnualAllowanceCharge.selectYesAndContinueForGSPage()
+      AnnualAllowanceCharge.selectYesThenContinue()
 
       When("0.11 I verify ContributionRefunds page select no and click continue")
-      ContributionRefunds.selectNoAndContinueForGSPage()
+      ContributionRefunds.selectNoThenContinue()
 
       Then("0.14 I verify not impacted no Rpss page and click continue")
       NotImpactedNoRpss.clickContinueButton()
@@ -277,10 +277,10 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -317,13 +317,13 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select LTA, and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -357,10 +357,10 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select LTA, and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -397,13 +397,13 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select LTA, and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -443,13 +443,13 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select LTA, and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -492,13 +492,13 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select LTA, and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -544,13 +544,13 @@ class AALTATriage1 extends BaseSpec {
       }
 
       When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectYesThenContinue()
 
       When("I land on resubmission reason page, enter reason and click continue")
       ReasonForResubmissionPage.enterReasonAndContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("0.7 I select LTA, and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -583,6 +583,661 @@ class AALTATriage1 extends BaseSpec {
 
     }
 
+    Scenario("Journey for Triage 14", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(y),2.1 */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+    }
+
+    Scenario("Journey for Triage 15", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(y),0.22 */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance,LTA and click continue")
+      ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesThenContinue()
+    }
+
+    Scenario("Journey for Triage 16", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA),0.8(n),0.9(n),0.10(n),0.11(y),0.12(y),0.13(n),0.14 */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("0.8 I select I have not received remedial service statement select no and continue to next page")
+      SavingsStatementPage.selectNoThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      Then("0.14 I verify user not able to use this service")
+      NotImpactedNoRpss.isHeader("notAbleToUseThisServiceAA")
+    }
+
+    Scenario("Journey for Triage 17", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA,LTA),0.8(n),0.9(n),0.10(n),0.11(y),0.12(y),0.13(n),0.14,0.22(y) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance,LTA and click continue")
+      ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select no and continue to next page")
+      SavingsStatementPage.selectNoThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.14 I verify user not able to use this service and click continue")
+      NotImpactedNoRpss.clickContinueButton()
+
+      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesThenContinue()
+    }
+
+    Scenario("Journey for Triage 18", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA),0.8(n),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.14 */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectNoThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      Then("0.14 I verify user not able to use this service")
+      NotImpactedNoRpss.isHeader("notAbleToUseThisServiceAA")
+    }
+    Scenario("Journey for Triage 19", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA,LTA),0.8(no),0.9(no),0.10(n),0.11(y),0.12(n),0.13(n),0.14,0.22(y) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance,LTA and click continue")
+      ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select no and continue to next page")
+      SavingsStatementPage.selectNoThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.14 I verify user not able to use this service and click continue")
+      NotImpactedNoRpss.clickContinueButton()
+
+      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesThenContinue()
+    }
+
+    Scenario("Journey for Triage 20", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(y),2.1(n) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select yes and click continue")
+      IncomeOver190Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+    }
+
+    Scenario("Journey for Triage 21", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(y),0.22(y) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance,LTA and click continue")
+      ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select yes and click continue")
+      IncomeOver190Page.selectYesThenContinue()
+
+      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesThenContinue()
+    }
+
+    Scenario("Journey for Triage 22", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(n),0.15(y),2.1(n) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select no and click continue")
+      ContributionRefunds.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select yes and click continue")
+      PIAAmountIncreasedPage.selectYesAndContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+    }
+
+    Scenario("Journey for Triage 23", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(n),0.15(y),0.22(y) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance,LTA and click continue")
+      ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select no and click continue")
+      ContributionRefunds.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select yes and click continue")
+      PIAAmountIncreasedPage.selectYesAndContinue()
+
+      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesThenContinue()
+    }
+
+    Scenario("Journey for Triage 24", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(y),2.1 */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select yes and click continue")
+      PIAAmountIncreasedPage.selectYesAndContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+    }
+
+    Scenario("Journey for Triage 25", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(y),0.22(y) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance,LTA and click continue")
+      ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select yes and click continue")
+      PIAAmountIncreasedPage.selectYesAndContinue()
+
+      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesThenContinue()
+    }
+
+    Scenario("Journey for Triage 26", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(idk),0.16(idk),0.22(y) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance,LTA and click continue")
+      ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select i don't know and click continue")
+      PIAAmountIncreasedPage.selectIDontKnowAndContinue()
+
+      When("0.16 I verify PIAAmountDecreaseOrNoChangePage page select i don't know and click continue")
+      PIAAmountDecreaseOrNoChangePage.selectIDontKnowAndContinue()
+
+      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesThenContinue()
+    }
+
+    Scenario("Journey for Triage 27", AALTATriage1) {
+
+      /** User not resubmitting, AA adjustment */
+      /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(idk),0.16(idk),2.1(n) */
+      /** This scenario covers Triage user journey where No RPSS/Protected Member (AA only).--- MCSC-1021(Scenario 5) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select i don't know and click continue")
+      PIAAmountIncreasedPage.selectIDontKnowAndContinue()
+
+      When("0.16 I verify PIAAmountDecreaseOrNoChangePage page select i don't know and click continue")
+      PIAAmountDecreaseOrNoChangePage.selectIDontKnowAndContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+    }
   }
 
 }

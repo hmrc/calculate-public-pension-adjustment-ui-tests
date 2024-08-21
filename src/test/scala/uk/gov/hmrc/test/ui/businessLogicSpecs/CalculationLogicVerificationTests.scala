@@ -131,7 +131,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
         /** Test */
         Given("I am on the Public Service Pensions Remediation home page")
         HomePage.goToHomepage()
-        SavingsStatementPage.selectYesAndContinueForGSPage()
+        SavingsStatementPage.selectYesThenContinue()
         signInPage match {
           case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
           case _      =>
@@ -140,7 +140,7 @@ class CalculationLogicVerificationTests extends BaseSpec {
           ResubmittingAdjustmentPage.selectOptionAndContinueForGSPage(isResubmission.mkString)
           ReasonForResubmissionPage.enterReasonAndContinue(reason.toString)
         } else {
-          ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+          ResubmittingAdjustmentPage.selectNoThenContinue()
         }
         ReportingChangePage.selectAnnualAllowanceAndContinue()
         CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()

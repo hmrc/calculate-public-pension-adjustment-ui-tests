@@ -39,10 +39,10 @@ class CalculationUserJourneys extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select no and click continue")
-      AffectedByRemedyPage.selectNoAndContinueForGSPage()
+      AffectedByRemedyPage.selectNoThenContinue()
 
       When("I click sign out from the page")
       NotAbleToUseThisServiceLtaPage.signOutPage()
@@ -63,10 +63,10 @@ class CalculationUserJourneys extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -94,10 +94,10 @@ class CalculationUserJourneys extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -185,10 +185,10 @@ class CalculationUserJourneys extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -262,10 +262,10 @@ class CalculationUserJourneys extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -332,10 +332,10 @@ class CalculationUserJourneys extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
@@ -390,10 +390,10 @@ class CalculationUserJourneys extends BaseSpec {
       }
 
       When("I select I'm not resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectNoAndContinueForGSPage()
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
-      AffectedByRemedyPage.selectYesAndContinueForGSPage()
+      AffectedByRemedyPage.selectYesThenContinue()
 
       When("I click Lifetime allowance and click continue")
       ReportingChangePage.selectLifetimeAllowanceAndContinue()
