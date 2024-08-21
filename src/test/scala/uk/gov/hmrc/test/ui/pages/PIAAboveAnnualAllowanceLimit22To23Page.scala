@@ -16,6 +16,4 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-object IncomeOver190Page extends BasePage {
-
-}
+object PIAAboveAnnualAllowanceLimit22To23Page extends BasePage {}
