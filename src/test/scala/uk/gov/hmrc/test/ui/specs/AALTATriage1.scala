@@ -1310,9 +1310,6 @@ class AALTATriage1 extends BaseSpec {
       When("0.17 I verify PPIAAboveAnnualAllowanceLimit22To23Page page select yes and click continue")
       PIAAboveAnnualAllowanceLimit22To23Page.selectYesThenContinue()
 
-      When("0.14 I verify user not able to use this service and click continue")
-      NotImpactedNoRpss.clickContinueButton()
-
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
@@ -1424,9 +1421,6 @@ class AALTATriage1 extends BaseSpec {
       When("0.17 I verify PPIAAboveAnnualAllowanceLimit22To23Page page select yes and click continue")
       PIAAboveAnnualAllowanceLimit22To23Page.selectYesThenContinue()
 
-      When("0.14 I verify user not able to use this service and click continue")
-      NotImpactedNoRpss.clickContinueButton()
-
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
 
@@ -1532,9 +1526,6 @@ class AALTATriage1 extends BaseSpec {
 
       When("0.17 I verify PPIAAboveAnnualAllowanceLimit22To23Page page select yes and click continue")
       PIAAboveAnnualAllowanceLimit22To23Page.selectYesThenContinue()
-
-      When("0.14 I verify user not able to use this service and click continue")
-      NotImpactedNoRpss.clickContinueButton()
 
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
@@ -1647,9 +1638,6 @@ class AALTATriage1 extends BaseSpec {
 
       When("0.18 I verify IncomeOver190Page page select yes and click continue")
       IncomeOver190Page.selectYesThenContinue()
-
-      When("0.14 I verify user not able to use this service and click continue")
-      NotImpactedNoRpss.clickContinueButton()
 
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
