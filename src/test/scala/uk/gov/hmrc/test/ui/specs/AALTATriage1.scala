@@ -1766,9 +1766,6 @@ class AALTATriage1 extends BaseSpec {
       When("0.21 I verify TriageJourney4000ContributionToDCSchemePage page select yes and click continue")
       TriageJourney4000ContributionToDCSchemePage.selectYesThenContinue()
 
-      When("0.14 I verify user not able to use this service and click continue")
-      NotImpactedNoRpss.clickContinueButton()
-
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
@@ -1828,8 +1825,8 @@ class AALTATriage1 extends BaseSpec {
       When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
       FlexibleAccessDcSchemePage.selectNoThenContinue()
 
-      When("----0.20 I verify TriageJourneyNotImpactedPIADecreasePage page select no and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.selectNoThenContinue()
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page")
+      TriageJourneyNotImpactedPIADecreasePage.isHeader("triageJourneyNotImpactedPIADecrease")
     }
 
     Scenario("Journey for Triage 39", AALTATriage1) {
@@ -1887,11 +1884,8 @@ class AALTATriage1 extends BaseSpec {
       When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
       FlexibleAccessDcSchemePage.selectNoThenContinue()
 
-      When("----0.20 I verify TriageJourneyNotImpactedPIADecreasePage page select no and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.selectNoThenContinue()
-
-      When("0.14 I verify user not able to use this service and click continue")
-      NotImpactedNoRpss.clickContinueButton()
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
+      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
 
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
@@ -1955,8 +1949,8 @@ class AALTATriage1 extends BaseSpec {
       When("0.21 I verify TriageJourney4000ContributionToDCSchemePage page select no and click continue")
       TriageJourney4000ContributionToDCSchemePage.selectNoThenContinue()
 
-      When("----0.20 I verify TriageJourneyNotImpactedPIADecreasePage page select no and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.selectNoThenContinue()
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page")
+      TriageJourneyNotImpactedPIADecreasePage.isHeader("triageJourneyNotImpactedPIADecrease")
     }
 
     Scenario("Journey for Triage 41", AALTATriage1) {
@@ -2017,11 +2011,8 @@ class AALTATriage1 extends BaseSpec {
       When("0.21 I verify TriageJourney4000ContributionToDCSchemePage page select no and click continue")
       TriageJourney4000ContributionToDCSchemePage.selectNoThenContinue()
 
-      When("----0.20 I verify TriageJourneyNotImpactedPIADecreasePage page select no and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.selectNoThenContinue()
-
-      When("0.14 I verify user not able to use this service and click continue")
-      NotImpactedNoRpss.clickContinueButton()
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage and click continue")
+      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
 
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
