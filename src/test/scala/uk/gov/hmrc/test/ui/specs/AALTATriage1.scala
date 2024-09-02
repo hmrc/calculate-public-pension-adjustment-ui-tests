@@ -18,14 +18,14 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{AALTATriage1, CalculationJourney2}
+import uk.gov.hmrc.test.ui.specs.tags.{AALTATriage1, CalculationJourney1, CalculationJourney2, ISJJourney1, ISJJourney2, ISJJourney3}
 
 class AALTATriage1 extends BaseSpec {
 
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
 
-    Scenario("Journey for Triage 1", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 1", AALTATriage1, CalculationJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7,0.8,0.9,0.14 */
@@ -58,7 +58,7 @@ class AALTATriage1 extends BaseSpec {
       NotImpactedNoRpss.signOutPage()
     }
 
-    Scenario("Journey for Triage 2", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 2", AALTATriage1, CalculationJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7,0.8,0.9,0.14.0.22 */
@@ -97,7 +97,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
     }
 
-    Scenario("Journey for Triage 3", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 3", AALTATriage1, CalculationJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7,0.8,0.9,0.10,2.1 */
@@ -139,7 +139,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 4", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 4", AALTATriage1, CalculationJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7,0.8,0.9,0.10.0.22 */
@@ -178,7 +178,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
     }
 
-    Scenario("Journey for Triage 5", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 5", AALTATriage1, CalculationJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7,0.8,0.9,0.10,0.11,0.14 */
@@ -217,7 +217,7 @@ class AALTATriage1 extends BaseSpec {
       NotImpactedNoRpss.signOutPage()
     }
 
-    Scenario("Journey for Triage 6", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 6", AALTATriage1, CalculationJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7,0.8,0.9,0.10,0.11,0.14.,0.22 */
@@ -262,7 +262,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
     }
 
-    Scenario("Journey for Triage 7", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 7", AALTATriage1, CalculationJourney1) {
 
       /** User not resubmitting,  LTA adjustment */
       /** Below journey covers 0.1, 0.3, 0.5, 0.7, 0.22, 0.23, 0.24 */
@@ -302,7 +302,7 @@ class AALTATriage1 extends BaseSpec {
       CheckYourAnswersLifetimeAllowancePage.signOutPage()
     }
 
-    Scenario("Journey for Triage 8", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 8", AALTATriage1, CalculationJourney1) {
 
       /** User resubmitting, LTA adjustment */
       /** Below journey covers 0.7,0.22,0.23,0.24, 0.29 */
@@ -342,7 +342,7 @@ class AALTATriage1 extends BaseSpec {
 
     }
 
-    Scenario("Journey for Triage 9", AALTATriage1, CalculationJourney2) {
+    Scenario("Journey for Triage 9", AALTATriage1, CalculationJourney1) {
 
       /** User not resubmitting, LTA adjustment */
       /** Below journey covers 0.7, 0.22, 0.23, 0.24, 0.25, 0.29 */
@@ -583,7 +583,7 @@ class AALTATriage1 extends BaseSpec {
 
     }
 
-    Scenario("Journey for Triage 14", AALTATriage1) {
+    Scenario("Journey for Triage 14", AALTATriage1, CalculationJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(y),2.1 */
@@ -628,7 +628,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 15", AALTATriage1) {
+    Scenario("Journey for Triage 15", AALTATriage1, CalculationJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(y),0.22 */
@@ -670,7 +670,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 16", AALTATriage1) {
+    Scenario("Journey for Triage 16", AALTATriage1, CalculationJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(n),0.9(n),0.10(n),0.11(y),0.12(y),0.13(n),0.14 */
@@ -715,7 +715,7 @@ class AALTATriage1 extends BaseSpec {
       NotImpactedNoRpss.isHeader("notAbleToUseThisServiceAA")
     }
 
-    Scenario("Journey for Triage 17", AALTATriage1) {
+    Scenario("Journey for Triage 17", AALTATriage1, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA,LTA),0.8(n),0.9(n),0.10(n),0.11(y),0.12(y),0.13(n),0.14,0.22(y) */
@@ -763,7 +763,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 18", AALTATriage1) {
+    Scenario("Journey for Triage 18", AALTATriage1, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(n),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.14 */
@@ -807,7 +807,7 @@ class AALTATriage1 extends BaseSpec {
       Then("0.14 I verify user not able to use this service")
       NotImpactedNoRpss.isHeader("notAbleToUseThisServiceAA")
     }
-    Scenario("Journey for Triage 19", AALTATriage1) {
+    Scenario("Journey for Triage 19", AALTATriage1, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA,LTA),0.8(no),0.9(no),0.10(n),0.11(y),0.12(n),0.13(n),0.14,0.22(y) */
@@ -855,7 +855,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 20", AALTATriage1) {
+    Scenario("Journey for Triage 20", AALTATriage1, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(y),2.1(n) */
@@ -903,7 +903,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 21", AALTATriage1) {
+    Scenario("Journey for Triage 21", AALTATriage1, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(y),0.22(y) */
@@ -948,7 +948,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 22", AALTATriage1) {
+    Scenario("Journey for Triage 22", AALTATriage1, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(n),0.15(y),2.1(n) */
@@ -993,7 +993,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 23", AALTATriage1) {
+    Scenario("Journey for Triage 23", AALTATriage1, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(n),0.15(y),0.22(y) */
@@ -1035,7 +1035,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 24", AALTATriage1) {
+    Scenario("Journey for Triage 24", AALTATriage1, ISJJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(y),2.1 */
@@ -1086,7 +1086,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 25", AALTATriage1) {
+    Scenario("Journey for Triage 25", AALTATriage1, ISJJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(y),0.22(y) */
@@ -1134,7 +1134,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 26", AALTATriage1) {
+    Scenario("Journey for Triage 26", AALTATriage1, ISJJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(idk),0.16(idk),0.22(y) */
@@ -1185,7 +1185,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 27", AALTATriage1) {
+    Scenario("Journey for Triage 27", AALTATriage1, ISJJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(idk),0.16(idk),2.1(n) */
@@ -1239,7 +1239,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 28", AALTATriage1) {
+    Scenario("Journey for Triage 28", AALTATriage1, ISJJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.17(y),cya,2.1(n) */
@@ -1278,7 +1278,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 29", AALTATriage1) {
+    Scenario("Journey for Triage 29", AALTATriage1, ISJJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(y),0.17(y),0.14,0.22(y) */
@@ -1314,7 +1314,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 30", AALTATriage1) {
+    Scenario("Journey for Triage 30", AALTATriage1, ISJJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(AA),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(idk),0.16(yes),0.17(y),2.1(n) */
@@ -1371,7 +1371,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 31", AALTATriage1) {
+    Scenario("Journey for Triage 31", AALTATriage1, ISJJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(idk),0.16(yes),0.17(y),0.14,0.22 */
@@ -1426,7 +1426,7 @@ class AALTATriage1 extends BaseSpec {
 
     }
 
-    Scenario("Journey for Triage 32", AALTATriage1) {
+    Scenario("Journey for Triage 32", AALTATriage1, ISJJourney2) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(aa),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(y),cya,2.1(n) */
@@ -1480,7 +1480,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 33", AALTATriage1) {
+    Scenario("Journey for Triage 33", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(y),0.14,0.22 */
@@ -1531,7 +1531,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 34", AALTATriage1) {
+    Scenario("Journey for Triage 34", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(aa),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(n),0.18(y),cya,2.1(n) */
@@ -1589,7 +1589,7 @@ class AALTATriage1 extends BaseSpec {
 
     }
 
-    Scenario("Journey for Triage 35", AALTATriage1) {
+    Scenario("Journey for Triage 35", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(n),0.18(y),0.14,0.22(y) */
@@ -1643,7 +1643,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 36", AALTATriage1) {
+    Scenario("Journey for Triage 36", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(aa),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(n),0.18(n),
@@ -1708,7 +1708,7 @@ class AALTATriage1 extends BaseSpec {
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
 
-    Scenario("Journey for Triage 37", AALTATriage1) {
+    Scenario("Journey for Triage 37", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(n),0.18(n),
@@ -1770,7 +1770,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 38", AALTATriage1) {
+    Scenario("Journey for Triage 38", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(aa),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(n),0.18(n),
@@ -1829,7 +1829,7 @@ class AALTATriage1 extends BaseSpec {
       TriageJourneyNotImpactedPIADecreasePage.isHeader("triageJourneyNotImpactedPIADecrease")
     }
 
-    Scenario("Journey for Triage 39", AALTATriage1) {
+    Scenario("Journey for Triage 39", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(n),0.18(n),
@@ -1891,7 +1891,7 @@ class AALTATriage1 extends BaseSpec {
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
-    Scenario("Journey for Triage 40", AALTATriage1) {
+    Scenario("Journey for Triage 40", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(aa),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(n),0.18(n),
@@ -1953,7 +1953,7 @@ class AALTATriage1 extends BaseSpec {
       TriageJourneyNotImpactedPIADecreasePage.isHeader("triageJourneyNotImpactedPIADecrease")
     }
 
-    Scenario("Journey for Triage 41", AALTATriage1) {
+    Scenario("Journey for Triage 41", AALTATriage1, ISJJourney3) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7(both),0.8(y),0.9(n),0.10(n),0.11(y),0.12(n),0.13(n),0.15(n),0.17(n),0.18(n),

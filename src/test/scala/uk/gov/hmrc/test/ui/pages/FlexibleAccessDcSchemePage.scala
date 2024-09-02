@@ -16,6 +16,4 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-object FlexibleAccessDcSchemePage extends BasePage {
-
-}
+object FlexibleAccessDcSchemePage extends BasePage {}
