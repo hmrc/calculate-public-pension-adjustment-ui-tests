@@ -40,17 +40,62 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         case _      =>
       }
 
-      When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesThenContinue()
-
-      When("I land on resubmission reason page, enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I select both Annual allowance and LTA, and click continue")
+      When("0.7 I click Annual allowance,LTA and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select no and click continue")
+      PIAAmountIncreasedPage.selectNoAndContinue()
+
+      When("0.17 I verify PPIAAboveAnnualAllowanceLimit22To23Page page select no and click continue")
+      PIAAboveAnnualAllowanceLimit22To23Page.selectNoThenContinue()
+
+      When("0.18 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
+      FlexibleAccessDcSchemePage.selectNoThenContinue()
+
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
+      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+
+      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesThenContinue()
+
+      When("0.23 I verify LTA Charge page select No and continue to next page")
+      LTACharge.selectNoAndContinueForLTAPage()
+
+      When("0.24 I verify LTA Percentage change page select Yes and continue to next page")
+      LifetimeAllowancePercentageChangePage.verifyLTAPercentageChangeSelectYesAndContinue()
+
+      When("0.25 I verify LTA Percentage increase page select Yes and continue to next page")
+      LifetimeAllowancePercentageIncreasePage.verifyLTAPercentageIncreaseSelectYesAndContinue()
+
+      When("0.26 I verify LTA New Charge page select Yes and continue to next page")
+      LifetimeAllowanceNewChargePage.selectYesAndContinueForLTAPage()
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
@@ -188,6 +233,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      HomePage.signOutPage()
     }
 
     Scenario("Journey for flexi date 2", ZapTests, CalculationJourney2) {
@@ -205,17 +251,56 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         case _      =>
       }
 
-      When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesThenContinue()
-
-      When("I land on resubmission reason page, enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I select both Annual allowance and LTA, and click continue")
+      When("0.7 I click Annual allowance,LTA and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select no and click continue")
+      PIAAmountIncreasedPage.selectNoAndContinue()
+
+      When("0.17 I verify PPIAAboveAnnualAllowanceLimit22To23Page page select no and click continue")
+      PIAAboveAnnualAllowanceLimit22To23Page.selectNoThenContinue()
+
+      When("0.18 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
+      FlexibleAccessDcSchemePage.selectNoThenContinue()
+
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
+      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+
+      When("I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
+      When("0.23 I verify LTA Charge page select Yes and continue to next page")
+      LTACharge.selectYesAndContinueForLTAPage()
+
+      When("0.24 I verify LTA Percentage change page select Yes and continue to next page")
+      LifetimeAllowancePercentageChangePage.verifyLTAPercentageChangeSelectYesAndContinue()
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
@@ -353,6 +438,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      HomePage.signOutPage()
     }
 
     Scenario("Journey for flexi date 3", CalculationJourney2) {
@@ -370,17 +456,56 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         case _      =>
       }
 
-      When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesThenContinue()
-
-      When("I land on resubmission reason page, enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I select both Annual allowance and LTA, and click continue")
+      When("0.7 I click Annual allowance,LTA and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select no and click continue")
+      PIAAmountIncreasedPage.selectNoAndContinue()
+
+      When("0.17 I verify PPIAAboveAnnualAllowanceLimit22To23Page page select no and click continue")
+      PIAAboveAnnualAllowanceLimit22To23Page.selectNoThenContinue()
+
+      When("0.18 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
+      FlexibleAccessDcSchemePage.selectNoThenContinue()
+
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
+      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+
+      When("I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
+      When("0.23 I verify LTA Charge page select Yes and continue to next page")
+      LTACharge.selectYesAndContinueForLTAPage()
+
+      When("0.24 I verify LTA Percentage change page select Yes and continue to next page")
+      LifetimeAllowancePercentageChangePage.verifyLTAPercentageChangeSelectYesAndContinue()
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
@@ -515,6 +640,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      HomePage.signOutPage()
     }
 
     Scenario("Journey for flexi date 4", CalculationJourney2) {
@@ -532,17 +658,56 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         case _      =>
       }
 
-      When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesThenContinue()
-
-      When("I land on resubmission reason page, enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I select both Annual allowance and LTA, and click continue")
+      When("0.7 I click Annual allowance,LTA and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select no and click continue")
+      PIAAmountIncreasedPage.selectNoAndContinue()
+
+      When("0.17 I verify PPIAAboveAnnualAllowanceLimit22To23Page page select no and click continue")
+      PIAAboveAnnualAllowanceLimit22To23Page.selectNoThenContinue()
+
+      When("0.18 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
+      FlexibleAccessDcSchemePage.selectNoThenContinue()
+
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
+      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+
+      When("I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
+      When("0.23 I verify LTA Charge page select Yes and continue to next page")
+      LTACharge.selectYesAndContinueForLTAPage()
+
+      When("0.24 I verify LTA Percentage change page select Yes and continue to next page")
+      LifetimeAllowancePercentageChangePage.verifyLTAPercentageChangeSelectYesAndContinue()
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
@@ -680,6 +845,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      HomePage.signOutPage()
     }
 
     Scenario("Journey for flexi date 5", CalculationJourney2) {
@@ -697,17 +863,56 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         case _      =>
       }
 
-      When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesThenContinue()
-
-      When("I land on resubmission reason page, enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I select both Annual allowance and LTA, and click continue")
+      When("0.7 I click Annual allowance,LTA and click continue")
       ReportingChangePage.selectBothAAAndLTAContinue()
+
+      When("0.8 I select I have not received remedial service statement select yes and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select no and click continue")
+      IncomeOver100Page.selectNoThenContinue()
+
+      When("0.13 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.15 I verify PIAAmountIncreasedPage page select no and click continue")
+      PIAAmountIncreasedPage.selectNoAndContinue()
+
+      When("0.17 I verify PPIAAboveAnnualAllowanceLimit22To23Page page select no and click continue")
+      PIAAboveAnnualAllowanceLimit22To23Page.selectNoThenContinue()
+
+      When("0.18 I verify IncomeOver190Page page select no and click continue")
+      IncomeOver190Page.selectNoThenContinue()
+
+      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
+      FlexibleAccessDcSchemePage.selectNoThenContinue()
+
+      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
+      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+
+      When("I verify Benefit crystallisation event page select Yes and continue to next page")
+      HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
+
+      When("0.23 I verify LTA Charge page select Yes and continue to next page")
+      LTACharge.selectYesAndContinueForLTAPage()
+
+      When("0.24 I verify LTA Percentage change page select Yes and continue to next page")
+      LifetimeAllowancePercentageChangePage.verifyLTAPercentageChangeSelectYesAndContinue()
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
@@ -842,6 +1047,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      HomePage.signOutPage()
     }
 
     Scenario("Setup Journey 6, AA Journey 6", CalculationJourney2) {
@@ -849,6 +1055,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       /** User not resubmitting, AA adjustment, non-Scottish taxpayer, left scheme 8/7/2015, no other schemes, charge paid 14/15. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (8/7/2015), 2.5 (N), 2.8 (Y) */
       /** This scenario covers user journey where user has left their public pension scheme prior to 9/7/15 should not be asked 15/16 post questions in the 15/16 year.--- MCSC-748 */
+
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
@@ -864,11 +1071,26 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -946,6 +1168,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      HomePage.signOutPage()
     }
 
     Scenario("Journey for User Left in pre remedy date 1", CalculationJourney2) {
@@ -961,20 +1184,32 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         case _      =>
       }
 
-      When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesThenContinue()
-
-      When("I land on resubmission reason page, enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
@@ -997,8 +1232,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       Then("I land on the when-flexibly-access-pension page, enter invalid flexibly access date and continue")
       WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("05", "6", "2015")
 
-      /* Then("I should see An Error Message for Invalid flexibly accessed date Entered")
-      WhenFlexiblyAccessPensionPage.verifyInvalidFlexiblyEnteredDate("There is a problem")*/
+      HomePage.signOutPage()
     }
 
     Scenario("Journey for User Left in pre remedy date 2", CalculationJourney2) {
@@ -1014,20 +1248,32 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
         case _      =>
       }
 
-      When("I select I am resubmitting the adjustment and click continue")
-      ResubmittingAdjustmentPage.selectYesThenContinue()
-
-      When("I land on resubmission reason page, enter reason and click continue")
-      ReasonForResubmissionPage.enterReasonAndContinue()
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
 
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
@@ -1152,6 +1398,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       /** verify check your answers page */
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+      HomePage.signOutPage()
     }
 
   }
