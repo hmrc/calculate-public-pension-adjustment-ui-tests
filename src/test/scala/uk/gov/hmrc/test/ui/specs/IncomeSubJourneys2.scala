@@ -44,11 +44,26 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -277,11 +292,26 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -525,11 +555,26 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -758,11 +803,26 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -991,11 +1051,26 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -1227,11 +1302,26 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I verify Affected by remedy page select yes and click continue")
       AffectedByRemedyPage.selectYesThenContinue()
 
-      When("I click Annual allowance and click continue")
+      When("0.7 I click Annual allowance and click continue")
       ReportingChangePage.selectAnnualAllowanceAndContinue()
 
-      When("I verify check your answers page and click continue")
-      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoThenContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesThenContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesThenContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
