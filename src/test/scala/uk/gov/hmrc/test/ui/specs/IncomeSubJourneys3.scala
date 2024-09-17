@@ -604,7 +604,7 @@ class IncomeSubJourneys3 extends BaseSpec {
 
       When("0.19 I verify FlexibleAccessDcSchemePage page select yes and click continue")
       FlexibleAccessDcSchemePage.selectYesThenContinue()
-git
+
       When("0.21 I verify ContributionToDefinedContributionSchemePage page select yes and click continue")
       ContributionToDefinedContributionSchemePage.selectYesThenContinue()
 
