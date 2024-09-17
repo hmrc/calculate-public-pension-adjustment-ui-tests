@@ -16,12 +16,4 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-
-object MarriageAllowanceAmount extends BasePage {
-
-  def enterMarriageAllowanceAmount(marriageAllowanceAmount: String) = {
-    driver.findElement(By.id("value")).sendKeys(marriageAllowanceAmount)
-    submitPage()
-  }
-}
+object TriageJourneyNotImpactedPIADecreasePage extends BasePage {}

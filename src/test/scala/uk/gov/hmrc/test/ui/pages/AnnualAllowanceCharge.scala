@@ -16,16 +16,4 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-object MarriageAllowance extends BasePage {
-
-  def verifyClaimingMarriageAllowanceSelectYesAndContinue() = {
-    selectYesOption()
-    submitPage()
-  }
-
-  def verifyClaimingMarriageAllowanceSelectNoAndContinue() = {
-    selectNoOption()
-    submitPage()
-  }
-
-}
+object AnnualAllowanceCharge extends BasePage {}
