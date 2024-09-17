@@ -76,11 +76,11 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("0.18 I verify IncomeOver190Page page select no and click continue")
       IncomeOver190Page.selectNoThenContinue()
 
-      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
-      FlexibleAccessDcSchemePage.selectNoThenContinue()
+      When("0.19 I verify FlexibleAccessDcSchemePage page select yes and click continue")
+      FlexibleAccessDcSchemePage.selectYesThenContinue()
 
-      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+      When("0.21 I verify ContributionToDefinedContributionSchemePage page select yes and click continue")
+      ContributionToDefinedContributionSchemePage.selectYesThenContinue()
 
       When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesThenContinue()
@@ -287,11 +287,11 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("0.18 I verify IncomeOver190Page page select no and click continue")
       IncomeOver190Page.selectNoThenContinue()
 
-      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
-      FlexibleAccessDcSchemePage.selectNoThenContinue()
+      When("0.19 I verify FlexibleAccessDcSchemePage page select yes and click continue")
+      FlexibleAccessDcSchemePage.selectYesThenContinue()
 
-      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+      When("0.21 I verify ContributionToDefinedContributionSchemePage page select yes and click continue")
+      ContributionToDefinedContributionSchemePage.selectYesThenContinue()
 
       When("I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
@@ -492,11 +492,11 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("0.18 I verify IncomeOver190Page page select no and click continue")
       IncomeOver190Page.selectNoThenContinue()
 
-      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
-      FlexibleAccessDcSchemePage.selectNoThenContinue()
+      When("0.19 I verify FlexibleAccessDcSchemePage page select yes and click continue")
+      FlexibleAccessDcSchemePage.selectYesThenContinue()
 
-      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+      When("0.21 I verify ContributionToDefinedContributionSchemePage page select yes and click continue")
+      ContributionToDefinedContributionSchemePage.selectYesThenContinue()
 
       When("I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
@@ -694,11 +694,11 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("0.18 I verify IncomeOver190Page page select no and click continue")
       IncomeOver190Page.selectNoThenContinue()
 
-      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
-      FlexibleAccessDcSchemePage.selectNoThenContinue()
+      When("0.19 I verify FlexibleAccessDcSchemePage page select yes and click continue")
+      FlexibleAccessDcSchemePage.selectYesThenContinue()
 
-      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+      When("0.21 I verify ContributionToDefinedContributionSchemePage page select yes and click continue")
+      ContributionToDefinedContributionSchemePage.selectYesThenContinue()
 
       When("I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()
@@ -899,11 +899,11 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("0.18 I verify IncomeOver190Page page select no and click continue")
       IncomeOver190Page.selectNoThenContinue()
 
-      When("0.19 I verify FlexibleAccessDcSchemePage page select no and click continue")
-      FlexibleAccessDcSchemePage.selectNoThenContinue()
+      When("0.19 I verify FlexibleAccessDcSchemePage page select yes and click continue")
+      FlexibleAccessDcSchemePage.selectYesThenContinue()
 
-      When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
-      TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
+      When("0.21 I verify ContributionToDefinedContributionSchemePage page select yes and click continue")
+      ContributionToDefinedContributionSchemePage.selectYesThenContinue()
 
       When("I verify Benefit crystallisation event page select Yes and continue to next page")
       HadBenefitCrystallisationEventPage.selectYesAndContinueForLTAPage()

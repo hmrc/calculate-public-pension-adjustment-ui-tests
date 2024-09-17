@@ -712,7 +712,7 @@ class AALTATriage1 extends BaseSpec {
       IncomeOver190Page.selectNoThenContinue()
 
       Then("0.14 I verify user not able to use this service")
-      NotImpactedNoRpss.isHeader("You are not impacted by the Public Service Pensions Remedy")
+      NotImpactedNoRpss.isHeader("You are not eligible to use this part of the service")
     }
 
     Scenario("Journey for Triage 17", AALTATriage1, ISJJourney1) {
@@ -805,7 +805,7 @@ class AALTATriage1 extends BaseSpec {
       IncomeOver190Page.selectNoThenContinue()
 
       Then("0.14 I verify user not able to use this service")
-      NotImpactedNoRpss.isHeader("You are not impacted by the Public Service Pensions Remedy")
+      NotImpactedNoRpss.isHeader("You are not eligible to use this part of the service")
     }
     Scenario("Journey for Triage 19", AALTATriage1, ISJJourney1) {
 
@@ -1887,8 +1887,6 @@ class AALTATriage1 extends BaseSpec {
       When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page and click continue")
       TriageJourneyNotImpactedPIADecreasePage.clickContinueButton()
 
-      When("0.22 I verify Benefit crystallisation event page select Yes and continue to next page")
-      HadBenefitCrystallisationEventPage.selectYesThenContinue()
     }
 
     Scenario("Journey for Triage 40", AALTATriage1, ISJJourney3) {
