@@ -98,6 +98,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
@@ -209,6 +212,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
@@ -306,6 +312,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
@@ -396,6 +405,9 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()
 
@@ -473,6 +485,9 @@ class CalculationUserJourneys extends BaseSpec {
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("I verify task list page and click add details for lifetime allowance")
       TaskListPage.verifyPageAndClickAddDetailsForLifetimeAllowance()

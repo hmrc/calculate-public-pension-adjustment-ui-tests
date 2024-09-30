@@ -135,6 +135,9 @@ class AALTATriage1 extends BaseSpec {
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("2.1 I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
@@ -624,6 +627,9 @@ class AALTATriage1 extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
@@ -899,6 +905,9 @@ class AALTATriage1 extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
@@ -988,6 +997,9 @@ class AALTATriage1 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -1081,6 +1093,9 @@ class AALTATriage1 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -1235,6 +1250,9 @@ class AALTATriage1 extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
@@ -1273,6 +1291,9 @@ class AALTATriage1 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -1366,6 +1387,9 @@ class AALTATriage1 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -1476,6 +1500,9 @@ class AALTATriage1 extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
     }
@@ -1583,6 +1610,9 @@ class AALTATriage1 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -1703,6 +1733,9 @@ class AALTATriage1 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("2.1 I verify ScottishTaxpayerFrom2016Page page select no and continue")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()

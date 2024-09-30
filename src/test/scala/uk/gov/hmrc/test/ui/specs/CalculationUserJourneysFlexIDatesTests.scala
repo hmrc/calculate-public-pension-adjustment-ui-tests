@@ -100,6 +100,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
 
@@ -304,6 +307,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
@@ -510,6 +516,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
 
@@ -711,6 +720,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
@@ -917,6 +929,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify check your answers page and click continue")
       CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
 
@@ -1092,6 +1107,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
 
@@ -1211,6 +1229,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
 
@@ -1274,6 +1295,9 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("I land on Scottish Taxpayer page, select yes and continue")
       ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()

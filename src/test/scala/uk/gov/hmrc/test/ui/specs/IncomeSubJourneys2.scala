@@ -65,6 +65,9 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
 
@@ -312,6 +315,9 @@ class IncomeSubJourneys2 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -576,6 +582,9 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
 
@@ -824,6 +833,9 @@ class IncomeSubJourneys2 extends BaseSpec {
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
 
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
 
@@ -1071,6 +1083,9 @@ class IncomeSubJourneys2 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
@@ -1322,6 +1337,9 @@ class IncomeSubJourneys2 extends BaseSpec {
 
       When("I reach CYA and click continue")
       CheckYourAnswersLifetimeAllowancePage.clickContinueButton()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
 
       When("I land on Scottish taxpayer page, select no and continue to next page")
       ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
