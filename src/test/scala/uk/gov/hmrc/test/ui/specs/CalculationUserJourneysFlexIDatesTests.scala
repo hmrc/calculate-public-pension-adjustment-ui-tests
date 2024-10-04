@@ -27,7 +27,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
 
     Scenario("Journey for flexi date 1", ZapTests, CalculationJourney2) {
 
-      /** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 6/4/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
+      /*** User resubmitting, AA and LTA adjustment, scottish taxpayer, stopped paying 1/1/2017, has DC scheme flexibly accessed 6/4/2015, did not pay charge in 14/15, member in each pre-remedy year with PIA in all of those years. */
       /** Below journey covers 0, 1.1 (Y), 1.3 (Y), 1.4, 1.5 (AA and LTA), 1.6, 2.1 (Y), 2.2 (16/17), 2.3 (Y), 2.5 (Y), 2.6 (Y),
         * 2.7 (1/1/2016), 2.8 (N), 2.8.1 (y), 2.8.2, 2.8.3 (Y), 2.8.4, 2.8.5 (Y), 2.9, 2.9.1 (Y), 2.10, 2.10.1 (Y), 2.11, 2.12
         */
