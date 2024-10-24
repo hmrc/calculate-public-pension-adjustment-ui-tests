@@ -19,7 +19,6 @@ package uk.gov.hmrc.test.ui.businessLogicSpecs
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.BaseSpec
-import uk.gov.hmrc.test.ui.specs.tags.{ISJJourney1, ZapTests}
 
 class BusinessScenario2 extends BaseSpec {
 
@@ -619,7 +618,8 @@ class BusinessScenario2 extends BaseSpec {
         2019 -> Array(8000, 3200),
         2020 -> Array(15000, 6000),
         2021 -> Array(10000, 4000),
-        2022 -> Array(15000, 6000)
+        2022 -> Array(15000, 6000),
+        2023 -> Array(0, 0)
       )
 
       for (year <- calculationResults.keys) {
