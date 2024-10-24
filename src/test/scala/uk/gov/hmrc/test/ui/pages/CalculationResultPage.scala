@@ -25,7 +25,7 @@ import scala.jdk.CollectionConverters.ListHasAsScala
 object CalculationResultPage extends BasePage {
   def returnTaxYearInformation(taxYear: String): Map[String, String] = {
     val dlElement        = driver.findElement(
-      By.xpath("//div[@class='govuk-grid-column-two-thirds']//h2[contains(text(),'" + taxYear + "')]")
+      By.xpath("//div[@class='govuk-grid-column-two-thirds']//h2[contains(text(),'5 April " + taxYear + "')]")
     )
     val nextTableElement = dlElement.findElement(By.xpath("following-sibling::table"))
     // Get the HTML content of the <dl> element
