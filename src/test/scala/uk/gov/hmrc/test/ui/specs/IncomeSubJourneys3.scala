@@ -933,6 +933,22 @@ class IncomeSubJourneys3 extends BaseSpec {
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I verify Task List page and click calculate")
+      TaskListPage.clickCalculateButton()
+
+      /** verify calculation results page* */
+      When("I verify calculation Result page")
+      assert(CalculationResultPage.getCalculationResultsHeading() == "Calculation results")
+
+      When("I verify calculation result page and click on Lifetime allowance review answers")
+      CalculationResultPage.clickOnReviewAnswersForLTA()
+
+      When("I verify review lifetime allowance answers page")
+      assert(
+        ReviewLifetimeAllowanceAnswersPage
+          .getReviewLTAanswersPageVerificationText() == "Review lifetime allowance answers"
+      )
+
       When("I click sign out from the page")
       CheckYourAnswersLifetimeAllowancePage.signOutPage()
 

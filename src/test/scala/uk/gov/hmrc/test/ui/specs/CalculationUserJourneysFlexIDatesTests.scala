@@ -1185,7 +1185,22 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
+      When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      When("I verify Task List page and click calculate")
+      TaskListPage.clickCalculateButton()
+
+      /** verify calculation results page* */
+      When("I verify calculation Result page")
+      assert(CalculationResultPage.getCalculationResultsHeading() == "Calculation results")
+
+      When("I verify calculation result page and click view breakdown for 2015-2016")
+      CalculationResultPage.clickOnViewBreakdownFor20152016()
+
+      When("I verify detailed breakdown page")
+      assert(DetailedBreakdownPage.getDetailedBreakdownPageVerificationText() == "A detailed look at the results")
+
       HomePage.signOutPage()
     }
 
@@ -1421,7 +1436,22 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2290")
 
       /** verify check your answers page */
+      When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      When("I verify Task List page and click calculate")
+      TaskListPage.clickCalculateButton()
+
+      /** verify calculation results page* */
+      When("I verify calculation Result page")
+      assert(CalculationResultPage.getCalculationResultsHeading() == "Calculation results")
+
+      When("I verify calculation result page and click view breakdown for 2015-2016")
+      CalculationResultPage.clickOnViewBreakdownFor20152016()
+
+      When("I verify detailed breakdown page")
+      assert(DetailedBreakdownPage.getDetailedBreakdownPageVerificationText() == "A detailed look at the results")
+
       HomePage.signOutPage()
     }
 

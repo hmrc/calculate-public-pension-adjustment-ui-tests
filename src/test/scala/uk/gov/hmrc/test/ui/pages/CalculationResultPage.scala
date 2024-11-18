@@ -45,6 +45,22 @@ object CalculationResultPage extends BasePage {
     map
   }
 
+  def getCalculationResultsHeading(): String =
+    driver
+      .findElement(By.xpath("//h1[contains(text(),'Calculation results')]"))
+      .getText
+      .toString
+
+  def clickOnViewBreakdownFor20152016(): Unit =
+    driver
+      .findElement(By.xpath("//*[contains(text(),'5 April 2016')]/../td/a[contains(text(),'View breakdown')]"))
+      .click()
+
+  def clickOnReviewAnswersForLTA(): Unit =
+    driver
+      .findElement(By.xpath("//th[contains(text(),'Lifetime allowance')]/../td/a[contains(text(),'Review answers')]"))
+      .click()
+
   def getTotCompensation(): Int =
     driver
       .findElement(By.xpath("//th[contains(text(),'Total amount of compensation')]//following-sibling::td"))
