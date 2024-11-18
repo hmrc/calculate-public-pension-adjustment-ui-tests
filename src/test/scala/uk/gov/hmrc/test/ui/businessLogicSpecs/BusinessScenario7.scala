@@ -283,7 +283,7 @@ class BusinessScenario7 extends BaseSpec {
     TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("500")
 
     When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
-    ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+    ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
 
     When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
     HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("20000")
