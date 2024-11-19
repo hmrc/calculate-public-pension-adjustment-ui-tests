@@ -1859,7 +1859,7 @@ class AALTATriage1 extends BaseSpec {
       FlexibleAccessDcSchemePage.selectNoThenContinue()
 
       When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page")
-      TriageJourneyNotImpactedPIADecreasePage.isHeader("You are not eligible to use the Public Service Pensions Remedy")
+      TriageJourneyNotImpactedPIADecreasePage.isHeader("You are not eligible to use the public service pensions remedy")
     }
 
     Scenario("Journey for Triage 39", AALTATriage1, ISJJourney3) {
@@ -1981,7 +1981,7 @@ class AALTATriage1 extends BaseSpec {
       TriageJourney4000ContributionToDCSchemePage.selectNoThenContinue()
 
       When("0.20 I verify TriageJourneyNotImpactedPIADecreasePage page")
-      TriageJourneyNotImpactedPIADecreasePage.isHeader("You are not eligible to use the Public Service Pensions Remedy")
+      TriageJourneyNotImpactedPIADecreasePage.isHeader("You are not eligible to use the public service pensions remedy")
     }
 
     Scenario("Journey for Triage 41", AALTATriage1, ISJJourney3) {
