@@ -1511,7 +1511,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
 
-      Then("I verify annual allowance period shows up to 2022 in the task list")
+      Then("I verify annual allowance period shows up to 2017 in the task list")
       TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2017")
 
       //AA -Triage
