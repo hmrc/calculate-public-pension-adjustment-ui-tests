@@ -58,7 +58,7 @@ object CalculationResultPage extends BasePage {
 
   def clickOnReviewAnswersForLTA(): Unit =
     driver
-      .findElement(By.xpath("//th[contains(text(),'Lifetime allowance')]/../td/a[contains(text(),'Review answers')]"))
+      .findElement(By.xpath("//a[normalize-space()='review your lifetime allowance answers']"))
       .click()
 
   def getTotCompensation(): Int =
