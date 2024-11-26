@@ -25,4 +25,9 @@ object HowMuchContribution extends BasePage {
     enterPreReliefPensionContribution(preReliefPensionContribution)
     submitPage()
   }
+
+  def enterPreReliefPensionContributionSaveAndContinue(preReliefPensionContribution: String) = {
+    enterPreReliefPensionContribution(preReliefPensionContribution)
+    saveAndsubmitPage()
+  }
 }

@@ -45,4 +45,9 @@ object ThresholdIncomePage extends BasePage {
     submitPage()
   }
 
+  def verifyPageSelectIdoNotKnowSaveAndContinue() = {
+    driver.findElement(By.id("value_2")).click()
+    saveAndsubmitPage()
+  }
+
 }

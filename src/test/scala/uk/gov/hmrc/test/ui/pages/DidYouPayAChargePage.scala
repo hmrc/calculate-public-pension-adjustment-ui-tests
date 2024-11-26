@@ -21,6 +21,12 @@ object DidYouPayAChargePage extends BasePage {
   def verifyPageSelectNoAndContinue() =
     selectNoAndContinueForAAPeriodPage()
 
+  def verifyPageSelectNoSaveAndContinue() =
+    selectNoSaveAndContinueForAAPeriodPage()
+
   def verifyPageSelectYesAndContinue() =
     selectYesAndContinueForAAPeriodPage()
+
+  def verifyPageSelectYesSaveAndContinue() =
+    selectYesThenSaveAndContinueForAASPage()
 }

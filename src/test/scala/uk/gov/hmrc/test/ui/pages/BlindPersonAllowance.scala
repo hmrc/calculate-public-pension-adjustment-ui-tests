@@ -23,6 +23,11 @@ object BlindPersonAllowance extends BasePage {
     submitPage()
   }
 
+  def verifyClaimingBlindPersonAllowanceSelectYesSaveAndContinue() = {
+    selectYesOption()
+    saveAndsubmitPage()
+  }
+
   def verifyClaimingBlindPersonAllowanceSelectNoAndContinue() = {
     selectNoOption()
     submitPage()

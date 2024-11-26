@@ -23,4 +23,9 @@ object LumpSumDeathBenefitsValuePage extends BasePage {
     driver.findElement(By.id("value")).sendKeys(lumpSumValue)
     submitPage()
   }
+
+  def enterLumpSumSaveAndContinue(lumpSumValue: String): Unit = {
+    driver.findElement(By.id("value")).sendKeys(lumpSumValue)
+    saveAndsubmitPage()
+  }
 }

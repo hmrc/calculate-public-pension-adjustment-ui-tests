@@ -80,6 +80,12 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   def submitPage(): Unit =
     driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click()
 
+  def saveAndsubmitPage(): Unit =
+    driver.findElement(By.xpath("//button[contains(text(),'Save and continue')]")).click()
+
+  def saveAndsubmitCYAPage(): Unit =
+    driver.findElement(By.xpath("//*[contains(text(),'Save and continue')]")).click()
+
   def clickContinueButton(): Unit =
     driver.findElement(By.xpath("//a[contains(text(),'Continue')]")).click()
 
@@ -236,6 +242,22 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     submitPage()
   }
 
+  def selectNoSaveAndContinue() = {
+    selectNoOption()
+    saveAndsubmitPage()
+  }
+
+  def selectYesSaveAndContinue() = {
+    selectYesOption()
+    saveAndsubmitPage()
+  }
+
+  def selectSaveAndContinue() =
+    saveAndsubmitPage()
+
+  def SaveAndContinueCYA() =
+    saveAndsubmitCYAPage()
+
   def selectOptionAndContinueForGSPage(option: String) =
     option match {
       case "true"  =>
@@ -260,6 +282,12 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     submitPage()
   }
 
+  def selectYesThenSaveAndContinueForAASPage() = {
+    selectYesOption()
+    checkYourAnswersAASMap(getHeader(), selectedOption())
+    saveAndsubmitPage()
+  }
+
   def selectYesAndContinueForAAPeriodPage() = {
     selectYesOption()
     checkYourAnswersAAPeriodMap(getHeader(), selectedOption())
@@ -272,10 +300,22 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     submitPage()
   }
 
+  def selectNoThenSaveAndContinueForAASPage() = {
+    selectNoOption()
+    checkYourAnswersAASMap(getHeader(), selectedOption())
+    saveAndsubmitPage()
+  }
+
   def selectNoAndContinueForAAPeriodPage() = {
     selectNoOption()
     checkYourAnswersAAPeriodMap(getHeader(), selectedOption())
     submitPage()
+  }
+
+  def selectNoSaveAndContinueForAAPeriodPage() = {
+    selectNoOption()
+    checkYourAnswersAAPeriodMap(getHeader(), selectedOption())
+    saveAndsubmitPage()
   }
 
   def selectYesAndContinueForLTAPage() = {
@@ -414,6 +454,12 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     driver.manage.deleteAllCookies()
     this
   }
+
+  def signout() =
+    driver.findElement(By.xpath("//a[contains(text(),'Sign out')]")).click()
+
+  def continueToSubmission() =
+    driver.findElement(By.xpath("//*[contains(text(),' Continue to submission')]")).click()
 
   def getCheckedOptions(): String = {
     var selectedText               = ""

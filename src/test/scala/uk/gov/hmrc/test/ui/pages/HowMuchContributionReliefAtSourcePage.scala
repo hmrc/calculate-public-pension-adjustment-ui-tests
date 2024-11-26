@@ -25,4 +25,9 @@ object HowMuchContributionReliefAtSourcePage extends BasePage {
     submitPage()
   }
 
+  def enterContributionReliefAmountSaveAndContinue(ContributionReliefAmount: String) = {
+    driver.findElement(By.xpath("//input[@id='value']")).sendKeys(ContributionReliefAmount)
+    saveAndsubmitPage()
+  }
+
 }

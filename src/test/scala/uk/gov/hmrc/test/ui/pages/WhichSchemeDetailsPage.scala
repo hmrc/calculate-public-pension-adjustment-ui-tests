@@ -34,6 +34,19 @@ object WhichSchemeDetailsPage extends BasePage {
     )
     submitPage()
   }
+
+  def verifyPageSelectSchemeSaveAndContinue(
+    pensionSchemeName: String,
+    pensionScheme: String
+  ) = {
+    selectPensionScheme(pensionScheme)
+    checkYourAnswersAAPeriodMap(
+      "What is the name and tax reference of the pension scheme?",
+      pensionSchemeName + " / " + pensionScheme
+    )
+    saveAndsubmitPage()
+  }
+
   def verifyPageSelectNewSchemeAndContinue() = {
     selectNewScheme()
     checkYourAnswersAAPeriodMap("What is the name and tax reference of the pension scheme?", "New")

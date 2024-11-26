@@ -26,4 +26,9 @@ object DonatedViaGiftAidAmount extends BasePage {
     enterDonatedGiftAidAmount(giftAidAmount)
     submitPage()
   }
+
+  def verifyPageEnterGiftAidAmountSaveAndContinue(giftAidAmount: String) = {
+    enterDonatedGiftAidAmount(giftAidAmount)
+    saveAndsubmitPage()
+  }
 }

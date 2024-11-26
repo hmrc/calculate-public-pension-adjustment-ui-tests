@@ -20,6 +20,9 @@ object KnowAdjustedAmountPage extends BasePage {
   def verifyPageSelectNoAndContinue() =
     selectNoAndContinueForAAPeriodPage()
 
+  def verifyPageSelectNoSaveAndContinue() =
+    selectNoSaveAndContinueForAAPeriodPage()
+
   def verifyPageSelectYesAndContinue() =
     selectYesAndContinueForAAPeriodPage()
 }

@@ -38,4 +38,13 @@ object PensionSchemeDetailsPage extends BasePage {
     submitPage()
   }
 
+  def enterTaxInformationSaveAndContinue(
+    schemeName: String,
+    taxReference: String
+  ) = {
+    enterPensionSchemeName(schemeName)
+    enterSchemeTaxReference(taxReference)
+    checkYourAnswersAAPeriodMap(getHeader(), schemeName + " / " + taxReference)
+    saveAndsubmitPage()
+  }
 }

@@ -24,4 +24,7 @@ object DonatedViaGiftAid extends BasePage {
   def verifyPageSelectYesAndContinue() =
     selectYesAndContinueForAAPeriodPage()
 
+  def verifyPageSelectYesSaveAndContinue() =
+    selectYesThenSaveAndContinueForAASPage()
+
 }

@@ -28,4 +28,9 @@ object FlexibleRemunerationsArrangements extends BasePage {
     submitPage()
   }
 
+  def selectNoThenSaveAndContinue() = {
+    selectNoOption()
+    saveAndsubmitPage()
+  }
+
 }

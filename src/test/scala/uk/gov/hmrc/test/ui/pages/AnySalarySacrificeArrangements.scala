@@ -23,6 +23,11 @@ object AnySalarySacrificeArrangements extends BasePage {
     submitPage()
   }
 
+  def selectYesThenSaveAndContinue() = {
+    selectYesOption()
+    saveAndsubmitPage()
+  }
+
   def selectNoAndContinue() = {
     selectNoOption()
     submitPage()

@@ -22,4 +22,7 @@ object DoYouKnowPersonalAllowancePage extends BasePage {
 
   def verifyPageSelectYesAndContinue() =
     selectYesAndContinueForAAPeriodPage()
+
+  def verifyPageSelectYesSaveAndContinue() =
+    selectYesThenSaveAndContinueForAASPage()
 }

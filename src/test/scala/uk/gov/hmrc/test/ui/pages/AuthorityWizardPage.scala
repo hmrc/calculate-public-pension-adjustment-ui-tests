@@ -35,7 +35,7 @@ object AuthorityWizardPage extends BasePage {
     driver.findElement(By.id("itmp.middleName")).sendKeys("Tharu")
     driver.findElement(By.id("itmp.familyName")).sendKeys("Jonson")
     driver.findElement(By.id("itmp.dateOfBirth")).sendKeys("1948-08-02")
-    driver.findElement(By.id("submit-top")).submit()
+    driver.findElement(By.id("submit")).submit()
   }
 
   def selectConfidenceLevel(confidenceLevel: String) = {

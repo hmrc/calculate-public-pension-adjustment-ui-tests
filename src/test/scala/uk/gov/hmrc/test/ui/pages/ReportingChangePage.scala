@@ -44,6 +44,12 @@ object ReportingChangePage extends BasePage {
     continueToNextPage()
   }
 
+  def selectAnnualAllowanceSaveAndContinue() = {
+    clearAllOptions()
+    clickAnnualAllowance()
+    saveAndsubmitPage()
+  }
+
   def selectLifetimeAllowanceAndContinue() = {
     clearAllOptions()
     clickLifetimeAllowance()

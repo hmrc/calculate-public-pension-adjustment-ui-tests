@@ -27,4 +27,9 @@ object TaxReliefOverseasPensionValuePage extends BasePage {
     submitPage()
   }
 
+  def verifyPageTaxReliefOverseasPensionValueSaveAndContinue(taxReliefPensionValue: String) = {
+    enterTaxReliefOverseasPensionValue(taxReliefPensionValue)
+    saveAndsubmitPage()
+  }
+
 }

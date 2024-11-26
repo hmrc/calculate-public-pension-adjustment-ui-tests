@@ -22,10 +22,19 @@ object ClaimingTaxReliefPension extends BasePage {
     selectYesOption()
     submitPage()
   }
+  def verifyClaimingTaxReliefPensionSelectYesSaveAndContinue() = {
+    selectYesOption()
+    saveAndsubmitPage()
+  }
 
   def verifyClaimingTaxReliefPensionSelectNoAndContinue() = {
     selectNoOption()
     submitPage()
+  }
+
+  def verifyClaimingTaxReliefPensionSelectNoSaveAndContinue() = {
+    selectNoOption()
+    saveAndsubmitPage()
   }
 
 }

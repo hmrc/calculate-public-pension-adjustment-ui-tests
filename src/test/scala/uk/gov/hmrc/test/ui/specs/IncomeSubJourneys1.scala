@@ -2119,5 +2119,6 @@ class IncomeSubJourneys1 extends BaseSpec {
       CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageAndContinue()
 
     }
+
   }
 }

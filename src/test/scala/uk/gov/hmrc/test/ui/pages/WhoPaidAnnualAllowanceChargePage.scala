@@ -29,6 +29,12 @@ object WhoPaidAnnualAllowanceChargePage extends BasePage {
     checkYourAnswersAAPeriodMap(getHeader(), "You")
     submitPage()
   }
+
+  def verifyPageSelectYouSaveAndContinue() = {
+    selectYou()
+    checkYourAnswersAAPeriodMap(getHeader(), "You")
+    saveAndsubmitPage()
+  }
   def verifyPageSelectPensionSchemeAndContinue() = {
     selectPensionScheme()
     checkYourAnswersAAPeriodMap(getHeader(), "Pension Scheme")

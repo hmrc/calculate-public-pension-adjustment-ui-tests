@@ -21,4 +21,7 @@ object CheckYourAnswersAnnualAllowancePeriodPage extends BasePage {
   def verifyCheckYourAnswersPageAndContinue() =
     clickContinueButton()
 
+  def verifyCheckYourAnswersPageSaveAndContinue() =
+    SaveAndContinueCYA()
+
 }

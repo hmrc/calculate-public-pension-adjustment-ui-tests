@@ -27,4 +27,9 @@ object AmountSalarySacrificeArrangements extends BasePage {
     enterSalarySacrificeAmount(salarySacrifice: String)
     submitPage()
   }
+
+  def enterSalarySacrificeAmountSaveAndContinue(salarySacrifice: String) = {
+    enterSalarySacrificeAmount(salarySacrifice: String)
+    saveAndsubmitPage()
+  }
 }

@@ -17,8 +17,9 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.pages.HomePage.{continueToSubmission, signout}
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{ISJJourney2, ZapTests}
+import uk.gov.hmrc.test.ui.specs.tags.{ISJJourney1, ISJJourney2, ZapTests}
 
 class IncomeSubJourneys2 extends BaseSpec {
 
@@ -1555,5 +1556,279 @@ class IncomeSubJourneys2 extends BaseSpec {
 
     }
 
+    Scenario("Income Sub-Journeys 13", ISJJourney2) {
+
+      /** User resubmitting, AA adjustment, non-Scottish taxpayer, left scheme 1/1/2017, no other schemes, charge paid 15/16. */
+      /** Below journey covers 0, 1.1 (Y), 1.3 (N), 1.5 (AA), 2.1 (N), 2.3 (N), 2.4 (1/1/2017), 2.5 (N), 2.8 (Y) */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.clickSignIn()
+        case _      =>
+      }
+
+      AuthorityWizardPage.authorizedLoginUser()
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoSaveAndContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesSaveAndContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceSaveAndContinue()
+
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesSaveAndContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoSaveAndContinue()
+
+      When("0.10 I verify Annual allowance charge page select no and click continue")
+      AnnualAllowanceCharge.selectNoSaveAndContinue()
+
+      When("0.11 I verify ContributionRefunds page select yes and click continue")
+      ContributionRefunds.selectYesSaveAndContinue()
+
+      When("0.12 I verify IncomeOver100Page page select yes and click continue")
+      IncomeOver100Page.selectYesSaveAndContinue()
+
+      When("I reach CYA and click continue")
+      CheckYourAnswersLifetimeAllowancePage.SaveAndContinueCYA()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.SaveAndContinueCYA()
+
+      When("I land on Scottish taxpayer page, select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoThenSaveAndContinueForAASPage()
+
+      When("I land on paying-into-public-pension-scheme, select no and continue to next page")
+      PayingIntoPublicPensionSchemePage.selectNoThenSaveAndContinueForAASPage()
+
+      When(
+        "I land on stopped-paying-into-public-service-pension page, enter a valid date of 1/1/2017, and click continue"
+      )
+      WhenStopPayingPublicPensionPage.enterValid2016_2017_DateAndSaveandContinue()
+
+      When("I land on defined-contribution-pension page, select no and continue to next page")
+      HaveDefinedContributionPensionPage.selectNoThenSaveAndContinueForAASPage()
+
+      When("I land on pay-tax-charge-from2015-2016 page, select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesThenSaveAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageSaveAndContinue()
+
+      Then("I verify annual allowance period shows up to 2017 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2017")
+
+      /** AA Journey 1 - Setup journey 1 - No DC AA Journey */
+      /** Below journey covers 3.1, 3.2 (N), 3.3, 3.4, 3.5 (Y), 3.6 (User), 3.7, 3.16 (60000), 3.17, task list */
+
+      /** --- 2016 ---
+        * 3.16.8,11,12,13,14,15,16
+        */
+      When("I click Add details for 2015 to 2016")
+      TaskListPage.clickAddDetailsFor2015To2016()
+
+      When("I verify what-you-will-need-aa/2016 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016Page()
+
+      Then("I verify member-more-than-one-pension page,select No and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoSaveAndContinue()
+
+      When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
+      PensionSchemeDetailsPage.enterTaxInformationSaveAndContinue("NHS", "11123456BC")
+
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
+      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsSaveAndContinue("40000")
+
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
+      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsSaveAndContinue("2000")
+
+      When("I verify DidYouPayAChargePage, select no and continue")
+      DidYouPayAChargePage.verifyPageSelectNoSaveAndContinue()
+
+      When("I verify TotalIncomePage, enter net income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeSaveAndContinue("42385")
+
+      When("3.16.8 I verify ClaimingTaxRelief Pension, select No and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoSaveAndContinue()
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesThenSaveAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountSaveAndContinue("2000")
+
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesSaveAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountSaveAndContinue("3000")
+
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      DoYouKnowPersonalAllowancePage.verifyPageSelectYesSaveAndContinue()
+
+      When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceSaveAndContinue("2000")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesSaveAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmountSaveandContinue("2290")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.SaveAndContinueCYA()
+
+      /** --- 2017 */
+      /**
+        * Income sub-journey 3.16.1,2,3,4,6,7,8,9 / 3.15.0,1,2 / 3.16.5 / 3.15.3,4,5 / 3.16.10,10.1,11,12,15,16
+        */
+
+      When("I click Add details for 2016 to 2017")
+      TaskListPage.clickAddDetailsFor2016To2017()
+
+      When("I verify what-you-will-need-aa/2017 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
+
+      Then("I verify member-more-than-one-pension page and click continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoSaveAndContinue()
+
+      When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeSaveAndContinue("NHS", "11123456BC")
+
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsSaveAndContinue("8000")
+
+      When("I verify DidYouPayAChargePage, select no and continue")
+      DidYouPayAChargePage.verifyPageSelectYesSaveAndContinue()
+
+      When("I verify WhoPaidAPayACharge Page, select You and continue")
+      WhoPaidAnnualAllowanceChargePage.verifyPageSelectYouSaveAndContinue()
+
+      When("I verify EnterPayACharge Page, enter amount and continue")
+      HowMuchYouPayChargePage.verifyPageEnterYouPaySaveAndContinue("4000")
+
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
+      ThresholdIncomePage.verifyPageSelectIdoNotKnowSaveAndContinue()
+
+      When("I verify TotalIncomePage page, enter total income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeSaveAndContinue("360000")
+
+      When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
+      AnySalarySacrificeArrangements.selectYesThenSaveAndContinue()
+
+      When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
+      AmountSalarySacrificeArrangements.enterSalarySacrificeAmountSaveAndContinue("1000")
+
+      When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
+      FlexibleRemunerationsArrangements.selectNoThenSaveAndContinue()
+
+      When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
+      AnyLumpSumDeathBenefitsPage.selectYesThenSaveAndContinue()
+
+      When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
+      LumpSumDeathBenefitsValuePage.enterLumpSumSaveAndContinue("5000")
+
+      When("3.16.8 I verify ClaimingTaxReliefPension page, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesSaveAndContinue()
+
+      When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefSaveAndContinue("2000")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesThenSaveAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountSaveAndContinue("2000")
+
+      When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
+      KnowAdjustedAmountPage.verifyPageSelectNoSaveAndContinue()
+
+      When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select no and continue")
+      ClaimingTaxReliefPensionPage.verifyPageSelectNoSaveAndContinue()
+
+      When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
+      HowMuchContribution.enterPreReliefPensionContributionSaveAndContinue("3000")
+
+      When("3.15.4 I verify AnyTaxReliefOverseasPensionPage page, select yes and continue")
+      AnyTaxReliefOverseasPensionPage.verifyPageSelectYesSaveAndContinue()
+
+      When("3.15.5 I verify TaxReliefOverseasPensionValuePage page, enter tax relief pension amount and continue")
+      TaxReliefOverseasPensionValuePage.verifyPageTaxReliefOverseasPensionValueSaveAndContinue("1300")
+
+      When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+      DonatedViaGiftAid.verifyPageSelectYesSaveAndContinue()
+
+      When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+      DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountSaveAndContinue("3000")
+
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+      DoYouKnowPersonalAllowancePage.verifyPageSelectYesSaveAndContinue()
+
+      When("3.16.12 I verify TaxReliefPage page, enter tax relief amount and continue")
+      PersonalAllowancePage.verifyPageEnterPersonalAllowanceSaveAndContinue("2130")
+
+      When("3.16.15 I verify BlindPersonAllowance page, select yes and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectYesSaveAndContinue()
+
+      When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
+      BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmountSaveandContinue("2291")
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.verifyCheckYourAnswersPageSaveAndContinue()
+
+      /** verify calculation results page and submit */
+
+      When("I click Calculate")
+      TaskListPage.clickCalculateButton()
+      CalculationResultPage.getCalculationResultsHeading()
+
+      When("I click Continue to submission")
+      continueToSubmission()
+
+      /** verify sign out and sign in again */
+
+      When("I click signout")
+      signout()
+
+      Given("I access the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.clickSignIn()
+        case _      =>
+      }
+
+      AuthorityWizardPage.authorizedLoginUser()
+
+      /** verify going to previous calculation results page */
+
+      When("I select I'm resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectYesSaveAndContinue()
+
+      When("I select save and continue from overview page")
+      ResubmittingAdjustmentPage.SaveAndContinueCYA()
+
+      When("I select Edit and continue")
+      CalculationContinuePage.selectEditChoice()
+
+      When("I select Yes and confirm to continue")
+      CalculationContinuePage.selectSaveandContinue()
+
+      When("I click Calculate")
+      TaskListPage.clickCalculateButton()
+      CalculationResultPage.getCalculationResultsHeading()
+
+    }
   }
 }

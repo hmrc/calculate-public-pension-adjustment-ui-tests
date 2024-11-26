@@ -29,4 +29,10 @@ object TotalIncomePage extends BasePage {
     checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
     submitPage()
   }
+
+  def verifyPageEnterTotalIncomeSaveAndContinue(adjustedIncome: String) = {
+    enterTotalIncome(adjustedIncome)
+    checkYourAnswersAAPeriodMap(getHeader(), "£" + driver.findElement(By.id("value")).getAttribute("value"))
+    saveAndsubmitPage()
+  }
 }

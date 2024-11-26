@@ -21,6 +21,12 @@ object AnyLumpSumDeathBenefitsPage extends BasePage {
     selectYesOption()
     submitPage()
   }
+
+  def selectYesThenSaveAndContinue() = {
+    selectYesOption()
+    saveAndsubmitPage()
+  }
+
   def selectNoAndContinue() = {
     selectNoOption()
     submitPage()

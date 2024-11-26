@@ -27,4 +27,10 @@ object TaxReliefAmountPage extends BasePage {
     checkYourAnswersCalculationsMap(getHeader(), taxReliefAmount)
     submitPage()
   }
+
+  def verifyPageEnterTaxReliefSaveAndContinue(taxReliefAmount: String) = {
+    enterTaxReliefAmount(taxReliefAmount)
+    checkYourAnswersCalculationsMap(getHeader(), taxReliefAmount)
+    saveAndsubmitPage()
+  }
 }

@@ -18,15 +18,21 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 
-object BlindPersonsAllowanceAmount extends BasePage {
+object CalculationContinuePage extends BasePage {
 
-  def enterBlindPersonsAllowanceAmount(blindPersonsAllowanceAmount: String) = {
-    driver.findElement(By.id("value")).sendKeys(blindPersonsAllowanceAmount)
-    submitPage()
-  }
-
-  def enterBlindPersonsAllowanceAmountSaveandContinue(blindPersonsAllowanceAmount: String) = {
-    driver.findElement(By.id("value")).sendKeys(blindPersonsAllowanceAmount)
+  def selectEditChoice() = {
+    driver.findElement(By.id("value_1")).click()
     saveAndsubmitPage()
   }
+
+  def selectYesThenSaveandContinue() = {
+    selectYesOption()
+    saveAndsubmitPage()
+  }
+
+  def selectSaveandContinue() = {
+    selectYesOption()
+    saveAndsubmitCYAPage()
+  }
+
 }

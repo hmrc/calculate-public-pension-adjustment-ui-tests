@@ -23,6 +23,6 @@ object SignInGovernmentGateway extends BasePage {
     driver.findElement(By.xpath("//a[contains(text(), 'Continue without signing in')]")).click()
 
   def clickSignIn(): Unit =
-    driver.findElement(By.xpath("//a[contains(text(),'Sign in')]")).click()
+    driver.findElement(By.xpath("//*[contains(text(),'Sign in')]")).click()
 
 }

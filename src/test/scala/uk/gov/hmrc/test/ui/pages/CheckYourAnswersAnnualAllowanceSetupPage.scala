@@ -48,6 +48,9 @@ object CheckYourAnswersAnnualAllowanceSetupPage extends BasePage {
   def verifyCheckYourAnswersPageAndContinue() =
     clickContinueButton()
 
+  def verifyCheckYourAnswersPageSaveAndContinue() =
+    saveAndsubmitCYAPage()
+
   def checkContains(description: String, map1: mutable.Map[String, Any], map2: mutable.Map[String, Any]) {
     map1.foreach { (kv: (String, Any)) =>
       val expected = map2(kv._1)

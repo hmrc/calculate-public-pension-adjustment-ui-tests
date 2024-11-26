@@ -36,6 +36,12 @@ object PensionSchemeInputAmountsPage extends BasePage {
     submitPage()
   }
 
+  def verifyPageEnterPensionAmountsSaveAndContinue(revisedPensionInputAmount: String) = {
+    enterRevisedPensionInputAmount(revisedPensionInputAmount)
+    checkYourAnswersAAPeriodMap(getHeader(), "£" + revisedPensionInputAmount)
+    saveAndsubmitPage()
+  }
+
   def getRevisedPIASpiltYearCaptionText() =
     driver.findElement(By.className("govuk-caption-xl")).getText
 

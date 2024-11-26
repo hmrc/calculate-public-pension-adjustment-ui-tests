@@ -27,4 +27,9 @@ object HowMuchYouPayChargePage extends BasePage {
     submitPage()
   }
 
+  def verifyPageEnterYouPaySaveAndContinue(pensionPay: String) = {
+    enterYouPay(pensionPay)
+    saveAndsubmitPage()
+  }
+
 }

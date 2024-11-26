@@ -23,6 +23,11 @@ object PersonalAllowancePage extends BasePage {
     enterPersonalAllowance(personalAllowance)
     submitPage()
   }
+
+  def verifyPageEnterPersonalAllowanceSaveAndContinue(personalAllowance: String) = {
+    enterPersonalAllowance(personalAllowance)
+    saveAndsubmitPage()
+  }
   def enterPersonalAllowance(personalAllowance: String) = driver.findElement(By.id("value")).sendKeys(personalAllowance)
 
 }
