@@ -16,9 +16,7 @@
 
 package uk.gov.hmrc.test.ui.businessLogicSpecs
 
-import org.scalatest.Assertions.assert
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.pages.HomePage.sanitiseAmount
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.BaseSpec
 
@@ -623,7 +621,7 @@ class BusinessScenario4 extends BaseSpec {
     assert(CalculationResultPage.getTotCompensation() == outDatesCompensation)
     assert(CalculationResultPage.getIncreasedTaxCharges() == inDatesDebit)
     assert(CalculationResultPage.getDecreasedTaxCharges() == inDatesCredit)
-*/
+     */
     //      calculationResults Map = [Year-> [Amount on which tax is due,Total revised tax charge]]
 
     val calculationResults: Map[Int, Array[Int]] = Map(
@@ -637,7 +635,7 @@ class BusinessScenario4 extends BaseSpec {
       2023 -> Array(60000, 25821)
     )
 
-    for (year <- calculationResults.keys) {
+    for (year <- calculationResults.keys)
       if (BreakdownPage.goToYearBreakdown(year)) {
         val calculationResult = calculationResults(year)
 
@@ -674,6 +672,5 @@ class BusinessScenario4 extends BaseSpec {
       } else {
         println(s"Skipping year $year due to missing breakdown page")
       }
-    }
   }
 }

@@ -361,7 +361,7 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     .pollingEvery(Duration.ofMillis(500))
     .ignoring(classOf[NoSuchElementException])
 
-  private def find (by: By): WebElement = {
+  private def find(by: By): WebElement = {
     fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
     driver.findElement(by)
   }
@@ -372,9 +372,8 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
   def getEnteredAmount(): String =
     "£" + driver.findElement(By.id("value")).getAttribute("value")
 
-  def sanitiseAmount(amount : String) : Int = {
+  def sanitiseAmount(amount: String): Int =
     amount.replaceAll("[£,]", "").trim.toInt
-  }
 
   def returnCheckYourAnswersPageInformation(): mutable.Map[String, Any] = {
     val map        = mutable.Map[String, Any]()
