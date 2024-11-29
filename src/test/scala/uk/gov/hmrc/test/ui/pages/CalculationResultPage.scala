@@ -23,7 +23,8 @@ import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
 import scala.jdk.CollectionConverters.ListHasAsScala
 
 object CalculationResultPage extends BasePage {
-  def returnTaxYearInformation(taxYear: String): Map[String, String] = {
+
+/*  def returnTaxYearInformation(taxYear: String): Map[String, String] = {
     val dlElement        = driver.findElement(
       By.xpath("//div[@class='govuk-grid-column-two-thirds']//h2[contains(text(),'5 April " + taxYear + "')]")
     )
@@ -38,11 +39,27 @@ object CalculationResultPage extends BasePage {
       .asScala
       .map { row =>
         val th = row.select("th").text()
-        val td = row.select("td").text()
+        val td =row.select("td").text()
         th -> td
       }
       .toMap
     map
+  }*/
+
+  def getTaxYearInformation(taxYear: String, fieldName: String): Int = {
+    val tableXPath = s"//div[@class='govuk-grid-column-two-thirds']//h2[contains(text(),'5 April $taxYear')]/following-sibling::table"
+
+    // Locate the table for the given tax year
+    val tableElement = driver.findElement(By.xpath(tableXPath))
+
+    // Locate the specific row based on fieldName and it's value
+    val rowXPath = s"//div[@class='govuk-grid-column-two-thirds']//h2[contains(text(),'5 April $taxYear')]/following-sibling::table//tr[th[contains(text(),'$fieldName')]]"
+    val rowElement = tableElement.findElement(By.xpath(rowXPath))
+
+    val rawValue = rowElement.findElement(By.xpath("./td")).getText
+
+    // Sanitize and return the value as Int
+    sanitiseAmount(rawValue)
   }
 
   def getCalculationResultsHeading(): String =
@@ -61,6 +78,8 @@ object CalculationResultPage extends BasePage {
       .findElement(By.xpath("//a[normalize-space()='review your lifetime allowance answers']"))
       .click()
 
+
+
   def getTotCompensation(): Int =
     driver
       .findElement(By.xpath("//th[contains(text(),'Total amount of compensation')]//following-sibling::td"))
@@ -78,6 +97,7 @@ object CalculationResultPage extends BasePage {
       .findElement(By.xpath("//th[contains(text(),'Total decrease in tax charges')]//following-sibling::td"))
       .getText
       .toInt
+
 
   def returnTaskListSummaryInformation(fieldName: String) = {
     val dlElement =
@@ -129,10 +149,11 @@ object CalculationResultPage extends BasePage {
       getTaxYearInformation(period, fieldName)
   }
 
-  def getTaxYearInformation(taxYear: String, fieldName: String) = {
-    val returnResult = returnTaxYearInformation(taxYear).getOrElse(fieldName, "0")
-    returnResult.toInt
-  }
+/*  def getTaxYearInformation(taxYear: String, fieldName: String) : Int = {
+    val yearData = returnTaxYearInformation(taxYear)
+      yearData.getOrElse(fieldName,  throw new NoSuchElementException(s"fieldName '$fieldName' not found for tax year $taxYear"))
+  }*/
+
   def clickContinueSignIn() = {
     Thread.sleep(2000)
     driver.findElement(By.xpath("//button[contains(text(),'Continue to sign in')]")).click()

@@ -17,7 +17,8 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.jsoup.Jsoup
-import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
+import org.openqa.selenium.{By, WebDriver, WebElement}
 import org.scalatest.Assertion
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
@@ -26,7 +27,7 @@ import util.DataCollectorMap
 
 import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
-import java.time.{LocalDate, LocalDateTime, ZoneId}
+import java.time.{Duration, LocalDate, LocalDateTime, ZoneId}
 import java.util.{Calendar, ResourceBundle}
 import scala.collection.mutable
 import scala.jdk.CollectionConverters.CollectionHasAsScala
@@ -355,11 +356,25 @@ trait BasePage extends BrowserDriver with GSDataCollector with AASDataCollector 
     (year, month, day)
   }
 
+  val fluentWait = new FluentWait[WebDriver](driver)
+    .withTimeout(Duration.ofSeconds(10))
+    .pollingEvery(Duration.ofMillis(500))
+    .ignoring(classOf[NoSuchElementException])
+
+  private def find (by: By): WebElement = {
+    fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
+    driver.findElement(by)
+  }
+
   def enterAmount(amount: String) =
     driver.findElement(By.id("value")).sendKeys(amount)
 
   def getEnteredAmount(): String =
     "£" + driver.findElement(By.id("value")).getAttribute("value")
+
+  def sanitiseAmount(amount : String) : Int = {
+    amount.replaceAll("[£,]", "").trim.toInt
+  }
 
   def returnCheckYourAnswersPageInformation(): mutable.Map[String, Any] = {
     val map        = mutable.Map[String, Any]()
