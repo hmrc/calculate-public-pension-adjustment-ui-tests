@@ -25,7 +25,7 @@ import scala.jdk.CollectionConverters.ListHasAsScala
 object CalculationResultPage extends BasePage {
   def returnTaxYearInformation(taxYear: String): Map[String, String] = {
     val dlElement        = driver.findElement(
-      By.xpath("//div[@class='govuk-grid-column-two-thirds']//h2[contains(text(),'5 April " + taxYear + "')]")
+      By.xpath("//div[@class='govuk-grid-column-two-thirds']//*[contains(text(),'5 April " + taxYear + "')]")
     )
     val nextTableElement = dlElement.findElement(By.xpath("following-sibling::table"))
     // Get the HTML content of the <dl> element
@@ -44,6 +44,20 @@ object CalculationResultPage extends BasePage {
       .toMap
     map
   }
+
+  def clickOnViewBreakdown(taxYear: String): Unit =
+    driver
+      .findElement(
+        By.xpath(
+          "//div[@class='govuk-grid-column-two-thirds']//th[contains(text(),'5 April " + taxYear + "')]/../td[@class='govuk-table__cell']/a[contains(text(),'View breakdown')]"
+        )
+      )
+      .click()
+
+  def clickOnReturnToSummaryOnDetailedBreakdownPage(): Unit =
+    driver
+      .findElement(By.xpath("//*[contains(text(),'return to main summary')]"))
+      .click()
 
   def getCalculationResultsHeading(): String =
     driver
@@ -132,6 +146,11 @@ object CalculationResultPage extends BasePage {
   def getTaxYearInformation(taxYear: String, fieldName: String) = {
     val returnResult = returnTaxYearInformation(taxYear).getOrElse(fieldName, "0")
     returnResult.toInt
+  }
+
+  def getTaxYearInformationValue(taxYear: String, fieldName: String) = {
+    val returnResult = returnTaxYearInformation(taxYear).getOrElse(fieldName, "0")
+    returnResult
   }
   def clickContinueSignIn() = {
     Thread.sleep(2000)
