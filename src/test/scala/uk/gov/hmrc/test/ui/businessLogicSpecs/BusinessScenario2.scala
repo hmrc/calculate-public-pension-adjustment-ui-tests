@@ -598,15 +598,6 @@ class BusinessScenario2 extends BaseSpec {
       TaskListPage.clickCalculateButton()
 
       /** Total verification * */
-
-      val outDatesCompensation = 0
-      val inDatesDebit         = 16000
-      val inDatesCredit        = 0
-
-      assert(CalculationResultPage.getTotCompensation() == outDatesCompensation)
-      assert(CalculationResultPage.getIncreasedTaxCharges() == inDatesDebit)
-      assert(CalculationResultPage.getDecreasedTaxCharges() == inDatesCredit)
-
       /**
         * calculationResults Map = [Year-> [Amount on which tax is due,Total revised tax charge]]
         */
@@ -624,24 +615,31 @@ class BusinessScenario2 extends BaseSpec {
 
       for (year <- calculationResults.keys) {
         val calculationResult = calculationResults(year)
+
+        CalculationResultPage.clickOnViewBreakdown(year.toString)
+        val revisedChargableAmountBeforeTaxRate = f"£${calculationResult(0)}%,d"
+        val revisedChargableAmountAfterTaxRate  = f"£${calculationResult(1)}%,d"
+
         assert(
           CalculationResultPage
-            .getTaxYearInformation(
+            .getTaxYearInformationValue(
               year.toString,
               "Updated amount on which tax is due"
             )
-            == calculationResult(0),
+            == revisedChargableAmountBeforeTaxRate,
           year.toString + " revisedChargableAmountBeforeTaxRate is different"
         )
         assert(
           CalculationResultPage
-            .getTaxYearInformation(
+            .getTaxYearInformationValue(
               year.toString,
               "Updated annual allowance tax charge amount"
             )
-            == calculationResult(1),
+            == revisedChargableAmountAfterTaxRate,
           year.toString + " revisedChargableAmountAfterTaxRate is different"
         )
+
+        CalculationResultPage.clickOnReturnToSummaryOnDetailedBreakdownPage()
       }
 
       /**

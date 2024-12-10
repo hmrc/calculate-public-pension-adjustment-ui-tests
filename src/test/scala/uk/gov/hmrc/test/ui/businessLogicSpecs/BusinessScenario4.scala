@@ -20,11 +20,11 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
 import uk.gov.hmrc.test.ui.specs.BaseSpec
 
-class BusinessScenario1 extends BaseSpec {
+class BusinessScenario4 extends BaseSpec {
 
   val signInPage: String = TestConfiguration.optionalAuthFlag()
 
-  Scenario("Calculation Logic Verification Scenario 1") {
+  Scenario("Business Scenario 4") {
 
     Given("I am on the Public Service Pensions Remediation home page")
     HomePage.goToHomepage()
@@ -67,22 +67,37 @@ class BusinessScenario1 extends BaseSpec {
     EligibleToUseServicePage.clickContinueButton()
 
     //AA Setup
-    When("2.1 I land on Scottish taxpayer page, select no and continue to next page")
-    ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+    When("I land on Scottish Taxpayer page, select yes and continue")
+    ScottishTaxpayerFrom2016Page.selectYesAndContinueForAASPage()
 
-    When("2.5 I land on paying-into-public-pension-scheme, select yes and continue to next page")
+    When("I land on Which Years Scottish Taxpayer page, select all the years and continue")
+    WhichYearsScottishTaxpayer.selectScottishTaxPayerYear("2017")
+
+    When("I land on Which Years Scottish Taxpayer page, select all the years and continue")
+    WhichYearsScottishTaxpayer.selectScottishTaxPayerYear("2018")
+
+    When("I land on Which Years Scottish Taxpayer page, select all the years and continue")
+    WhichYearsScottishTaxpayer.selectScottishTaxPayerYear("2019")
+
+    When("I land on Which Years Scottish Taxpayer page, select all the years and continue")
+    WhichYearsScottishTaxpayer.selectScottishTaxPayerYear("2020")
+
+    When("I land on Which Years Scottish Taxpayer page, select all the years and continue")
+    WhichYearsScottishTaxpayer.selectScottishTaxPayerYear("2021")
+
+    When("I land on Which Years Scottish Taxpayer page, select all the years and continue")
+    WhichYearsScottishTaxpayer.selectScottishTaxPayerYear("2022")
+
+    When("I land on Which Years Scottish Taxpayer page, select all the years and continue")
+    WhichYearsScottishTaxpayer.selectScottishTaxpayerYearAndContinue("2023")
+
+    When("I land on paying-into-public-scheme-page, select yes and click continue")
     PayingIntoPublicPensionSchemePage.selectYesAndContinueForAASPage()
 
-    When("I land on defined-contribution-pension page, select yes and continue to next page")
-    HaveDefinedContributionPensionPage.selectYesAndContinueForAASPage()
+    When("I land on defined-contributions-scheme page, select no and continue")
+    HaveDefinedContributionPensionPage.selectNoAndContinueForAASPage()
 
-    When("I land on the when-flexibly-access-pension page select yes and continue to next page")
-    HaveFlexiblyAccessedPensionPage.selectYesThenContinue()
-
-    Then("I land on the when-flexibly-access-pension page, enter flexi access date 7/7/15 and continue")
-    WhenFlexiblyAccessPensionPage.enterFlexiAcessDateAndClickContinue("01", "1", "2018")
-
-    When("I land on pay-tax-charge 14/15 page, select yes and continue to next page")
+    When("I land on pay-tax-charge 14/15 page, select Yes and continue to next page")
     PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
 
     When("I verify check your answers page for annual allowance and click continue")
@@ -91,10 +106,8 @@ class BusinessScenario1 extends BaseSpec {
     Then("I verify annual allowance period shows up to 2022 in the task list")
     TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2022")
 
-    //AA -Triage
-    /** --- 2016 ---
-      * 3.16.8,11,12,13,14,15,16
-      */
+    /** --- 2016 */
+
     When("I click Add details for 2015 to 2016")
     TaskListPage.clickAddDetailsFor2015To2016()
 
@@ -110,21 +123,18 @@ class BusinessScenario1 extends BaseSpec {
     When(
       "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
     )
-    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("85000")
+    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("25000")
 
     When(
       "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
     )
-    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("5000")
+    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("60000")
 
     When("I verify DidYouPayAChargePage, select no and continue")
     DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
-    When("I verify ContributedOtherDbDcSchemePage, select no and continue")
-    ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
-
     When("I verify TaxableIncomePage, enter Taxable income and continue")
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("51600")
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("56600")
 
     When("3.16.8 I verify ClaimingTaxReliefPension page, select Yes and continue")
     ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
@@ -135,19 +145,16 @@ class BusinessScenario1 extends BaseSpec {
     When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
     ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
-    When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
-    DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+    When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
+    DonatedViaGiftAid.verifyPageSelectNoAndContinue()
 
-    When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
-    DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("3000")
+    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+    DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
-    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
-    DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+    When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
+    PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("10600")
 
-    When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
-    TradeUnionRelief.verifyPageSelectNoAndContinue()
-
-    When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+    When("3.16.16 I verify BlindPersonsAllowanceAmount page, select no and continue")
     BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
     /** verify check your answers page */
@@ -168,31 +175,28 @@ class BusinessScenario1 extends BaseSpec {
     WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00348916RX")
 
     When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
-    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("55000")
+    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("49000")
 
     When("I verify DidYouPayAChargePage, select no and continue")
     DidYouPayAChargePage.verifyPageSelectNoAndContinue()
-
-    When("I verify ContributedOtherDbDcSchemePage, select no and continue")
-    ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
 
     When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
     ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
     When("I verify TotalIncomePage page, enter total income and continue")
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("53000")
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("61000")
 
-    When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
+    When("3.16.1 I verify AnySalarySacrificeArrangements page, select Yes and continue")
     AnySalarySacrificeArrangements.selectYesAndContinue()
 
     When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
-    AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("3000")
+    AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("1000")
 
-    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
+    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select Yes and continue")
     FlexibleRemunerationsArrangements.selectYesAndContinue()
 
     When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
-    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("10000")
+    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
     When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select No and continue")
     AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
@@ -207,18 +211,18 @@ class BusinessScenario1 extends BaseSpec {
     ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
 
     When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("20000")
+    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("5000")
 
     When("3.16.10 I verify DonatedViaGiftAid page, select no and continue")
     DonatedViaGiftAid.verifyPageSelectNoAndContinue()
 
-    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
-    DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+    DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
-    When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
-    TradeUnionRelief.verifyPageSelectNoAndContinue()
+    When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
+    PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("11000")
 
-    When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+    When("3.16.16 I verify BlindPersonsAllowanceAmount page, select no and continue")
     BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
     /** verify check your answers page */
@@ -244,76 +248,40 @@ class BusinessScenario1 extends BaseSpec {
     When("I verify DidYouPayAChargePage, select no and continue")
     DidYouPayAChargePage.verifyPageSelectNoAndContinue()
 
-    When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-    ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
-
-    When("I verify WhichContributedDuringRemedyPeriodPage, select DC continue")
-    WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue()
-
-    When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
-    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue("10000")
-
-    When("I verify PiaForDcPensionFlexiblePage, enter pension amount for DC and continue")
-    PiaForDcPensionFlexiblePage.verifyPageEnterPensionInputAmountForDCAndContinue("5000")
-
     When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
     ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
     When("I verify TotalIncomePage page, enter total income and continue")
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("160000")
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("35500")
 
-    When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
-    AnySalarySacrificeArrangements.selectYesAndContinue()
+    When("3.16.1 I verify AnySalarySacrificeArrangements page, select No and continue")
+    AnySalarySacrificeArrangements.selectNoAndContinue()
 
-    When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
-    AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("3000")
+    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select No and continue")
+    FlexibleRemunerationsArrangements.selectNoAndContinue()
 
-    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
-    FlexibleRemunerationsArrangements.selectYesAndContinue()
+    When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select No and continue")
+    AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
 
-    When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
-    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("3000")
-
-    When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select Yes and continue")
-    AnyLumpSumDeathBenefitsPage.selectYesAndContinue()
-
-    When("3.16.7 I verify LumpSumDeathBenefitsValuePage page, enter lump sum and continue")
-    LumpSumDeathBenefitsValuePage.enterLumpSumAndContinue("40000")
-
-    When("3.16.8 I verify ClaimingTaxReliefPension page, select Yes and continue")
-    ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
-
-    When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
-    TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("5000")
+    When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
+    ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
     When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
     ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
 
     When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("10000")
-
-    When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
-    KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
-
-    When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select no and continue")
-    ClaimingTaxReliefPensionPage.verifyPageSelectNoAndContinue()
-
-    When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
-    HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("30000")
-
-    When("3.15.4 I verify AnyTaxReliefOverseasPensionPage page, select no and continue")
-    AnyTaxReliefOverseasPensionPage.verifyPageSelectNoAndContinue()
+    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("5000")
 
     When("3.16.10 I verify DonatedViaGiftAid page, select no and continue")
     DonatedViaGiftAid.verifyPageSelectNoAndContinue()
 
-    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
-    DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+    DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
-    When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
-    TradeUnionRelief.verifyPageSelectNoAndContinue()
+    When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
+    PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("11500")
 
-    When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+    When("3.16.16 I verify BlindPersonsAllowanceAmount page, select no and continue")
     BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
     /** verify check your answers page */
@@ -323,7 +291,7 @@ class BusinessScenario1 extends BaseSpec {
     When("I click Add details for 2018 to 2019")
     TaskListPage.clickAddDetailsFor2018To2019()
 
-    When("I verify what-you-will-need-aa/2018 page and click continue")
+    When("I verify what-you-will-need-aa/2019 page and click continue")
     WhatYouWillNeedAaPage.onWhatYouWillNeedAa2019Page()
 
     Then("I verify member-more-than-one-pension page and click continue")
@@ -333,31 +301,22 @@ class BusinessScenario1 extends BaseSpec {
     WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00348916RX")
 
     When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
-    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("65000")
+    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("80000")
 
     When("I verify DidYouPayAChargePage, select no and continue")
     DidYouPayAChargePage.verifyPageSelectNoAndContinue()
-
-    When("I verify ContributedOtherDbDcSchemePage, select no and continue")
-    ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
 
     When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
     ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
     When("I verify TotalIncomePage page, enter total income and continue")
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("135000")
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("26850")
 
-    When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
-    AnySalarySacrificeArrangements.selectYesAndContinue()
+    When("3.16.1 I verify AnySalarySacrificeArrangements page, select No and continue")
+    AnySalarySacrificeArrangements.selectNoAndContinue()
 
-    When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
-    AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("3000")
-
-    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
-    FlexibleRemunerationsArrangements.selectYesAndContinue()
-
-    When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
-    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("10000")
+    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select No and continue")
+    FlexibleRemunerationsArrangements.selectNoAndContinue()
 
     When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select No and continue")
     AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
@@ -365,31 +324,25 @@ class BusinessScenario1 extends BaseSpec {
     When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
     ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
-    When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
-    ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
+    When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+    ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
 
-    When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
-    KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
+    When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("5000")
 
-    When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select no and continue")
-    ClaimingTaxReliefPensionPage.verifyPageSelectNoAndContinue()
+    When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
+    DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
-    When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
-    HowMuchContribution.enterPreReliefPensionContributionAndContinue("15000")
+    When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
+    DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("800")
 
-    When("3.15.4 I verify AnyTaxReliefOverseasPensionPage page, select no and continue")
-    AnyTaxReliefOverseasPensionPage.verifyPageSelectNoAndContinue()
+    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+    DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
-    When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
-    DonatedViaGiftAid.verifyPageSelectNoAndContinue()
+    When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
+    PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("11850")
 
-    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
-    DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
-
-    When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
-    TradeUnionRelief.verifyPageSelectNoAndContinue()
-
-    When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+    When("3.16.16 I verify BlindPersonsAllowanceAmount page, select no and continue")
     BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
     /** verify check your answers page */
@@ -409,57 +362,51 @@ class BusinessScenario1 extends BaseSpec {
     WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00348916RX")
 
     When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
-    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("55000")
+    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("67000")
 
     When("I verify DidYouPayAChargePage, select no and continue")
     DidYouPayAChargePage.verifyPageSelectNoAndContinue()
-
-    When("I verify ContributedOtherDbDcSchemePage, select no and continue")
-    ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
 
     When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
     ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
     When("I verify TotalIncomePage page, enter total income and continue")
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("40500")
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("62600")
 
-    When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
+    When("3.16.1 I verify AnySalarySacrificeArrangements page, select Yes and continue")
     AnySalarySacrificeArrangements.selectYesAndContinue()
 
     When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
     AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("3000")
 
-    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
+    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select Yes and continue")
     FlexibleRemunerationsArrangements.selectYesAndContinue()
 
     When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
-    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("3000")
+    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("1000")
 
     When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select No and continue")
     AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
 
-    When("3.16.8 I verify ClaimingTaxReliefPension page, select no and continue")
+    When("3.16.8 I verify ClaimingTaxReliefPension page, select No and continue")
     ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectNoAndContinue()
 
     When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
     ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
 
     When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("5000")
+    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("10000")
 
-    When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
-    DonatedViaGiftAid.verifyPageSelectYesAndContinue()
+    When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
+    DonatedViaGiftAid.verifyPageSelectNoAndContinue()
 
-    When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
-    DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("1000")
+    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+    DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
-    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
-    DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+    When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
+    PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("12500")
 
-    When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
-    TradeUnionRelief.verifyPageSelectNoAndContinue()
-
-    When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+    When("3.16.16 I verify BlindPersonsAllowanceAmount page, select no and continue")
     BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
     /** verify check your answers page */
@@ -480,28 +427,28 @@ class BusinessScenario1 extends BaseSpec {
     WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00348916RX")
 
     When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
-    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("180000")
+    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("120000")
 
     When("I verify DidYouPayAChargePage, select no and continue")
     DidYouPayAChargePage.verifyPageSelectNoAndContinue()
-
-    When("I verify ContributedOtherDbDcSchemePage, select no and continue")
-    ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
 
     When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
     ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
     When("I verify TotalIncomePage page, enter total income and continue")
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("41500")
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("88500")
 
-    When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
+    When("3.16.1 I verify AnySalarySacrificeArrangements page, select Yes and continue")
     AnySalarySacrificeArrangements.selectYesAndContinue()
 
     When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
-    AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("3000")
+    AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("1000")
 
-    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
-    FlexibleRemunerationsArrangements.selectNoAndContinue()
+    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select Yes and continue")
+    FlexibleRemunerationsArrangements.selectYesAndContinue()
+
+    When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
+    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("2000")
 
     When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select No and continue")
     AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
@@ -512,22 +459,19 @@ class BusinessScenario1 extends BaseSpec {
     When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
     TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("1000")
 
-    When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
-    ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
-
-    When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("4000")
+    When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select No and continue")
+    ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
     When("3.16.10 I verify DonatedViaGiftAid page, select No and continue")
     DonatedViaGiftAid.verifyPageSelectNoAndContinue()
 
-    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
-    DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select yes and continue")
+    DoYouKnowPersonalAllowancePage.verifyPageSelectYesAndContinue()
 
-    When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
-    TradeUnionRelief.verifyPageSelectNoAndContinue()
+    When("3.16.12 I verify PersonalAllowancePage page, enter allowance amount and continue")
+    PersonalAllowancePage.verifyPageEnterPersonalAllowanceAndContinue("12500")
 
-    When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+    When("3.16.16 I verify BlindPersonsAllowanceAmount page, select No and continue")
     BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
     /** verify check your answers page */
@@ -547,30 +491,21 @@ class BusinessScenario1 extends BaseSpec {
     WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00348916RX")
 
     When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
-    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("57000")
+    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("150000")
 
-    When("I verify DidYouPayAChargePage, select no and continue")
+    When("I verify DidYouPayAChargePage, select No and continue")
     DidYouPayAChargePage.verifyPageSelectNoAndContinue()
-
-    When("I verify ContributedOtherDbDcSchemePage, select yes and continue")
-    ContributedOtherDbDcSchemePage.verifyPageSelectYesAndContinue()
-
-    When("I verify WhichContributedDuringRemedyPeriodPage, select DC continue")
-    WhichContributedDuringRemedyPeriodPage.verifyPageSelectDCAndContinue()
-
-    When("I verify PiaForDcPensionPage, enter pension amount for DC and continue")
-    PiaForDcPensionPage.verifyPageEnterPensionInputAmountForDCAndContinue("3000")
 
     When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
     ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
     When("I verify TotalIncomePage page, enter total income and continue")
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("53000")
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("160000")
 
-    When("3.16.1 I verify AnySalarySacrificeArrangements page, select no and continue")
+    When("3.16.1 I verify AnySalarySacrificeArrangements page, select No and continue")
     AnySalarySacrificeArrangements.selectNoAndContinue()
 
-    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select no and continue")
+    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select No and continue")
     FlexibleRemunerationsArrangements.selectNoAndContinue()
 
     When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select No and continue")
@@ -582,22 +517,22 @@ class BusinessScenario1 extends BaseSpec {
     When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
     TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("430")
 
-    When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select no and continue")
+    When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select No and continue")
     ContributeToReliefAtSourceSchemePage.selectNoAndContinue()
 
     When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
     DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
     When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
-    DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("2000")
+    DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("1600")
 
-    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
+    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
     DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
     When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
     TradeUnionRelief.verifyPageSelectNoAndContinue()
 
-    When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+    When("3.16.16 I verify BlindPersonsAllowanceAmount page, select No and continue")
     BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
     /** verify check your answers page */
@@ -618,31 +553,28 @@ class BusinessScenario1 extends BaseSpec {
     WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00348916RX")
 
     When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
-    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("180000")
+    PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("100000")
 
-    When("I verify DidYouPayAChargePage, select no and continue")
+    When("I verify DidYouPayAChargePage, select No and continue")
     DidYouPayAChargePage.verifyPageSelectNoAndContinue()
-
-    When("I verify ContributedOtherDbDcSchemePage, select no and continue")
-    ContributedOtherDbDcSchemePage.verifyPageSelectNoAndContinue()
 
     When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
     ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
 
     When("I verify TotalIncomePage page, enter total income and continue")
-    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("150000")
+    TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("162000")
 
-    When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
+    When("3.16.1 I verify AnySalarySacrificeArrangements page, select Yes and continue")
     AnySalarySacrificeArrangements.selectYesAndContinue()
 
     When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
-    AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("61000")
+    AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("10000")
 
-    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
+    When("3.16.3 I verify FlexibleRemunerationsArrangements page, select Yes and continue")
     FlexibleRemunerationsArrangements.selectYesAndContinue()
 
     When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
-    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("60000")
+    AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("40000")
 
     When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select No and continue")
     AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
@@ -651,45 +583,27 @@ class BusinessScenario1 extends BaseSpec {
     ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
 
     When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
-    TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("2100")
+    TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("2000")
 
-    When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+    When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select Yes and continue")
     ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
 
-    When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
-    HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("10000")
-
-    When("3.15.0 I verify KnowAdjustedAmountPage page, select no and continue")
-    KnowAdjustedAmountPage.verifyPageSelectNoAndContinue()
-
-    When("3.15.1 I verify ClaimingTaxReliefPensionPage page, select yes and continue")
-    ClaimingTaxReliefPensionPage.verifyPageSelectYesAndContinue()
-
-    When("3.15.2 I verify HowMuchTaxReliefPensionPage page, enter amount and continue")
-    HowMuchTaxReliefPensionPage.verifyPageEnterPensionPayAndContinue("10000")
-
     When("3.16.5 I verify HowMuchContribution page, enter amount and continue")
-    HowMuchContribution.enterPreReliefPensionContributionAndContinue("52500")
-
-    When("3.15.4 I verify AnyTaxReliefOverseasPensionPage page, select no and continue")
-    AnyTaxReliefOverseasPensionPage.verifyPageSelectNoAndContinue()
+    HowMuchContribution.enterPreReliefPensionContributionAndContinue("40000")
 
     When("3.16.10 I verify DonatedViaGiftAid page, select Yes and continue")
     DonatedViaGiftAid.verifyPageSelectYesAndContinue()
 
     When("3.16.10.1 I verify DonatedViaGiftAidAmount page, enter amount and continue")
-    DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("2000")
+    DonatedViaGiftAidAmount.verifyPageEnterGiftAidAmountAndContinue("1600")
 
-    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
+    When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select No and continue")
     DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
 
-    When("3.16.11.4 I verify TradeUnionRelief page, select yes and continue")
-    TradeUnionRelief.verifyPageSelectYesAndContinue()
+    When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+    TradeUnionRelief.verifyPageSelectNoAndContinue()
 
-    When("3.16.11.5 I verify UnionPoliceReliefAmount page, enter UnionPoliceRelief amount and continue")
-    UnionPoliceReliefAmount.enterUnionPoliceReliefAmount("100")
-
-    When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+    When("3.16.16 I verify BlindPersonsAllowanceAmount page, select No and continue")
     BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
 
     /** verify check your answers page */
@@ -704,14 +618,14 @@ class BusinessScenario1 extends BaseSpec {
       */
 
     val calculationResults: Map[Int, Array[Int]] = Map(
-      2016 -> Array(10000, 4000),
-      2017 -> Array(15000, 3600),
-      2018 -> Array(50000, 22250),
-      2019 -> Array(50000, 21750),
-      2020 -> Array(15000, 3000),
-      2021 -> Array(140000, 54000),
-      2022 -> Array(20000, 7960),
-      2023 -> Array(176000, 78470)
+      2016 -> Array(20000, 8000),
+      2017 -> Array(9000, 3600),
+      2018 -> Array(20000, 5500),
+      2019 -> Array(40000, 11852),
+      2020 -> Array(27000, 11070),
+      2021 -> Array(80000, 33050),
+      2022 -> Array(110000, 50600),
+      2023 -> Array(60000, 25821)
     )
 
     for (year <- calculationResults.keys) {
