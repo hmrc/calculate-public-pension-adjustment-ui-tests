@@ -1600,7 +1600,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       )
       assert(
         PensionSchemeInputAmountsPage
-          .getRevisedPIASpiltYearCaptionText() == "Annual allowance between 6 April 2015 and 8 July 2015"
+          .getRevisedPIASpiltYearCaptionText() == "Annual allowance from 6 April 2015 to 8 July 2015"
       )
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("85000")
 
@@ -1609,7 +1609,7 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       )
       assert(
         PensionSchemeInputAmountsPage
-          .getRevisedPIASpiltYearCaptionText() == "Annual allowance between 9 July 2015 and 5 April 2016"
+          .getRevisedPIASpiltYearCaptionText() == "Annual allowance from 9 July 2015 to 5 April 2016"
       )
       PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("5000")
 
