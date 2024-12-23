@@ -21,14 +21,14 @@ import org.openqa.selenium.By
 object NewExcessPaidPage extends BasePage {
 
   def selectAnnualPaymentRadioButtonAndContinue(): Unit = {
-    val text = "Annual Payment"
+    val text = "Annual payment"
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()
   }
 
   def selectLumpSumRadioButtonAndContinue(): Unit = {
-    val text = "Lump Sum"
+    val text = "Lump sum"
     driver.findElement(By.xpath("//label[contains(text(),'" + text + "')]")).click()
     checkYourAnswersLASMap(getHeader(), text)
     submitPage()

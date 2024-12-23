@@ -35,4 +35,8 @@ object PensionSchemeInputAmountsPage extends BasePage {
     checkYourAnswersAAPeriodMap(getHeader(), "£" + revisedPensionInputAmount)
     submitPage()
   }
+
+  def getRevisedPIASpiltYearCaptionText() =
+    driver.findElement(By.className("govuk-caption-xl")).getText
+
 }

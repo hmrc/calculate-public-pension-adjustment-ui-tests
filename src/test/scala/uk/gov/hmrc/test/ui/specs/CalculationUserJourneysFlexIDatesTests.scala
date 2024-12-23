@@ -1455,6 +1455,167 @@ class CalculationUserJourneysFlexIDatesTests extends BaseSpec {
       HomePage.signOutPage()
     }
 
+    Scenario("Journey for year 2015-16 Revised PIA spilt year verification", CalculationJourney2) {
+
+      /** MCSC-1188. */
+      /** This scenario covers user journey where user starts AA years from 2016-2017 and then enter details for 2015-2016 year ,verification of Spilt year should be visible-- */
+      Given("I am on the Public Service Pensions Remediation home page")
+      HomePage.goToHomepage()
+
+      When("I click on ContinueWithoutSignIn and move to next page")
+      signInPage match {
+        case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
+        case _      =>
+      }
+
+      When("I select I'm not resubmitting the adjustment and click continue")
+      ResubmittingAdjustmentPage.selectNoThenContinue()
+
+      When("I verify Affected by remedy page select yes and click continue")
+      AffectedByRemedyPage.selectYesThenContinue()
+
+      When("0.7 I click Annual allowance and click continue")
+      ReportingChangePage.selectAnnualAllowanceAndContinue()
+
+      When("0.8 I select I have not received remedial service statement and continue to next page")
+      SavingsStatementPage.selectYesThenContinue()
+
+      When("0.9 I verify Protected Member page select no and click continue")
+      ProtectedMember.selectNoThenContinue()
+
+      When("0.10 I verify Annual allowance charge page select yes and click continue")
+      AnnualAllowanceCharge.selectYesThenContinue()
+
+      When("I verify check your answers page and click continue")
+      CheckYourAnswersPage.verifyCheckYourAnswersPageAndContinue()
+
+      When("I verify eligible to use the Public Service Pensions adjustment service page click continue")
+      EligibleToUseServicePage.clickContinueButton()
+
+      //AA Setup
+      When("2.1 I land on Scottish taxpayer page, select no and continue to next page")
+      ScottishTaxpayerFrom2016Page.selectNoAndContinueForAASPage()
+
+      When("I land on paying-into-public-scheme-page, select no and click continue")
+      PayingIntoPublicPensionSchemePage.selectNoAndContinueForAASPage()
+
+      Then("I Should see the when-stop-paying-public-pension page")
+      WhenStopPayingPublicPensionPage.enterStopPayingDateAndClickContinue("5", "6", "2016")
+
+      When("I land on defined-contributions-scheme page, select yes and continue")
+      HaveDefinedContributionPensionPage.selectNoAndContinueForAASPage()
+
+      When("I land on pay-tax-charge 14/15 page, select yes and continue to next page")
+      PayTaxChargeFrom20152016Page.selectYesAndContinueForAASPage()
+
+      When("I verify check your answers page for annual allowance and click continue")
+      CheckYourAnswersAnnualAllowanceSetupPage.verifyCheckYourAnswersPageAndContinue()
+
+      Then("I verify annual allowance period shows up to 2017 in the task list")
+      TaskListPage.isAnnualAllowancePeriodShowsUpToYear("2017")
+
+      //AA -Triage
+      /** --- 2017 */
+      When("I click Add details for 2016 to 2017")
+      TaskListPage.clickAddDetailsFor2016To2017()
+
+      When("I verify what-you-will-need-aa/2017 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2017Page()
+
+      Then("I verify member-more-than-one-pension page and click continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+
+      When("I verify PensionSchemeDetailsPage, enter pension scheme and tax reference")
+      PensionSchemeDetailsPage.enterTaxInformationAndContinue("NHS", "00348916RX")
+
+      When("I verify PensionSchemeInputAmountsPage, enter revised pension input amount")
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("55000")
+
+      When("I verify DidYouPayAChargePage, select no and continue")
+      DidYouPayAChargePage.verifyPageSelectNoAndContinue()
+
+      When("I verify ThresholdIncomePage(2017-2020) page, select option IdoNotKnow and continue")
+      ThresholdIncomePage.verifyPageSelectIdoNotKnowAndContinue()
+
+      When("I verify TotalIncomePage page, enter total income and continue")
+      TotalIncomePage.verifyPageEnterTotalIncomeAndContinue("53000")
+
+      When("3.16.1 I verify AnySalarySacrificeArrangements page, select yes and continue")
+      AnySalarySacrificeArrangements.selectYesAndContinue()
+
+      When("3.16.2 I verify AmountSalarySacrificeArrangements page, enter amount and continue")
+      AmountSalarySacrificeArrangements.enterSalarySacrificeAmountAndContinue("3000")
+
+      When("3.16.3 I verify FlexibleRemunerationsArrangements page, select yes and continue")
+      FlexibleRemunerationsArrangements.selectYesAndContinue()
+
+      When("3.16.4 I verify AmountFlexibleRemunerationArrangements page, enter amount and continue")
+      AmountFlexibleRemunerationArrangements.enterFlexibleRemunerationAmountAndContinue("10000")
+
+      When("3.16.6 I verify AnyLumpSumDeathBenefitsPage page, select No and continue")
+      AnyLumpSumDeathBenefitsPage.selectNoAndContinue()
+
+      When("3.16.8 I verify ClaimingTaxReliefPension page, select Yes and continue")
+      ClaimingTaxReliefPension.verifyClaimingTaxReliefPensionSelectYesAndContinue()
+
+      When("3.16.9 I verify TaxReliefAmount page, enter tax relief amount and continue")
+      TaxReliefAmountPage.verifyPageEnterTaxReliefAndContinue("2000")
+
+      When("3.16.5.1 I verify ContributeToReliefAtSourceSchemePage page, select yes and continue")
+      ContributeToReliefAtSourceSchemePage.selectYesAndContinue()
+
+      When("3.16.5.2 I verify HowMuchContributionReliefAtSourcePage page, enter amount and continue")
+      HowMuchContributionReliefAtSourcePage.enterContributionReliefAmountAndContinue("20000")
+
+      When("3.16.10 I verify DonatedViaGiftAid page, select no and continue")
+      DonatedViaGiftAid.verifyPageSelectNoAndContinue()
+
+      When("3.16.11 I verify DoYouKnowPersonalAllowancePage page, select no and continue")
+      DoYouKnowPersonalAllowancePage.verifyPageSelectNoAndContinue()
+
+      When("3.16.11.4 I verify TradeUnionRelief page, select no and continue")
+      TradeUnionRelief.verifyPageSelectNoAndContinue()
+
+      When("3.16.15 I verify BlindPersonAllowance page, select no and continue")
+      BlindPersonAllowance.verifyClaimingBlindPersonAllowanceSelectNoAndContinue()
+
+      /** verify check your answers page */
+      CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
+
+      /** --- 2016 --- */
+      When("I click Add details for 2015 to 2016")
+      TaskListPage.clickAddDetailsFor2015To2016()
+
+      When("I verify what-you-will-need-aa/2016 page and click continue")
+      WhatYouWillNeedAaPage.onWhatYouWillNeedAa2016Page()
+
+      Then("I verify member-more-than-one-pension page,select No and continue")
+      MemberMoreThanOnePensionPage.verifyPageSelectNoAndContinue()
+
+      When("I verify WhichSchemeDetailsPage and select an existing scheme")
+      WhichSchemeDetailsPage.verifyPageSelectSchemeAndContinue("NHS", "00348916RX")
+
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-pre revised pension input amount"
+      )
+      assert(
+        PensionSchemeInputAmountsPage
+          .getRevisedPIASpiltYearCaptionText() == "Annual allowance from 6 April 2015 to 8 July 2015"
+      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("85000")
+
+      When(
+        "I verify PensionSchemeInputAmountsPage, enter period of 2016-post revised pension input amount"
+      )
+      assert(
+        PensionSchemeInputAmountsPage
+          .getRevisedPIASpiltYearCaptionText() == "Annual allowance from 9 July 2015 to 5 April 2016"
+      )
+      PensionSchemeInputAmountsPage.verifyPageEnterPensionAmountsAndContinue("5000")
+
+      HomePage.signOutPage()
+
+    }
   }
 
 }
