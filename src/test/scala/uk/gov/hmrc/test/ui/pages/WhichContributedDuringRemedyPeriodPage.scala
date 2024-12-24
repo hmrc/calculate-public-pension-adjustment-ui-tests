@@ -20,8 +20,8 @@ import org.openqa.selenium.By
 
 object WhichContributedDuringRemedyPeriodPage extends BasePage {
 
-  def selectDefinedContribution() = driver.findElement(By.id("value_0")).click()
-  def selectDefinedBenefit()      = driver.findElement(By.id("value_1")).click()
+  def selectDefinedContribution() = driver.findElement(By.id("value_1")).click()
+  def selectDefinedBenefit()      = driver.findElement(By.id("value_0")).click()
 
   def defSelectBothDCAndDB() = {
     selectDefinedContribution()
