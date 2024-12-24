@@ -32,7 +32,7 @@ class BusinessScenario5 extends BaseSpec {
     When("0.1 I click on ContinueWithoutSignIn and move to next page")
     signInPage match {
       case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
-      case _ =>
+      case _      =>
     }
 
     //setup journey
@@ -565,7 +565,7 @@ class BusinessScenario5 extends BaseSpec {
 
       CalculationResultPage.clickOnViewBreakdown(year.toString)
       val revisedChargableAmountBeforeTaxRate = f"£${calculationResult(0)}%,d"
-      val revisedChargableAmountAfterTaxRate = f"£${calculationResult(1)}%,d"
+      val revisedChargableAmountAfterTaxRate  = f"£${calculationResult(1)}%,d"
 
       assert(
         CalculationResultPage
