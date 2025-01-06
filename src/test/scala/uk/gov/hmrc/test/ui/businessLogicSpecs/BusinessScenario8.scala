@@ -32,7 +32,7 @@ class BusinessScenario8 extends BaseSpec {
     When("0.1 I click on ContinueWithoutSignIn and move to next page")
     signInPage match {
       case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
-      case _ =>
+      case _      =>
     }
 
     //setup journey
@@ -280,7 +280,6 @@ class BusinessScenario8 extends BaseSpec {
 
     When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
     BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2320")
-
 
     /** verify check your answers page */
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
@@ -530,7 +529,6 @@ class BusinessScenario8 extends BaseSpec {
     When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
     BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2520")
 
-
     /** verify check your answers page */
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
@@ -593,13 +591,11 @@ class BusinessScenario8 extends BaseSpec {
     When("3.16.16 I verify BlindPersonsAllowanceAmount page, enter BlindPersonsAllowance amount and continue")
     BlindPersonsAllowanceAmount.enterBlindPersonsAllowanceAmount("2600")
 
-
     /** verify check your answers page */
     CheckYourAnswersAnnualAllowancePeriodPage.clickContinueButton()
 
     //end of AA Triage journey
     TaskListPage.clickCalculateButton()
-
 
     val calculationResults: Map[Int, Array[Int]] = Map(
       2016 -> Array(0, 0),
@@ -617,7 +613,7 @@ class BusinessScenario8 extends BaseSpec {
 
       CalculationResultPage.clickOnViewBreakdown(year.toString)
       val revisedChargableAmountBeforeTaxRate = f"£${calculationResult(0)}%,d"
-      val revisedChargableAmountAfterTaxRate = f"£${calculationResult(1)}%,d"
+      val revisedChargableAmountAfterTaxRate  = f"£${calculationResult(1)}%,d"
 
       assert(
         CalculationResultPage
