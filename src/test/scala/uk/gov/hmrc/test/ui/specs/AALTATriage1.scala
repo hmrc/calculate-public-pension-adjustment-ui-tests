@@ -18,14 +18,14 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specs.tags.{AALTATriage1, CalculationJourney1, CalculationJourney2, ISJJourney1, ISJJourney2, ISJJourney3}
+import uk.gov.hmrc.test.ui.specs.tags.{AALTATriage1, CalculationJourney1, CalculationJourney2, ISJJourney1, ISJJourney2, ISJJourney3, JenkinsE2ETests}
 
 class AALTATriage1 extends BaseSpec {
 
   Feature("Calculate...") {
     val signInPage: String = TestConfiguration.optionalAuthFlag()
 
-    Scenario("Journey for Triage 1", AALTATriage1, CalculationJourney1) {
+    Scenario("Journey for Triage 1", AALTATriage1, JenkinsE2ETests, CalculationJourney1) {
 
       /** User not resubmitting, AA adjustment */
       /** Below journey covers 0.7,0.8,0.9,0.14 */
