@@ -18,16 +18,11 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 
-object ResubmittingAdjustmentPage extends BasePage {
+object LifetimeAllowanceReviewAnswersPage extends BasePage {
+  def verifyLifetimeAllowanceReviewAnswersPageAndContinue() =
+    clickContinueButton()
 
-  def selectNoAndSaveAndContinue() = {
-    driver.findElement(By.cssSelector("#value-no")).click()
-    driver.findElement(By.cssSelector(".govuk-button")).click()
-  }
-
-  def selectYesAndSaveAndContinue() = {
-    driver.findElement(By.cssSelector("#value")).click()
-    driver.findElement(By.cssSelector(".govuk-button")).click()
-  }
-
+  def verifyLifeTimeAllowanceReviewPageHeading()=
+    driver
+      .findElement(By.xpath("//h1[contains(text(),'Review your lifetime allowance answers')]"))
 }
