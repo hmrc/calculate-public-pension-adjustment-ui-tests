@@ -374,7 +374,7 @@ class CalculationUserJourneys extends BaseSpec {
       Given("I am on the Public Service Pensions Remediation home page")
       HomePage.goToHomepage()
 
-      When("I clic on ContinueWithoutSignIn and move to next page")
+      When("I click on ContinueWithoutSignIn and move to next page")
       signInPage match {
         case "true" => SignInGovernmentGateway.ContinueWithoutSignIn()
         case _      =>

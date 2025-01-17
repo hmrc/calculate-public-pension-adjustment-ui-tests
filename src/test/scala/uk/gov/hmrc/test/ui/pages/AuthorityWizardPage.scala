@@ -23,8 +23,7 @@ import util.NINOGenerator
 
 object AuthorityWizardPage extends BasePage {
 
-  val authUrl: String   = TestConfiguration.url("auth-frontend")
-  val submitFrontendUrl = TestConfiguration.url("submit-ui-frontend")
+  val authUrl: String = TestConfiguration.url("auth-frontend")
 
   def authorizedLoginUser(): Unit = {
     driver.get(driver.getCurrentUrl)

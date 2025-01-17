@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 
 object ChangePreviousAdjustmentPage extends BasePage {
 
-  def selectYesAndSaveAndContinue()= {
+  def selectYesAndSaveAndContinue() = {
     driver.findElement(By.cssSelector("#value")).click()
     driver.findElement(By.cssSelector(".govuk-button")).click()
   }

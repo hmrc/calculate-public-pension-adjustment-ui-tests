@@ -22,7 +22,7 @@ object LifetimeAllowanceReviewAnswersPage extends BasePage {
   def verifyLifetimeAllowanceReviewAnswersPageAndContinue() =
     clickContinueButton()
 
-  def verifyLifeTimeAllowanceReviewPageHeading()=
+  def verifyLifeTimeAllowanceReviewPageHeading() =
     driver
       .findElement(By.xpath("//h1[contains(text(),'Review your lifetime allowance answers')]"))
 }
