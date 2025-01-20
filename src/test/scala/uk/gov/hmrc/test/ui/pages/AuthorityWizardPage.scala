@@ -43,4 +43,25 @@ object AuthorityWizardPage extends BasePage {
     val dropdown      = new Select(selectElement)
     dropdown.selectByValue(confidenceLevel)
   }
+
+  def authorizeTheUserSignOutAndSignInBack(): Unit = {
+    val ninoToEnter = NINOGenerator.nino
+    driver.findElement(By.id("nino")).sendKeys(ninoToEnter)
+    println("NINO: " + ninoToEnter)
+    selectConfidenceLevel("250")
+    driver.findElement(By.id("add-preset")).click()
+    driver.findElement(By.id("input-4-0-value")).sendKeys("123456789")
+    driver.findElement(By.id("itmp.givenName")).sendKeys("Test")
+    driver.findElement(By.id("submit-top")).submit()
+    driver.findElement(By.xpath("//nav/a[contains(text(),'Sign out')]")).click()
+    driver.findElement(By.cssSelector(".hmrc-header__service-name")).click()
+    driver.findElement(By.cssSelector(".govuk-button")).click()
+    driver.findElement(By.id("nino")).sendKeys(ninoToEnter)
+    println("NINO: " + ninoToEnter)
+    selectConfidenceLevel("250")
+    driver.findElement(By.id("add-preset")).click()
+    driver.findElement(By.id("input-4-0-value")).sendKeys("123456789")
+    driver.findElement(By.id("itmp.givenName")).sendKeys("Test")
+    driver.findElement(By.id("submit-top")).submit()
+  }
 }

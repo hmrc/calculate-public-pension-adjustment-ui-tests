@@ -259,9 +259,20 @@ class CalculationUserJourneys extends BaseSpec {
       When("I verify check your answers page for annual allowance and click continue")
       CheckYourAnswersLifetimeAllowancePage.verifyCheckYourAnswersPageAndContinue()
 
+      When("I click on Continue to sign in")
+      TaskListPage.continueToSignIn()
+
+      When("I Authenticate and Signin back")
+      AuthorityWizardPage.authorizeTheUserSignOutAndSignInBack()
+
+      Then("I select Yes on Resubmission Page")
+      ChangePreviousAdjustmentPage.selectYesAndSaveAndContinue()
+
+      Then("I should be on LTA Review Answers page")
+      LifetimeAllowanceReviewAnswersPage.verifyLifeTimeAllowanceReviewPageHeading()
+
       When("I click sign out from the page")
       CheckYourAnswersLifetimeAllowancePage.signOutPage()
-
     }
 
     Scenario("Setup Journey 2, and LTA journey 4", CalculationJourney1) {

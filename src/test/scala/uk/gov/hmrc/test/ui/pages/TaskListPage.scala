@@ -171,4 +171,6 @@ object TaskListPage extends BasePage {
   def clickCalculateButton() =
     driver.findElement(By.xpath("//span/a[contains(text(),'Calculate')]")).click()
 
+  def continueToSignIn() =
+    driver.findElement(By.xpath("//a[contains(text(),'Continue to sign in')]")).click()
 }
