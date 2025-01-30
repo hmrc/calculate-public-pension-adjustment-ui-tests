@@ -54,7 +54,7 @@ object AuthorityWizardPage extends BasePage {
     driver.findElement(By.id("itmp.givenName")).sendKeys("Test")
     driver.findElement(By.id("submit-top")).submit()
     driver.findElement(By.xpath("//nav/a[contains(text(),'Sign out')]")).click()
-    driver.findElement(By.cssSelector(".hmrc-header__service-name")).click()
+    driver.findElement(By.cssSelector(".govuk-header__link.govuk-header__service-name")).click()
     driver.findElement(By.cssSelector(".govuk-button")).click()
     driver.findElement(By.id("nino")).sendKeys(ninoToEnter)
     println("NINO: " + ninoToEnter)
