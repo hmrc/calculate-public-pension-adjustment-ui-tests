@@ -262,7 +262,7 @@ class CalculationUserJourneys extends BaseSpec {
       When("I click on Continue to sign in")
       TaskListPage.continueToSignIn()
 
-      When("I Authenticate and Signin back")
+      When("I Authenticate, Sign out and Sign in back")
       AuthorityWizardPage.authorizeTheUserSignOutAndSignInBack()
 
       Then("I select Yes on Resubmission Page")
